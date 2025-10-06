@@ -17,43 +17,71 @@ def _read_sas(path: str) -> pd.DataFrame:
     return df
 
 
-def load_adam_tables(data_root: str) -> Dict[str, pd.DataFrame]:
-    """Load required ADaM tables for 310.
+def load_adam_tables(data_root: str, verbose: bool = False) -> Dict[str, pd.DataFrame]:
+    """Load all available ADaM tables for PDS310.
 
     Expected files in data_root:
-      - adsl_*.sas7bdat (subject-level)
-      - adlb_*.sas7bdat (lab)
-      - adae_*.sas7bdat (adverse events) [optional for Phase 2]
+      - adsl_*.sas7bdat (subject-level) - REQUIRED
+      - adlb_*.sas7bdat (lab) - REQUIRED
+      - adae_*.sas7bdat (adverse events) - optional
+      - adls_*.sas7bdat (lesion measurements) - optional
+      - adpm_*.sas7bdat (physical measurements) - optional
+      - adrsp_*.sas7bdat (response) - optional
+      - biomark_*.sas7bdat (biomarkers) - optional
 
-    Returns a dict with keys: adsl, adlb, adae (if present).
+    Returns a dict with keys: adsl, adlb, adae, adls, adpm, adrsp, biomark (where available).
     """
     # Discover files by prefix
     files = {f.lower(): os.path.join(data_root, f) for f in os.listdir(data_root) if f.lower().endswith('.sas7bdat')}
 
-    def _find(prefix: str) -> str:
+    def _find(prefix: str, required: bool = True) -> str:
         for name, path in files.items():
             if name.startswith(prefix):
                 return path
-        raise FileNotFoundError(f"Missing SAS file with prefix '{prefix}' in {data_root}")
+        if required:
+            raise FileNotFoundError(f"Missing SAS file with prefix '{prefix}' in {data_root}")
+        return None
 
-    adsl_path = _find("adsl_") if any(k.startswith("adsl_") for k in files) else files.get("adsl.sas7bdat") or _find("adsl")
-    adlb_path = _find("adlb_") if any(k.startswith("adlb_") for k in files) else files.get("adlb.sas7bdat") or _find("adlb")
-    adae_path = None
-    for cand in ("adae_", "adae.sas7bdat", "adae"):
-        if any(k.startswith(cand) for k in files) or cand in files:
-            adae_path = files.get("adae.sas7bdat") or files.get(cand) or next((p for n, p in files.items() if n.startswith("adae_")), None)
-            break
-
+    # Load required tables
     tables: Dict[str, pd.DataFrame] = {}
+    
+    # ADSL - required
+    adsl_path = _find("adsl_", required=True)
     tables["adsl"] = _read_sas(adsl_path)
+    if verbose:
+        print(f"Loaded ADSL: {len(tables['adsl'])} rows")
+    
+    # ADLB - required
+    adlb_path = _find("adlb_", required=True)
     tables["adlb"] = _read_sas(adlb_path)
-    if adae_path:
-        try:
-            tables["adae"] = _read_sas(adae_path)
-        except Exception:
-            pass
+    if verbose:
+        print(f"Loaded ADLB: {len(tables['adlb'])} rows")
+    
+    # Optional tables
+    optional_tables = {
+        "adae": "adae_",
+        "adls": "adls_",
+        "adpm": "adpm_",
+        "adrsp": "adrsp_",
+        "biomark": "biomark_",
+    }
+    
+    for table_name, prefix in optional_tables.items():
+        path = _find(prefix, required=False)
+        if path:
+            try:
+                tables[table_name] = _read_sas(path)
+                if verbose:
+                    print(f"Loaded {table_name.upper()}: {len(tables[table_name])} rows")
+            except Exception as e:
+                if verbose:
+                    print(f"Warning: Could not load {table_name.upper()}: {e}")
+                pass
+        else:
+            if verbose:
+                print(f"Info: {table_name.upper()} not found (optional)")
 
-    # Normalize ID types
+    # Normalize ID types for all tables
     for k, df in list(tables.items()):
         # Ensure SUBJID exists as string
         if ID_COL in df.columns:
@@ -64,6 +92,10 @@ def load_adam_tables(data_root: str) -> Dict[str, pd.DataFrame]:
         else:
             df[STUDY_COL] = df[STUDY_COL].astype("string")
         tables[k] = df
+
+    if verbose:
+        print(f"\nTotal tables loaded: {len(tables)}")
+        print(f"Available tables: {', '.join(tables.keys())}")
 
     return tables
 
