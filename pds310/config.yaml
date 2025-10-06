@@ -1,0 +1,25 @@
+data_root: /Users/rsjaya/Longetivity_task/AllProvidedFiles_310/PDS_DSA_20020408
+outputs_root: /Users/rsjaya/Longetivity_task/outputs/pds310
+
+endpoints:
+  os:
+    death_flag_col: DTHX
+    time_col: DTHDYX
+
+features:
+  longitudinal:
+    windows:
+      baseline_days: [-30, 0]
+      early_treatment_days: [1, 60]
+
+modeling:
+  cv:
+    n_splits: 5
+    group_by: STUDYID
+    random_state: 42
+
+simulation:
+  n_simulations: 50
+  seed: 42
+
+

@@ -1,0 +1,44 @@
+data_root: /Users/rsjaya/Longetivity_task/AllProvidedFiles_149/prostate_cancer_challenge_data_training
+outputs_root: /Users/rsjaya/Longetivity_task/outputs
+
+endpoints:
+  time_zero: CONSENT DATE
+  time_unit: DAYS
+  os:
+    death_flag_col: DEATH
+    time_col: LKADT_P
+    time_ref_col: LKADT_REF
+    time_unit_col: LKADT_PER
+  ae_disc:
+    reason_col: ENDTRS_C
+    reason_values:
+      - AE
+      - possible_AE
+    time_col: ENTRT_PC
+
+features:
+  baseline:
+    use_coretable_baselines: true
+    include_comorbidities: true
+    include_priormeds: true
+  longitudinal:
+    windows:
+      baseline_days: [-30, 0]
+      early_treatment_days: [0, 60]
+    aggregate: [last, mean, slope, delta]
+
+modeling:
+  os:
+    cox_elastic_net:
+      l1_ratio: 0.2
+      alphas: [0.01, 0.1, 0.5]
+    aft_weibull:
+      penalizer: 0.001
+  cv:
+    n_splits: 5
+    group_by: STUDYID
+    random_state: 42
+
+simulation:
+  n_simulations: 200
+  seed: 42
