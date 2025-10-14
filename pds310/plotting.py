@@ -9,9 +9,26 @@ from .endpoints import derive_eot_from_adlb
 
 
 def plot_ae_incidence(report_csv: str, out_dir: str, horizons: List[int] = [90, 180, 365]) -> List[str]:
-    # Reuse implementation from pds149
-    from pds149.plotting import plot_ae_incidence as _plot
-    return _plot(report_csv, out_dir, horizons)
+    os.makedirs(out_dir, exist_ok=True)
+    df = pd.read_csv(report_csv)
+    paths: List[str] = []
+    for horizon in horizons:
+        col_obs = f"obs_incidence_ae_{horizon}"
+        col_sim = f"sim_incidence_ae_{horizon}"
+        if col_obs not in df.columns or col_sim not in df.columns:
+            continue
+        p = os.path.join(out_dir, f"plot_ae_incidence_{horizon}.png")
+        plt.figure(figsize=(8, 6))
+        sns.scatterplot(data=df, x=col_obs, y=col_sim, hue="ARM")
+        plt.plot([0, 1], [0, 1], linestyle="--", color="gray")
+        plt.title(f"AE Incidence at {horizon} days: Observed vs Simulated")
+        plt.xlabel("Observed")
+        plt.ylabel("Simulated")
+        plt.tight_layout()
+        plt.savefig(p)
+        plt.close()
+        paths.append(p)
+    return paths
 
 
 def plot_eot_distributions_from_tables(adlb: pd.DataFrame, sim_csv: str, out_dir: str, n_bins: int = 50) -> str:
