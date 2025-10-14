@@ -6,8 +6,7 @@ from lifelines import CoxPHFitter
 from lifelines.utils import concordance_index
 from sklearn.model_selection import KFold, StratifiedKFold
 
-# Reuse preprocessing from pds149
-from pds149.model_os import _make_preprocessor, _fit_transform, _transform  # type: ignore
+from .preprocessing import _make_preprocessor, _fit_transform, _transform
 
 
 def _stratified_indices(event: pd.Series, n_splits: int, random_state: int) -> List:
