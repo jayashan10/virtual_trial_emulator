@@ -1,0 +1,88 @@
+{
+  "trial_name": "PDS310-Original",
+  "description": "Panitumumab + BSC vs BSC alone in RAS wild-type metastatic colorectal cancer",
+  "phase": "3",
+  "n_patients": 1000,
+  "allocation_ratio": [
+    1.0,
+    1.0
+  ],
+  "treatment_arms": [
+    {
+      "name": "Panitumumab + BSC",
+      "description": "Panitumumab 6 mg/kg IV Q2W + best supportive care",
+      "response_rate_modifier": 1.5,
+      "ttr_modifier": 1.0,
+      "os_hr": 0.88,
+      "pfs_hr": 0.54,
+      "is_control": false
+    },
+    {
+      "name": "BSC",
+      "description": "Best supportive care alone",
+      "response_rate_modifier": 1.0,
+      "ttr_modifier": 1.0,
+      "os_hr": 1.0,
+      "pfs_hr": 1.0,
+      "is_control": true
+    }
+  ],
+  "eligibility": {
+    "min_age": 18,
+    "max_age": null,
+    "required_ecog": [
+      0,
+      1,
+      2
+    ],
+    "ras_status": [
+      "WILD-TYPE"
+    ],
+    "min_weight": null,
+    "max_weight": null,
+    "required_sex": null,
+    "exclude_prior_egfr": false
+  },
+  "endpoints": [
+    {
+      "name": "Overall Survival",
+      "endpoint_type": "primary",
+      "metric": "os",
+      "test_type": "survival",
+      "alpha": 0.05,
+      "power": 0.8,
+      "target_hr": 0.88,
+      "target_difference": null
+    },
+    {
+      "name": "Progression-Free Survival",
+      "endpoint_type": "secondary",
+      "metric": "pfs",
+      "test_type": "survival",
+      "alpha": 0.05,
+      "power": 0.8,
+      "target_hr": 0.54,
+      "target_difference": null
+    },
+    {
+      "name": "Overall Response Rate",
+      "endpoint_type": "secondary",
+      "metric": "response_rate",
+      "test_type": "proportion",
+      "alpha": 0.05,
+      "power": 0.8,
+      "target_hr": null,
+      "target_difference": null
+    }
+  ],
+  "stratification_factors": [
+    "baseline_ecog",
+    "num_metastatic_sites"
+  ],
+  "random_seed": 42,
+  "max_followup_days": 730,
+  "arm_sizes": {
+    "Panitumumab + BSC": 500,
+    "BSC": 500
+  }
+}

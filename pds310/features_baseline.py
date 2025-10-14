@@ -1,33 +1,16 @@
 from typing import Dict, List
 import pandas as pd
 
+from .labs import canonical_lab_list, canonical_lab_name
+
 ID_COL = "SUBJID"
 STUDY_COL = "STUDYID"
 
-
-_PARAMCD_MAP = {
-    # 310 uses LBTEST names rather than PARAMCD; we map from LBTEST
-    "ALP": "ALP",
-    "ALT": "ALT",
-    "AST": "AST",
-    "CALCIUM": "CA",
-    "CREATININE": "CREAT",
-    "HGB": "HB",
-    "LDH": "LDH",
-    "NEUTROPHILS": "NEU",
-    "PLATELETS": "PLT",
-    "PSA": "PSA",
-    "BILIRUBIN": "TBILI",
-    "TESTOSTERONE": "TESTO",
-    "WBC": "WBC",
-}
-
-
 def build_baseline_from_adsl(adsl: pd.DataFrame) -> pd.DataFrame:
-    cols_keep: List[str] = [c for c in [ID_COL, STUDY_COL, "AGE", "SEX", "RACE", "B_ECOG", "TRT"] if c in adsl.columns]
+    cols_keep: List[str] = [c for c in [ID_COL, STUDY_COL, "AGE", "SEX", "RACE", "B_ECOG"] if c in adsl.columns]
     base = adsl[cols_keep].copy()
     # Normalize categoricals as strings
-    for c in ["RACE", "SEX", "TRT"]:
+    for c in ["RACE", "SEX"]:
         if c in base.columns:
             base[c] = base[c].astype("string").fillna("MISSING")
     # Numeric conversions
@@ -52,10 +35,17 @@ def build_baseline_labs_from_adlb(adlb: pd.DataFrame) -> pd.DataFrame:
     df_baseline[val_col] = pd.to_numeric(df_baseline[val_col], errors="coerce")
 
     # Pivot LBTEST to columns using canonical names
-    df_baseline["CANON"] = df_baseline["LBTEST"].astype("string").str.upper().map(_PARAMCD_MAP)
-    df_baseline = df_baseline.dropna(subset=["CANON"])  # keep mapped only
+    df_baseline["CANON"] = df_baseline["LBTEST"].map(canonical_lab_name)
+    df_baseline = df_baseline.dropna(subset=["CANON"])
+    keep_codes = set(canonical_lab_list())
+    df_baseline = df_baseline[df_baseline["CANON"].isin(keep_codes)]
+    if df_baseline.empty:
+        return pd.DataFrame(columns=[ID_COL, STUDY_COL])
+
     wide = df_baseline.pivot_table(index=[ID_COL, STUDY_COL], columns="CANON", values=val_col, aggfunc="first")
     wide = wide.reset_index()
+    rename_map = {code: f"baseline_{code}" for code in wide.columns if code not in [ID_COL, STUDY_COL]}
+    wide = wide.rename(columns=rename_map)
     # Merge to one row per subject
     return wide
 
@@ -69,5 +59,4 @@ def assemble_baseline_feature_view(tables: Dict[str, pd.DataFrame]) -> pd.DataFr
     if labs is not None and not labs.empty:
         out = out.merge(labs, on=[ID_COL, STUDY_COL], how="left")
     return out
-
 

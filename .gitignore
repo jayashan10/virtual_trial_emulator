@@ -58,7 +58,7 @@ uv.lock
 .LSOverride
 
 # Outputs and Models
-outputs/
+# outputs/
 *.joblib
 *.pkl
 *.pickle
@@ -68,14 +68,14 @@ outputs/
 *.pth
 
 # Data files (uncomment specific lines if you want to track certain data)
-*.csv
-*.xlsx
-*.xls
+# *.csv
+# *.xlsx
+# *.xls
 *.zip
-*.sas7bdat
-*.pdf
-*.docx
-*.doc
+# *.sas7bdat
+# *.pdf
+# *.docx
+# *.doc
 
 # Logs
 *.log
@@ -98,3 +98,5 @@ dmypy.json
 *.swo
 *~
 .tmp
+tmp/
+docs/

@@ -1,0 +1,185 @@
+{
+  "n_patients": 370,
+  "n_features": 71,
+  "feature_groups": {
+    "identifiers": {
+      "n_features": 2,
+      "features": [
+        "SUBJID",
+        "STUDYID"
+      ]
+    },
+    "demographics": {
+      "n_features": 5,
+      "features": [
+        "AGE",
+        "SEX",
+        "RACE",
+        "B_ECOG",
+        "B_WEIGHT"
+      ]
+    },
+    "disease": {
+      "n_features": 4,
+      "features": [
+        "DIAGMONS",
+        "HISSUBTY",
+        "DIAGTYPE",
+        "SXANY"
+      ]
+    },
+    "treatment": {
+      "n_features": 1,
+      "features": [
+        "ATRT"
+      ]
+    },
+    "baseline_labs": {
+      "n_features": 8,
+      "features": [
+        "baseline_ALB",
+        "baseline_ALP",
+        "baseline_CEA",
+        "baseline_CREAT",
+        "baseline_HGB",
+        "baseline_LDH",
+        "baseline_PLT",
+        "baseline_WBC"
+      ]
+    },
+    "longitudinal_labs": {
+      "n_features": 16,
+      "features": [
+        "lab_ALB_early_last",
+        "lab_ALP_early_last",
+        "lab_CEA_early_last",
+        "lab_CREAT_early_last",
+        "lab_HGB_early_last",
+        "lab_LDH_early_last",
+        "lab_PLT_early_last",
+        "lab_WBC_early_last",
+        "lab_ALB_early_slope",
+        "lab_ALP_early_slope",
+        "lab_CEA_early_slope",
+        "lab_CREAT_early_slope",
+        "lab_HGB_early_slope",
+        "lab_LDH_early_slope",
+        "lab_PLT_early_slope",
+        "lab_WBC_early_slope"
+      ]
+    },
+    "tumor": {
+      "n_features": 7,
+      "features": [
+        "target_lesion_count",
+        "nontarget_lesion_count",
+        "sum_target_diameters",
+        "max_lesion_size",
+        "mean_lesion_size",
+        "lesion_sites_count",
+        "tumor_burden_category"
+      ]
+    },
+    "molecular": {
+      "n_features": 8,
+      "features": [
+        "KRAS_exon2",
+        "KRAS_exon3",
+        "KRAS_exon4",
+        "NRAS_exon2",
+        "NRAS_exon3",
+        "NRAS_exon4",
+        "BRAF_exon15",
+        "RAS_status"
+      ]
+    },
+    "physical": {
+      "n_features": 1,
+      "features": [
+        "weight_change_pct_42d"
+      ]
+    },
+    "history": {
+      "n_features": 5,
+      "features": [
+        "prior_ae_count",
+        "prior_severe_ae_count",
+        "prior_skin_toxicity_flag",
+        "num_prior_therapies",
+        "time_since_diagnosis"
+      ]
+    },
+    "risk_scores": {
+      "n_features": 6,
+      "features": [
+        "lab_risk_score",
+        "performance_risk",
+        "tumor_burden_risk",
+        "molecular_risk",
+        "composite_risk_score",
+        "predicted_good_prognosis_flag"
+      ]
+    },
+    "outcomes": {
+      "n_features": 8,
+      "features": [
+        "DTHDYX",
+        "DTHX",
+        "PFSDYCR",
+        "PFSCR",
+        "best_response",
+        "response_at_week8",
+        "response_at_week16",
+        "time_to_response"
+      ]
+    }
+  },
+  "demographics": {
+    "age_mean": 60.997297297297294,
+    "age_std": 10.556211300066222,
+    "age_range": [
+      27.0,
+      83.0
+    ]
+  },
+  "sex_distribution": {
+    "Male": 237,
+    "Female": 133
+  },
+  "race_distribution": {
+    "White or Caucasian": 366,
+    "Hispanic or Latino": 2,
+    "Asian": 1,
+    "Black or African American": 1
+  },
+  "treatment_distribution": {
+    "Best supportive care": 187,
+    "panit. plus best supportive care": 183
+  },
+  "ras_distribution": {
+    "WILD-TYPE": 181,
+    "MUTANT": 170,
+    "UNKNOWN": 19
+  },
+  "ecog_distribution": {
+    "Fully active": 147,
+    "In bed less than 50% of the time": 50,
+    "In bed more than 50% of the time": 2,
+    "Symptoms but ambulatory": 171
+  },
+  "os_events": 335,
+  "os_censored": 35,
+  "os_median_days": 186.5,
+  "pfs_events": 345,
+  "response_distribution": {
+    "PD": 215,
+    "SD": 65,
+    "PR": 25
+  },
+  "high_missing_features": {
+    "response_at_week16": 305,
+    "time_to_response": 345,
+    "lab_CEA_early_last": 317,
+    "lab_CEA_early_slope": 369
+  }
+}

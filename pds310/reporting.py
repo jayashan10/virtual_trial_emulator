@@ -13,7 +13,7 @@ STUDY_COL = "STUDYID"
 
 def _arm_map_from_adsl(adsl: pd.DataFrame) -> pd.DataFrame:
     arm_col = None
-    for c in ["TRT", "ARM", "ARMCD"]:
+    for c in ["ATRT", "TRT", "ARM", "ARMCD"]:
         if c in adsl.columns:
             arm_col = c
             break

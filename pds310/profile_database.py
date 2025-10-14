@@ -96,13 +96,16 @@ def load_profile_database(path: str) -> pd.DataFrame:
     Returns:
         DataFrame with patient profiles
     """
-    df = pd.read_csv(path)
-    
-    # Ensure ID columns are strings
-    if ID_COL in df.columns:
-        df[ID_COL] = df[ID_COL].astype(str)
-    if STUDY_COL in df.columns:
-        df[STUDY_COL] = df[STUDY_COL].astype(str)
+    dtype_map = {ID_COL: "string", STUDY_COL: "string"}
+    try:
+        df = pd.read_csv(path, dtype=dtype_map)
+    except ValueError:
+        # Columns may not exist; load generically then cast when present.
+        df = pd.read_csv(path)
+        if ID_COL in df.columns:
+            df[ID_COL] = df[ID_COL].astype("string")
+        if STUDY_COL in df.columns:
+            df[STUDY_COL] = df[STUDY_COL].astype("string")
     
     return df
 
@@ -158,7 +161,7 @@ def get_profiles_by_criteria(
         get_profiles_by_criteria(db, {"AGE": (50, 70), "baseline_LDH": (None, 250)})
         
         # Lists of values
-        get_profiles_by_criteria(db, {"TRT": ["Panitumumab+BSC", "BSC"]})
+        get_profiles_by_criteria(db, {"ATRT": ["Panitumumab+BSC", "BSC"]})
     """
     if not criteria:
         return db.copy()
@@ -246,8 +249,8 @@ def get_database_summary(db: pd.DataFrame) -> Dict[str, Any]:
         summary["race_distribution"] = db["RACE"].value_counts().to_dict()
     
     # Treatment arm distribution
-    if "TRT" in db.columns:
-        summary["treatment_distribution"] = db["TRT"].value_counts().to_dict()
+    if "ATRT" in db.columns:
+        summary["treatment_distribution"] = db["ATRT"].value_counts().to_dict()
     
     # RAS status distribution
     if "RAS_status" in db.columns:
@@ -377,7 +380,7 @@ def split_train_test(
     Args:
         db: Profile database
         test_size: Fraction for test set (default: 0.2)
-        stratify_col: Column to use for stratified split (e.g., "TRT", "RAS_status")
+    stratify_col: Column to use for stratified split (e.g., "ATRT", "RAS_status")
         random_state: Random seed
     
     Returns:

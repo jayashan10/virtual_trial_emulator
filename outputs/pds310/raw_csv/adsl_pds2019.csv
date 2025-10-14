@@ -1,0 +1,371 @@
+SUBJID,TRT,ATRT,SXANY,DTHDYX,DTHX,PFSDYCR,PFSCR,DIAGMONS,AGE,SEX,B_WEIGHT,RACE,B_ECOG,HISSUBTY,DIAGTYPE
+000001,panit. plus best supportive care,panit. plus best supportive care,Y,218.0,1.0,84.0,1.0,54.98360655737705,68.0,Male,48.0,White or Caucasian,Symptoms but ambulatory,No sub-type,Colon
+000002,Best supportive care,Best supportive care,Y,231.0,1.0,57.0,1.0,24.983606557377048,48.0,Male,88.0,White or Caucasian,Symptoms but ambulatory,Mucinous,Colon
+000004,Best supportive care,Best supportive care,Y,581.0,1.0,581.0,1.0,19.40983606557377,70.0,Female,57.0,White or Caucasian,Fully active,No sub-type,Colon
+000005,Best supportive care,Best supportive care,Y,15.0,1.0,15.0,1.0,6.622950819672131,68.0,Female,64.4,White or Caucasian,In bed less than 50% of the time,No sub-type,Colon
+000006,panit. plus best supportive care,panit. plus best supportive care,Y,286.0,1.0,112.0,1.0,30.229508196721312,56.0,Male,83.5,White or Caucasian,Fully active,No sub-type,Rectal
+000008,Best supportive care,Best supportive care,Y,43.0,1.0,35.0,1.0,38.65573770491803,66.0,Female,48.0,White or Caucasian,Symptoms but ambulatory,No sub-type,Rectal
+000010,panit. plus best supportive care,panit. plus best supportive care,Y,129.0,1.0,53.0,1.0,22.885245901639344,52.0,Female,66.0,White or Caucasian,Symptoms but ambulatory,No sub-type,Colon
+000011,Best supportive care,Best supportive care,Y,318.0,1.0,59.0,1.0,16.360655737704917,75.0,Male,79.0,White or Caucasian,Symptoms but ambulatory,No sub-type,Colon
+000013,panit. plus best supportive care,panit. plus best supportive care,Y,230.0,1.0,170.0,1.0,76.22950819672131,66.0,Male,46.6,White or Caucasian,In bed less than 50% of the time,No sub-type,Rectal
+000015,Best supportive care,Best supportive care,Y,320.0,1.0,76.0,1.0,15.21311475409836,55.0,Male,83.0,White or Caucasian,Fully active,No sub-type,Rectal
+000016,panit. plus best supportive care,panit. plus best supportive care,Y,481.0,1.0,162.0,1.0,21.934426229508198,66.0,Male,88.10000000000001,White or Caucasian,Symptoms but ambulatory,Other,Rectal
+000017,Best supportive care,Best supportive care,Y,37.0,1.0,37.0,1.0,59.049180327868854,78.0,Male,79.0,White or Caucasian,Symptoms but ambulatory,No sub-type,Colon
+000018,Best supportive care,Best supportive care,Y,416.0,1.0,56.0,1.0,29.147540983606557,63.0,Male,80.0,White or Caucasian,Fully active,No sub-type,Colon
+000019,Best supportive care,Best supportive care,Y,324.0,1.0,54.0,1.0,28.0,43.0,Male,76.0,Asian,Fully active,No sub-type,Colon
+000020,panit. plus best supportive care,panit. plus best supportive care,Y,461.0,1.0,166.0,1.0,25.9672131147541,57.0,Male,83.5,White or Caucasian,Fully active,No sub-type,Rectal
+000021,panit. plus best supportive care,panit. plus best supportive care,Y,291.0,1.0,164.0,1.0,29.639344262295083,63.0,Male,77.0,White or Caucasian,Symptoms but ambulatory,No sub-type,Rectal
+000022,Best supportive care,Best supportive care,Y,346.0,1.0,128.0,1.0,36.59016393442623,74.0,Male,70.0,White or Caucasian,In bed less than 50% of the time,No sub-type,Colon
+000024,panit. plus best supportive care,panit. plus best supportive care,Y,133.0,1.0,0.0,0.0,57.60655737704918,59.0,Female,60.0,White or Caucasian,Fully active,,Colon
+000025,Best supportive care,Best supportive care,Y,134.0,1.0,57.0,1.0,30.75409836065574,60.0,Female,72.0,White or Caucasian,Symptoms but ambulatory,No sub-type,Colon
+000026,Best supportive care,Best supportive care,Y,554.0,1.0,54.0,1.0,,51.0,Female,59.0,White or Caucasian,Fully active,No sub-type,Rectal
+000027,panit. plus best supportive care,panit. plus best supportive care,Y,664.0,1.0,228.0,1.0,23.672131147540984,70.0,Male,74.0,White or Caucasian,Symptoms but ambulatory,No sub-type,Colon
+000028,Best supportive care,Best supportive care,Y,374.0,1.0,254.0,1.0,28.42622950819672,57.0,Male,,White or Caucasian,Symptoms but ambulatory,No sub-type,Colon
+000029,Best supportive care,Best supportive care,Y,295.0,1.0,56.0,1.0,,53.0,Female,56.0,White or Caucasian,Symptoms but ambulatory,No sub-type,Rectal
+000030,Best supportive care,Best supportive care,Y,131.0,1.0,62.0,1.0,29.24590163934426,72.0,Female,,White or Caucasian,Fully active,No sub-type,Colon
+000031,Best supportive care,Best supportive care,Y,516.0,1.0,50.0,1.0,22.229508196721312,62.0,Female,60.5,White or Caucasian,Symptoms but ambulatory,No sub-type,Colon
+000034,panit. plus best supportive care,panit. plus best supportive care,Y,86.0,0.0,50.0,1.0,36.885245901639344,72.0,Female,63.0,Black or African American,Symptoms but ambulatory,No sub-type,Colon
+000036,Best supportive care,Best supportive care,Y,334.0,1.0,88.0,1.0,67.34426229508196,83.0,Male,65.0,White or Caucasian,Fully active,No sub-type,Colon
+000037,Best supportive care,Best supportive care,Y,702.0,0.0,178.0,0.0,64.39344262295081,74.0,Male,80.0,White or Caucasian,Fully active,No sub-type,Rectal
+000038,panit. plus best supportive care,panit. plus best supportive care,Y,189.0,1.0,189.0,1.0,33.01639344262295,77.0,Male,79.0,White or Caucasian,In bed less than 50% of the time,No sub-type,Colon
+000039,Best supportive care,Best supportive care,Y,98.0,1.0,50.0,1.0,53.08196721311475,73.0,Male,96.0,White or Caucasian,Fully active,No sub-type,Colon
+000040,panit. plus best supportive care,panit. plus best supportive care,Y,416.0,1.0,168.0,1.0,29.37704918032787,41.0,Female,63.0,White or Caucasian,Fully active,No sub-type,Colon
+000041,Best supportive care,Best supportive care,Y,356.0,1.0,50.0,1.0,15.639344262295081,59.0,Male,65.0,White or Caucasian,Symptoms but ambulatory,No sub-type,Colon
+000042,Best supportive care,Best supportive care,Y,506.0,1.0,48.0,1.0,46.52459016393443,62.0,Male,98.0,White or Caucasian,Fully active,Other,Rectal
+000043,panit. plus best supportive care,panit. plus best supportive care,Y,292.0,1.0,51.0,1.0,27.9672131147541,61.0,Male,83.0,White or Caucasian,Symptoms but ambulatory,Other,Colon
+000044,panit. plus best supportive care,panit. plus best supportive care,N,130.0,1.0,49.0,1.0,16.0,69.0,Male,87.0,White or Caucasian,Fully active,No sub-type,Rectal
+000045,panit. plus best supportive care,panit. plus best supportive care,Y,513.0,1.0,167.0,1.0,56.131147540983605,60.0,Male,90.0,White or Caucasian,Fully active,No sub-type,Colon
+000046,Best supportive care,Best supportive care,Y,22.0,1.0,22.0,1.0,,59.0,Male,71.8,White or Caucasian,In bed less than 50% of the time,Mucinous,Colon
+000048,panit. plus best supportive care,panit. plus best supportive care,Y,233.0,1.0,55.0,1.0,10.819672131147541,65.0,Male,78.60000000000001,White or Caucasian,Symptoms but ambulatory,Other,Colon
+000049,Best supportive care,Best supportive care,Y,9.0,1.0,9.0,1.0,23.40983606557377,68.0,Male,86.0,White or Caucasian,Symptoms but ambulatory,Other,Rectal
+000051,Best supportive care,Best supportive care,Y,115.0,1.0,52.0,1.0,9.278688524590164,56.0,Male,90.4,White or Caucasian,Symptoms but ambulatory,Mucinous,Colon
+000052,Best supportive care,Best supportive care,Y,35.0,1.0,22.0,1.0,27.049180327868854,44.0,Female,62.0,White or Caucasian,In bed less than 50% of the time,Other,Rectal
+000054,panit. plus best supportive care,panit. plus best supportive care,Y,190.0,1.0,58.0,1.0,23.540983606557376,54.0,Male,83.0,White or Caucasian,Fully active,No sub-type,Rectal
+000055,Best supportive care,Best supportive care,Y,210.0,1.0,0.0,0.0,24.360655737704917,62.0,Male,69.0,White or Caucasian,Fully active,No sub-type,Colon
+000056,panit. plus best supportive care,panit. plus best supportive care,Y,98.0,1.0,39.0,1.0,27.868852459016395,58.0,Female,52.0,White or Caucasian,Fully active,No sub-type,Rectal
+000057,panit. plus best supportive care,panit. plus best supportive care,Y,139.0,1.0,52.0,1.0,11.37704918032787,62.0,Female,57.0,White or Caucasian,Fully active,Mucinous,Colon
+000058,panit. plus best supportive care,panit. plus best supportive care,Y,102.0,1.0,102.0,1.0,26.229508196721312,39.0,Male,68.0,White or Caucasian,Fully active,No sub-type,Colon
+000059,Best supportive care,Best supportive care,Y,199.0,1.0,50.0,1.0,41.31147540983606,62.0,Male,125.0,White or Caucasian,Fully active,No sub-type,Colon
+000060,panit. plus best supportive care,panit. plus best supportive care,Y,17.0,1.0,17.0,1.0,16.0,35.0,Female,95.0,White or Caucasian,In bed less than 50% of the time,Appendiceal,Colon
+000061,Best supportive care,Best supportive care,Y,44.0,1.0,44.0,1.0,15.934426229508198,35.0,Female,57.0,White or Caucasian,In bed less than 50% of the time,Other,Colon
+000062,Best supportive care,Best supportive care,Y,50.0,1.0,50.0,1.0,12.327868852459016,58.0,Male,76.0,White or Caucasian,Symptoms but ambulatory,No sub-type,Colon
+000063,Best supportive care,Best supportive care,Y,153.0,1.0,84.0,1.0,19.704918032786885,58.0,Male,102.0,White or Caucasian,Fully active,No sub-type,Colon
+000064,panit. plus best supportive care,panit. plus best supportive care,Y,45.0,1.0,41.0,1.0,28.78688524590164,64.0,Male,74.0,White or Caucasian,In bed less than 50% of the time,No sub-type,Rectal
+000065,panit. plus best supportive care,panit. plus best supportive care,Y,167.0,1.0,59.0,1.0,12.491803278688524,51.0,Male,60.0,White or Caucasian,Symptoms but ambulatory,No sub-type,Colon
+000066,Best supportive care,Best supportive care,Y,120.0,1.0,20.0,1.0,78.22950819672131,54.0,Female,47.800000000000004,White or Caucasian,Symptoms but ambulatory,No sub-type,Colon
+000067,panit. plus best supportive care,panit. plus best supportive care,Y,594.0,1.0,167.0,1.0,23.442622950819672,66.0,Male,74.4,White or Caucasian,Fully active,No sub-type,Rectal
+000068,Best supportive care,Best supportive care,Y,32.0,0.0,0.0,0.0,21.114754098360656,73.0,Female,44.0,White or Caucasian,Symptoms but ambulatory,No sub-type,Rectal
+000069,Best supportive care,Best supportive care,Y,205.0,1.0,108.0,1.0,36.65573770491803,52.0,Male,101.0,White or Caucasian,Fully active,No sub-type,Rectal
+000070,panit. plus best supportive care,panit. plus best supportive care,Y,270.0,1.0,54.0,1.0,81.01639344262296,60.0,Male,74.2,White or Caucasian,Fully active,No sub-type,Rectal
+000071,panit. plus best supportive care,panit. plus best supportive care,Y,22.0,1.0,22.0,1.0,15.114754098360656,50.0,Female,50.0,White or Caucasian,In bed less than 50% of the time,No sub-type,Rectal
+000072,Best supportive care,Best supportive care,Y,275.0,1.0,55.0,1.0,28.59016393442623,62.0,Male,80.0,White or Caucasian,Fully active,No sub-type,Colon
+000073,Best supportive care,Best supportive care,Y,283.0,1.0,49.0,1.0,10.0,63.0,Female,58.0,White or Caucasian,Symptoms but ambulatory,No sub-type,Rectal
+000074,Best supportive care,Best supportive care,Y,130.0,1.0,21.0,1.0,51.83606557377049,61.0,Male,110.0,White or Caucasian,Symptoms but ambulatory,No sub-type,Colon
+000075,Best supportive care,Best supportive care,Y,506.0,1.0,62.0,1.0,28.59016393442623,62.0,Female,79.0,White or Caucasian,Fully active,No sub-type,Colon
+000076,Best supportive care,Best supportive care,Y,57.0,1.0,21.0,1.0,15.508196721311476,52.0,Male,75.3,White or Caucasian,Symptoms but ambulatory,No sub-type,Colon
+000078,Best supportive care,Best supportive care,Y,490.0,1.0,49.0,1.0,20.983606557377048,63.0,Male,90.5,White or Caucasian,Fully active,No sub-type,Colon
+000079,panit. plus best supportive care,panit. plus best supportive care,Y,317.0,1.0,83.0,1.0,21.278688524590162,65.0,Male,64.4,White or Caucasian,Fully active,No sub-type,Colon
+000081,panit. plus best supportive care,panit. plus best supportive care,Y,3.0,1.0,3.0,1.0,23.57377049180328,59.0,Male,63.9,White or Caucasian,Symptoms but ambulatory,No sub-type,Colon
+000082,panit. plus best supportive care,panit. plus best supportive care,Y,634.0,0.0,227.0,1.0,51.442622950819676,75.0,Female,81.0,White or Caucasian,Fully active,No sub-type,Colon
+000083,Best supportive care,Best supportive care,Y,382.0,1.0,56.0,1.0,47.704918032786885,63.0,Female,102.0,White or Caucasian,Symptoms but ambulatory,No sub-type,Colon
+000084,panit. plus best supportive care,panit. plus best supportive care,Y,136.0,1.0,0.0,0.0,,77.0,Male,60.0,White or Caucasian,Fully active,No sub-type,Colon
+000085,Best supportive care,Best supportive care,N,232.0,1.0,6.0,1.0,16.098360655737704,45.0,Male,103.0,White or Caucasian,Fully active,No sub-type,Rectal
+000087,panit. plus best supportive care,panit. plus best supportive care,Y,295.0,1.0,56.0,1.0,16.262295081967213,60.0,Female,82.0,White or Caucasian,Symptoms but ambulatory,Mucinous,Colon
+000089,panit. plus best supportive care,panit. plus best supportive care,Y,195.0,1.0,107.0,1.0,32.39344262295082,69.0,Male,90.0,White or Caucasian,Symptoms but ambulatory,Other,Colon
+000090,panit. plus best supportive care,panit. plus best supportive care,Y,116.0,1.0,56.0,1.0,12.426229508196721,27.0,Male,84.0,White or Caucasian,Fully active,No sub-type,Rectal
+000091,Best supportive care,Best supportive care,Y,125.0,1.0,52.0,1.0,62.59016393442623,54.0,Male,91.60000000000001,White or Caucasian,Symptoms but ambulatory,No sub-type,Colon
+000092,panit. plus best supportive care,panit. plus best supportive care,Y,118.0,1.0,84.0,1.0,65.40983606557377,55.0,Male,100.0,White or Caucasian,Symptoms but ambulatory,Other,Rectal
+000093,Best supportive care,Best supportive care,Y,479.0,1.0,179.0,1.0,47.049180327868854,70.0,Male,71.0,White or Caucasian,Symptoms but ambulatory,No sub-type,Rectal
+000094,Best supportive care,Best supportive care,Y,67.0,1.0,16.0,1.0,17.704918032786885,32.0,Male,79.0,White or Caucasian,In bed less than 50% of the time,Mucinous,Colon
+000095,panit. plus best supportive care,panit. plus best supportive care,Y,37.0,1.0,37.0,1.0,,46.0,Male,57.0,White or Caucasian,Symptoms but ambulatory,No sub-type,Colon
+000096,panit. plus best supportive care,panit. plus best supportive care,Y,68.0,1.0,55.0,1.0,30.16393442622951,63.0,Male,69.0,White or Caucasian,In bed less than 50% of the time,No sub-type,Colon
+000097,Best supportive care,Best supportive care,Y,133.0,1.0,56.0,1.0,14.655737704918034,57.0,Male,110.0,White or Caucasian,Fully active,No sub-type,Colon
+000098,Best supportive care,Best supportive care,Y,372.0,1.0,92.0,1.0,57.114754098360656,65.0,Male,62.0,White or Caucasian,Fully active,No sub-type,Rectal
+000099,Best supportive care,Best supportive care,Y,21.0,1.0,21.0,1.0,27.80327868852459,78.0,Male,83.0,White or Caucasian,In bed more than 50% of the time,No sub-type,Colon
+000101,panit. plus best supportive care,panit. plus best supportive care,Y,212.0,1.0,54.0,1.0,23.147540983606557,73.0,Female,66.0,White or Caucasian,Fully active,Mucinous,Colon
+000102,Best supportive care,Best supportive care,Y,40.0,1.0,40.0,1.0,14.0,27.0,Male,67.0,White or Caucasian,In bed less than 50% of the time,Mucinous,Colon
+000103,Best supportive care,Best supportive care,Y,79.0,1.0,57.0,1.0,13.80327868852459,52.0,Male,65.0,White or Caucasian,Fully active,Other,Colon
+000104,Best supportive care,Best supportive care,Y,400.0,1.0,45.0,1.0,18.557377049180328,65.0,Female,56.0,White or Caucasian,Symptoms but ambulatory,No sub-type,Colon
+000105,Best supportive care,Best supportive care,Y,487.0,1.0,27.0,1.0,14.721311475409836,52.0,Female,80.4,White or Caucasian,Fully active,No sub-type,Colon
+000106,panit. plus best supportive care,panit. plus best supportive care,Y,461.0,1.0,47.0,1.0,22.327868852459016,65.0,Female,60.0,White or Caucasian,Fully active,No sub-type,Rectal
+000108,Best supportive care,Best supportive care,Y,441.0,1.0,55.0,1.0,,53.0,Male,74.0,White or Caucasian,Symptoms but ambulatory,No sub-type,Colon
+000110,panit. plus best supportive care,panit. plus best supportive care,Y,27.0,1.0,27.0,1.0,7.213114754098361,82.0,Male,67.0,White or Caucasian,Symptoms but ambulatory,Other,Colon
+000113,Best supportive care,Best supportive care,Y,244.0,1.0,49.0,1.0,24.950819672131146,63.0,Male,100.0,White or Caucasian,Symptoms but ambulatory,No sub-type,Colon
+000114,panit. plus best supportive care,panit. plus best supportive care,N,63.0,1.0,52.0,1.0,10.918032786885245,47.0,Male,86.0,White or Caucasian,Symptoms but ambulatory,No sub-type,Colon
+000116,panit. plus best supportive care,panit. plus best supportive care,Y,123.0,1.0,65.0,1.0,30.229508196721312,57.0,Male,72.0,White or Caucasian,Symptoms but ambulatory,No sub-type,Rectal
+000117,Best supportive care,Best supportive care,Y,150.0,1.0,121.0,1.0,66.88524590163935,57.0,Male,59.0,White or Caucasian,Symptoms but ambulatory,No sub-type,Rectal
+000119,panit. plus best supportive care,panit. plus best supportive care,Y,495.0,1.0,170.0,1.0,49.08196721311475,53.0,Male,112.0,White or Caucasian,Fully active,Other,Colon
+000121,panit. plus best supportive care,panit. plus best supportive care,Y,62.0,1.0,50.0,1.0,37.967213114754095,56.0,Female,50.6,White or Caucasian,Symptoms but ambulatory,No sub-type,Colon
+000122,Best supportive care,Best supportive care,Y,284.0,1.0,81.0,1.0,60.65573770491803,63.0,Male,82.0,White or Caucasian,Symptoms but ambulatory,No sub-type,Colon
+000123,Best supportive care,Best supportive care,Y,265.0,0.0,113.0,1.0,29.18032786885246,53.0,Male,94.0,White or Caucasian,Fully active,No sub-type,Colon
+000125,Best supportive care,Best supportive care,Y,36.0,1.0,36.0,1.0,,58.0,Male,75.0,White or Caucasian,Fully active,,Colon
+000126,panit. plus best supportive care,panit. plus best supportive care,Y,259.0,0.0,168.0,1.0,52.98360655737705,55.0,Female,55.0,White or Caucasian,Fully active,No sub-type,Colon
+000128,Best supportive care,Best supportive care,Y,81.0,1.0,51.0,1.0,25.60655737704918,64.0,Male,75.0,White or Caucasian,Fully active,No sub-type,Colon
+000130,panit. plus best supportive care,panit. plus best supportive care,Y,69.0,1.0,50.0,1.0,,68.0,Female,68.0,White or Caucasian,Fully active,No sub-type,Rectal
+000131,panit. plus best supportive care,panit. plus best supportive care,Y,374.0,1.0,271.0,1.0,13.770491803278688,29.0,Female,82.0,White or Caucasian,Symptoms but ambulatory,No sub-type,Rectal
+000132,panit. plus best supportive care,panit. plus best supportive care,Y,247.0,1.0,160.0,1.0,,53.0,Female,68.0,White or Caucasian,Symptoms but ambulatory,No sub-type,Colon
+000133,Best supportive care,Best supportive care,Y,212.0,1.0,57.0,1.0,19.016393442622952,69.0,Female,70.0,White or Caucasian,Symptoms but ambulatory,No sub-type,Colon
+000136,Best supportive care,Best supportive care,Y,15.0,1.0,15.0,1.0,8.163934426229508,64.0,Male,70.0,White or Caucasian,Symptoms but ambulatory,Other,Colon
+000137,panit. plus best supportive care,panit. plus best supportive care,Y,344.0,1.0,215.0,1.0,48.91803278688525,68.0,Male,75.0,White or Caucasian,Symptoms but ambulatory,No sub-type,Colon
+000140,panit. plus best supportive care,panit. plus best supportive care,Y,39.0,0.0,29.0,1.0,12.098360655737705,55.0,Male,86.5,White or Caucasian,Symptoms but ambulatory,Mucinous,Colon
+000141,panit. plus best supportive care,panit. plus best supportive care,Y,666.0,1.0,227.0,1.0,44.68852459016394,68.0,Male,78.0,White or Caucasian,Symptoms but ambulatory,No sub-type,Colon
+000142,panit. plus best supportive care,panit. plus best supportive care,Y,262.0,1.0,90.0,1.0,89.31147540983606,69.0,Male,94.0,White or Caucasian,Symptoms but ambulatory,No sub-type,Rectal
+000143,panit. plus best supportive care,panit. plus best supportive care,Y,64.0,1.0,52.0,1.0,15.278688524590164,72.0,Female,51.1,White or Caucasian,Fully active,Other,Colon
+000144,Best supportive care,Best supportive care,Y,769.0,1.0,55.0,1.0,55.77049180327869,70.0,Male,84.0,White or Caucasian,Fully active,No sub-type,Colon
+000145,panit. plus best supportive care,panit. plus best supportive care,Y,293.0,0.0,43.0,1.0,5.672131147540983,57.0,Female,50.0,White or Caucasian,Symptoms but ambulatory,No sub-type,Colon
+000146,panit. plus best supportive care,panit. plus best supportive care,Y,606.0,1.0,350.0,1.0,20.229508196721312,65.0,Male,89.0,White or Caucasian,Fully active,No sub-type,Colon
+000147,Best supportive care,Best supportive care,Y,479.0,1.0,55.0,1.0,31.672131147540984,69.0,Male,97.5,White or Caucasian,Fully active,No sub-type,Rectal
+000149,panit. plus best supportive care,panit. plus best supportive care,Y,710.0,0.0,225.0,0.0,33.24590163934426,63.0,Female,82.0,White or Caucasian,Fully active,No sub-type,Colon
+000150,panit. plus best supportive care,panit. plus best supportive care,Y,107.0,1.0,55.0,1.0,19.442622950819672,64.0,Male,52.7,White or Caucasian,Fully active,No sub-type,Colon
+000151,panit. plus best supportive care,panit. plus best supportive care,Y,414.0,1.0,56.0,1.0,11.540983606557377,74.0,Male,74.0,White or Caucasian,Symptoms but ambulatory,Other,Colon
+000152,Best supportive care,Best supportive care,Y,78.0,1.0,42.0,1.0,12.19672131147541,71.0,Male,77.0,White or Caucasian,Symptoms but ambulatory,Mucinous,Colon
+000153,panit. plus best supportive care,panit. plus best supportive care,Y,207.0,1.0,113.0,1.0,,57.0,Male,73.0,White or Caucasian,Symptoms but ambulatory,No sub-type,Colon
+000154,Best supportive care,Best supportive care,Y,159.0,1.0,14.0,1.0,22.16393442622951,70.0,Male,73.0,White or Caucasian,Symptoms but ambulatory,No sub-type,Colon
+000155,Best supportive care,Best supportive care,Y,482.0,1.0,482.0,1.0,23.639344262295083,61.0,Female,85.0,White or Caucasian,Fully active,No sub-type,Colon
+000156,panit. plus best supportive care,panit. plus best supportive care,Y,207.0,1.0,56.0,1.0,28.42622950819672,61.0,Male,94.10000000000001,White or Caucasian,Symptoms but ambulatory,Other,Rectal
+000157,panit. plus best supportive care,panit. plus best supportive care,Y,157.0,1.0,52.0,1.0,36.65573770491803,66.0,Male,86.0,White or Caucasian,Fully active,No sub-type,Rectal
+000158,panit. plus best supportive care,panit. plus best supportive care,Y,60.0,1.0,56.0,1.0,39.540983606557376,51.0,Female,42.0,White or Caucasian,In bed less than 50% of the time,No sub-type,Colon
+000159,Best supportive care,Best supportive care,Y,330.0,1.0,15.0,1.0,11.245901639344263,53.0,Female,77.5,White or Caucasian,In bed less than 50% of the time,No sub-type,Colon
+000161,panit. plus best supportive care,panit. plus best supportive care,Y,106.0,1.0,49.0,1.0,24.098360655737704,45.0,Female,95.0,White or Caucasian,Symptoms but ambulatory,No sub-type,Colon
+000162,Best supportive care,Best supportive care,Y,44.0,1.0,44.0,1.0,56.459016393442624,57.0,Male,80.0,White or Caucasian,In bed less than 50% of the time,No sub-type,Colon
+000163,panit. plus best supportive care,panit. plus best supportive care,Y,70.0,1.0,50.0,1.0,28.0327868852459,53.0,Male,79.0,White or Caucasian,Fully active,No sub-type,Colon
+000164,Best supportive care,Best supportive care,Y,169.0,1.0,141.0,1.0,47.80327868852459,62.0,Male,87.0,White or Caucasian,Fully active,Other,Colon
+000166,Best supportive care,Best supportive care,Y,83.0,1.0,50.0,1.0,26.262295081967213,66.0,Female,79.9,White or Caucasian,Symptoms but ambulatory,Mucinous,Colon
+000167,panit. plus best supportive care,panit. plus best supportive care,Y,233.0,1.0,48.0,1.0,32.131147540983605,74.0,Male,93.60000000000001,White or Caucasian,Fully active,No sub-type,Colon
+000170,Best supportive care,Best supportive care,Y,500.0,1.0,7.0,1.0,,33.0,Male,85.0,White or Caucasian,Symptoms but ambulatory,No sub-type,Colon
+000171,Best supportive care,Best supportive care,Y,100.0,1.0,40.0,1.0,16.16393442622951,45.0,Male,119.0,White or Caucasian,Symptoms but ambulatory,Other,Rectal
+000172,Best supportive care,Best supportive care,Y,26.0,1.0,15.0,1.0,4.786885245901639,38.0,Male,88.0,White or Caucasian,In bed less than 50% of the time,No sub-type,Colon
+000173,panit. plus best supportive care,panit. plus best supportive care,Y,171.0,1.0,56.0,1.0,22.0,67.0,Female,65.0,White or Caucasian,Fully active,No sub-type,Rectal
+000174,panit. plus best supportive care,panit. plus best supportive care,Y,57.0,1.0,52.0,1.0,46.295081967213115,60.0,Male,115.0,White or Caucasian,Fully active,No sub-type,Colon
+000175,Best supportive care,Best supportive care,Y,213.0,1.0,147.0,1.0,46.49180327868852,43.0,Male,100.0,White or Caucasian,Fully active,No sub-type,Colon
+000176,panit. plus best supportive care,panit. plus best supportive care,Y,313.0,1.0,39.0,1.0,22.59016393442623,67.0,Male,61.0,White or Caucasian,Fully active,No sub-type,Colon
+000177,panit. plus best supportive care,panit. plus best supportive care,Y,45.0,1.0,45.0,1.0,40.622950819672134,53.0,Female,55.6,White or Caucasian,In bed less than 50% of the time,No sub-type,Colon
+000178,Best supportive care,Best supportive care,Y,596.0,1.0,596.0,1.0,44.0,59.0,Female,100.0,White or Caucasian,Fully active,Mucinous,Colon
+000179,panit. plus best supportive care,panit. plus best supportive care,Y,366.0,1.0,287.0,1.0,24.59016393442623,72.0,Male,60.0,White or Caucasian,Fully active,No sub-type,Colon
+000180,Best supportive care,Best supportive care,Y,119.0,1.0,119.0,1.0,24.360655737704917,49.0,Male,78.8,White or Caucasian,Symptoms but ambulatory,No sub-type,Rectal
+000181,Best supportive care,Best supportive care,Y,687.0,0.0,168.0,1.0,16.0327868852459,37.0,Male,61.4,White or Caucasian,Fully active,Mucinous,Colon
+000182,panit. plus best supportive care,panit. plus best supportive care,Y,247.0,1.0,163.0,1.0,37.63934426229508,70.0,Male,72.0,White or Caucasian,Fully active,No sub-type,Colon
+000184,Best supportive care,Best supportive care,Y,46.0,1.0,46.0,1.0,21.737704918032787,44.0,Male,64.0,White or Caucasian,In bed less than 50% of the time,No sub-type,Colon
+000186,Best supportive care,Best supportive care,Y,472.0,1.0,224.0,1.0,21.704918032786885,61.0,Male,95.0,White or Caucasian,Fully active,No sub-type,Rectal
+000187,panit. plus best supportive care,panit. plus best supportive care,Y,58.0,1.0,34.0,1.0,17.704918032786885,43.0,Male,105.0,White or Caucasian,Symptoms but ambulatory,No sub-type,Rectal
+000188,panit. plus best supportive care,panit. plus best supportive care,Y,97.0,1.0,56.0,1.0,21.80327868852459,61.0,Male,75.0,White or Caucasian,Fully active,Other,Rectal
+000189,panit. plus best supportive care,panit. plus best supportive care,Y,28.0,1.0,28.0,1.0,15.37704918032787,67.0,Female,55.0,White or Caucasian,Symptoms but ambulatory,Other,Colon
+000190,Best supportive care,Best supportive care,Y,148.0,1.0,69.0,1.0,,56.0,Female,58.0,White or Caucasian,Symptoms but ambulatory,Mucinous,Colon
+000191,Best supportive care,Best supportive care,Y,110.0,1.0,52.0,1.0,25.639344262295083,71.0,Female,57.0,White or Caucasian,Symptoms but ambulatory,Mucinous,Colon
+000192,Best supportive care,Best supportive care,Y,68.0,1.0,52.0,1.0,43.18032786885246,71.0,Female,45.0,White or Caucasian,Symptoms but ambulatory,No sub-type,Colon
+000193,panit. plus best supportive care,panit. plus best supportive care,Y,583.0,1.0,223.0,1.0,42.131147540983605,79.0,Female,69.0,White or Caucasian,Symptoms but ambulatory,Other,Rectal
+000194,panit. plus best supportive care,panit. plus best supportive care,Y,357.0,1.0,166.0,1.0,29.672131147540984,77.0,Female,59.0,White or Caucasian,Symptoms but ambulatory,No sub-type,Rectal
+000195,panit. plus best supportive care,panit. plus best supportive care,Y,62.0,1.0,48.0,1.0,13.868852459016393,45.0,Male,96.0,White or Caucasian,In bed less than 50% of the time,No sub-type,Colon
+000196,Best supportive care,Best supportive care,Y,233.0,1.0,20.0,1.0,28.19672131147541,69.0,Male,84.2,White or Caucasian,Symptoms but ambulatory,No sub-type,Colon
+000197,Best supportive care,Best supportive care,Y,55.0,1.0,12.0,1.0,6.491803278688525,71.0,Male,70.0,White or Caucasian,In bed less than 50% of the time,No sub-type,Colon
+000198,panit. plus best supportive care,panit. plus best supportive care,Y,218.0,1.0,54.0,1.0,42.68852459016394,58.0,Male,94.0,White or Caucasian,Symptoms but ambulatory,Other,Rectal
+000201,panit. plus best supportive care,panit. plus best supportive care,Y,276.0,1.0,107.0,1.0,35.14754098360656,62.0,Male,68.0,White or Caucasian,Symptoms but ambulatory,No sub-type,Rectal
+000202,panit. plus best supportive care,panit. plus best supportive care,Y,290.0,1.0,290.0,1.0,18.885245901639344,78.0,Female,55.2,White or Caucasian,Fully active,Mucinous,Colon
+000203,panit. plus best supportive care,panit. plus best supportive care,Y,147.0,1.0,60.0,1.0,48.295081967213115,74.0,Male,73.0,White or Caucasian,Symptoms but ambulatory,Other,Colon
+000204,Best supportive care,Best supportive care,Y,105.0,1.0,47.0,1.0,12.131147540983607,49.0,Male,65.3,White or Caucasian,Symptoms but ambulatory,No sub-type,Colon
+000205,panit. plus best supportive care,panit. plus best supportive care,Y,45.0,1.0,45.0,1.0,13.049180327868852,76.0,Male,80.10000000000001,White or Caucasian,In bed less than 50% of the time,No sub-type,Colon
+000206,Best supportive care,Best supportive care,Y,280.0,1.0,49.0,1.0,,47.0,Female,54.5,White or Caucasian,Symptoms but ambulatory,Mucinous,Rectal
+000207,Best supportive care,Best supportive care,Y,263.0,1.0,59.0,1.0,17.9672131147541,74.0,Male,62.0,White or Caucasian,Symptoms but ambulatory,No sub-type,Rectal
+000208,panit. plus best supportive care,panit. plus best supportive care,Y,104.0,1.0,71.0,1.0,25.21311475409836,64.0,Male,66.0,White or Caucasian,In bed less than 50% of the time,Other,Colon
+000210,panit. plus best supportive care,panit. plus best supportive care,Y,318.0,1.0,55.0,1.0,22.0327868852459,52.0,Male,98.0,White or Caucasian,Symptoms but ambulatory,No sub-type,Rectal
+000214,panit. plus best supportive care,panit. plus best supportive care,Y,122.0,1.0,39.0,1.0,11.245901639344263,49.0,Female,54.0,White or Caucasian,Fully active,No sub-type,Colon
+000215,Best supportive care,Best supportive care,Y,543.0,1.0,94.0,1.0,21.21311475409836,53.0,Male,75.0,White or Caucasian,Symptoms but ambulatory,Other,Colon
+000216,panit. plus best supportive care,panit. plus best supportive care,Y,452.0,1.0,56.0,1.0,42.59016393442623,63.0,Male,65.0,White or Caucasian,Fully active,No sub-type,Rectal
+000218,panit. plus best supportive care,panit. plus best supportive care,Y,272.0,1.0,173.0,1.0,66.65573770491804,50.0,Male,86.0,White or Caucasian,Symptoms but ambulatory,No sub-type,Rectal
+000219,Best supportive care,Best supportive care,Y,511.0,1.0,41.0,1.0,16.721311475409838,44.0,Female,92.9,White or Caucasian,Fully active,Mucinous,Colon
+000220,panit. plus best supportive care,panit. plus best supportive care,Y,58.0,1.0,58.0,1.0,23.639344262295083,63.0,Male,70.5,White or Caucasian,Fully active,No sub-type,Colon
+000221,panit. plus best supportive care,panit. plus best supportive care,Y,760.0,0.0,50.0,1.0,38.59016393442623,52.0,Male,88.0,White or Caucasian,Fully active,No sub-type,Colon
+000222,Best supportive care,Best supportive care,Y,180.0,1.0,78.0,1.0,94.22950819672131,74.0,Female,61.300000000000004,White or Caucasian,Symptoms but ambulatory,Mucinous,Rectal
+000223,panit. plus best supportive care,panit. plus best supportive care,Y,231.0,1.0,52.0,1.0,18.16393442622951,63.0,Male,82.0,White or Caucasian,Fully active,No sub-type,Colon
+000224,panit. plus best supportive care,panit. plus best supportive care,Y,336.0,1.0,234.0,1.0,38.459016393442624,57.0,Male,78.0,White or Caucasian,Fully active,Other,Colon
+000225,Best supportive care,Best supportive care,Y,708.0,1.0,57.0,1.0,34.98360655737705,69.0,Female,63.0,White or Caucasian,Fully active,No sub-type,Colon
+000226,Best supportive care,Best supportive care,Y,731.0,1.0,57.0,1.0,47.73770491803279,49.0,Female,64.0,White or Caucasian,Symptoms but ambulatory,No sub-type,Rectal
+000228,panit. plus best supportive care,panit. plus best supportive care,Y,182.0,1.0,182.0,1.0,36.36065573770492,68.0,Male,55.0,White or Caucasian,Symptoms but ambulatory,No sub-type,Rectal
+000229,panit. plus best supportive care,panit. plus best supportive care,N,944.0,0.0,225.0,0.0,16.721311475409838,72.0,Male,70.0,White or Caucasian,Fully active,Other,Rectal
+000230,panit. plus best supportive care,panit. plus best supportive care,Y,111.0,1.0,64.0,1.0,16.098360655737704,41.0,Female,46.0,White or Caucasian,Fully active,No sub-type,Colon
+000231,panit. plus best supportive care,panit. plus best supportive care,Y,189.0,1.0,46.0,1.0,23.639344262295083,67.0,Male,71.0,White or Caucasian,Symptoms but ambulatory,No sub-type,Colon
+000233,Best supportive care,Best supportive care,Y,3.0,0.0,0.0,0.0,10.131147540983607,43.0,Female,82.0,White or Caucasian,Symptoms but ambulatory,No sub-type,Colon
+000234,Best supportive care,Best supportive care,Y,134.0,1.0,36.0,1.0,14.688524590163935,44.0,Male,97.7,White or Caucasian,Symptoms but ambulatory,Mucinous,Colon
+000235,panit. plus best supportive care,panit. plus best supportive care,Y,92.0,1.0,0.0,0.0,,69.0,Male,54.0,White or Caucasian,In bed less than 50% of the time,No sub-type,Colon
+000236,panit. plus best supportive care,panit. plus best supportive care,Y,255.0,1.0,168.0,1.0,29.37704918032787,72.0,Female,82.0,White or Caucasian,Symptoms but ambulatory,Other,Colon
+000237,panit. plus best supportive care,panit. plus best supportive care,Y,430.0,1.0,430.0,1.0,24.39344262295082,57.0,Female,66.7,White or Caucasian,Symptoms but ambulatory,No sub-type,Colon
+000238,panit. plus best supportive care,panit. plus best supportive care,Y,399.0,1.0,0.0,0.0,79.63934426229508,68.0,Male,96.0,White or Caucasian,Symptoms but ambulatory,No sub-type,Colon
+000239,Best supportive care,Best supportive care,Y,256.0,1.0,108.0,1.0,62.52459016393443,54.0,Male,98.9,White or Caucasian,Fully active,No sub-type,Rectal
+000242,Best supportive care,Best supportive care,Y,241.0,1.0,51.0,1.0,65.9672131147541,64.0,Male,100.0,White or Caucasian,Fully active,Mucinous,Colon
+000243,Best supportive care,Best supportive care,Y,54.0,1.0,27.0,1.0,17.704918032786885,55.0,Male,78.0,White or Caucasian,Symptoms but ambulatory,No sub-type,Rectal
+000244,Best supportive care,Best supportive care,Y,25.0,1.0,14.0,1.0,11.60655737704918,50.0,Female,64.0,White or Caucasian,Symptoms but ambulatory,No sub-type,Colon
+000245,Best supportive care,Best supportive care,Y,773.0,1.0,59.0,1.0,,57.0,Male,74.0,White or Caucasian,Fully active,No sub-type,Rectal
+000246,panit. plus best supportive care,panit. plus best supportive care,Y,134.0,1.0,50.0,1.0,69.77049180327869,65.0,Female,54.0,White or Caucasian,Symptoms but ambulatory,Mucinous,Colon
+000247,panit. plus best supportive care,panit. plus best supportive care,Y,150.0,1.0,49.0,1.0,11.40983606557377,57.0,Male,75.0,White or Caucasian,Fully active,No sub-type,Rectal
+000248,panit. plus best supportive care,panit. plus best supportive care,Y,69.0,1.0,50.0,1.0,21.311475409836067,66.0,Male,63.0,White or Caucasian,Symptoms but ambulatory,No sub-type,Rectal
+000250,Best supportive care,Best supportive care,Y,528.0,1.0,59.0,1.0,34.622950819672134,60.0,Female,63.0,White or Caucasian,Symptoms but ambulatory,Other,Colon
+000251,panit. plus best supportive care,panit. plus best supportive care,Y,374.0,1.0,50.0,1.0,39.967213114754095,58.0,Male,89.0,White or Caucasian,Fully active,No sub-type,Colon
+000254,Best supportive care,Best supportive care,Y,118.0,1.0,0.0,0.0,17.737704918032787,58.0,Male,87.0,White or Caucasian,Fully active,No sub-type,Colon
+000255,panit. plus best supportive care,panit. plus best supportive care,Y,153.0,1.0,56.0,1.0,22.62295081967213,66.0,Female,46.0,White or Caucasian,In bed less than 50% of the time,No sub-type,Colon
+000256,Best supportive care,Best supportive care,Y,132.0,1.0,37.0,1.0,40.557377049180324,64.0,Male,68.0,White or Caucasian,Symptoms but ambulatory,No sub-type,Colon
+000258,panit. plus best supportive care,panit. plus best supportive care,Y,62.0,0.0,51.0,1.0,33.442622950819676,64.0,Female,48.0,White or Caucasian,Symptoms but ambulatory,No sub-type,Colon
+000259,Best supportive care,Best supportive care,Y,108.0,1.0,21.0,1.0,27.83606557377049,62.0,Female,78.0,White or Caucasian,Symptoms but ambulatory,No sub-type,Colon
+000260,Best supportive care,Best supportive care,Y,103.0,1.0,28.0,1.0,13.508196721311476,47.0,Male,62.0,White or Caucasian,In bed less than 50% of the time,No sub-type,Colon
+000261,Best supportive care,Best supportive care,Y,635.0,0.0,55.0,1.0,31.934426229508198,65.0,Male,106.0,White or Caucasian,Fully active,No sub-type,Colon
+000262,panit. plus best supportive care,panit. plus best supportive care,Y,122.0,1.0,44.0,1.0,30.0327868852459,51.0,Male,78.0,White or Caucasian,Fully active,No sub-type,Colon
+000263,panit. plus best supportive care,panit. plus best supportive care,Y,52.0,1.0,45.0,1.0,,59.0,Female,67.0,White or Caucasian,Symptoms but ambulatory,No sub-type,Colon
+000266,panit. plus best supportive care,panit. plus best supportive care,Y,101.0,1.0,59.0,1.0,23.37704918032787,57.0,Female,79.0,White or Caucasian,Symptoms but ambulatory,Other,Rectal
+000267,panit. plus best supportive care,panit. plus best supportive care,Y,45.0,1.0,45.0,1.0,45.21311475409836,67.0,Male,66.0,White or Caucasian,Fully active,Mucinous,Colon
+000268,panit. plus best supportive care,panit. plus best supportive care,Y,286.0,1.0,104.0,1.0,18.098360655737704,64.0,Female,67.0,White or Caucasian,Symptoms but ambulatory,No sub-type,Rectal
+000269,Best supportive care,Best supportive care,Y,240.0,1.0,31.0,1.0,55.9344262295082,59.0,Female,70.0,White or Caucasian,Symptoms but ambulatory,No sub-type,Rectal
+000271,panit. plus best supportive care,panit. plus best supportive care,Y,1024.0,0.0,695.0,1.0,16.59016393442623,42.0,Male,97.7,White or Caucasian,Fully active,No sub-type,Colon
+000272,Best supportive care,Best supportive care,N,95.0,1.0,53.0,1.0,,67.0,Male,54.0,White or Caucasian,In bed less than 50% of the time,No sub-type,Rectal
+000273,Best supportive care,Best supportive care,Y,35.0,1.0,32.0,1.0,30.229508196721312,59.0,Male,57.0,White or Caucasian,Symptoms but ambulatory,No sub-type,Colon
+000275,Best supportive care,Best supportive care,Y,244.0,1.0,70.0,1.0,16.327868852459016,72.0,Male,75.0,White or Caucasian,Symptoms but ambulatory,No sub-type,Rectal
+000278,panit. plus best supportive care,panit. plus best supportive care,Y,86.0,1.0,53.0,1.0,27.770491803278688,79.0,Male,67.0,White or Caucasian,Symptoms but ambulatory,No sub-type,Colon
+000280,panit. plus best supportive care,panit. plus best supportive care,Y,472.0,1.0,472.0,1.0,23.672131147540984,63.0,Male,69.0,White or Caucasian,Fully active,No sub-type,Rectal
+000281,panit. plus best supportive care,panit. plus best supportive care,Y,320.0,1.0,105.0,0.0,36.0,58.0,Male,74.0,White or Caucasian,Symptoms but ambulatory,No sub-type,Rectal
+000282,panit. plus best supportive care,panit. plus best supportive care,Y,334.0,1.0,157.0,1.0,16.65573770491803,66.0,Male,91.0,White or Caucasian,Fully active,No sub-type,Colon
+000283,panit. plus best supportive care,Best supportive care,Y,1.0,1.0,1.0,1.0,34.622950819672134,67.0,Male,55.5,White or Caucasian,In bed less than 50% of the time,No sub-type,Colon
+000284,panit. plus best supportive care,panit. plus best supportive care,Y,132.0,1.0,52.0,1.0,18.59016393442623,68.0,Male,78.0,White or Caucasian,Fully active,Mucinous,Colon
+000285,panit. plus best supportive care,panit. plus best supportive care,Y,37.0,0.0,0.0,0.0,9.40983606557377,36.0,Female,81.0,White or Caucasian,Symptoms but ambulatory,No sub-type,Colon
+000286,panit. plus best supportive care,panit. plus best supportive care,Y,313.0,1.0,313.0,1.0,22.950819672131146,61.0,Female,44.0,White or Caucasian,Fully active,No sub-type,Colon
+000287,Best supportive care,Best supportive care,Y,358.0,1.0,83.0,1.0,41.77049180327869,71.0,Female,79.0,White or Caucasian,Fully active,No sub-type,Rectal
+000288,Best supportive care,Best supportive care,Y,261.0,1.0,261.0,1.0,68.75409836065573,72.0,Female,60.0,White or Caucasian,Symptoms but ambulatory,No sub-type,Rectal
+000289,Best supportive care,Best supportive care,Y,107.0,1.0,56.0,1.0,50.65573770491803,66.0,Male,75.0,White or Caucasian,Symptoms but ambulatory,No sub-type,Colon
+000290,panit. plus best supportive care,panit. plus best supportive care,Y,373.0,1.0,227.0,1.0,17.540983606557376,65.0,Male,85.0,White or Caucasian,Fully active,No sub-type,Colon
+000291,Best supportive care,Best supportive care,Y,60.0,1.0,60.0,1.0,23.21311475409836,66.0,Male,57.0,White or Caucasian,Symptoms but ambulatory,No sub-type,Colon
+000292,panit. plus best supportive care,panit. plus best supportive care,Y,881.0,0.0,106.0,0.0,23.868852459016395,64.0,Female,59.0,White or Caucasian,Fully active,Mucinous,Colon
+000293,panit. plus best supportive care,panit. plus best supportive care,Y,372.0,1.0,80.0,1.0,10.98360655737705,53.0,Male,78.0,White or Caucasian,Fully active,No sub-type,Colon
+000294,Best supportive care,Best supportive care,Y,63.0,1.0,29.0,1.0,,64.0,Male,64.0,White or Caucasian,Symptoms but ambulatory,No sub-type,Colon
+000296,panit. plus best supportive care,panit. plus best supportive care,Y,154.0,1.0,46.0,1.0,7.967213114754099,54.0,Male,59.0,White or Caucasian,Symptoms but ambulatory,No sub-type,Colon
+000298,panit. plus best supportive care,panit. plus best supportive care,Y,60.0,1.0,43.0,1.0,27.475409836065573,79.0,Male,80.0,White or Caucasian,In bed less than 50% of the time,No sub-type,Colon
+000299,Best supportive care,Best supportive care,Y,497.0,1.0,58.0,1.0,,81.0,Female,51.0,White or Caucasian,Symptoms but ambulatory,No sub-type,Rectal
+000300,panit. plus best supportive care,panit. plus best supportive care,Y,113.0,0.0,84.0,1.0,59.77049180327869,77.0,Male,80.0,White or Caucasian,Fully active,No sub-type,Rectal
+000301,Best supportive care,Best supportive care,Y,228.0,1.0,12.0,1.0,44.131147540983605,52.0,Male,64.0,White or Caucasian,In bed less than 50% of the time,No sub-type,Colon
+000303,Best supportive care,Best supportive care,Y,157.0,1.0,43.0,1.0,9.967213114754099,77.0,Female,57.5,White or Caucasian,Symptoms but ambulatory,Mucinous,Colon
+000304,panit. plus best supportive care,panit. plus best supportive care,Y,120.0,0.0,112.0,0.0,62.950819672131146,73.0,Male,60.0,White or Caucasian,Symptoms but ambulatory,No sub-type,Colon
+000305,Best supportive care,Best supportive care,Y,104.0,0.0,47.0,1.0,25.540983606557376,61.0,Female,64.0,White or Caucasian,Fully active,No sub-type,Rectal
+000306,panit. plus best supportive care,panit. plus best supportive care,Y,152.0,1.0,53.0,0.0,16.39344262295082,61.0,Male,68.5,White or Caucasian,Fully active,No sub-type,Rectal
+000307,Best supportive care,Best supportive care,Y,58.0,1.0,58.0,1.0,40.98360655737705,65.0,Male,69.2,White or Caucasian,In bed less than 50% of the time,No sub-type,Colon
+000308,panit. plus best supportive care,panit. plus best supportive care,Y,221.0,1.0,174.0,1.0,10.59016393442623,66.0,Male,64.2,White or Caucasian,Symptoms but ambulatory,No sub-type,Colon
+000309,Best supportive care,Best supportive care,Y,478.0,1.0,55.0,1.0,55.08196721311475,70.0,Male,78.0,White or Caucasian,Symptoms but ambulatory,No sub-type,Colon
+000311,panit. plus best supportive care,panit. plus best supportive care,Y,273.0,1.0,49.0,1.0,9.278688524590164,60.0,Female,72.0,White or Caucasian,Fully active,Mucinous,Colon
+000312,Best supportive care,Best supportive care,N,70.0,1.0,56.0,1.0,9.573770491803279,72.0,Male,89.0,White or Caucasian,In bed less than 50% of the time,No sub-type,Colon
+000313,panit. plus best supportive care,panit. plus best supportive care,Y,15.0,1.0,15.0,1.0,9.180327868852459,77.0,Male,66.0,White or Caucasian,In bed less than 50% of the time,No sub-type,Rectal
+000314,Best supportive care,Best supportive care,Y,75.0,1.0,13.0,1.0,28.262295081967213,57.0,Male,84.5,White or Caucasian,Symptoms but ambulatory,No sub-type,Rectal
+000315,Best supportive care,Best supportive care,Y,300.0,1.0,300.0,1.0,77.37704918032787,69.0,Male,78.0,White or Caucasian,Symptoms but ambulatory,Mucinous,Colon
+000316,panit. plus best supportive care,panit. plus best supportive care,Y,311.0,1.0,311.0,1.0,16.39344262295082,37.0,Female,67.0,White or Caucasian,In bed less than 50% of the time,Mucinous,Colon
+000317,panit. plus best supportive care,panit. plus best supportive care,Y,203.0,1.0,85.0,1.0,20.098360655737704,58.0,Male,63.0,White or Caucasian,Fully active,No sub-type,Rectal
+000318,panit. plus best supportive care,panit. plus best supportive care,Y,732.0,1.0,222.0,1.0,53.377049180327866,51.0,Female,64.0,White or Caucasian,Fully active,No sub-type,Rectal
+000319,Best supportive care,Best supportive care,Y,34.0,1.0,34.0,1.0,23.57377049180328,65.0,Female,52.0,White or Caucasian,In bed less than 50% of the time,No sub-type,Colon
+000320,Best supportive care,Best supportive care,Y,121.0,1.0,42.0,1.0,10.295081967213115,45.0,Male,62.0,White or Caucasian,In bed less than 50% of the time,No sub-type,Rectal
+000321,panit. plus best supportive care,panit. plus best supportive care,Y,164.0,1.0,52.0,1.0,31.114754098360656,60.0,Male,82.0,White or Caucasian,Symptoms but ambulatory,No sub-type,Rectal
+000322,panit. plus best supportive care,panit. plus best supportive care,Y,24.0,1.0,24.0,1.0,13.40983606557377,70.0,Female,68.0,White or Caucasian,Symptoms but ambulatory,Mucinous,Colon
+000323,Best supportive care,Best supportive care,Y,280.0,1.0,10.0,1.0,44.49180327868852,45.0,Female,42.0,White or Caucasian,Symptoms but ambulatory,Other,Rectal
+000324,Best supportive care,Best supportive care,Y,635.0,1.0,27.0,1.0,55.50819672131148,71.0,Male,58.0,White or Caucasian,In bed less than 50% of the time,No sub-type,Colon
+000325,panit. plus best supportive care,panit. plus best supportive care,Y,16.0,1.0,16.0,1.0,18.62295081967213,63.0,Female,82.0,White or Caucasian,Symptoms but ambulatory,Mucinous,Colon
+000326,Best supportive care,Best supportive care,Y,158.0,1.0,53.0,1.0,24.0,78.0,Female,88.0,White or Caucasian,In bed less than 50% of the time,No sub-type,Rectal
+000327,panit. plus best supportive care,panit. plus best supportive care,Y,273.0,1.0,273.0,1.0,,51.0,Female,57.7,White or Caucasian,Fully active,No sub-type,Colon
+000329,Best supportive care,Best supportive care,Y,42.0,1.0,18.0,1.0,29.704918032786885,48.0,Female,64.0,White or Caucasian,Symptoms but ambulatory,No sub-type,Colon
+000330,Best supportive care,Best supportive care,Y,82.0,1.0,0.0,0.0,47.442622950819676,66.0,Female,72.7,White or Caucasian,In bed less than 50% of the time,Mucinous,Rectal
+000331,Best supportive care,Best supportive care,Y,188.0,1.0,42.0,1.0,30.491803278688526,55.0,Male,92.0,White or Caucasian,Fully active,No sub-type,Colon
+000332,Best supportive care,Best supportive care,Y,91.0,1.0,39.0,1.0,10.39344262295082,60.0,Male,83.0,White or Caucasian,Symptoms but ambulatory,No sub-type,Colon
+000333,Best supportive care,Best supportive care,Y,41.0,1.0,14.0,1.0,5.836065573770492,69.0,Male,64.0,White or Caucasian,In bed less than 50% of the time,No sub-type,Rectal
+000334,Best supportive care,Best supportive care,Y,148.0,1.0,125.0,1.0,,80.0,Male,67.0,White or Caucasian,Fully active,No sub-type,Rectal
+000335,panit. plus best supportive care,panit. plus best supportive care,Y,709.0,1.0,330.0,1.0,27.475409836065573,48.0,Female,74.0,White or Caucasian,Symptoms but ambulatory,No sub-type,Colon
+000336,panit. plus best supportive care,panit. plus best supportive care,Y,841.0,0.0,666.0,1.0,36.49180327868852,67.0,Male,74.5,White or Caucasian,Symptoms but ambulatory,Other,Colon
+000338,Best supportive care,Best supportive care,Y,106.0,1.0,42.0,1.0,31.57377049180328,39.0,Male,79.0,White or Caucasian,Fully active,No sub-type,Rectal
+000339,panit. plus best supportive care,panit. plus best supportive care,Y,185.0,1.0,52.0,1.0,12.918032786885245,57.0,Male,71.5,White or Caucasian,Fully active,No sub-type,Colon
+000340,Best supportive care,Best supportive care,Y,201.0,1.0,53.0,1.0,,59.0,Male,62.0,White or Caucasian,Fully active,No sub-type,Rectal
+000341,Best supportive care,Best supportive care,Y,108.0,1.0,45.0,1.0,47.40983606557377,56.0,Male,74.0,White or Caucasian,Fully active,No sub-type,Rectal
+000342,Best supportive care,Best supportive care,Y,93.0,1.0,24.0,1.0,9.901639344262295,61.0,Female,85.5,White or Caucasian,Symptoms but ambulatory,Mucinous,Colon
+000343,Best supportive care,Best supportive care,Y,1.0,0.0,0.0,0.0,24.688524590163933,77.0,Male,72.60000000000001,White or Caucasian,In bed less than 50% of the time,No sub-type,Colon
+000344,Best supportive care,Best supportive care,Y,231.0,1.0,55.0,1.0,62.0,83.0,Female,65.3,White or Caucasian,Symptoms but ambulatory,No sub-type,Rectal
+000345,Best supportive care,Best supportive care,Y,22.0,1.0,22.0,1.0,14.262295081967213,63.0,Male,96.5,White or Caucasian,In bed less than 50% of the time,No sub-type,Colon
+000347,Best supportive care,Best supportive care,Y,243.0,1.0,45.0,1.0,15.278688524590164,42.0,Female,80.0,White or Caucasian,Fully active,No sub-type,Colon
+000348,Best supportive care,Best supportive care,Y,60.0,1.0,60.0,1.0,,64.0,Male,59.0,White or Caucasian,Symptoms but ambulatory,Mucinous,Rectal
+000349,Best supportive care,Best supportive care,Y,85.0,1.0,59.0,1.0,38.0655737704918,43.0,Male,98.5,Hispanic or Latino,Symptoms but ambulatory,No sub-type,Rectal
+000350,panit. plus best supportive care,panit. plus best supportive care,Y,191.0,1.0,191.0,1.0,66.36065573770492,60.0,Female,42.0,White or Caucasian,Symptoms but ambulatory,No sub-type,Colon
+000353,panit. plus best supportive care,panit. plus best supportive care,Y,519.0,1.0,164.0,1.0,44.52459016393443,70.0,Male,73.0,White or Caucasian,Fully active,No sub-type,Colon
+000354,Best supportive care,Best supportive care,Y,193.0,1.0,50.0,1.0,18.721311475409838,69.0,Female,47.0,White or Caucasian,Symptoms but ambulatory,No sub-type,Rectal
+000356,panit. plus best supportive care,panit. plus best supportive care,Y,157.0,1.0,57.0,1.0,24.0327868852459,41.0,Female,49.0,White or Caucasian,In bed less than 50% of the time,No sub-type,Colon
+000357,Best supportive care,Best supportive care,Y,706.0,0.0,169.0,1.0,29.57377049180328,64.0,Female,71.0,White or Caucasian,Fully active,Other,Colon
+000358,panit. plus best supportive care,panit. plus best supportive care,Y,187.0,1.0,112.0,1.0,25.049180327868854,49.0,Female,84.0,White or Caucasian,Symptoms but ambulatory,No sub-type,Colon
+000359,Best supportive care,Best supportive care,Y,240.0,1.0,6.0,1.0,,63.0,Female,54.4,White or Caucasian,Symptoms but ambulatory,No sub-type,Colon
+000360,panit. plus best supportive care,panit. plus best supportive care,Y,144.0,0.0,53.0,1.0,24.983606557377048,64.0,Male,80.0,White or Caucasian,Symptoms but ambulatory,No sub-type,Colon
+000361,Best supportive care,Best supportive care,Y,365.0,1.0,56.0,1.0,21.311475409836067,72.0,Female,82.0,White or Caucasian,Symptoms but ambulatory,No sub-type,Colon
+000362,panit. plus best supportive care,panit. plus best supportive care,Y,137.0,1.0,53.0,1.0,14.098360655737705,53.0,Male,103.5,White or Caucasian,Fully active,Mucinous,Colon
+000363,panit. plus best supportive care,panit. plus best supportive care,Y,142.0,1.0,50.0,0.0,31.18032786885246,69.0,Male,82.0,White or Caucasian,Fully active,Other,Colon
+000364,panit. plus best supportive care,panit. plus best supportive care,Y,104.0,1.0,0.0,0.0,20.852459016393443,66.0,Male,82.0,White or Caucasian,Fully active,No sub-type,Rectal
+000366,Best supportive care,Best supportive care,Y,255.0,1.0,56.0,1.0,52.032786885245905,73.0,Female,94.0,White or Caucasian,Symptoms but ambulatory,No sub-type,Rectal
+000367,Best supportive care,Best supportive care,Y,75.0,1.0,19.0,1.0,27.147540983606557,67.0,Male,92.0,White or Caucasian,Symptoms but ambulatory,No sub-type,Rectal
+000369,Best supportive care,Best supportive care,Y,37.0,1.0,37.0,1.0,21.508196721311474,66.0,Male,77.0,White or Caucasian,In bed more than 50% of the time,No sub-type,Colon
+000370,panit. plus best supportive care,panit. plus best supportive care,Y,89.0,1.0,56.0,1.0,,56.0,Male,96.0,White or Caucasian,Fully active,No sub-type,Colon
+000371,panit. plus best supportive care,panit. plus best supportive care,Y,63.0,0.0,0.0,0.0,6.786885245901639,73.0,Male,49.0,White or Caucasian,In bed less than 50% of the time,Mucinous,Rectal
+000372,panit. plus best supportive care,panit. plus best supportive care,Y,62.0,0.0,56.0,1.0,60.75409836065574,53.0,Male,64.0,White or Caucasian,Fully active,No sub-type,Rectal
+000373,panit. plus best supportive care,panit. plus best supportive care,Y,84.0,0.0,49.0,1.0,14.295081967213115,76.0,Female,72.0,White or Caucasian,Fully active,No sub-type,Colon
+000374,panit. plus best supportive care,panit. plus best supportive care,Y,94.0,1.0,49.0,1.0,23.934426229508198,77.0,Female,64.0,White or Caucasian,Symptoms but ambulatory,No sub-type,Colon
+000375,panit. plus best supportive care,panit. plus best supportive care,Y,162.0,1.0,0.0,0.0,46.39344262295082,59.0,Male,91.0,White or Caucasian,Symptoms but ambulatory,No sub-type,Colon
+000376,Best supportive care,Best supportive care,Y,759.0,0.0,54.0,1.0,58.36065573770492,52.0,Female,69.0,White or Caucasian,Fully active,No sub-type,Colon
+000377,Best supportive care,Best supportive care,N,82.0,1.0,0.0,0.0,13.60655737704918,76.0,Male,68.5,White or Caucasian,In bed less than 50% of the time,No sub-type,Colon
+000378,Best supportive care,Best supportive care,Y,288.0,1.0,38.0,1.0,14.557377049180328,54.0,Male,115.0,White or Caucasian,Symptoms but ambulatory,Other,Colon
+000379,Best supportive care,Best supportive care,Y,62.0,1.0,24.0,1.0,49.540983606557376,47.0,Female,51.0,White or Caucasian,In bed less than 50% of the time,No sub-type,Rectal
+000380,Best supportive care,Best supportive care,Y,181.0,1.0,0.0,0.0,14.852459016393443,59.0,Male,99.0,White or Caucasian,Fully active,Other,Rectal
+000381,Best supportive care,Best supportive care,Y,147.0,1.0,115.0,1.0,25.442622950819672,65.0,Male,64.0,White or Caucasian,Symptoms but ambulatory,Other,Colon
+000382,Best supportive care,Best supportive care,Y,74.0,1.0,12.0,1.0,22.81967213114754,60.0,Male,72.0,White or Caucasian,Symptoms but ambulatory,Mucinous,Colon
+000383,panit. plus best supportive care,panit. plus best supportive care,Y,273.0,1.0,56.0,1.0,129.14754098360655,61.0,Female,53.2,White or Caucasian,Fully active,No sub-type,Colon
+000384,Best supportive care,Best supportive care,Y,58.0,1.0,50.0,1.0,27.868852459016395,71.0,Male,72.0,White or Caucasian,Symptoms but ambulatory,No sub-type,Rectal
+000385,Best supportive care,Best supportive care,Y,97.0,1.0,54.0,1.0,19.311475409836067,71.0,Male,65.0,White or Caucasian,Fully active,No sub-type,Colon
+000387,Best supportive care,Best supportive care,Y,269.0,1.0,52.0,1.0,15.40983606557377,57.0,Male,88.0,White or Caucasian,Fully active,No sub-type,Colon
+000389,panit. plus best supportive care,panit. plus best supportive care,Y,191.0,1.0,157.0,1.0,12.524590163934427,51.0,Male,93.0,Hispanic or Latino,Symptoms but ambulatory,No sub-type,Rectal
+000390,Best supportive care,Best supportive care,Y,584.0,1.0,91.0,1.0,21.311475409836067,60.0,Female,56.2,White or Caucasian,Symptoms but ambulatory,Mucinous,Colon
+000392,Best supportive care,Best supportive care,Y,107.0,1.0,26.0,1.0,9.836065573770492,55.0,Male,65.2,White or Caucasian,Symptoms but ambulatory,No sub-type,Colon
+000393,Best supportive care,Best supportive care,Y,383.0,1.0,50.0,1.0,39.90163934426229,59.0,Male,62.0,White or Caucasian,Symptoms but ambulatory,No sub-type,Rectal
+000394,panit. plus best supportive care,panit. plus best supportive care,Y,287.0,1.0,287.0,1.0,,52.0,Male,91.60000000000001,White or Caucasian,Symptoms but ambulatory,No sub-type,Rectal
+000395,panit. plus best supportive care,panit. plus best supportive care,Y,226.0,1.0,112.0,1.0,54.81967213114754,68.0,Male,77.0,White or Caucasian,Fully active,No sub-type,Rectal
+000396,panit. plus best supportive care,panit. plus best supportive care,Y,434.0,1.0,170.0,1.0,31.639344262295083,70.0,Female,54.6,White or Caucasian,Fully active,No sub-type,Colon
+000397,Best supportive care,Best supportive care,Y,675.0,0.0,337.0,1.0,106.95081967213115,73.0,Male,82.0,White or Caucasian,Fully active,Mucinous,Colon
+000398,panit. plus best supportive care,panit. plus best supportive care,Y,239.0,1.0,84.0,1.0,25.34426229508197,51.0,Female,59.300000000000004,White or Caucasian,Fully active,No sub-type,Rectal
+000400,panit. plus best supportive care,panit. plus best supportive care,Y,301.0,1.0,54.0,1.0,20.39344262295082,56.0,Male,63.0,White or Caucasian,Fully active,No sub-type,Rectal
+000403,Best supportive care,Best supportive care,Y,94.0,1.0,32.0,1.0,30.065573770491802,60.0,Female,62.0,White or Caucasian,Symptoms but ambulatory,No sub-type,Rectal
+000404,panit. plus best supportive care,panit. plus best supportive care,Y,437.0,1.0,79.0,1.0,36.721311475409834,75.0,Male,71.0,White or Caucasian,Fully active,No sub-type,Colon
+000405,Best supportive care,Best supportive care,Y,311.0,1.0,26.0,1.0,22.557377049180328,61.0,Male,87.0,White or Caucasian,Symptoms but ambulatory,No sub-type,Colon
+000406,panit. plus best supportive care,panit. plus best supportive care,Y,28.0,1.0,23.0,1.0,25.24590163934426,65.0,Male,83.0,White or Caucasian,Fully active,No sub-type,Colon
+000407,panit. plus best supportive care,panit. plus best supportive care,Y,105.0,1.0,51.0,1.0,27.639344262295083,69.0,Male,71.0,White or Caucasian,Fully active,No sub-type,Colon
+000409,panit. plus best supportive care,panit. plus best supportive care,Y,373.0,0.0,91.0,0.0,,61.0,Female,80.0,White or Caucasian,Fully active,,Colon
+000410,panit. plus best supportive care,panit. plus best supportive care,Y,190.0,1.0,55.0,1.0,6.885245901639344,66.0,Male,82.0,White or Caucasian,Symptoms but ambulatory,No sub-type,Rectal
+000414,panit. plus best supportive care,panit. plus best supportive care,Y,143.0,1.0,86.0,1.0,,46.0,Male,67.5,White or Caucasian,Symptoms but ambulatory,No sub-type,Colon
+000415,Best supportive care,Best supportive care,Y,184.0,1.0,52.0,1.0,35.77049180327869,50.0,Male,70.0,White or Caucasian,Symptoms but ambulatory,No sub-type,Colon
+000416,Best supportive care,Best supportive care,Y,171.0,1.0,28.0,1.0,15.836065573770492,65.0,Female,70.0,White or Caucasian,Symptoms but ambulatory,No sub-type,Colon
+000419,Best supportive care,Best supportive care,Y,410.0,1.0,54.0,1.0,15.573770491803279,74.0,Female,52.4,White or Caucasian,Symptoms but ambulatory,Mucinous,Colon
+000420,panit. plus best supportive care,panit. plus best supportive care,Y,239.0,1.0,28.0,1.0,50.68852459016394,65.0,Male,49.0,White or Caucasian,In bed less than 50% of the time,No sub-type,Colon
+000421,panit. plus best supportive care,panit. plus best supportive care,Y,70.0,1.0,70.0,1.0,59.18032786885246,66.0,Male,84.0,White or Caucasian,Symptoms but ambulatory,No sub-type,Colon
+000422,Best supportive care,Best supportive care,Y,108.0,1.0,29.0,1.0,15.639344262295081,54.0,Female,82.5,White or Caucasian,Fully active,,Colon
+000423,panit. plus best supportive care,panit. plus best supportive care,Y,195.0,1.0,53.0,1.0,20.0327868852459,50.0,Female,72.9,White or Caucasian,Symptoms but ambulatory,No sub-type,Colon
+000424,Best supportive care,Best supportive care,Y,12.0,1.0,12.0,1.0,42.721311475409834,72.0,Female,50.0,White or Caucasian,In bed less than 50% of the time,Mucinous,Colon
+000425,Best supportive care,Best supportive care,Y,113.0,1.0,18.0,1.0,15.049180327868852,64.0,Male,98.0,White or Caucasian,Symptoms but ambulatory,No sub-type,Colon
+000427,panit. plus best supportive care,panit. plus best supportive care,Y,303.0,1.0,56.0,1.0,35.50819672131148,65.0,Male,82.0,White or Caucasian,Fully active,No sub-type,Colon
+000429,panit. plus best supportive care,panit. plus best supportive care,Y,174.0,1.0,53.0,1.0,14.229508196721312,50.0,Male,79.0,White or Caucasian,Fully active,No sub-type,Rectal
+000430,panit. plus best supportive care,panit. plus best supportive care,Y,157.0,1.0,107.0,1.0,26.852459016393443,70.0,Female,90.60000000000001,White or Caucasian,Symptoms but ambulatory,No sub-type,Rectal
+000431,Best supportive care,Best supportive care,Y,194.0,1.0,38.0,1.0,7.737704918032787,72.0,Male,68.0,White or Caucasian,Symptoms but ambulatory,No sub-type,Colon
+000433,panit. plus best supportive care,panit. plus best supportive care,Y,465.0,1.0,108.0,1.0,61.442622950819676,50.0,Male,97.0,White or Caucasian,Symptoms but ambulatory,,Colon
+000435,Best supportive care,Best supportive care,Y,206.0,1.0,27.0,1.0,67.04918032786885,59.0,Male,70.0,White or Caucasian,Fully active,No sub-type,Rectal
+000436,panit. plus best supportive care,panit. plus best supportive care,Y,186.0,1.0,48.0,1.0,13.868852459016393,62.0,Male,67.0,White or Caucasian,Symptoms but ambulatory,No sub-type,Colon
+000437,Best supportive care,Best supportive care,Y,92.0,0.0,1.0,1.0,44.19672131147541,69.0,Female,66.0,White or Caucasian,In bed less than 50% of the time,No sub-type,Colon
+000439,Best supportive care,Best supportive care,Y,334.0,1.0,43.0,1.0,74.72131147540983,69.0,Male,78.5,White or Caucasian,Symptoms but ambulatory,No sub-type,Colon
+000440,panit. plus best supportive care,panit. plus best supportive care,Y,211.0,1.0,99.0,1.0,7.442622950819672,59.0,Female,42.6,White or Caucasian,Symptoms but ambulatory,Other,Colon
+000442,Best supportive care,Best supportive care,Y,118.0,1.0,38.0,1.0,12.524590163934427,57.0,Female,72.0,White or Caucasian,Symptoms but ambulatory,No sub-type,Rectal
+000443,panit. plus best supportive care,panit. plus best supportive care,Y,64.0,1.0,56.0,1.0,32.98360655737705,77.0,Female,50.0,White or Caucasian,Symptoms but ambulatory,Mucinous,Colon
+000444,Best supportive care,Best supportive care,Y,307.0,1.0,93.0,1.0,78.36065573770492,63.0,Male,91.0,White or Caucasian,Fully active,No sub-type,Rectal
+000445,Best supportive care,Best supportive care,Y,729.0,0.0,133.0,1.0,,72.0,Female,63.0,White or Caucasian,Fully active,No sub-type,Colon
+000446,Best supportive care,Best supportive care,Y,378.0,1.0,27.0,1.0,73.01639344262296,62.0,Female,63.0,White or Caucasian,Symptoms but ambulatory,No sub-type,Rectal
+000447,panit. plus best supportive care,panit. plus best supportive care,Y,679.0,0.0,196.0,1.0,22.65573770491803,57.0,Male,110.0,White or Caucasian,Fully active,No sub-type,Rectal
+000448,panit. plus best supportive care,panit. plus best supportive care,Y,344.0,1.0,79.0,1.0,27.147540983606557,57.0,Female,51.0,White or Caucasian,Symptoms but ambulatory,No sub-type,Rectal
+000450,panit. plus best supportive care,panit. plus best supportive care,Y,168.0,1.0,50.0,1.0,61.14754098360656,55.0,Male,69.0,White or Caucasian,Fully active,No sub-type,Rectal
+000451,Best supportive care,Best supportive care,Y,238.0,1.0,56.0,1.0,18.0327868852459,79.0,Male,87.0,White or Caucasian,In bed less than 50% of the time,No sub-type,Colon
+000452,panit. plus best supportive care,panit. plus best supportive care,Y,392.0,1.0,218.0,1.0,39.63934426229508,61.0,Male,106.7,White or Caucasian,Fully active,No sub-type,Rectal
+000453,Best supportive care,Best supportive care,Y,310.0,1.0,60.0,1.0,18.0327868852459,67.0,Male,61.0,White or Caucasian,Fully active,No sub-type,Colon
+000454,panit. plus best supportive care,panit. plus best supportive care,N,30.0,1.0,30.0,1.0,9.37704918032787,81.0,Female,72.60000000000001,White or Caucasian,Symptoms but ambulatory,No sub-type,Colon
+000456,panit. plus best supportive care,panit. plus best supportive care,Y,32.0,1.0,32.0,1.0,19.278688524590162,64.0,Male,78.60000000000001,White or Caucasian,Fully active,Mucinous,Colon
+000457,Best supportive care,Best supportive care,Y,94.0,1.0,50.0,1.0,17.83606557377049,74.0,Female,73.9,White or Caucasian,Symptoms but ambulatory,No sub-type,Colon
+000458,Best supportive care,Best supportive care,Y,501.0,1.0,54.0,1.0,35.60655737704918,71.0,Female,63.0,White or Caucasian,Symptoms but ambulatory,No sub-type,Rectal
+000459,Best supportive care,Best supportive care,Y,485.0,0.0,55.0,1.0,,32.0,Female,62.5,White or Caucasian,Fully active,No sub-type,Rectal
+000460,Best supportive care,Best supportive care,Y,64.0,1.0,46.0,1.0,38.81967213114754,53.0,Female,75.0,White or Caucasian,Fully active,No sub-type,Colon
+000461,panit. plus best supportive care,panit. plus best supportive care,N,175.0,1.0,53.0,1.0,8.98360655737705,76.0,Male,72.0,White or Caucasian,Fully active,No sub-type,Rectal
+000462,panit. plus best supportive care,panit. plus best supportive care,Y,504.0,1.0,61.0,1.0,45.08196721311475,66.0,Female,79.0,White or Caucasian,Fully active,No sub-type,Rectal

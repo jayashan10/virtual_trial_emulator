@@ -96,11 +96,11 @@ def main():
             output_path=str(Path(outputs_root) / "ras_vs_risk_score.png")
         )
     
-    if "TRT" in profile_db.columns and "DTHDYX" in profile_db.columns:
+    if "ATRT" in profile_db.columns and "DTHDYX" in profile_db.columns:
         print("  - Creating treatment arm vs survival comparison...")
         plot_subgroup_comparison(
             profile_db,
-            subgroup_col="TRT",
+            subgroup_col="ATRT",
             metric_col="DTHDYX",
             output_path=str(Path(outputs_root) / "treatment_vs_survival.png")
         )
@@ -140,8 +140,8 @@ def main():
         sex_counts = profile_db["SEX"].value_counts()
         print(f"  - Sex: {sex_counts.to_dict()}")
     
-    if "TRT" in profile_db.columns:
-        trt_counts = profile_db["TRT"].value_counts()
+    if "ATRT" in profile_db.columns:
+        trt_counts = profile_db["ATRT"].value_counts()
         print(f"  - Treatment Arms:")
         for trt, count in trt_counts.items():
             print(f"      {trt}: {count}")

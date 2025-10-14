@@ -1,0 +1,371 @@
+SUBJID,AGE,SEX,RACE,B_ECOG,ATRT,RAS_status,baseline_HGB,baseline_LDH,sum_target_diameters,tumor_burden_category,composite_risk_score,best_response,DTHDYX,DTHX
+000001,68.0,Male,White or Caucasian,Symptoms but ambulatory,panit. plus best supportive care,UNKNOWN,114.41,454.0,567.0,high,0.71,PD,218.0,1
+000002,48.0,Male,White or Caucasian,Symptoms but ambulatory,Best supportive care,WILD-TYPE,145.02,168.0,,,0.42,PD,231.0,1
+000004,70.0,Female,White or Caucasian,Fully active,Best supportive care,MUTANT,124.07,122.0,296.0,high,0.78,,581.0,1
+000005,68.0,Female,White or Caucasian,In bed less than 50% of the time,Best supportive care,MUTANT,125.68,1795.0,422.0,high,0.85,,15.0,1
+000006,56.0,Male,White or Caucasian,Fully active,panit. plus best supportive care,WILD-TYPE,159.52,186.0,,,0.42,SD,286.0,1
+000008,66.0,Female,White or Caucasian,Symptoms but ambulatory,Best supportive care,WILD-TYPE,125.68,167.0,218.0,high,0.54,PD,43.0,1
+000010,52.0,Female,White or Caucasian,Symptoms but ambulatory,panit. plus best supportive care,MUTANT,96.68,229.0,251.0,high,0.74,PD,129.0,1
+000011,75.0,Male,White or Caucasian,Symptoms but ambulatory,Best supportive care,WILD-TYPE,127.3,366.0,277.0,high,0.58,PD,318.0,1
+000013,66.0,Male,White or Caucasian,In bed less than 50% of the time,panit. plus best supportive care,WILD-TYPE,106.35,989.0,372.0,high,0.61,SD,230.0,1
+000015,55.0,Male,White or Caucasian,Fully active,Best supportive care,MUTANT,132.13,254.0,635.0,high,0.78,,320.0,1
+000016,66.0,Male,White or Caucasian,Symptoms but ambulatory,panit. plus best supportive care,WILD-TYPE,120.85,232.0,,,0.42,SD,481.0,1
+000017,78.0,Male,White or Caucasian,Symptoms but ambulatory,Best supportive care,MUTANT,125.68,1166.0,575.0,high,0.78,,37.0,1
+000018,63.0,Male,White or Caucasian,Fully active,Best supportive care,MUTANT,145.02,445.0,237.0,high,0.74,PD,416.0,1
+000019,43.0,Male,Asian,Fully active,Best supportive care,WILD-TYPE,151.47,285.0,239.0,high,0.58,PD,324.0,1
+000020,57.0,Male,White or Caucasian,Fully active,panit. plus best supportive care,WILD-TYPE,127.3,269.0,,,0.42,PR,461.0,1
+000021,63.0,Male,White or Caucasian,Symptoms but ambulatory,panit. plus best supportive care,WILD-TYPE,124.07,720.0,655.0,high,0.58,PR,291.0,1
+000022,74.0,Male,White or Caucasian,In bed less than 50% of the time,Best supportive care,WILD-TYPE,140.19,178.0,460.0,high,0.51,SD,346.0,1
+000024,59.0,Female,White or Caucasian,Fully active,panit. plus best supportive care,MUTANT,130.52,281.0,346.0,high,0.74,,133.0,1
+000025,60.0,Female,White or Caucasian,Symptoms but ambulatory,Best supportive care,WILD-TYPE,130.52,1368.0,257.0,high,0.58,PD,134.0,1
+000026,51.0,Female,White or Caucasian,Fully active,Best supportive care,WILD-TYPE,128.91,215.0,65.0,medium,0.38,PD,554.0,1
+000027,70.0,Male,White or Caucasian,Symptoms but ambulatory,panit. plus best supportive care,UNKNOWN,124.07,148.0,63.0,medium,0.48,SD,664.0,1
+000028,57.0,Male,White or Caucasian,Symptoms but ambulatory,Best supportive care,MUTANT,127.3,195.0,234.0,high,0.74,SD,374.0,1
+000029,53.0,Female,White or Caucasian,Symptoms but ambulatory,Best supportive care,MUTANT,146.63,232.0,106.0,high,0.74,PD,295.0,1
+000030,72.0,Female,White or Caucasian,Fully active,Best supportive care,MUTANT,116.02,1056.0,868.0,high,0.85,PD,131.0,1
+000031,62.0,Female,White or Caucasian,Symptoms but ambulatory,Best supportive care,WILD-TYPE,143.41,537.0,468.0,high,0.58,PD,516.0,1
+000034,72.0,Female,Black or African American,Symptoms but ambulatory,panit. plus best supportive care,WILD-TYPE,132.13,946.0,640.0,high,0.61,PD,86.0,0
+000036,83.0,Male,White or Caucasian,Fully active,Best supportive care,MUTANT,128.91,152.0,163.0,high,0.74,SD,334.0,1
+000037,74.0,Male,White or Caucasian,Fully active,Best supportive care,MUTANT,138.58,246.0,246.0,high,0.71,SD,702.0,0
+000038,77.0,Male,White or Caucasian,In bed less than 50% of the time,panit. plus best supportive care,WILD-TYPE,143.41,2687.0,602.0,high,0.61,PR,189.0,1
+000039,73.0,Male,White or Caucasian,Fully active,Best supportive care,WILD-TYPE,130.52,177.0,,,0.38,PD,98.0,1
+000040,41.0,Female,White or Caucasian,Fully active,panit. plus best supportive care,UNKNOWN,120.85,326.0,,,0.59,SD,416.0,1
+000041,59.0,Male,White or Caucasian,Symptoms but ambulatory,Best supportive care,WILD-TYPE,125.68,398.0,679.0,high,0.61,PD,356.0,1
+000042,62.0,Male,White or Caucasian,Fully active,Best supportive care,MUTANT,146.63,236.0,260.0,high,0.71,PD,506.0,1
+000043,61.0,Male,White or Caucasian,Symptoms but ambulatory,panit. plus best supportive care,WILD-TYPE,119.24,255.0,,,0.49,PD,292.0,1
+000044,69.0,Male,White or Caucasian,Fully active,panit. plus best supportive care,UNKNOWN,162.75,267.0,399.0,high,0.68,PD,130.0,1
+000045,60.0,Male,White or Caucasian,Fully active,panit. plus best supportive care,WILD-TYPE,140.19,509.0,207.0,high,0.58,SD,513.0,1
+000046,59.0,Male,White or Caucasian,In bed less than 50% of the time,Best supportive care,WILD-TYPE,106.35,245.0,615.0,high,0.58,,22.0,1
+000048,65.0,Male,White or Caucasian,Symptoms but ambulatory,panit. plus best supportive care,MUTANT,143.41,706.0,507.0,high,0.78,PD,233.0,1
+000049,68.0,Male,White or Caucasian,Symptoms but ambulatory,Best supportive care,MUTANT,106.35,443.0,453.0,high,0.81,,9.0,1
+000051,56.0,Male,White or Caucasian,Symptoms but ambulatory,Best supportive care,MUTANT,138.58,447.0,716.0,high,0.78,PD,115.0,1
+000052,44.0,Female,White or Caucasian,In bed less than 50% of the time,Best supportive care,UNKNOWN,120.85,1379.0,576.0,high,0.68,PD,35.0,1
+000054,54.0,Male,White or Caucasian,Fully active,panit. plus best supportive care,WILD-TYPE,130.52,175.0,33.0,low,0.26,PD,190.0,1
+000055,62.0,Male,White or Caucasian,Fully active,Best supportive care,MUTANT,119.24,474.0,572.0,high,0.78,PD,210.0,1
+000056,58.0,Female,White or Caucasian,Fully active,panit. plus best supportive care,MUTANT,130.52,343.0,,,0.62,PD,98.0,1
+000057,62.0,Female,White or Caucasian,Fully active,panit. plus best supportive care,MUTANT,127.3,306.0,292.0,high,0.78,PD,139.0,1
+000058,39.0,Male,White or Caucasian,Fully active,panit. plus best supportive care,UNKNOWN,119.24,261.0,,,0.52,SD,102.0,1
+000059,62.0,Male,White or Caucasian,Fully active,Best supportive care,MUTANT,159.52,280.0,277.0,high,0.74,PD,199.0,1
+000060,35.0,Female,White or Caucasian,In bed less than 50% of the time,panit. plus best supportive care,WILD-TYPE,96.68,474.0,779.0,high,0.58,,17.0,1
+000061,35.0,Female,White or Caucasian,In bed less than 50% of the time,Best supportive care,WILD-TYPE,95.07,1410.0,618.0,high,0.58,,44.0,1
+000062,58.0,Male,White or Caucasian,Symptoms but ambulatory,Best supportive care,UNKNOWN,133.74,823.0,771.0,high,0.68,,50.0,1
+000063,58.0,Male,White or Caucasian,Fully active,Best supportive care,MUTANT,135.35,350.0,355.0,high,0.74,,153.0,1
+000064,64.0,Male,White or Caucasian,In bed less than 50% of the time,panit. plus best supportive care,WILD-TYPE,133.74,214.0,288.0,high,0.58,PD,45.0,1
+000065,51.0,Male,White or Caucasian,Symptoms but ambulatory,panit. plus best supportive care,MUTANT,138.58,287.0,377.0,high,0.78,PD,167.0,1
+000066,54.0,Female,White or Caucasian,Symptoms but ambulatory,Best supportive care,MUTANT,114.41,287.0,,,0.65,PD,120.0,1
+000067,66.0,Male,White or Caucasian,Fully active,panit. plus best supportive care,WILD-TYPE,164.36,185.0,,,0.42,PR,594.0,1
+000068,73.0,Female,White or Caucasian,Symptoms but ambulatory,Best supportive care,WILD-TYPE,119.24,758.0,194.0,high,0.54,,32.0,0
+000069,52.0,Male,White or Caucasian,Fully active,Best supportive care,MUTANT,112.79,240.0,,,0.58,SD,205.0,1
+000070,60.0,Male,White or Caucasian,Fully active,panit. plus best supportive care,MUTANT,133.74,203.0,,,0.58,PD,270.0,1
+000071,50.0,Female,White or Caucasian,In bed less than 50% of the time,panit. plus best supportive care,WILD-TYPE,104.74,256.0,404.0,high,0.65,,22.0,1
+000072,62.0,Male,White or Caucasian,Fully active,Best supportive care,MUTANT,148.24,139.0,258.0,high,0.74,PD,275.0,1
+000073,63.0,Female,White or Caucasian,Symptoms but ambulatory,Best supportive care,WILD-TYPE,135.35,344.0,783.0,high,0.58,PD,283.0,1
+000074,61.0,Male,White or Caucasian,Symptoms but ambulatory,Best supportive care,WILD-TYPE,130.52,846.0,422.0,high,0.61,PD,130.0,1
+000075,62.0,Female,White or Caucasian,Fully active,Best supportive care,MUTANT,138.58,270.0,228.0,high,0.78,PD,506.0,1
+000076,52.0,Male,White or Caucasian,Symptoms but ambulatory,Best supportive care,WILD-TYPE,127.3,792.0,397.0,high,0.58,PD,57.0,1
+000078,63.0,Male,White or Caucasian,Fully active,Best supportive care,WILD-TYPE,135.35,319.0,586.0,high,0.54,PD,490.0,1
+000079,65.0,Male,White or Caucasian,Fully active,panit. plus best supportive care,MUTANT,143.41,207.0,75.0,medium,0.58,SD,317.0,1
+000081,59.0,Male,White or Caucasian,Symptoms but ambulatory,panit. plus best supportive care,WILD-TYPE,122.46,131.0,50.0,medium,0.45,,3.0,1
+000082,75.0,Female,White or Caucasian,Fully active,panit. plus best supportive care,WILD-TYPE,125.68,132.0,,,0.42,SD,634.0,0
+000083,63.0,Female,White or Caucasian,Symptoms but ambulatory,Best supportive care,UNKNOWN,130.52,229.0,123.0,high,0.64,PD,382.0,1
+000084,77.0,Male,White or Caucasian,Fully active,panit. plus best supportive care,MUTANT,114.41,1450.0,548.0,high,0.78,,136.0,1
+000085,45.0,Male,White or Caucasian,Fully active,Best supportive care,WILD-TYPE,130.52,603.0,,,0.45,PD,232.0,1
+000087,60.0,Female,White or Caucasian,Symptoms but ambulatory,panit. plus best supportive care,WILD-TYPE,95.07,147.0,,,0.45,PD,295.0,1
+000089,69.0,Male,White or Caucasian,Symptoms but ambulatory,panit. plus best supportive care,WILD-TYPE,103.13,203.0,,,0.42,SD,195.0,1
+000090,27.0,Male,White or Caucasian,Fully active,panit. plus best supportive care,MUTANT,127.3,547.0,226.0,high,0.81,PD,116.0,1
+000091,54.0,Male,White or Caucasian,Symptoms but ambulatory,Best supportive care,MUTANT,124.07,284.0,190.0,high,0.74,PD,125.0,1
+000092,55.0,Male,White or Caucasian,Symptoms but ambulatory,panit. plus best supportive care,WILD-TYPE,109.57,741.0,139.0,high,0.54,SD,118.0,1
+000093,70.0,Male,White or Caucasian,Symptoms but ambulatory,Best supportive care,WILD-TYPE,120.85,185.0,,,0.38,SD,479.0,1
+000094,32.0,Male,White or Caucasian,In bed less than 50% of the time,Best supportive care,MUTANT,135.35,297.0,,,0.65,PD,67.0,1
+000095,46.0,Male,White or Caucasian,Symptoms but ambulatory,panit. plus best supportive care,MUTANT,101.51,511.0,777.0,high,0.78,,37.0,1
+000096,63.0,Male,White or Caucasian,In bed less than 50% of the time,panit. plus best supportive care,MUTANT,104.74,1289.0,412.0,high,0.85,PD,68.0,1
+000097,57.0,Male,White or Caucasian,Fully active,Best supportive care,MUTANT,122.46,484.0,541.0,high,0.78,PD,133.0,1
+000098,65.0,Male,White or Caucasian,Fully active,Best supportive care,MUTANT,135.35,166.0,,,0.58,,372.0,1
+000099,78.0,Male,White or Caucasian,In bed more than 50% of the time,Best supportive care,WILD-TYPE,106.35,337.0,789.0,high,0.65,,21.0,1
+000101,73.0,Female,White or Caucasian,Fully active,panit. plus best supportive care,MUTANT,135.35,366.0,306.0,high,0.74,PD,212.0,1
+000102,27.0,Male,White or Caucasian,In bed less than 50% of the time,Best supportive care,MUTANT,96.68,508.0,601.0,high,0.81,,40.0,1
+000103,52.0,Male,White or Caucasian,Fully active,Best supportive care,MUTANT,128.91,367.0,479.0,high,0.81,PD,79.0,1
+000104,65.0,Female,White or Caucasian,Symptoms but ambulatory,Best supportive care,MUTANT,143.41,147.0,,,0.58,PD,400.0,1
+000105,52.0,Female,White or Caucasian,Fully active,Best supportive care,WILD-TYPE,112.79,379.0,,,0.42,PD,487.0,1
+000106,65.0,Female,White or Caucasian,Fully active,panit. plus best supportive care,MUTANT,132.13,249.0,340.0,high,0.74,PD,461.0,1
+000108,53.0,Male,White or Caucasian,Symptoms but ambulatory,Best supportive care,WILD-TYPE,148.24,218.0,,,0.42,PD,441.0,1
+000110,82.0,Male,White or Caucasian,Symptoms but ambulatory,panit. plus best supportive care,MUTANT,103.13,5383.0,940.0,high,0.78,,27.0,1
+000113,63.0,Male,White or Caucasian,Symptoms but ambulatory,Best supportive care,WILD-TYPE,135.35,354.0,,,0.45,PD,244.0,1
+000114,47.0,Male,White or Caucasian,Symptoms but ambulatory,panit. plus best supportive care,MUTANT,130.52,559.0,465.0,high,0.78,PD,63.0,1
+000116,57.0,Male,White or Caucasian,Symptoms but ambulatory,panit. plus best supportive care,MUTANT,99.9,415.0,991.0,high,0.78,PD,123.0,1
+000117,57.0,Male,White or Caucasian,Symptoms but ambulatory,Best supportive care,MUTANT,130.52,175.0,,,0.62,SD,150.0,1
+000119,53.0,Male,White or Caucasian,Fully active,panit. plus best supportive care,WILD-TYPE,148.24,235.0,,,0.42,PR,495.0,1
+000121,56.0,Female,White or Caucasian,Symptoms but ambulatory,panit. plus best supportive care,MUTANT,107.96,526.0,468.0,high,0.81,PD,62.0,1
+000122,63.0,Male,White or Caucasian,Symptoms but ambulatory,Best supportive care,WILD-TYPE,132.13,451.0,97.0,medium,0.42,PD,284.0,1
+000123,53.0,Male,White or Caucasian,Fully active,Best supportive care,WILD-TYPE,170.8,260.0,286.0,high,0.54,SD,265.0,0
+000125,58.0,Male,White or Caucasian,Fully active,Best supportive care,MUTANT,138.58,1421.0,,,0.69,,36.0,1
+000126,55.0,Female,White or Caucasian,Fully active,panit. plus best supportive care,WILD-TYPE,112.79,472.0,,,0.45,SD,259.0,0
+000128,64.0,Male,White or Caucasian,Fully active,Best supportive care,MUTANT,124.07,968.0,498.0,high,0.81,PD,81.0,1
+000130,68.0,Female,White or Caucasian,Fully active,panit. plus best supportive care,MUTANT,117.63,458.0,584.0,high,0.85,PD,69.0,1
+000131,29.0,Female,White or Caucasian,Symptoms but ambulatory,panit. plus best supportive care,WILD-TYPE,112.79,299.0,,,0.49,PR,374.0,1
+000132,53.0,Female,White or Caucasian,Symptoms but ambulatory,panit. plus best supportive care,WILD-TYPE,141.8,224.0,152.0,high,0.54,PR,247.0,1
+000133,69.0,Female,White or Caucasian,Symptoms but ambulatory,Best supportive care,MUTANT,90.24,1274.0,507.0,high,0.81,PD,212.0,1
+000136,64.0,Male,White or Caucasian,Symptoms but ambulatory,Best supportive care,MUTANT,111.18,330.0,589.0,high,0.81,,15.0,1
+000137,68.0,Male,White or Caucasian,Symptoms but ambulatory,panit. plus best supportive care,WILD-TYPE,127.3,1159.0,,,0.45,SD,344.0,1
+000140,55.0,Male,White or Caucasian,Symptoms but ambulatory,panit. plus best supportive care,WILD-TYPE,125.68,442.0,586.0,high,0.54,PD,39.0,0
+000141,68.0,Male,White or Caucasian,Symptoms but ambulatory,panit. plus best supportive care,UNKNOWN,133.74,230.0,,,0.48,SD,666.0,1
+000142,69.0,Male,White or Caucasian,Symptoms but ambulatory,panit. plus best supportive care,MUTANT,146.63,276.0,263.0,high,0.78,SD,262.0,1
+000143,72.0,Female,White or Caucasian,Fully active,panit. plus best supportive care,WILD-TYPE,120.85,512.0,369.0,high,0.61,PD,64.0,1
+000144,70.0,Male,White or Caucasian,Fully active,Best supportive care,WILD-TYPE,136.96,194.0,128.0,high,0.54,PD,769.0,1
+000145,57.0,Female,White or Caucasian,Symptoms but ambulatory,panit. plus best supportive care,MUTANT,82.18,220.0,237.0,high,0.78,PD,293.0,0
+000146,65.0,Male,White or Caucasian,Fully active,panit. plus best supportive care,WILD-TYPE,138.58,250.0,163.0,high,0.54,PR,606.0,1
+000147,69.0,Male,White or Caucasian,Fully active,Best supportive care,WILD-TYPE,148.24,359.0,510.0,high,0.58,PD,479.0,1
+000149,63.0,Female,White or Caucasian,Fully active,panit. plus best supportive care,UNKNOWN,143.41,199.0,,,0.48,SD,710.0,0
+000150,64.0,Male,White or Caucasian,Fully active,panit. plus best supportive care,WILD-TYPE,111.18,1485.0,945.0,high,0.58,PD,107.0,1
+000151,74.0,Male,White or Caucasian,Symptoms but ambulatory,panit. plus best supportive care,WILD-TYPE,151.47,207.0,93.0,medium,0.38,PD,414.0,1
+000152,71.0,Male,White or Caucasian,Symptoms but ambulatory,Best supportive care,MUTANT,107.96,288.0,688.0,high,0.78,PD,78.0,1
+000153,57.0,Male,White or Caucasian,Symptoms but ambulatory,panit. plus best supportive care,WILD-TYPE,101.51,392.0,,,0.45,SD,207.0,1
+000154,70.0,Male,White or Caucasian,Symptoms but ambulatory,Best supportive care,MUTANT,120.85,1043.0,494.0,high,0.81,PD,159.0,1
+000155,61.0,Female,White or Caucasian,Fully active,Best supportive care,WILD-TYPE,119.24,227.0,144.0,high,0.54,PR,482.0,1
+000156,61.0,Male,White or Caucasian,Symptoms but ambulatory,panit. plus best supportive care,MUTANT,130.52,402.0,,,0.65,PD,207.0,1
+000157,66.0,Male,White or Caucasian,Fully active,panit. plus best supportive care,MUTANT,119.24,434.0,,,0.69,PD,157.0,1
+000158,51.0,Female,White or Caucasian,In bed less than 50% of the time,panit. plus best supportive care,MUTANT,109.57,813.0,811.0,high,0.85,PD,60.0,1
+000159,53.0,Female,White or Caucasian,In bed less than 50% of the time,Best supportive care,WILD-TYPE,122.46,509.0,529.0,high,0.58,PD,330.0,1
+000161,45.0,Female,White or Caucasian,Symptoms but ambulatory,panit. plus best supportive care,MUTANT,125.68,224.0,478.0,high,0.71,PD,106.0,1
+000162,57.0,Male,White or Caucasian,In bed less than 50% of the time,Best supportive care,MUTANT,112.79,280.0,429.0,high,0.78,,44.0,1
+000163,53.0,Male,White or Caucasian,Fully active,panit. plus best supportive care,MUTANT,125.68,205.0,181.0,high,0.71,PD,70.0,1
+000164,62.0,Male,White or Caucasian,Fully active,Best supportive care,WILD-TYPE,101.51,223.0,355.0,high,0.54,,169.0,1
+000166,66.0,Female,White or Caucasian,Symptoms but ambulatory,Best supportive care,WILD-TYPE,122.46,370.0,516.0,high,0.58,PD,83.0,1
+000167,74.0,Male,White or Caucasian,Fully active,panit. plus best supportive care,MUTANT,128.91,196.0,382.0,high,0.74,PD,233.0,1
+000170,33.0,Male,White or Caucasian,Symptoms but ambulatory,Best supportive care,MUTANT,141.8,292.0,122.0,high,0.81,PD,500.0,1
+000171,45.0,Male,White or Caucasian,Symptoms but ambulatory,Best supportive care,WILD-TYPE,98.29,260.0,580.0,high,0.58,PD,100.0,1
+000172,38.0,Male,White or Caucasian,In bed less than 50% of the time,Best supportive care,WILD-TYPE,83.79,779.0,765.0,high,0.61,PD,26.0,1
+000173,67.0,Female,White or Caucasian,Fully active,panit. plus best supportive care,MUTANT,93.46,220.0,284.0,high,0.74,PD,171.0,1
+000174,60.0,Male,White or Caucasian,Fully active,panit. plus best supportive care,WILD-TYPE,106.35,289.0,,,0.42,PD,57.0,1
+000175,43.0,Male,White or Caucasian,Fully active,Best supportive care,MUTANT,159.52,2465.0,496.0,high,0.78,,213.0,1
+000176,67.0,Male,White or Caucasian,Fully active,panit. plus best supportive care,MUTANT,122.46,157.0,220.0,high,0.71,PD,313.0,1
+000177,53.0,Female,White or Caucasian,In bed less than 50% of the time,panit. plus best supportive care,MUTANT,111.18,260.0,218.0,high,0.74,,45.0,1
+000178,59.0,Female,White or Caucasian,Fully active,Best supportive care,MUTANT,127.3,314.0,,,0.62,,596.0,1
+000179,72.0,Male,White or Caucasian,Fully active,panit. plus best supportive care,WILD-TYPE,135.35,209.0,,,0.42,SD,366.0,1
+000180,49.0,Male,White or Caucasian,Symptoms but ambulatory,Best supportive care,MUTANT,124.07,241.0,510.0,high,0.78,SD,119.0,1
+000181,37.0,Male,White or Caucasian,Fully active,Best supportive care,WILD-TYPE,138.58,183.0,,,0.45,PR,687.0,0
+000182,70.0,Male,White or Caucasian,Fully active,panit. plus best supportive care,WILD-TYPE,124.07,155.0,89.0,medium,0.38,SD,247.0,1
+000184,44.0,Male,White or Caucasian,In bed less than 50% of the time,Best supportive care,WILD-TYPE,72.51,189.0,215.0,high,0.54,,46.0,1
+000186,61.0,Male,White or Caucasian,Fully active,Best supportive care,WILD-TYPE,164.36,228.0,,,0.38,SD,472.0,1
+000187,43.0,Male,White or Caucasian,Symptoms but ambulatory,panit. plus best supportive care,MUTANT,117.63,931.0,1086.0,high,0.78,PD,58.0,1
+000188,61.0,Male,White or Caucasian,Fully active,panit. plus best supportive care,WILD-TYPE,140.19,239.0,161.0,high,0.51,PD,97.0,1
+000189,67.0,Female,White or Caucasian,Symptoms but ambulatory,panit. plus best supportive care,WILD-TYPE,116.02,1985.0,698.0,high,0.61,,28.0,1
+000190,56.0,Female,White or Caucasian,Symptoms but ambulatory,Best supportive care,MUTANT,119.24,189.0,,,0.62,PD,148.0,1
+000191,71.0,Female,White or Caucasian,Symptoms but ambulatory,Best supportive care,MUTANT,138.58,497.0,271.0,high,0.78,PD,110.0,1
+000192,71.0,Female,White or Caucasian,Symptoms but ambulatory,Best supportive care,WILD-TYPE,136.96,420.0,181.0,high,0.54,PD,68.0,1
+000193,79.0,Female,White or Caucasian,Symptoms but ambulatory,panit. plus best supportive care,MUTANT,125.68,167.0,,,0.58,SD,583.0,1
+000194,77.0,Female,White or Caucasian,Symptoms but ambulatory,panit. plus best supportive care,WILD-TYPE,114.41,662.0,,,0.49,SD,357.0,1
+000195,45.0,Male,White or Caucasian,In bed less than 50% of the time,panit. plus best supportive care,WILD-TYPE,117.63,415.0,1048.0,high,0.54,PD,62.0,1
+000196,69.0,Male,White or Caucasian,Symptoms but ambulatory,Best supportive care,MUTANT,109.57,281.0,277.0,high,0.74,PD,233.0,1
+000197,71.0,Male,White or Caucasian,In bed less than 50% of the time,Best supportive care,MUTANT,107.96,2376.0,672.0,high,0.81,PD,55.0,1
+000198,58.0,Male,White or Caucasian,Symptoms but ambulatory,panit. plus best supportive care,MUTANT,135.35,200.0,181.0,high,0.71,PD,218.0,1
+000201,62.0,Male,White or Caucasian,Symptoms but ambulatory,panit. plus best supportive care,WILD-TYPE,125.68,220.0,127.0,high,0.51,PR,276.0,1
+000202,78.0,Female,White or Caucasian,Fully active,panit. plus best supportive care,WILD-TYPE,117.63,361.0,287.0,high,0.58,SD,290.0,1
+000203,74.0,Male,White or Caucasian,Symptoms but ambulatory,panit. plus best supportive care,MUTANT,85.4,199.0,238.0,high,0.71,PD,147.0,1
+000204,49.0,Male,White or Caucasian,Symptoms but ambulatory,Best supportive care,WILD-TYPE,141.8,235.0,511.0,high,0.51,PD,105.0,1
+000205,76.0,Male,White or Caucasian,In bed less than 50% of the time,panit. plus best supportive care,MUTANT,125.68,292.0,137.0,high,0.85,,45.0,1
+000206,47.0,Female,White or Caucasian,Symptoms but ambulatory,Best supportive care,WILD-TYPE,149.85,695.0,448.0,high,0.54,PD,280.0,1
+000207,74.0,Male,White or Caucasian,Symptoms but ambulatory,Best supportive care,MUTANT,141.8,201.0,127.0,high,0.71,PD,263.0,1
+000208,64.0,Male,White or Caucasian,In bed less than 50% of the time,panit. plus best supportive care,WILD-TYPE,93.46,1841.0,108.0,high,0.58,PD,104.0,1
+000210,52.0,Male,White or Caucasian,Symptoms but ambulatory,panit. plus best supportive care,MUTANT,120.85,180.0,242.0,high,0.74,PD,318.0,1
+000214,49.0,Female,White or Caucasian,Fully active,panit. plus best supportive care,MUTANT,112.79,432.0,575.0,high,0.78,PD,122.0,1
+000215,53.0,Male,White or Caucasian,Symptoms but ambulatory,Best supportive care,MUTANT,157.91,176.0,126.0,high,0.74,,543.0,1
+000216,63.0,Male,White or Caucasian,Fully active,panit. plus best supportive care,MUTANT,140.19,254.0,,,0.62,PD,452.0,1
+000218,50.0,Male,White or Caucasian,Symptoms but ambulatory,panit. plus best supportive care,WILD-TYPE,128.91,462.0,,,0.42,SD,272.0,1
+000219,44.0,Female,White or Caucasian,Fully active,Best supportive care,MUTANT,133.74,210.0,45.0,low,0.49,PD,511.0,1
+000220,63.0,Male,White or Caucasian,Fully active,panit. plus best supportive care,MUTANT,112.79,479.0,724.0,high,0.81,,58.0,1
+000221,52.0,Male,White or Caucasian,Fully active,panit. plus best supportive care,MUTANT,153.08,396.0,81.0,medium,0.62,PD,760.0,0
+000222,74.0,Female,White or Caucasian,Symptoms but ambulatory,Best supportive care,MUTANT,104.74,222.0,,,0.58,SD,180.0,1
+000223,63.0,Male,White or Caucasian,Fully active,panit. plus best supportive care,MUTANT,161.13,201.0,167.0,high,0.74,PD,231.0,1
+000224,57.0,Male,White or Caucasian,Fully active,panit. plus best supportive care,WILD-TYPE,93.46,653.0,,,0.45,PR,336.0,1
+000225,69.0,Female,White or Caucasian,Fully active,Best supportive care,MUTANT,127.3,452.0,404.0,high,0.74,PD,708.0,1
+000226,49.0,Female,White or Caucasian,Symptoms but ambulatory,Best supportive care,WILD-TYPE,120.85,168.0,170.0,high,0.51,PD,731.0,1
+000228,68.0,Male,White or Caucasian,Symptoms but ambulatory,panit. plus best supportive care,WILD-TYPE,136.96,191.0,,,0.42,,182.0,1
+000229,72.0,Male,White or Caucasian,Fully active,panit. plus best supportive care,WILD-TYPE,133.74,223.0,,,0.45,PR,944.0,0
+000230,41.0,Female,White or Caucasian,Fully active,panit. plus best supportive care,MUTANT,99.9,2858.0,890.0,high,0.78,PD,111.0,1
+000231,67.0,Male,White or Caucasian,Symptoms but ambulatory,panit. plus best supportive care,MUTANT,146.63,220.0,262.0,high,0.74,PD,189.0,1
+000233,43.0,Female,White or Caucasian,Symptoms but ambulatory,Best supportive care,MUTANT,127.3,419.0,379.0,high,0.78,,3.0,0
+000234,44.0,Male,White or Caucasian,Symptoms but ambulatory,Best supportive care,MUTANT,136.96,387.0,286.0,high,0.78,,134.0,1
+000235,69.0,Male,White or Caucasian,In bed less than 50% of the time,panit. plus best supportive care,MUTANT,125.68,123.0,105.0,high,0.74,,92.0,1
+000236,72.0,Female,White or Caucasian,Symptoms but ambulatory,panit. plus best supportive care,WILD-TYPE,116.02,283.0,265.0,high,0.54,PR,255.0,1
+000237,57.0,Female,White or Caucasian,Symptoms but ambulatory,panit. plus best supportive care,MUTANT,128.91,152.0,190.0,high,0.74,SD,430.0,1
+000238,68.0,Male,White or Caucasian,Symptoms but ambulatory,panit. plus best supportive care,WILD-TYPE,146.63,299.0,484.0,high,0.58,,399.0,1
+000239,54.0,Male,White or Caucasian,Fully active,Best supportive care,MUTANT,112.79,292.0,,,0.69,SD,256.0,1
+000242,64.0,Male,White or Caucasian,Fully active,Best supportive care,WILD-TYPE,127.3,1510.0,556.0,high,0.58,PD,241.0,1
+000243,55.0,Male,White or Caucasian,Symptoms but ambulatory,Best supportive care,WILD-TYPE,106.35,338.0,,,0.45,PD,54.0,1
+000244,50.0,Female,White or Caucasian,Symptoms but ambulatory,Best supportive care,MUTANT,148.24,490.0,521.0,high,0.78,PD,25.0,1
+000245,57.0,Male,White or Caucasian,Fully active,Best supportive care,WILD-TYPE,146.63,193.0,249.0,high,0.51,PD,773.0,1
+000246,65.0,Female,White or Caucasian,Symptoms but ambulatory,panit. plus best supportive care,WILD-TYPE,130.52,241.0,419.0,high,0.54,PD,134.0,1
+000247,57.0,Male,White or Caucasian,Fully active,panit. plus best supportive care,MUTANT,146.63,377.0,441.0,high,0.74,PD,150.0,1
+000248,66.0,Male,White or Caucasian,Symptoms but ambulatory,panit. plus best supportive care,MUTANT,124.07,831.0,145.0,high,0.78,PD,69.0,1
+000250,60.0,Female,White or Caucasian,Symptoms but ambulatory,Best supportive care,WILD-TYPE,127.3,373.0,180.0,high,0.58,PD,528.0,1
+000251,58.0,Male,White or Caucasian,Fully active,panit. plus best supportive care,WILD-TYPE,154.69,450.0,,,0.49,PD,374.0,1
+000254,58.0,Male,White or Caucasian,Fully active,Best supportive care,MUTANT,135.35,154.0,,,0.62,,118.0,1
+000255,66.0,Female,White or Caucasian,In bed less than 50% of the time,panit. plus best supportive care,WILD-TYPE,124.07,774.0,559.0,high,0.61,PD,153.0,1
+000256,64.0,Male,White or Caucasian,Symptoms but ambulatory,Best supportive care,WILD-TYPE,127.3,530.0,570.0,high,0.58,PD,132.0,1
+000258,64.0,Female,White or Caucasian,Symptoms but ambulatory,panit. plus best supportive care,WILD-TYPE,141.8,357.0,365.0,high,0.61,PD,62.0,0
+000259,62.0,Female,White or Caucasian,Symptoms but ambulatory,Best supportive care,MUTANT,140.19,277.0,,,0.62,PD,108.0,1
+000260,47.0,Male,White or Caucasian,In bed less than 50% of the time,Best supportive care,WILD-TYPE,85.4,1117.0,704.0,high,0.58,PD,103.0,1
+000261,65.0,Male,White or Caucasian,Fully active,Best supportive care,MUTANT,151.47,209.0,,,0.62,PD,635.0,0
+000262,51.0,Male,White or Caucasian,Fully active,panit. plus best supportive care,MUTANT,132.13,288.0,297.0,high,0.78,PD,122.0,1
+000263,59.0,Female,White or Caucasian,Symptoms but ambulatory,panit. plus best supportive care,MUTANT,99.9,1385.0,647.0,high,0.81,PD,52.0,1
+000266,57.0,Female,White or Caucasian,Symptoms but ambulatory,panit. plus best supportive care,MUTANT,119.24,350.0,286.0,high,0.74,PD,101.0,1
+000267,67.0,Male,White or Caucasian,Fully active,panit. plus best supportive care,MUTANT,119.24,181.0,222.0,high,0.78,,45.0,1
+000268,64.0,Female,White or Caucasian,Symptoms but ambulatory,panit. plus best supportive care,WILD-TYPE,112.79,265.0,,,0.42,SD,286.0,1
+000269,59.0,Female,White or Caucasian,Symptoms but ambulatory,Best supportive care,MUTANT,125.68,518.0,219.0,high,0.78,PD,240.0,1
+000271,42.0,Male,White or Caucasian,Fully active,panit. plus best supportive care,WILD-TYPE,138.58,330.0,293.0,high,0.58,PR,1024.0,0
+000272,67.0,Male,White or Caucasian,In bed less than 50% of the time,Best supportive care,MUTANT,117.63,182.0,424.0,high,0.74,PD,95.0,1
+000273,59.0,Male,White or Caucasian,Symptoms but ambulatory,Best supportive care,WILD-TYPE,69.29,635.0,,,0.52,PD,35.0,1
+000275,72.0,Male,White or Caucasian,Symptoms but ambulatory,Best supportive care,WILD-TYPE,124.07,530.0,454.0,high,0.61,,244.0,1
+000278,79.0,Male,White or Caucasian,Symptoms but ambulatory,panit. plus best supportive care,WILD-TYPE,117.63,423.0,529.0,high,0.58,PD,86.0,1
+000280,63.0,Male,White or Caucasian,Fully active,panit. plus best supportive care,WILD-TYPE,149.85,419.0,514.0,high,0.58,PR,472.0,1
+000281,58.0,Male,White or Caucasian,Symptoms but ambulatory,panit. plus best supportive care,WILD-TYPE,103.13,553.0,,,0.49,PR,320.0,1
+000282,66.0,Male,White or Caucasian,Fully active,panit. plus best supportive care,MUTANT,136.96,233.0,,,0.62,SD,334.0,1
+000283,67.0,Male,White or Caucasian,In bed less than 50% of the time,Best supportive care,UNKNOWN,143.41,728.0,727.0,high,0.75,,1.0,1
+000284,68.0,Male,White or Caucasian,Fully active,panit. plus best supportive care,WILD-TYPE,122.46,207.0,670.0,high,0.51,PD,132.0,1
+000285,36.0,Female,White or Caucasian,Symptoms but ambulatory,panit. plus best supportive care,MUTANT,135.35,179.0,121.0,high,0.71,,37.0,0
+000286,61.0,Female,White or Caucasian,Fully active,panit. plus best supportive care,WILD-TYPE,117.63,542.0,445.0,high,0.58,SD,313.0,1
+000287,71.0,Female,White or Caucasian,Fully active,Best supportive care,WILD-TYPE,125.68,187.0,211.0,high,0.51,SD,358.0,1
+000288,72.0,Female,White or Caucasian,Symptoms but ambulatory,Best supportive care,WILD-TYPE,154.69,219.0,,,0.45,SD,261.0,1
+000289,66.0,Male,White or Caucasian,Symptoms but ambulatory,Best supportive care,WILD-TYPE,88.62,193.0,276.0,high,0.61,PD,107.0,1
+000290,65.0,Male,White or Caucasian,Fully active,panit. plus best supportive care,WILD-TYPE,141.8,948.0,,,0.45,SD,373.0,1
+000291,66.0,Male,White or Caucasian,Symptoms but ambulatory,Best supportive care,MUTANT,124.07,291.0,358.0,high,0.78,,60.0,1
+000292,64.0,Female,White or Caucasian,Fully active,panit. plus best supportive care,MUTANT,122.46,188.0,149.0,high,0.74,SD,881.0,0
+000293,53.0,Male,White or Caucasian,Fully active,panit. plus best supportive care,WILD-TYPE,125.68,840.0,,,0.42,SD,372.0,1
+000294,64.0,Male,White or Caucasian,Symptoms but ambulatory,Best supportive care,MUTANT,119.24,553.0,728.0,high,0.78,PD,63.0,1
+000296,54.0,Male,White or Caucasian,Symptoms but ambulatory,panit. plus best supportive care,MUTANT,153.08,380.0,513.0,high,0.78,PD,154.0,1
+000298,79.0,Male,White or Caucasian,In bed less than 50% of the time,panit. plus best supportive care,MUTANT,149.85,268.0,104.0,high,0.74,PD,60.0,1
+000299,81.0,Female,White or Caucasian,Symptoms but ambulatory,Best supportive care,WILD-TYPE,143.41,436.0,490.0,high,0.58,PD,497.0,1
+000300,77.0,Male,White or Caucasian,Fully active,panit. plus best supportive care,MUTANT,143.41,212.0,649.0,high,0.74,SD,113.0,0
+000301,52.0,Male,White or Caucasian,In bed less than 50% of the time,Best supportive care,WILD-TYPE,135.35,379.0,253.0,high,0.58,PD,228.0,1
+000303,77.0,Female,White or Caucasian,Symptoms but ambulatory,Best supportive care,WILD-TYPE,112.79,240.0,,,0.45,PD,157.0,1
+000304,73.0,Male,White or Caucasian,Symptoms but ambulatory,panit. plus best supportive care,MUTANT,125.68,233.0,661.0,high,0.71,SD,120.0,0
+000305,61.0,Female,White or Caucasian,Fully active,Best supportive care,MUTANT,128.91,227.0,310.0,high,0.74,PD,104.0,0
+000306,61.0,Male,White or Caucasian,Fully active,panit. plus best supportive care,WILD-TYPE,130.52,1358.0,,,0.49,SD,152.0,1
+000307,65.0,Male,White or Caucasian,In bed less than 50% of the time,Best supportive care,WILD-TYPE,109.57,162.0,204.0,high,0.51,,58.0,1
+000308,66.0,Male,White or Caucasian,Symptoms but ambulatory,panit. plus best supportive care,WILD-TYPE,116.02,614.0,560.0,high,0.58,PR,221.0,1
+000309,70.0,Male,White or Caucasian,Symptoms but ambulatory,Best supportive care,UNKNOWN,133.74,136.0,53.0,medium,0.52,PD,478.0,1
+000311,60.0,Female,White or Caucasian,Fully active,panit. plus best supportive care,MUTANT,125.68,236.0,96.0,medium,0.62,PD,273.0,1
+000312,72.0,Male,White or Caucasian,In bed less than 50% of the time,Best supportive care,WILD-TYPE,117.63,682.0,531.0,high,0.54,PD,70.0,1
+000313,77.0,Male,White or Caucasian,In bed less than 50% of the time,panit. plus best supportive care,MUTANT,104.74,661.0,808.0,high,0.78,,15.0,1
+000314,57.0,Male,White or Caucasian,Symptoms but ambulatory,Best supportive care,MUTANT,104.74,848.0,,,0.65,PD,75.0,1
+000315,69.0,Male,White or Caucasian,Symptoms but ambulatory,Best supportive care,MUTANT,140.19,115.0,249.0,high,0.71,SD,300.0,1
+000316,37.0,Female,White or Caucasian,In bed less than 50% of the time,panit. plus best supportive care,MUTANT,106.35,140.0,,,0.58,SD,311.0,1
+000317,58.0,Male,White or Caucasian,Fully active,panit. plus best supportive care,WILD-TYPE,138.58,255.0,,,0.45,SD,203.0,1
+000318,51.0,Female,White or Caucasian,Fully active,panit. plus best supportive care,MUTANT,130.52,230.0,,,0.58,SD,732.0,1
+000319,65.0,Female,White or Caucasian,In bed less than 50% of the time,Best supportive care,MUTANT,135.35,1252.0,,,0.69,,34.0,1
+000320,45.0,Male,White or Caucasian,In bed less than 50% of the time,Best supportive care,WILD-TYPE,106.35,1056.0,906.0,high,0.61,PD,121.0,1
+000321,60.0,Male,White or Caucasian,Symptoms but ambulatory,panit. plus best supportive care,MUTANT,162.75,406.0,218.0,high,0.78,PD,164.0,1
+000322,70.0,Female,White or Caucasian,Symptoms but ambulatory,panit. plus best supportive care,MUTANT,133.74,1889.0,680.0,high,0.81,,24.0,1
+000323,45.0,Female,White or Caucasian,Symptoms but ambulatory,Best supportive care,WILD-TYPE,98.29,791.0,,,0.49,PD,280.0,1
+000324,71.0,Male,White or Caucasian,In bed less than 50% of the time,Best supportive care,MUTANT,109.57,141.0,,,0.62,PD,635.0,1
+000325,63.0,Female,White or Caucasian,Symptoms but ambulatory,panit. plus best supportive care,WILD-TYPE,143.41,366.0,265.0,high,0.58,,16.0,1
+000326,78.0,Female,White or Caucasian,In bed less than 50% of the time,Best supportive care,MUTANT,119.24,317.0,366.0,high,0.81,PD,158.0,1
+000327,51.0,Female,White or Caucasian,Fully active,panit. plus best supportive care,WILD-TYPE,125.68,189.0,279.0,high,0.51,SD,273.0,1
+000329,48.0,Female,White or Caucasian,Symptoms but ambulatory,Best supportive care,WILD-TYPE,130.52,2350.0,487.0,high,0.58,PD,42.0,1
+000330,66.0,Female,White or Caucasian,In bed less than 50% of the time,Best supportive care,MUTANT,120.85,219.0,156.0,high,0.71,,82.0,1
+000331,55.0,Male,White or Caucasian,Fully active,Best supportive care,WILD-TYPE,164.36,288.0,200.0,high,0.54,PD,188.0,1
+000332,60.0,Male,White or Caucasian,Symptoms but ambulatory,Best supportive care,WILD-TYPE,133.74,337.0,512.0,high,0.58,PD,91.0,1
+000333,69.0,Male,White or Caucasian,In bed less than 50% of the time,Best supportive care,WILD-TYPE,109.57,1843.0,679.0,high,0.65,PD,41.0,1
+000334,80.0,Male,White or Caucasian,Fully active,Best supportive care,UNKNOWN,141.8,696.0,,,0.59,SD,148.0,1
+000335,48.0,Female,White or Caucasian,Symptoms but ambulatory,panit. plus best supportive care,WILD-TYPE,135.35,331.0,,,0.45,PR,709.0,1
+000336,67.0,Male,White or Caucasian,Symptoms but ambulatory,panit. plus best supportive care,WILD-TYPE,127.3,225.0,,,0.38,SD,841.0,0
+000338,39.0,Male,White or Caucasian,Fully active,Best supportive care,MUTANT,141.8,141.0,64.0,medium,0.62,,106.0,1
+000339,57.0,Male,White or Caucasian,Fully active,panit. plus best supportive care,MUTANT,159.52,222.0,120.0,high,0.71,PD,185.0,1
+000340,59.0,Male,White or Caucasian,Fully active,Best supportive care,WILD-TYPE,104.74,208.0,94.0,medium,0.42,PD,201.0,1
+000341,56.0,Male,White or Caucasian,Fully active,Best supportive care,WILD-TYPE,138.58,498.0,371.0,high,0.58,PD,108.0,1
+000342,61.0,Female,White or Caucasian,Symptoms but ambulatory,Best supportive care,MUTANT,114.41,205.0,,,0.65,PD,93.0,1
+000343,77.0,Male,White or Caucasian,In bed less than 50% of the time,Best supportive care,WILD-TYPE,143.41,587.0,374.0,high,0.58,,1.0,0
+000344,83.0,Female,White or Caucasian,Symptoms but ambulatory,Best supportive care,MUTANT,143.41,364.0,560.0,high,0.74,PD,231.0,1
+000345,63.0,Male,White or Caucasian,In bed less than 50% of the time,Best supportive care,WILD-TYPE,96.68,1219.0,1043.0,high,0.61,,22.0,1
+000347,42.0,Female,White or Caucasian,Fully active,Best supportive care,WILD-TYPE,156.3,214.0,,,0.38,PD,243.0,1
+000348,64.0,Male,White or Caucasian,Symptoms but ambulatory,Best supportive care,MUTANT,93.46,160.0,65.0,medium,0.65,,60.0,1
+000349,43.0,Male,Hispanic or Latino,Symptoms but ambulatory,Best supportive care,MUTANT,133.74,294.0,,,0.65,PD,85.0,1
+000350,60.0,Female,White or Caucasian,Symptoms but ambulatory,panit. plus best supportive care,UNKNOWN,107.96,186.0,75.0,medium,0.52,PR,191.0,1
+000353,70.0,Male,White or Caucasian,Fully active,panit. plus best supportive care,WILD-TYPE,132.13,1198.0,,,0.45,PR,519.0,1
+000354,69.0,Female,White or Caucasian,Symptoms but ambulatory,Best supportive care,WILD-TYPE,140.19,333.0,251.0,high,0.58,PD,193.0,1
+000356,41.0,Female,White or Caucasian,In bed less than 50% of the time,panit. plus best supportive care,MUTANT,61.23,229.0,568.0,high,0.74,PD,157.0,1
+000357,64.0,Female,White or Caucasian,Fully active,Best supportive care,WILD-TYPE,141.8,187.0,27.0,low,0.29,SD,706.0,0
+000358,49.0,Female,White or Caucasian,Symptoms but ambulatory,panit. plus best supportive care,WILD-TYPE,125.68,3265.0,,,0.45,SD,187.0,1
+000359,63.0,Female,White or Caucasian,Symptoms but ambulatory,Best supportive care,WILD-TYPE,130.52,273.0,168.0,high,0.58,PD,240.0,1
+000360,64.0,Male,White or Caucasian,Symptoms but ambulatory,panit. plus best supportive care,MUTANT,101.51,534.0,320.0,high,0.78,PD,144.0,0
+000361,72.0,Female,White or Caucasian,Symptoms but ambulatory,Best supportive care,WILD-TYPE,112.79,366.0,,,0.45,PD,365.0,1
+000362,53.0,Male,White or Caucasian,Fully active,panit. plus best supportive care,MUTANT,125.68,408.0,433.0,high,0.78,PD,137.0,1
+000363,69.0,Male,White or Caucasian,Fully active,panit. plus best supportive care,MUTANT,117.63,617.0,792.0,high,0.81,SD,142.0,1
+000364,66.0,Male,White or Caucasian,Fully active,panit. plus best supportive care,MUTANT,130.52,436.0,408.0,high,0.78,,104.0,1
+000366,73.0,Female,White or Caucasian,Symptoms but ambulatory,Best supportive care,MUTANT,112.79,290.0,,,0.65,PD,255.0,1
+000367,67.0,Male,White or Caucasian,Symptoms but ambulatory,Best supportive care,MUTANT,120.85,1692.0,662.0,high,0.78,PD,75.0,1
+000369,66.0,Male,White or Caucasian,In bed more than 50% of the time,Best supportive care,MUTANT,145.02,305.0,586.0,high,0.81,,37.0,1
+000370,56.0,Male,White or Caucasian,Fully active,panit. plus best supportive care,WILD-TYPE,96.68,449.0,510.0,high,0.54,PD,89.0,1
+000371,73.0,Male,White or Caucasian,In bed less than 50% of the time,panit. plus best supportive care,MUTANT,128.91,135.0,92.0,medium,0.58,,63.0,0
+000372,53.0,Male,White or Caucasian,Fully active,panit. plus best supportive care,WILD-TYPE,151.47,424.0,505.0,high,0.58,PD,62.0,0
+000373,76.0,Female,White or Caucasian,Fully active,panit. plus best supportive care,WILD-TYPE,141.8,535.0,442.0,high,0.58,PD,84.0,0
+000374,77.0,Female,White or Caucasian,Symptoms but ambulatory,panit. plus best supportive care,WILD-TYPE,109.57,810.0,,,0.45,PD,94.0,1
+000375,59.0,Male,White or Caucasian,Symptoms but ambulatory,panit. plus best supportive care,WILD-TYPE,140.19,109.0,156.0,high,0.51,,162.0,1
+000376,52.0,Female,White or Caucasian,Fully active,Best supportive care,WILD-TYPE,133.74,180.0,48.0,low,0.26,PD,759.0,0
+000377,76.0,Male,White or Caucasian,In bed less than 50% of the time,Best supportive care,UNKNOWN,122.46,463.0,214.0,high,0.68,PD,82.0,1
+000378,54.0,Male,White or Caucasian,Symptoms but ambulatory,Best supportive care,MUTANT,148.24,367.0,412.0,high,0.74,PD,288.0,1
+000379,47.0,Female,White or Caucasian,In bed less than 50% of the time,Best supportive care,MUTANT,128.91,210.0,348.0,high,0.74,PD,62.0,1
+000380,59.0,Male,White or Caucasian,Fully active,Best supportive care,MUTANT,149.85,347.0,373.0,high,0.74,PD,181.0,1
+000381,65.0,Male,White or Caucasian,Symptoms but ambulatory,Best supportive care,WILD-TYPE,119.24,423.0,,,0.45,,147.0,1
+000382,60.0,Male,White or Caucasian,Symptoms but ambulatory,Best supportive care,MUTANT,148.24,193.0,90.0,medium,0.65,PD,74.0,1
+000383,61.0,Female,White or Caucasian,Fully active,panit. plus best supportive care,WILD-TYPE,119.24,355.0,,,0.45,PD,273.0,1
+000384,71.0,Male,White or Caucasian,Symptoms but ambulatory,Best supportive care,MUTANT,132.13,2180.0,690.0,high,0.81,PD,58.0,1
+000385,71.0,Male,White or Caucasian,Fully active,Best supportive care,WILD-TYPE,109.57,1382.0,697.0,high,0.58,PD,97.0,1
+000387,57.0,Male,White or Caucasian,Fully active,Best supportive care,WILD-TYPE,136.96,403.0,490.0,high,0.58,PD,269.0,1
+000389,51.0,Male,Hispanic or Latino,Symptoms but ambulatory,panit. plus best supportive care,WILD-TYPE,125.68,2925.0,643.0,high,0.58,SD,191.0,1
+000390,60.0,Female,White or Caucasian,Symptoms but ambulatory,Best supportive care,MUTANT,156.3,203.0,249.0,high,0.71,,584.0,1
+000392,55.0,Male,White or Caucasian,Symptoms but ambulatory,Best supportive care,MUTANT,133.74,773.0,607.0,high,0.78,PD,107.0,1
+000393,59.0,Male,White or Caucasian,Symptoms but ambulatory,Best supportive care,WILD-TYPE,133.74,239.0,154.0,high,0.58,PD,383.0,1
+000394,52.0,Male,White or Caucasian,Symptoms but ambulatory,panit. plus best supportive care,WILD-TYPE,107.96,232.0,69.0,medium,0.45,PR,287.0,1
+000395,68.0,Male,White or Caucasian,Fully active,panit. plus best supportive care,WILD-TYPE,133.74,862.0,756.0,high,0.61,PR,226.0,1
+000396,70.0,Female,White or Caucasian,Fully active,panit. plus best supportive care,WILD-TYPE,116.02,322.0,608.0,high,0.61,SD,434.0,1
+000397,73.0,Male,White or Caucasian,Fully active,Best supportive care,WILD-TYPE,119.24,226.0,333.0,high,0.54,SD,675.0,0
+000398,51.0,Female,White or Caucasian,Fully active,panit. plus best supportive care,WILD-TYPE,141.8,198.0,293.0,high,0.51,SD,239.0,1
+000400,56.0,Male,White or Caucasian,Fully active,panit. plus best supportive care,UNKNOWN,143.41,207.0,310.0,high,0.61,PD,301.0,1
+000403,60.0,Female,White or Caucasian,Symptoms but ambulatory,Best supportive care,WILD-TYPE,109.57,172.0,,,0.42,PD,94.0,1
+000404,75.0,Male,White or Caucasian,Fully active,panit. plus best supportive care,WILD-TYPE,148.24,238.0,,,0.38,PD,437.0,1
+000405,61.0,Male,White or Caucasian,Symptoms but ambulatory,Best supportive care,WILD-TYPE,156.3,775.0,476.0,high,0.58,PD,311.0,1
+000406,65.0,Male,White or Caucasian,Fully active,panit. plus best supportive care,WILD-TYPE,146.63,734.0,,,0.49,PD,28.0,1
+000407,69.0,Male,White or Caucasian,Fully active,panit. plus best supportive care,MUTANT,135.35,237.0,521.0,high,0.78,PD,105.0,1
+000409,61.0,Female,White or Caucasian,Fully active,panit. plus best supportive care,WILD-TYPE,132.13,408.0,403.0,high,0.58,PR,373.0,0
+000410,66.0,Male,White or Caucasian,Symptoms but ambulatory,panit. plus best supportive care,WILD-TYPE,130.52,565.0,390.0,high,0.58,PD,190.0,1
+000414,46.0,Male,White or Caucasian,Symptoms but ambulatory,panit. plus best supportive care,WILD-TYPE,125.68,231.0,,,0.45,PD,143.0,1
+000415,50.0,Male,White or Caucasian,Symptoms but ambulatory,Best supportive care,WILD-TYPE,85.4,257.0,,,0.45,PD,184.0,1
+000416,65.0,Female,White or Caucasian,Symptoms but ambulatory,Best supportive care,MUTANT,119.24,249.0,128.0,high,0.74,PD,171.0,1
+000419,74.0,Female,White or Caucasian,Symptoms but ambulatory,Best supportive care,WILD-TYPE,119.24,606.0,381.0,high,0.58,PD,410.0,1
+000420,65.0,Male,White or Caucasian,In bed less than 50% of the time,panit. plus best supportive care,MUTANT,122.46,180.0,69.0,medium,0.62,PD,239.0,1
+000421,66.0,Male,White or Caucasian,Symptoms but ambulatory,panit. plus best supportive care,MUTANT,107.96,631.0,570.0,high,0.74,,70.0,1
+000422,54.0,Female,White or Caucasian,Fully active,Best supportive care,MUTANT,99.9,721.0,317.0,high,0.74,PD,108.0,1
+000423,50.0,Female,White or Caucasian,Symptoms but ambulatory,panit. plus best supportive care,MUTANT,125.68,282.0,44.0,low,0.53,PD,195.0,1
+000424,72.0,Female,White or Caucasian,In bed less than 50% of the time,Best supportive care,WILD-TYPE,119.24,204.0,252.0,high,0.54,,12.0,1
+000425,64.0,Male,White or Caucasian,Symptoms but ambulatory,Best supportive care,WILD-TYPE,145.02,286.0,317.0,high,0.54,PD,113.0,1
+000427,65.0,Male,White or Caucasian,Fully active,panit. plus best supportive care,WILD-TYPE,149.85,385.0,200.0,high,0.58,PD,303.0,1
+000429,50.0,Male,White or Caucasian,Fully active,panit. plus best supportive care,MUTANT,127.3,163.0,275.0,high,0.74,PD,174.0,1
+000430,70.0,Female,White or Caucasian,Symptoms but ambulatory,panit. plus best supportive care,WILD-TYPE,117.63,658.0,357.0,high,0.58,SD,157.0,1
+000431,72.0,Male,White or Caucasian,Symptoms but ambulatory,Best supportive care,WILD-TYPE,124.07,763.0,424.0,high,0.58,PD,194.0,1
+000433,50.0,Male,White or Caucasian,Symptoms but ambulatory,panit. plus best supportive care,WILD-TYPE,99.9,193.0,,,0.45,SD,465.0,1
+000435,59.0,Male,White or Caucasian,Fully active,Best supportive care,WILD-TYPE,146.63,246.0,,,0.45,PD,206.0,1
+000436,62.0,Male,White or Caucasian,Symptoms but ambulatory,panit. plus best supportive care,MUTANT,143.41,688.0,452.0,high,0.78,PD,186.0,1
+000437,69.0,Female,White or Caucasian,In bed less than 50% of the time,Best supportive care,UNKNOWN,,475.0,135.0,high,0.75,PD,92.0,0
+000439,69.0,Male,White or Caucasian,Symptoms but ambulatory,Best supportive care,WILD-TYPE,132.13,672.0,428.0,high,0.61,PD,334.0,1
+000440,59.0,Female,White or Caucasian,Symptoms but ambulatory,panit. plus best supportive care,WILD-TYPE,114.41,180.0,114.0,high,0.54,SD,211.0,1
+000442,57.0,Female,White or Caucasian,Symptoms but ambulatory,Best supportive care,MUTANT,106.35,317.0,332.0,high,0.78,PD,118.0,1
+000443,77.0,Female,White or Caucasian,Symptoms but ambulatory,panit. plus best supportive care,MUTANT,136.96,239.0,328.0,high,0.74,PD,64.0,1
+000444,63.0,Male,White or Caucasian,Fully active,Best supportive care,MUTANT,122.46,177.0,498.0,high,0.71,,307.0,1
+000445,72.0,Female,White or Caucasian,Fully active,Best supportive care,MUTANT,133.74,170.0,186.0,high,0.74,,729.0,0
+000446,62.0,Female,White or Caucasian,Symptoms but ambulatory,Best supportive care,MUTANT,146.63,296.0,351.0,high,0.74,PD,378.0,1
+000447,57.0,Male,White or Caucasian,Fully active,panit. plus best supportive care,WILD-TYPE,141.8,271.0,,,0.45,PR,679.0,0
+000448,57.0,Female,White or Caucasian,Symptoms but ambulatory,panit. plus best supportive care,WILD-TYPE,125.68,295.0,,,0.45,PD,344.0,1
+000450,55.0,Male,White or Caucasian,Fully active,panit. plus best supportive care,MUTANT,125.68,109.0,23.0,low,0.53,PD,168.0,1
+000451,79.0,Male,White or Caucasian,In bed less than 50% of the time,Best supportive care,MUTANT,117.63,165.0,242.0,high,0.78,PD,238.0,1
+000452,61.0,Male,White or Caucasian,Fully active,panit. plus best supportive care,WILD-TYPE,151.47,177.0,,,0.38,SD,392.0,1
+000453,67.0,Male,White or Caucasian,Fully active,Best supportive care,WILD-TYPE,133.74,1605.0,565.0,high,0.61,PD,310.0,1
+000454,81.0,Female,White or Caucasian,Symptoms but ambulatory,panit. plus best supportive care,UNKNOWN,127.3,583.0,433.0,high,0.64,,30.0,1
+000456,64.0,Male,White or Caucasian,Fully active,panit. plus best supportive care,WILD-TYPE,122.46,2150.0,843.0,high,0.61,,32.0,1
+000457,74.0,Female,White or Caucasian,Symptoms but ambulatory,Best supportive care,MUTANT,117.63,674.0,505.0,high,0.78,PD,94.0,1
+000458,71.0,Female,White or Caucasian,Symptoms but ambulatory,Best supportive care,WILD-TYPE,128.91,246.0,106.0,high,0.54,PD,501.0,1
+000459,32.0,Female,White or Caucasian,Fully active,Best supportive care,WILD-TYPE,140.19,157.0,107.0,high,0.51,PD,485.0,0
+000460,53.0,Female,White or Caucasian,Fully active,Best supportive care,UNKNOWN,98.29,4284.0,873.0,high,0.75,PD,64.0,1
+000461,76.0,Male,White or Caucasian,Fully active,panit. plus best supportive care,MUTANT,125.68,350.0,464.0,high,0.78,PD,175.0,1
+000462,66.0,Female,White or Caucasian,Fully active,panit. plus best supportive care,MUTANT,141.8,327.0,,,0.65,PD,504.0,1

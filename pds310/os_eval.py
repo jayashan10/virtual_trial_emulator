@@ -9,7 +9,7 @@ STUDY_COL = "STUDYID"
 
 def observed_os_df(adsl: pd.DataFrame, os_df: pd.DataFrame) -> pd.DataFrame:
     arm_col = None
-    for c in ["TRT", "ARM", "ARMCD"]:
+    for c in ["ATRT", "TRT", "ARM", "ARMCD"]:
         if c in adsl.columns:
             arm_col = c
             break

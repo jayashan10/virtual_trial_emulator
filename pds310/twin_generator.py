@@ -237,8 +237,8 @@ def _generate_arm_specific_twin(
         np.random.seed(seed)
     
     # Filter to treatment arm
-    if "TRT" in donor_pool.columns:
-        arm_pool = donor_pool[donor_pool["TRT"] == treatment_arm]
+    if "ATRT" in donor_pool.columns:
+        arm_pool = donor_pool[donor_pool["ATRT"] == treatment_arm]
         if len(arm_pool) < 2:
             raise ValueError(f"Insufficient patients in treatment arm '{treatment_arm}'")
     else:
@@ -248,7 +248,6 @@ def _generate_arm_specific_twin(
     twin = _generate_random_twin(arm_pool, seed=seed)
     
     # Ensure treatment arm is set correctly
-    twin["TRT"] = treatment_arm
     twin["ATRT"] = treatment_arm
     
     return twin
@@ -401,7 +400,7 @@ def get_twin_statistics(
                 }
     
     # Compare categorical distributions
-    categorical_features = ["SEX", "RAS_status", "TRT", "B_ECOG"]
+    categorical_features = ["SEX", "RAS_status", "ATRT", "B_ECOG"]
     
     for feature in categorical_features:
         if feature in twins_df.columns and feature in real_profiles.columns:

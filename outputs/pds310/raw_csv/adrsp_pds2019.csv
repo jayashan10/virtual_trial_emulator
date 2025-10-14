@@ -1,0 +1,2303 @@
+SUBJID,RSRESP,VISITDY,VISIT,RSCONFYN,RSTRESP,RSNTRESP,RSREADER
+000001,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000001,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000001,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000001,Unable to evaluate,50.0,Week 8,,Stable disease,Stable disease,Radiologist 1
+000001,Unable to evaluate,50.0,Week 8,,Stable disease,Stable disease,Radiologist 2
+000001,Unable to evaluate,50.0,Week 8,,Stable disease,Stable disease,Oncologist
+000001,Progressive disease,85.0,Week 12,,Stable disease,Progressive disease,Radiologist 1
+000001,Progressive disease,85.0,Week 12,,Stable disease,Progressive disease,Radiologist 2
+000001,Progressive disease,85.0,Week 12,,Stable disease,Progressive disease,Oncologist
+000001,Progressive disease,112.0,Week 16,,Stable disease,Progressive disease,Radiologist 1
+000001,Progressive disease,112.0,Week 16,,Stable disease,Progressive disease,Radiologist 2
+000001,Progressive disease,112.0,Week 16,,Stable disease,Progressive disease,Oncologist
+000001,Progressive disease,163.0,Week 24,,Stable disease,Progressive disease,Radiologist 1
+000001,Progressive disease,163.0,Week 24,,Progressive disease,Progressive disease,Radiologist 2
+000001,Progressive disease,163.0,Week 24,,Stable disease,Progressive disease,Oncologist
+000002,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000002,Unable to evaluate,30.0,Unscheduled visit 1,,Stable disease,Stable disease,Oncologist
+000002,Progressive disease,58.0,Week 8,,Stable disease,Progressive disease,Oncologist
+000004,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000004,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000004,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000004,Unable to evaluate,32.0,Unscheduled visit 1,,Stable disease,Stable disease,Radiologist 1
+000004,Unable to evaluate,32.0,Unscheduled visit 1,,Stable disease,Not applicable,Radiologist 2
+000004,Unable to evaluate,32.0,Unscheduled visit 1,,Stable disease,Stable disease,Oncologist
+000005,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000005,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000005,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000005,Unable to evaluate,7.0,Unscheduled visit 1,,Stable disease,Stable disease,Radiologist 1
+000005,Unable to evaluate,7.0,Unscheduled visit 1,,Stable disease,Stable disease,Radiologist 2
+000005,Unable to evaluate,7.0,Unscheduled visit 1,,Stable disease,Stable disease,Oncologist
+000006,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000006,Stable disease,57.0,Week 8,,Stable disease,Stable disease,Oncologist
+000006,Stable disease,85.0,Week 12,,Stable disease,Stable disease,Oncologist
+000006,Progressive disease,113.0,Week 16,,Stable disease,Progressive disease,Oncologist
+000006,Progressive disease,169.0,Week 24,,Stable disease,Progressive disease,Oncologist
+000006,Progressive disease,225.0,Week 32,,Progressive disease,Progressive disease,Oncologist
+000008,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000008,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000008,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000008,Progressive disease,36.0,Unscheduled visit 1,,Stable disease,Progressive disease,Radiologist 1
+000008,Progressive disease,36.0,Unscheduled visit 1,,Progressive disease,Progressive disease,Radiologist 2
+000008,Progressive disease,36.0,Unscheduled visit 1,,Stable disease,Progressive disease,Oncologist
+000010,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000010,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000010,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000010,Progressive disease,54.0,Week 8,,Progressive disease,Stable disease,Radiologist 1
+000010,Progressive disease,54.0,Week 8,,Progressive disease,Stable disease,Radiologist 2
+000010,Progressive disease,54.0,Week 8,,Progressive disease,Stable disease,Oncologist
+000010,Progressive disease,82.0,Week 12,,Progressive disease,Stable disease,Radiologist 1
+000010,Progressive disease,82.0,Week 12,,Progressive disease,Stable disease,Radiologist 2
+000010,Progressive disease,82.0,Week 12,,Progressive disease,Stable disease,Oncologist
+000010,Progressive disease,110.0,Week 16,,Progressive disease,Stable disease,Radiologist 1
+000010,Progressive disease,110.0,Week 16,,Progressive disease,Stable disease,Radiologist 2
+000010,Progressive disease,110.0,Week 16,,Progressive disease,Stable disease,Oncologist
+000011,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000011,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000011,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000011,Progressive disease,60.0,Week 8,,Progressive disease,Stable disease,Radiologist 1
+000011,Progressive disease,60.0,Week 8,,Progressive disease,Stable disease,Radiologist 2
+000011,Progressive disease,60.0,Week 8,,Progressive disease,Stable disease,Oncologist
+000011,Progressive disease,88.0,Week 12,,Progressive disease,Stable disease,Radiologist 1
+000011,Progressive disease,88.0,Week 12,,Progressive disease,Stable disease,Radiologist 2
+000011,Progressive disease,88.0,Week 12,,Progressive disease,Stable disease,Oncologist
+000013,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000013,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000013,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000013,Unable to evaluate,50.0,Week 8,,Stable disease,Stable disease,Radiologist 1
+000013,Unable to evaluate,50.0,Week 8,,Stable disease,Stable disease,Radiologist 2
+000013,Unable to evaluate,50.0,Week 8,,Stable disease,Stable disease,Oncologist
+000013,Stable disease,87.0,Week 12,,Stable disease,Stable disease,Radiologist 1
+000013,Stable disease,87.0,Week 12,,Stable disease,Stable disease,Radiologist 2
+000013,Stable disease,87.0,Week 12,,Stable disease,Stable disease,Oncologist
+000013,Stable disease,115.0,Week 16,,Stable disease,Stable disease,Radiologist 1
+000013,Stable disease,115.0,Week 16,,Stable disease,Stable disease,Radiologist 2
+000013,Stable disease,115.0,Week 16,,Stable disease,Stable disease,Oncologist
+000013,Progressive disease,171.0,Week 24,,Stable disease,Progressive disease,Radiologist 1
+000013,Progressive disease,171.0,Week 24,,Stable disease,Stable disease,Radiologist 2
+000013,Progressive disease,171.0,Week 24,,Stable disease,Progressive disease,Oncologist
+000013,Progressive disease,213.0,Week 32,,Progressive disease,Progressive disease,Radiologist 1
+000013,Progressive disease,213.0,Week 32,,Stable disease,Progressive disease,Radiologist 2
+000013,Progressive disease,213.0,Week 32,,Progressive disease,Progressive disease,Oncologist
+000015,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000015,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000015,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000015,Unable to evaluate,15.0,Unscheduled visit 1,,Unable to evaluate,Unable to evaluate,Radiologist 1
+000015,Unable to evaluate,15.0,Unscheduled visit 1,,Unable to evaluate,Unable to evaluate,Radiologist 2
+000015,Unable to evaluate,15.0,Unscheduled visit 1,,Stable disease,Stable disease,Oncologist
+000016,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000016,Stable disease,52.0,Week 8,,Stable disease,Stable disease,Oncologist
+000016,Stable disease,78.0,Week 12,,Stable disease,Stable disease,Oncologist
+000016,Stable disease,107.0,Week 16,,Stable disease,Stable disease,Oncologist
+000016,Progressive disease,163.0,Week 24,,Stable disease,Progressive disease,Oncologist
+000016,Progressive disease,219.0,Week 32,,Unable to evaluate,Progressive disease,Oncologist
+000017,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000017,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000017,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000018,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000018,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000018,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000018,Progressive disease,57.0,Week 8,,Progressive disease,Progressive disease,Radiologist 1
+000018,Progressive disease,57.0,Week 8,,Progressive disease,Progressive disease,Radiologist 2
+000018,Progressive disease,57.0,Week 8,,Progressive disease,Progressive disease,Oncologist
+000019,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000019,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000019,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000019,Progressive disease,53.0,Safety follow-Up,,Progressive disease,Progressive disease,Radiologist 2
+000019,Progressive disease,55.0,Safety follow-Up,,Progressive disease,Not applicable,Radiologist 1
+000019,Progressive disease,55.0,Safety follow-Up,,Progressive disease,Not applicable,Oncologist
+000020,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000020,Partial response,48.0,Week 8,Y,Partial response,Stable disease,Oncologist
+000020,Partial response,111.0,Week 16,N,Partial response,Stable disease,Oncologist
+000020,Progressive disease,167.0,Week 24,,Progressive disease,Stable disease,Oncologist
+000020,Progressive disease,223.0,Week 32,,Progressive disease,Progressive disease,Oncologist
+000021,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000021,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000021,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000021,Partial response,53.0,Week 8,,Partial response,Stable disease,Radiologist 1
+000021,Partial response,53.0,Week 8,,Partial response,Stable disease,Radiologist 2
+000021,Partial response,53.0,Week 8,Y,Partial response,Stable disease,Oncologist
+000021,Partial response,81.0,Week 12,,Partial response,Stable disease,Radiologist 1
+000021,Partial response,81.0,Week 12,,Partial response,Stable disease,Radiologist 2
+000021,Partial response,81.0,Week 12,Y,Partial response,Stable disease,Oncologist
+000021,Partial response,109.0,Week 16,,Partial response,Stable disease,Radiologist 1
+000021,Partial response,109.0,Week 16,,Partial response,Stable disease,Radiologist 2
+000021,Partial response,109.0,Week 16,N,Partial response,Stable disease,Oncologist
+000021,Progressive disease,165.0,Week 24,,Progressive disease,Stable disease,Radiologist 1
+000021,Progressive disease,165.0,Week 24,,Progressive disease,Progressive disease,Radiologist 2
+000021,Progressive disease,165.0,Week 24,,Progressive disease,Stable disease,Oncologist
+000021,Progressive disease,189.0,Safety follow-Up,,Progressive disease,Progressive disease,Radiologist 1
+000021,Progressive disease,189.0,Safety follow-Up,,Progressive disease,Progressive disease,Radiologist 2
+000021,Progressive disease,189.0,Safety follow-Up,,Progressive disease,Progressive disease,Oncologist
+000022,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000022,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000022,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000022,Stable disease,62.0,Week 8,,Stable disease,Stable disease,Radiologist 1
+000022,Stable disease,62.0,Week 8,,Stable disease,Not applicable,Radiologist 2
+000022,Stable disease,62.0,Week 8,,Stable disease,Stable disease,Oncologist
+000024,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000024,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000024,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000025,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000025,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000025,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000025,Progressive disease,58.0,Week 8,,Progressive disease,Progressive disease,Radiologist 1
+000025,Progressive disease,58.0,Week 8,,Progressive disease,Progressive disease,Radiologist 2
+000025,Progressive disease,58.0,Week 8,,Progressive disease,Progressive disease,Oncologist
+000026,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000026,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000026,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000026,Progressive disease,55.0,Week 8,,Stable disease,Progressive disease,Radiologist 1
+000026,Progressive disease,55.0,Week 8,,Progressive disease,Progressive disease,Radiologist 2
+000026,Progressive disease,55.0,Week 8,,Stable disease,Progressive disease,Oncologist
+000026,Progressive disease,90.0,Week 12,,Progressive disease,Progressive disease,Radiologist 1
+000026,Progressive disease,90.0,Week 12,,Progressive disease,Progressive disease,Radiologist 2
+000026,Progressive disease,90.0,Week 12,,Progressive disease,Progressive disease,Oncologist
+000027,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000027,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000027,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000027,Stable disease,55.0,Week 8,,Not applicable,Stable disease,Radiologist 1
+000027,Stable disease,55.0,Week 8,,Stable disease,Stable disease,Radiologist 2
+000027,Stable disease,55.0,Week 8,,Not applicable,Stable disease,Oncologist
+000027,Stable disease,117.0,Week 16,,Not applicable,Stable disease,Radiologist 1
+000027,Stable disease,117.0,Week 16,,Stable disease,Stable disease,Radiologist 2
+000027,Stable disease,117.0,Week 16,,Not applicable,Stable disease,Oncologist
+000027,Stable disease,173.0,Week 24,,Not applicable,Stable disease,Radiologist 1
+000027,Stable disease,173.0,Week 24,,Stable disease,Stable disease,Radiologist 2
+000027,Stable disease,173.0,Week 24,,Not applicable,Stable disease,Oncologist
+000027,Progressive disease,229.0,Week 32,,Not applicable,Progressive disease,Radiologist 1
+000027,Progressive disease,229.0,Week 32,,Stable disease,Progressive disease,Radiologist 2
+000027,Progressive disease,229.0,Week 32,,Not applicable,Progressive disease,Oncologist
+000028,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000028,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000028,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000028,Stable disease,56.0,Week 8,,Stable disease,Stable disease,Radiologist 1
+000028,Stable disease,56.0,Week 8,,Stable disease,Stable disease,Radiologist 2
+000028,Stable disease,56.0,Week 8,,Stable disease,Stable disease,Oncologist
+000028,Stable disease,85.0,Week 12,,Stable disease,Stable disease,Radiologist 1
+000028,Stable disease,85.0,Week 12,,Stable disease,Stable disease,Radiologist 2
+000028,Stable disease,85.0,Week 12,,Stable disease,Stable disease,Oncologist
+000028,Stable disease,113.0,Week 16,,Stable disease,Stable disease,Radiologist 1
+000028,Stable disease,113.0,Week 16,,Stable disease,Stable disease,Radiologist 2
+000028,Stable disease,113.0,Week 16,,Stable disease,Stable disease,Oncologist
+000028,Stable disease,168.0,Week 24,,Stable disease,Stable disease,Radiologist 1
+000028,Stable disease,168.0,Week 24,,Stable disease,Stable disease,Radiologist 2
+000028,Stable disease,168.0,Week 24,,Stable disease,Stable disease,Oncologist
+000029,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000029,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000029,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000029,Progressive disease,57.0,Week 8,,Progressive disease,Stable disease,Radiologist 1
+000029,Progressive disease,57.0,Week 8,,Progressive disease,Progressive disease,Radiologist 2
+000029,Progressive disease,57.0,Week 8,,Progressive disease,Stable disease,Oncologist
+000030,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000030,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000030,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000030,Progressive disease,63.0,Week 8,,Stable disease,Progressive disease,Radiologist 1
+000030,Progressive disease,63.0,Week 8,,Stable disease,Stable disease,Radiologist 2
+000030,Progressive disease,63.0,Week 8,,Stable disease,Progressive disease,Oncologist
+000031,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000031,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000031,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000031,Progressive disease,51.0,Week 8,,Progressive disease,Progressive disease,Radiologist 1
+000031,Progressive disease,51.0,Week 8,,Progressive disease,Progressive disease,Radiologist 2
+000031,Progressive disease,51.0,Week 8,,Progressive disease,Progressive disease,Oncologist
+000034,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000034,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000034,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000034,Progressive disease,51.0,Week 8,,Unable to evaluate,Progressive disease,Radiologist 1
+000034,Progressive disease,51.0,Week 8,,Unable to evaluate,Unable to evaluate,Radiologist 2
+000034,Progressive disease,51.0,Week 8,,Unable to evaluate,Progressive disease,Oncologist
+000036,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000036,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000036,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000036,Stable disease,55.0,Week 8,,Stable disease,Stable disease,Radiologist 1
+000036,Stable disease,55.0,Week 8,,Stable disease,Stable disease,Radiologist 2
+000036,Stable disease,55.0,Week 8,,Stable disease,Stable disease,Oncologist
+000036,Progressive disease,89.0,Week 12,,Stable disease,Stable disease,Radiologist 1
+000036,Progressive disease,89.0,Week 12,,Progressive disease,Progressive disease,Radiologist 2
+000036,Progressive disease,89.0,Week 12,,Stable disease,Stable disease,Oncologist
+000037,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000037,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000037,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000037,Stable disease,51.0,Week 8,,Stable disease,Stable disease,Radiologist 1
+000037,Stable disease,51.0,Week 8,,Stable disease,Stable disease,Radiologist 2
+000037,Stable disease,51.0,Week 8,,Stable disease,Stable disease,Oncologist
+000038,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000038,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000038,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000038,Partial response,52.0,Week 8,,Partial response,Stable disease,Radiologist 1
+000038,Partial response,52.0,Week 8,,Partial response,Stable disease,Radiologist 2
+000038,Partial response,52.0,Week 8,Y,Partial response,Stable disease,Oncologist
+000038,Partial response,82.0,Week 12,,Partial response,Stable disease,Radiologist 1
+000038,Partial response,82.0,Week 12,,Partial response,Stable disease,Radiologist 2
+000038,Partial response,82.0,Week 12,Y,Partial response,Stable disease,Oncologist
+000038,Partial response,107.0,Week 16,,Partial response,Stable disease,Radiologist 1
+000038,Partial response,107.0,Week 16,,Partial response,Stable disease,Radiologist 2
+000038,Partial response,107.0,Week 16,N,Partial response,Stable disease,Oncologist
+000039,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000039,Progressive disease,51.0,Week 8,,Stable disease,Progressive disease,Oncologist
+000040,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000040,Stable disease,57.0,Week 8,,Stable disease,Stable disease,Oncologist
+000040,Stable disease,85.0,Week 12,,Stable disease,Stable disease,Oncologist
+000040,Stable disease,113.0,Week 16,,Stable disease,Stable disease,Oncologist
+000040,Progressive disease,169.0,Week 24,,Progressive disease,Progressive disease,Oncologist
+000040,Progressive disease,225.0,Week 32,,Progressive disease,Progressive disease,Oncologist
+000041,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000041,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000041,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000041,Progressive disease,51.0,Week 8,,Stable disease,Stable disease,Radiologist 1
+000041,Progressive disease,51.0,Week 8,,Progressive disease,Progressive disease,Radiologist 2
+000041,Progressive disease,51.0,Week 8,,Stable disease,Stable disease,Oncologist
+000042,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000042,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000042,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000042,Progressive disease,49.0,Week 8,,Progressive disease,Not applicable,Radiologist 1
+000042,Progressive disease,49.0,Week 8,,Progressive disease,Progressive disease,Radiologist 2
+000042,Progressive disease,49.0,Week 8,,Progressive disease,Not applicable,Oncologist
+000043,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000043,Progressive disease,52.0,Week 8,,Stable disease,Progressive disease,Oncologist
+000044,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000044,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000044,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000044,Progressive disease,50.0,Week 8,,Progressive disease,Progressive disease,Radiologist 1
+000044,Progressive disease,50.0,Week 8,,Progressive disease,Stable disease,Radiologist 2
+000044,Progressive disease,50.0,Week 8,,Progressive disease,Progressive disease,Oncologist
+000045,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000045,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000045,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000045,Stable disease,56.0,Week 8,,Stable disease,Stable disease,Radiologist 1
+000045,Stable disease,56.0,Week 8,,Stable disease,Stable disease,Radiologist 2
+000045,Stable disease,56.0,Week 8,,Stable disease,Stable disease,Oncologist
+000045,Unable to evaluate,84.0,Week 12,,Partial response,Unable to evaluate,Radiologist 1
+000045,Unable to evaluate,84.0,Week 12,,Partial response,Unable to evaluate,Radiologist 2
+000045,Unable to evaluate,84.0,Week 12,,Partial response,Unable to evaluate,Oncologist
+000045,Unable to evaluate,112.0,Week 16,,Partial response,Unable to evaluate,Radiologist 1
+000045,Unable to evaluate,112.0,Week 16,,Partial response,Unable to evaluate,Radiologist 2
+000045,Unable to evaluate,112.0,Week 16,,Partial response,Unable to evaluate,Oncologist
+000045,Progressive disease,168.0,Week 24,,Progressive disease,Unable to evaluate,Radiologist 1
+000045,Progressive disease,168.0,Week 24,,Progressive disease,Unable to evaluate,Radiologist 2
+000045,Progressive disease,168.0,Week 24,,Progressive disease,Unable to evaluate,Oncologist
+000045,Progressive disease,224.0,Week 32,,Progressive disease,Unable to evaluate,Radiologist 1
+000045,Progressive disease,224.0,Week 32,,Progressive disease,Unable to evaluate,Radiologist 2
+000045,Progressive disease,224.0,Week 32,,Progressive disease,Unable to evaluate,Oncologist
+000046,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000046,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000046,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000048,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000048,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000048,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000048,Progressive disease,56.0,Week 8,,Stable disease,Progressive disease,Radiologist 1
+000048,Progressive disease,56.0,Week 8,,Stable disease,Progressive disease,Radiologist 2
+000048,Progressive disease,56.0,Week 8,,Stable disease,Progressive disease,Oncologist
+000048,Progressive disease,87.0,Week 12,,Progressive disease,Progressive disease,Radiologist 1
+000048,Progressive disease,87.0,Week 12,,Progressive disease,Progressive disease,Radiologist 2
+000048,Progressive disease,87.0,Week 12,,Stable disease,Progressive disease,Oncologist
+000049,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000049,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000049,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000051,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000051,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000051,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000051,Progressive disease,53.0,Week 8,,Progressive disease,Progressive disease,Radiologist 1
+000051,Progressive disease,53.0,Week 8,,Progressive disease,Progressive disease,Radiologist 2
+000051,Progressive disease,53.0,Week 8,,Progressive disease,Progressive disease,Oncologist
+000052,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000052,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000052,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000052,Progressive disease,23.0,Unscheduled visit 1,,Progressive disease,Progressive disease,Radiologist 1
+000052,Progressive disease,23.0,Unscheduled visit 1,,Stable disease,Progressive disease,Radiologist 2
+000052,Progressive disease,23.0,Unscheduled visit 1,,Progressive disease,Progressive disease,Oncologist
+000054,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000054,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000054,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000054,Progressive disease,59.0,Week 8,,Not applicable,Progressive disease,Radiologist 1
+000054,Progressive disease,59.0,Week 8,,Unable to evaluate,Unable to evaluate,Radiologist 2
+000054,Progressive disease,59.0,Week 8,,Not applicable,Progressive disease,Oncologist
+000055,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000055,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000055,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000055,Progressive disease,1.0,Unscheduled visit 1,,Stable disease,Stable disease,Radiologist 1
+000055,Progressive disease,1.0,Unscheduled visit 1,,Stable disease,Stable disease,Radiologist 2
+000055,Progressive disease,1.0,Unscheduled visit 1,,Stable disease,Stable disease,Oncologist
+000056,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000056,Progressive disease,40.0,Week 8,,Stable disease,Progressive disease,Oncologist
+000057,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000057,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000057,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000057,Progressive disease,53.0,Week 8,,Progressive disease,Progressive disease,Radiologist 1
+000057,Progressive disease,53.0,Week 8,,Progressive disease,Progressive disease,Radiologist 2
+000057,Progressive disease,53.0,Week 8,,Progressive disease,Progressive disease,Oncologist
+000058,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000058,Stable disease,53.0,Week 8,,Stable disease,Stable disease,Oncologist
+000059,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000059,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000059,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000059,Progressive disease,51.0,Week 8,,Progressive disease,Progressive disease,Radiologist 1
+000059,Progressive disease,51.0,Week 8,,Progressive disease,Progressive disease,Radiologist 2
+000059,Progressive disease,51.0,Week 8,,Progressive disease,Progressive disease,Oncologist
+000060,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000060,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000060,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000061,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000061,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000061,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000062,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000062,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000062,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000063,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000063,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000063,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000063,Unable to evaluate,25.0,Unscheduled visit 1,,Stable disease,Stable disease,Radiologist 1
+000063,Unable to evaluate,25.0,Unscheduled visit 1,,Stable disease,Stable disease,Radiologist 2
+000063,Unable to evaluate,25.0,Unscheduled visit 1,,Stable disease,Stable disease,Oncologist
+000064,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000064,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000064,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000064,Progressive disease,42.0,Week 8,,Stable disease,Progressive disease,Radiologist 1
+000064,Progressive disease,42.0,Week 8,,Progressive disease,Progressive disease,Radiologist 2
+000064,Progressive disease,42.0,Week 8,,Stable disease,Progressive disease,Oncologist
+000065,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000065,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000065,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000065,Progressive disease,60.0,Week 8,,Progressive disease,Progressive disease,Radiologist 1
+000065,Progressive disease,60.0,Week 8,,Stable disease,Not applicable,Radiologist 2
+000065,Progressive disease,60.0,Week 8,,Progressive disease,Progressive disease,Oncologist
+000065,Progressive disease,83.0,Unscheduled visit 1,,Progressive disease,Progressive disease,Radiologist 1
+000065,Progressive disease,83.0,Unscheduled visit 1,,Progressive disease,Not applicable,Radiologist 2
+000065,Progressive disease,83.0,Unscheduled visit 1,,Progressive disease,Progressive disease,Oncologist
+000066,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000066,Progressive disease,21.0,Unscheduled visit 1,,Stable disease,Progressive disease,Oncologist
+000066,Progressive disease,49.0,Safety follow-Up,,Stable disease,Progressive disease,Oncologist
+000067,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000067,Partial response,56.0,Week 8,Y,Partial response,Stable disease,Oncologist
+000067,Partial response,84.0,Week 12,Y,Partial response,Stable disease,Oncologist
+000067,Partial response,112.0,Week 16,N,Partial response,Stable disease,Oncologist
+000067,Progressive disease,168.0,Week 24,,Progressive disease,Progressive disease,Oncologist
+000067,Progressive disease,224.0,Week 32,,Progressive disease,Progressive disease,Oncologist
+000068,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000068,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000068,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000069,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000069,Stable disease,51.0,Week 8,,Stable disease,Stable disease,Oncologist
+000069,Stable disease,82.0,Week 12,,Stable disease,Stable disease,Oncologist
+000069,Progressive disease,109.0,Week 16,,Stable disease,Stable disease,Oncologist
+000070,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000070,Progressive disease,55.0,Week 8,,Progressive disease,Stable disease,Oncologist
+000070,Progressive disease,83.0,Week 12,,Progressive disease,Stable disease,Oncologist
+000070,Progressive disease,114.0,Week 16,,Progressive disease,Stable disease,Oncologist
+000071,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000071,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000071,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000072,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000072,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000072,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000072,Progressive disease,56.0,Week 8,,Progressive disease,Progressive disease,Radiologist 1
+000072,Progressive disease,56.0,Week 8,,Stable disease,Progressive disease,Radiologist 2
+000072,Progressive disease,56.0,Week 8,,Progressive disease,Progressive disease,Oncologist
+000073,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000073,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000073,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000073,Progressive disease,50.0,Week 8,,Progressive disease,Stable disease,Radiologist 1
+000073,Progressive disease,50.0,Week 8,,Progressive disease,Stable disease,Radiologist 2
+000073,Progressive disease,50.0,Week 8,,Progressive disease,Stable disease,Oncologist
+000074,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000074,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000074,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000074,Progressive disease,22.0,Unscheduled visit 1,,Progressive disease,Progressive disease,Radiologist 1
+000074,Progressive disease,22.0,Unscheduled visit 1,,Stable disease,Progressive disease,Radiologist 2
+000074,Progressive disease,22.0,Unscheduled visit 1,,Progressive disease,Progressive disease,Oncologist
+000075,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000075,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000075,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000075,Progressive disease,63.0,Week 8,,Progressive disease,Progressive disease,Radiologist 1
+000075,Progressive disease,63.0,Week 8,,Progressive disease,Stable disease,Radiologist 2
+000075,Progressive disease,63.0,Week 8,,Progressive disease,Progressive disease,Oncologist
+000076,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000076,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000076,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000076,Progressive disease,22.0,Unscheduled visit 1,,Progressive disease,Progressive disease,Radiologist 1
+000076,Progressive disease,22.0,Unscheduled visit 1,,Progressive disease,Progressive disease,Radiologist 2
+000076,Progressive disease,22.0,Unscheduled visit 1,,Progressive disease,Progressive disease,Oncologist
+000078,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000078,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000078,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000078,Progressive disease,50.0,Week 8,,Progressive disease,Progressive disease,Radiologist 1
+000078,Progressive disease,50.0,Week 8,,Progressive disease,Progressive disease,Radiologist 2
+000078,Progressive disease,50.0,Week 8,,Progressive disease,Progressive disease,Oncologist
+000079,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000079,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000079,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000079,Stable disease,52.0,Week 8,,Stable disease,Stable disease,Radiologist 1
+000079,Stable disease,52.0,Week 8,,Stable disease,Stable disease,Radiologist 2
+000079,Stable disease,52.0,Week 8,,Stable disease,Stable disease,Oncologist
+000079,Progressive disease,84.0,Week 12,,Stable disease,Progressive disease,Radiologist 1
+000079,Progressive disease,84.0,Week 12,,Progressive disease,Progressive disease,Radiologist 2
+000079,Progressive disease,84.0,Week 12,,Stable disease,Progressive disease,Oncologist
+000081,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000081,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000081,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000082,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000082,Stable disease,60.0,Week 8,,Stable disease,Stable disease,Oncologist
+000082,Stable disease,88.0,Week 12,,Stable disease,Stable disease,Oncologist
+000082,Stable disease,116.0,Week 16,,Stable disease,Stable disease,Oncologist
+000082,Stable disease,172.0,Week 24,,Stable disease,Stable disease,Oncologist
+000082,Progressive disease,228.0,Week 32,,Stable disease,Stable disease,Oncologist
+000082,Progressive disease,284.0,Week 40,,Stable disease,Stable disease,Oncologist
+000083,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000083,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000083,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000083,Progressive disease,57.0,Week 8,,Not applicable,Stable disease,Radiologist 1
+000083,Progressive disease,57.0,Week 8,,Stable disease,Stable disease,Radiologist 2
+000083,Progressive disease,57.0,Week 8,,Not applicable,Stable disease,Oncologist
+000084,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000084,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000084,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000085,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000085,Progressive disease,7.0,Unscheduled visit 1,,Stable disease,Stable disease,Oncologist
+000087,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000087,Progressive disease,57.0,Week 8,,Stable disease,Progressive disease,Oncologist
+000087,Progressive disease,85.0,Week 12,,Progressive disease,Stable disease,Oncologist
+000089,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000089,Stable disease,51.0,Week 8,,Stable disease,Stable disease,Oncologist
+000089,Stable disease,80.0,Week 12,,Stable disease,Stable disease,Oncologist
+000089,Progressive disease,108.0,Week 16,,Stable disease,Progressive disease,Oncologist
+000089,Progressive disease,161.0,Week 24,,Progressive disease,Progressive disease,Oncologist
+000090,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000090,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000090,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000090,Progressive disease,57.0,Week 8,,Progressive disease,Progressive disease,Radiologist 1
+000090,Progressive disease,57.0,Week 8,,Progressive disease,Progressive disease,Radiologist 2
+000090,Progressive disease,57.0,Week 8,,Progressive disease,Progressive disease,Oncologist
+000091,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000091,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000091,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000091,Progressive disease,53.0,Week 8,,Progressive disease,Progressive disease,Radiologist 1
+000091,Progressive disease,53.0,Week 8,,Stable disease,Progressive disease,Radiologist 2
+000091,Progressive disease,53.0,Week 8,,Progressive disease,Progressive disease,Oncologist
+000092,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000092,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000092,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000092,Stable disease,57.0,Week 8,,Stable disease,Stable disease,Radiologist 1
+000092,Stable disease,57.0,Week 8,,Stable disease,Stable disease,Radiologist 2
+000092,Stable disease,57.0,Week 8,,Stable disease,Stable disease,Oncologist
+000092,Progressive disease,85.0,Week 12,,Stable disease,Stable disease,Radiologist 1
+000092,Progressive disease,85.0,Week 12,,Stable disease,Stable disease,Radiologist 2
+000092,Progressive disease,85.0,Week 12,,Stable disease,Stable disease,Oncologist
+000092,Progressive disease,113.0,Week 16,,Stable disease,Stable disease,Radiologist 1
+000092,Progressive disease,113.0,Week 16,,Stable disease,Stable disease,Radiologist 2
+000092,Progressive disease,113.0,Week 16,,Stable disease,Stable disease,Oncologist
+000093,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000093,Stable disease,58.0,Week 8,,Not applicable,Stable disease,Oncologist
+000094,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000094,Progressive disease,17.0,Unscheduled visit 1,,Not applicable,Progressive disease,Oncologist
+000094,Progressive disease,42.0,Safety follow-Up,,Not applicable,Progressive disease,Oncologist
+000095,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000095,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000095,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000096,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000096,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000096,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000096,Progressive disease,56.0,Week 8,,Stable disease,Progressive disease,Radiologist 1
+000096,Progressive disease,56.0,Week 8,,Progressive disease,Progressive disease,Radiologist 2
+000096,Progressive disease,56.0,Week 8,,Stable disease,Progressive disease,Oncologist
+000097,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000097,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000097,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000097,Progressive disease,57.0,Week 8,,Progressive disease,Progressive disease,Radiologist 1
+000097,Progressive disease,57.0,Week 8,,Progressive disease,Progressive disease,Radiologist 2
+000097,Progressive disease,57.0,Week 8,,Progressive disease,Progressive disease,Oncologist
+000098,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000098,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000098,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000098,Unable to evaluate,29.0,Unscheduled visit 1,,Not applicable,Stable disease,Radiologist 1
+000098,Unable to evaluate,29.0,Unscheduled visit 1,,Unable to evaluate,Stable disease,Radiologist 2
+000098,Unable to evaluate,29.0,Unscheduled visit 1,,Not applicable,Stable disease,Oncologist
+000099,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000099,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000099,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000101,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000101,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000101,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000101,Progressive disease,55.0,Week 8,,Progressive disease,Progressive disease,Radiologist 1
+000101,Progressive disease,55.0,Week 8,,Progressive disease,Progressive disease,Radiologist 2
+000101,Progressive disease,55.0,Week 8,,Progressive disease,Progressive disease,Oncologist
+000102,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000102,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000102,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000103,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000103,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000103,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000103,Progressive disease,58.0,Week 8,,Progressive disease,Progressive disease,Radiologist 1
+000103,Progressive disease,58.0,Week 8,,Progressive disease,Progressive disease,Radiologist 2
+000103,Progressive disease,58.0,Week 8,,Progressive disease,Progressive disease,Oncologist
+000104,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000104,Progressive disease,46.0,Week 8,,Progressive disease,Progressive disease,Oncologist
+000105,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000105,Progressive disease,28.0,Unscheduled visit 1,,Progressive disease,Stable disease,Oncologist
+000106,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000106,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000106,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000106,Progressive disease,48.0,Week 8,,Stable disease,Stable disease,Radiologist 1
+000106,Progressive disease,48.0,Week 8,,Stable disease,Stable disease,Radiologist 2
+000106,Progressive disease,48.0,Week 8,,Stable disease,Stable disease,Oncologist
+000108,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000108,Progressive disease,56.0,Week 8,,Progressive disease,Stable disease,Oncologist
+000110,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000110,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000110,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000113,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000113,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000113,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000113,Progressive disease,50.0,Week 8,,Not applicable,Progressive disease,Radiologist 1
+000113,Progressive disease,50.0,Week 8,,Not applicable,Progressive disease,Radiologist 2
+000113,Progressive disease,50.0,Week 8,,Not applicable,Progressive disease,Oncologist
+000114,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000114,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000114,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000114,Progressive disease,53.0,Week 8,,Unable to evaluate,Unable to evaluate,Radiologist 1
+000114,Progressive disease,53.0,Week 8,,Progressive disease,Progressive disease,Radiologist 2
+000114,Progressive disease,53.0,Week 8,,Unable to evaluate,Unable to evaluate,Oncologist
+000116,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000116,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000116,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000116,Progressive disease,66.0,Week 8,,Stable disease,Progressive disease,Radiologist 1
+000116,Progressive disease,66.0,Week 8,,Progressive disease,Progressive disease,Radiologist 2
+000116,Progressive disease,66.0,Week 8,,Stable disease,Progressive disease,Oncologist
+000117,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000117,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000117,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000117,Unable to evaluate,29.0,Unscheduled visit 1,,Not applicable,Stable disease,Radiologist 1
+000117,Unable to evaluate,29.0,Unscheduled visit 1,,Not applicable,Stable disease,Radiologist 2
+000117,Unable to evaluate,29.0,Unscheduled visit 1,,Not applicable,Stable disease,Oncologist
+000117,Stable disease,61.0,Week 8,,Not applicable,Stable disease,Radiologist 1
+000117,Stable disease,61.0,Week 8,,Not applicable,Stable disease,Radiologist 2
+000117,Stable disease,61.0,Week 8,,Not applicable,Stable disease,Oncologist
+000119,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000119,Partial response,56.0,Week 8,Y,Partial response,Stable disease,Oncologist
+000119,Partial response,87.0,Week 12,Y,Partial response,Stable disease,Oncologist
+000119,Partial response,115.0,Week 16,N,Partial response,Stable disease,Oncologist
+000119,Progressive disease,171.0,Week 24,,Stable disease,Progressive disease,Oncologist
+000119,Progressive disease,227.0,Week 32,,Progressive disease,Progressive disease,Oncologist
+000121,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000121,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000121,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000121,Progressive disease,51.0,Week 8,,Unable to evaluate,Progressive disease,Radiologist 1
+000121,Progressive disease,51.0,Week 8,,Progressive disease,Progressive disease,Radiologist 2
+000121,Progressive disease,51.0,Week 8,,Unable to evaluate,Progressive disease,Oncologist
+000122,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000122,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000122,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000122,Progressive disease,82.0,Week 12,,Stable disease,Stable disease,Radiologist 1
+000122,Progressive disease,82.0,Week 12,,Stable disease,Stable disease,Radiologist 2
+000122,Progressive disease,82.0,Week 12,,Stable disease,Stable disease,Oncologist
+000123,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000123,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000123,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000123,Stable disease,54.0,Week 8,,Stable disease,Stable disease,Radiologist 1
+000123,Stable disease,54.0,Week 8,,Stable disease,Stable disease,Radiologist 2
+000123,Stable disease,54.0,Week 8,,Stable disease,Stable disease,Oncologist
+000125,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000125,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000125,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000125,Unknown,,Week 12,,Unknown,Unknown,Radiologist 1
+000125,Unknown,,Week 12,,Unknown,Unknown,Radiologist 2
+000125,Unknown,,Week 12,,Unknown,Unknown,Oncologist
+000125,Unknown,,Week 16,,Unknown,Unknown,Radiologist 1
+000125,Unknown,,Week 16,,Unknown,Unknown,Radiologist 2
+000125,Unknown,,Week 16,,Unknown,Unknown,Oncologist
+000125,Unknown,,Week 8,,Unknown,Unknown,Radiologist 1
+000125,Unknown,,Week 8,,Unknown,Unknown,Radiologist 2
+000125,Unknown,,Week 8,,Unknown,Unknown,Oncologist
+000126,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000126,Stable disease,56.0,Week 8,,Stable disease,Stable disease,Oncologist
+000126,Stable disease,81.0,Week 12,,Stable disease,Stable disease,Oncologist
+000126,Stable disease,112.0,Week 16,,Stable disease,Stable disease,Oncologist
+000126,Progressive disease,169.0,Week 24,,Stable disease,Progressive disease,Oncologist
+000126,Progressive disease,221.0,Week 32,,Progressive disease,Progressive disease,Oncologist
+000128,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000128,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000128,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000128,Progressive disease,52.0,Week 8,,Progressive disease,Progressive disease,Radiologist 1
+000128,Progressive disease,52.0,Week 8,,Progressive disease,Progressive disease,Radiologist 2
+000128,Progressive disease,52.0,Week 8,,Progressive disease,Progressive disease,Oncologist
+000130,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000130,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000130,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000130,Progressive disease,51.0,Week 8,,Progressive disease,Progressive disease,Radiologist 1
+000130,Progressive disease,51.0,Week 8,,Progressive disease,Progressive disease,Radiologist 2
+000130,Progressive disease,51.0,Week 8,,Progressive disease,Progressive disease,Oncologist
+000131,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000131,Stable disease,54.0,Week 8,,Stable disease,Stable disease,Oncologist
+000131,Partial response,109.0,Week 16,Y,Partial response,Stable disease,Oncologist
+000131,Partial response,164.0,Week 24,Y,Partial response,Stable disease,Oncologist
+000131,Partial response,220.0,Week 32,N,Partial response,Stable disease,Oncologist
+000131,Progressive disease,272.0,Week 40,,Progressive disease,Progressive disease,Oncologist
+000132,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000132,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000132,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000132,Partial response,53.0,Week 8,,Partial response,Stable disease,Radiologist 1
+000132,Partial response,53.0,Week 8,,Partial response,Stable disease,Radiologist 2
+000132,Partial response,53.0,Week 8,Y,Partial response,Stable disease,Oncologist
+000132,Partial response,81.0,Week 12,,Partial response,Stable disease,Radiologist 1
+000132,Partial response,81.0,Week 12,,Partial response,Stable disease,Radiologist 2
+000132,Partial response,81.0,Week 12,N,Partial response,Stable disease,Oncologist
+000132,Stable disease,108.0,Week 16,,Stable disease,Stable disease,Radiologist 1
+000132,Stable disease,108.0,Week 16,,Stable disease,Stable disease,Radiologist 2
+000132,Stable disease,108.0,Week 16,,Stable disease,Stable disease,Oncologist
+000132,Progressive disease,161.0,Week 24,,Progressive disease,Stable disease,Radiologist 1
+000132,Progressive disease,161.0,Week 24,,Progressive disease,Stable disease,Radiologist 2
+000132,Progressive disease,161.0,Week 24,,Progressive disease,Stable disease,Oncologist
+000133,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000133,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000133,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000133,Progressive disease,58.0,Week 8,,Stable disease,Stable disease,Radiologist 1
+000133,Progressive disease,58.0,Week 8,,Progressive disease,Progressive disease,Radiologist 2
+000133,Progressive disease,58.0,Week 8,,Stable disease,Stable disease,Oncologist
+000136,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000136,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000136,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000137,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000137,Stable disease,52.0,Week 8,,Stable disease,Stable disease,Oncologist
+000137,Stable disease,85.0,Week 12,,Stable disease,Stable disease,Oncologist
+000137,Stable disease,111.0,Week 16,,Stable disease,Stable disease,Oncologist
+000137,Stable disease,167.0,Week 24,,Stable disease,Stable disease,Oncologist
+000137,Progressive disease,216.0,Week 32,,Stable disease,Progressive disease,Oncologist
+000140,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000140,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000140,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000140,Progressive disease,30.0,Unscheduled visit 1,,Progressive disease,Progressive disease,Radiologist 1
+000140,Progressive disease,30.0,Unscheduled visit 1,,Progressive disease,Progressive disease,Radiologist 2
+000140,Progressive disease,30.0,Unscheduled visit 1,,Progressive disease,Progressive disease,Oncologist
+000141,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000141,Stable disease,51.0,Week 8,,Stable disease,Stable disease,Oncologist
+000141,Stable disease,86.0,Week 12,,Stable disease,Stable disease,Oncologist
+000141,Stable disease,114.0,Week 16,,Stable disease,Stable disease,Oncologist
+000141,Stable disease,170.0,Week 24,,Stable disease,Stable disease,Oncologist
+000141,Progressive disease,228.0,Week 32,,Progressive disease,Stable disease,Oncologist
+000142,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000142,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000142,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000142,Stable disease,57.0,Week 8,,Stable disease,Stable disease,Radiologist 1
+000142,Stable disease,57.0,Week 8,,Stable disease,Stable disease,Radiologist 2
+000142,Stable disease,57.0,Week 8,,Stable disease,Stable disease,Oncologist
+000142,Progressive disease,91.0,Week 12,,Progressive disease,Stable disease,Radiologist 1
+000142,Progressive disease,91.0,Week 12,,Progressive disease,Progressive disease,Radiologist 2
+000142,Progressive disease,91.0,Week 12,,Progressive disease,Stable disease,Oncologist
+000143,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000143,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000143,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000143,Progressive disease,53.0,Week 8,,Unable to evaluate,Progressive disease,Radiologist 1
+000143,Progressive disease,53.0,Week 8,,Progressive disease,Progressive disease,Radiologist 2
+000143,Progressive disease,53.0,Week 8,,Unable to evaluate,Progressive disease,Oncologist
+000144,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000144,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000144,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000144,Progressive disease,56.0,Week 8,,Progressive disease,Stable disease,Radiologist 1
+000144,Progressive disease,56.0,Week 8,,Stable disease,Progressive disease,Radiologist 2
+000144,Progressive disease,56.0,Week 8,,Progressive disease,Stable disease,Oncologist
+000145,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000145,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000145,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000145,Progressive disease,44.0,Unscheduled visit 1,,Progressive disease,Progressive disease,Radiologist 1
+000145,Progressive disease,44.0,Unscheduled visit 1,,Progressive disease,Progressive disease,Radiologist 2
+000145,Progressive disease,44.0,Unscheduled visit 1,,Progressive disease,Progressive disease,Oncologist
+000146,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000146,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000146,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000146,Partial response,57.0,Week 8,,Partial response,Stable disease,Radiologist 1
+000146,Partial response,57.0,Week 8,,Partial response,Not applicable,Radiologist 2
+000146,Partial response,57.0,Week 8,Y,Partial response,Stable disease,Oncologist
+000146,Partial response,85.0,Week 12,,Partial response,Stable disease,Radiologist 1
+000146,Partial response,85.0,Week 12,,Partial response,Not applicable,Radiologist 2
+000146,Partial response,85.0,Week 12,Y,Partial response,Stable disease,Oncologist
+000146,Partial response,169.0,Week 24,,Partial response,Stable disease,Radiologist 1
+000146,Partial response,169.0,Week 24,,Partial response,Not applicable,Radiologist 2
+000146,Partial response,169.0,Week 24,Y,Partial response,Stable disease,Oncologist
+000146,Partial response,225.0,Week 32,,Partial response,Stable disease,Radiologist 1
+000146,Partial response,225.0,Week 32,,Partial response,Not applicable,Radiologist 2
+000146,Partial response,225.0,Week 32,Y,Partial response,Stable disease,Oncologist
+000146,Partial response,281.0,Week 40,,Partial response,Stable disease,Radiologist 1
+000146,Partial response,281.0,Week 40,,Partial response,Not applicable,Radiologist 2
+000146,Partial response,281.0,Week 40,N,Partial response,Stable disease,Oncologist
+000146,Progressive disease,351.0,Week 48,,Progressive disease,Stable disease,Radiologist 1
+000146,Progressive disease,351.0,Week 48,,Progressive disease,Not applicable,Radiologist 2
+000146,Progressive disease,351.0,Week 48,,Progressive disease,Stable disease,Oncologist
+000146,Progressive disease,435.0,Week 60,,Progressive disease,Stable disease,Radiologist 1
+000146,Progressive disease,435.0,Week 60,,Progressive disease,Not applicable,Radiologist 2
+000146,Progressive disease,435.0,Week 60,,Progressive disease,Stable disease,Oncologist
+000147,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000147,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000147,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000147,Progressive disease,56.0,Week 8,,Progressive disease,Progressive disease,Radiologist 1
+000147,Progressive disease,56.0,Week 8,,Progressive disease,Progressive disease,Radiologist 2
+000147,Progressive disease,56.0,Week 8,,Progressive disease,Progressive disease,Oncologist
+000149,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000149,Stable disease,53.0,Week 8,,Stable disease,Stable disease,Oncologist
+000149,Stable disease,94.0,Week 12,,Stable disease,Stable disease,Oncologist
+000149,Stable disease,138.0,Unscheduled visit 1,,Stable disease,Stable disease,Oncologist
+000149,Stable disease,226.0,Week 32,,Stable disease,Stable disease,Oncologist
+000150,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000150,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000150,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000150,Progressive disease,56.0,Week 8,,Stable disease,Progressive disease,Radiologist 1
+000150,Progressive disease,56.0,Week 8,,Stable disease,Progressive disease,Radiologist 2
+000150,Progressive disease,56.0,Week 8,,Stable disease,Progressive disease,Oncologist
+000150,Progressive disease,94.0,Week 12,,Stable disease,Progressive disease,Radiologist 1
+000150,Progressive disease,94.0,Week 12,,Progressive disease,Progressive disease,Radiologist 2
+000150,Progressive disease,94.0,Week 12,,Stable disease,Progressive disease,Oncologist
+000151,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000151,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000151,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000151,Progressive disease,57.0,Week 8,,Progressive disease,Progressive disease,Radiologist 1
+000151,Progressive disease,57.0,Week 8,,Progressive disease,Progressive disease,Radiologist 2
+000151,Progressive disease,57.0,Week 8,,Progressive disease,Progressive disease,Oncologist
+000152,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000152,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000152,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000152,Progressive disease,43.0,Week 8,,Progressive disease,Progressive disease,Radiologist 1
+000152,Progressive disease,43.0,Week 8,,Progressive disease,Progressive disease,Radiologist 2
+000152,Progressive disease,43.0,Week 8,,Progressive disease,Progressive disease,Oncologist
+000153,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000153,Stable disease,55.0,Week 8,,Not applicable,Stable disease,Oncologist
+000153,Stable disease,78.0,Week 12,,Not applicable,Stable disease,Oncologist
+000153,Progressive disease,114.0,Week 16,,Not applicable,Stable disease,Oncologist
+000154,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000154,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000154,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000154,Progressive disease,15.0,Unscheduled visit 1,,Progressive disease,Progressive disease,Oncologist
+000155,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000155,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000155,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000155,Partial response,30.0,Unscheduled visit 1,,Partial response,Stable disease,Radiologist 1
+000155,Unable to evaluate,30.0,Unscheduled visit 1,,Stable disease,Stable disease,Radiologist 2
+000155,Unable to evaluate,30.0,Unscheduled visit 1,,Partial response,Stable disease,Oncologist
+000156,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000156,Progressive disease,57.0,Week 8,,Stable disease,Stable disease,Oncologist
+000157,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000157,Progressive disease,53.0,Week 8,,Progressive disease,Progressive disease,Oncologist
+000157,Progressive disease,77.0,Week 12,,Progressive disease,Progressive disease,Oncologist
+000158,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000158,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000158,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000158,Progressive disease,57.0,Week 8,,Progressive disease,Progressive disease,Radiologist 1
+000158,Progressive disease,57.0,Week 8,,Progressive disease,Progressive disease,Radiologist 2
+000158,Progressive disease,57.0,Week 8,,Progressive disease,Progressive disease,Oncologist
+000159,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000159,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000159,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000159,Progressive disease,16.0,Unscheduled visit 1,,Stable disease,Stable disease,Radiologist 1
+000159,Progressive disease,16.0,Unscheduled visit 1,,Stable disease,Progressive disease,Radiologist 2
+000159,Progressive disease,16.0,Unscheduled visit 1,,Stable disease,Stable disease,Oncologist
+000161,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000161,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000161,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000161,Progressive disease,50.0,Week 8,,Progressive disease,Progressive disease,Radiologist 1
+000161,Progressive disease,50.0,Week 8,,Progressive disease,Progressive disease,Radiologist 2
+000161,Progressive disease,50.0,Week 8,,Progressive disease,Progressive disease,Oncologist
+000162,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000162,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000162,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000162,Unable to evaluate,16.0,Unscheduled visit 1,,Stable disease,Stable disease,Radiologist 1
+000162,Unable to evaluate,16.0,Unscheduled visit 1,,Stable disease,Not applicable,Radiologist 2
+000162,Unable to evaluate,16.0,Unscheduled visit 1,,Stable disease,Stable disease,Oncologist
+000163,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000163,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000163,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000163,Progressive disease,51.0,Week 8,,Stable disease,Stable disease,Radiologist 1
+000163,Progressive disease,51.0,Week 8,,Progressive disease,Progressive disease,Radiologist 2
+000163,Progressive disease,51.0,Week 8,,Stable disease,Stable disease,Oncologist
+000164,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000164,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000164,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000164,Unable to evaluate,16.0,Unscheduled visit 1,,Stable disease,Stable disease,Radiologist 1
+000164,Unable to evaluate,16.0,Unscheduled visit 1,,Stable disease,Stable disease,Radiologist 2
+000164,Unable to evaluate,16.0,Unscheduled visit 1,,Stable disease,Stable disease,Oncologist
+000166,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000166,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000166,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000166,Progressive disease,51.0,Week 8,,Progressive disease,Stable disease,Radiologist 1
+000166,Progressive disease,51.0,Week 8,,Progressive disease,Progressive disease,Radiologist 2
+000166,Progressive disease,51.0,Week 8,,Progressive disease,Stable disease,Oncologist
+000167,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000167,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000167,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000167,Progressive disease,49.0,Week 8,,Progressive disease,Progressive disease,Radiologist 1
+000167,Progressive disease,49.0,Week 8,,Progressive disease,Progressive disease,Radiologist 2
+000167,Progressive disease,49.0,Week 8,,Progressive disease,Progressive disease,Oncologist
+000170,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000170,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000170,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000170,Progressive disease,8.0,Unscheduled visit 1,,Stable disease,Progressive disease,Radiologist 1
+000170,Progressive disease,8.0,Unscheduled visit 1,,Progressive disease,Stable disease,Radiologist 2
+000170,Progressive disease,8.0,Unscheduled visit 1,,Stable disease,Progressive disease,Oncologist
+000171,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000171,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000171,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000171,Progressive disease,41.0,Unscheduled visit 1,,Progressive disease,Stable disease,Radiologist 1
+000171,Progressive disease,41.0,Unscheduled visit 1,,Progressive disease,Stable disease,Radiologist 2
+000171,Progressive disease,41.0,Unscheduled visit 1,,Progressive disease,Stable disease,Oncologist
+000172,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000172,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000172,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000172,Progressive disease,16.0,Unscheduled visit 1,,Stable disease,Stable disease,Radiologist 1
+000172,Progressive disease,16.0,Unscheduled visit 1,,Stable disease,Stable disease,Radiologist 2
+000172,Progressive disease,16.0,Unscheduled visit 1,,Stable disease,Stable disease,Oncologist
+000173,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000173,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000173,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000173,Progressive disease,57.0,Week 8,,Progressive disease,Progressive disease,Radiologist 1
+000173,Progressive disease,57.0,Week 8,,Progressive disease,Progressive disease,Radiologist 2
+000173,Progressive disease,57.0,Week 8,,Progressive disease,Progressive disease,Oncologist
+000174,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000174,Progressive disease,53.0,Week 8,,Stable disease,Progressive disease,Oncologist
+000175,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000175,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000175,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000175,Unable to evaluate,30.0,Unscheduled visit 1,,Stable disease,Stable disease,Radiologist 1
+000175,Unable to evaluate,30.0,Unscheduled visit 1,,Stable disease,Stable disease,Radiologist 2
+000175,Unable to evaluate,30.0,Unscheduled visit 1,,Stable disease,Stable disease,Oncologist
+000176,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000176,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000176,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000176,Progressive disease,40.0,Week 8,,Progressive disease,Progressive disease,Radiologist 1
+000176,Progressive disease,40.0,Week 8,,Progressive disease,Stable disease,Radiologist 2
+000176,Progressive disease,40.0,Week 8,,Progressive disease,Progressive disease,Oncologist
+000177,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000177,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000177,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000177,Unable to evaluate,25.0,Unscheduled visit 1,,Unable to evaluate,Unable to evaluate,Radiologist 1
+000177,Unable to evaluate,25.0,Unscheduled visit 1,,Unable to evaluate,Unable to evaluate,Radiologist 2
+000177,Unable to evaluate,25.0,Unscheduled visit 1,,Unable to evaluate,Unable to evaluate,Oncologist
+000178,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000178,Unable to evaluate,45.0,Week 8,,Stable disease,Stable disease,Oncologist
+000179,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000179,Stable disease,57.0,Week 8,,Stable disease,Stable disease,Oncologist
+000179,Stable disease,85.0,Week 12,,Stable disease,Stable disease,Oncologist
+000179,Stable disease,113.0,Week 16,,Stable disease,Stable disease,Oncologist
+000179,Stable disease,169.0,Week 24,,Stable disease,Stable disease,Oncologist
+000179,Stable disease,225.0,Week 32,,Stable disease,Stable disease,Oncologist
+000179,Progressive disease,288.0,Week 40,,Unable to evaluate,Stable disease,Oncologist
+000180,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000180,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000180,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000180,Stable disease,55.0,Week 8,,Stable disease,Stable disease,Radiologist 1
+000180,Stable disease,55.0,Week 8,,Stable disease,Stable disease,Radiologist 2
+000180,Stable disease,55.0,Week 8,,Stable disease,Stable disease,Oncologist
+000181,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000181,Unable to evaluate,50.0,Week 8,,Stable disease,Stable disease,Oncologist
+000181,Partial response,106.0,Week 16,N,Partial response,Stable disease,Oncologist
+000181,Partial response,129.0,Unscheduled visit 1,N,Partial response,Stable disease,Oncologist
+000181,Progressive disease,169.0,Week 24,,Progressive disease,Stable disease,Oncologist
+000181,Progressive disease,219.0,Week 32,,Progressive disease,Stable disease,Oncologist
+000181,Progressive disease,299.0,Unscheduled visit 2,,Progressive disease,Stable disease,Oncologist
+000182,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000182,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000182,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000182,Stable disease,54.0,Week 8,,Stable disease,Stable disease,Radiologist 1
+000182,Stable disease,54.0,Week 8,,Stable disease,Stable disease,Radiologist 2
+000182,Stable disease,54.0,Week 8,,Stable disease,Stable disease,Oncologist
+000182,Stable disease,86.0,Week 12,,Stable disease,Stable disease,Radiologist 1
+000182,Stable disease,86.0,Week 12,,Stable disease,Stable disease,Radiologist 2
+000182,Stable disease,86.0,Week 12,,Stable disease,Stable disease,Oncologist
+000182,Stable disease,108.0,Week 16,,Stable disease,Stable disease,Radiologist 1
+000182,Stable disease,108.0,Week 16,,Stable disease,Stable disease,Radiologist 2
+000182,Stable disease,108.0,Week 16,,Stable disease,Stable disease,Oncologist
+000182,Progressive disease,164.0,Week 24,,Progressive disease,Stable disease,Radiologist 1
+000182,Progressive disease,164.0,Week 24,,Progressive disease,Stable disease,Radiologist 2
+000182,Progressive disease,164.0,Week 24,,Progressive disease,Stable disease,Oncologist
+000184,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000184,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000184,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000186,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000186,Stable disease,53.0,Week 8,,Stable disease,Stable disease,Oncologist
+000187,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000187,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000187,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000187,Progressive disease,35.0,Week 8,,Stable disease,Progressive disease,Radiologist 1
+000187,Progressive disease,35.0,Week 8,,Stable disease,Stable disease,Radiologist 2
+000187,Progressive disease,35.0,Week 8,,Stable disease,Progressive disease,Oncologist
+000188,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000188,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000188,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000188,Progressive disease,57.0,Week 8,,Progressive disease,Stable disease,Radiologist 1
+000188,Progressive disease,57.0,Week 8,,Progressive disease,Progressive disease,Radiologist 2
+000188,Progressive disease,57.0,Week 8,,Progressive disease,Stable disease,Oncologist
+000189,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000189,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000189,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000190,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000190,Progressive disease,70.0,Unscheduled visit 1,,Not applicable,Stable disease,Oncologist
+000191,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000191,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000191,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000191,Progressive disease,53.0,Week 8,,Progressive disease,Progressive disease,Radiologist 1
+000191,Progressive disease,53.0,Week 8,,Progressive disease,Progressive disease,Radiologist 2
+000191,Progressive disease,53.0,Week 8,,Progressive disease,Progressive disease,Oncologist
+000192,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000192,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000192,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000192,Progressive disease,53.0,Week 8,,Progressive disease,Progressive disease,Radiologist 1
+000192,Progressive disease,53.0,Week 8,,Stable disease,Progressive disease,Radiologist 2
+000192,Progressive disease,53.0,Week 8,,Progressive disease,Progressive disease,Oncologist
+000193,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000193,Stable disease,55.0,Week 8,,Stable disease,Not applicable,Oncologist
+000193,Stable disease,85.0,Week 12,,Stable disease,Not applicable,Oncologist
+000193,Stable disease,113.0,Week 16,,Stable disease,Not applicable,Oncologist
+000193,Stable disease,167.0,Week 24,,Stable disease,Not applicable,Oncologist
+000193,Progressive disease,224.0,Week 32,,Progressive disease,Not applicable,Oncologist
+000193,Progressive disease,288.0,Week 40,,Progressive disease,Not applicable,Oncologist
+000193,Progressive disease,336.0,Week 48,,Progressive disease,Not applicable,Oncologist
+000193,Progressive disease,427.0,Week 60,,Progressive disease,Not applicable,Oncologist
+000194,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000194,Stable disease,57.0,Week 8,,Stable disease,Stable disease,Oncologist
+000194,Stable disease,83.0,Week 12,,Stable disease,Stable disease,Oncologist
+000194,Stable disease,111.0,Week 16,,Stable disease,Stable disease,Oncologist
+000194,Progressive disease,167.0,Week 24,,Progressive disease,Stable disease,Oncologist
+000195,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000195,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000195,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000195,Progressive disease,49.0,Week 8,,Progressive disease,Progressive disease,Radiologist 1
+000195,Progressive disease,49.0,Week 8,,Stable disease,Progressive disease,Radiologist 2
+000195,Progressive disease,49.0,Week 8,,Progressive disease,Progressive disease,Oncologist
+000196,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000196,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000196,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000196,Progressive disease,21.0,Unscheduled visit 1,,Progressive disease,Progressive disease,Radiologist 1
+000196,Progressive disease,21.0,Unscheduled visit 1,,Unable to evaluate,Unable to evaluate,Radiologist 2
+000196,Progressive disease,21.0,Unscheduled visit 1,,Unable to evaluate,Unable to evaluate,Oncologist
+000197,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000197,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000197,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000197,Progressive disease,13.0,Safety follow-Up,,Progressive disease,Not done,Radiologist 1
+000197,Progressive disease,13.0,Safety follow-Up,,Progressive disease,Progressive disease,Radiologist 2
+000197,Progressive disease,13.0,Safety follow-Up,,Progressive disease,Not done,Oncologist
+000198,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000198,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000198,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000198,Progressive disease,55.0,Week 8,,Stable disease,Progressive disease,Radiologist 1
+000198,Progressive disease,55.0,Week 8,,Stable disease,Progressive disease,Radiologist 2
+000198,Progressive disease,55.0,Week 8,,Stable disease,Progressive disease,Oncologist
+000198,Progressive disease,84.0,Week 12,,Progressive disease,Progressive disease,Radiologist 1
+000198,Progressive disease,84.0,Week 12,,Progressive disease,Progressive disease,Radiologist 2
+000198,Progressive disease,84.0,Week 12,,Progressive disease,Progressive disease,Oncologist
+000198,Progressive disease,111.0,Week 16,,Progressive disease,Progressive disease,Radiologist 1
+000198,Progressive disease,111.0,Week 16,,Progressive disease,Progressive disease,Radiologist 2
+000198,Progressive disease,111.0,Week 16,,Progressive disease,Progressive disease,Oncologist
+000201,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000201,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000201,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000201,Partial response,52.0,Week 8,,Partial response,Stable disease,Radiologist 1
+000201,Partial response,52.0,Week 8,,Partial response,Stable disease,Radiologist 2
+000201,Partial response,52.0,Week 8,Y,Partial response,Stable disease,Oncologist
+000201,Partial response,81.0,Week 12,,Partial response,Stable disease,Radiologist 1
+000201,Partial response,81.0,Week 12,,Partial response,Stable disease,Radiologist 2
+000201,Partial response,81.0,Week 12,N,Partial response,Stable disease,Oncologist
+000201,Progressive disease,108.0,Week 16,,Partial response,Stable disease,Radiologist 1
+000201,Progressive disease,108.0,Week 16,,Partial response,Stable disease,Radiologist 2
+000201,Progressive disease,108.0,Week 16,,Partial response,Stable disease,Oncologist
+000202,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000202,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000202,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000202,Stable disease,57.0,Week 8,,Stable disease,Stable disease,Radiologist 1
+000202,Stable disease,57.0,Week 8,,Stable disease,Stable disease,Radiologist 2
+000202,Stable disease,57.0,Week 8,,Stable disease,Stable disease,Oncologist
+000202,Stable disease,82.0,Week 12,,Stable disease,Stable disease,Radiologist 1
+000202,Stable disease,82.0,Week 12,,Stable disease,Stable disease,Radiologist 2
+000202,Stable disease,82.0,Week 12,,Stable disease,Stable disease,Oncologist
+000202,Stable disease,110.0,Week 16,,Stable disease,Stable disease,Radiologist 1
+000202,Stable disease,110.0,Week 16,,Stable disease,Stable disease,Radiologist 2
+000202,Stable disease,110.0,Week 16,,Stable disease,Stable disease,Oncologist
+000202,Stable disease,166.0,Week 24,,Stable disease,Stable disease,Radiologist 1
+000202,Stable disease,166.0,Week 24,,Stable disease,Stable disease,Radiologist 2
+000202,Stable disease,166.0,Week 24,,Stable disease,Stable disease,Oncologist
+000203,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000203,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000203,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000203,Progressive disease,61.0,Week 8,,Stable disease,Progressive disease,Radiologist 1
+000203,Progressive disease,61.0,Week 8,,Progressive disease,Progressive disease,Radiologist 2
+000203,Progressive disease,61.0,Week 8,,Stable disease,Progressive disease,Oncologist
+000203,Progressive disease,89.0,Week 12,,Progressive disease,Progressive disease,Radiologist 1
+000203,Progressive disease,89.0,Week 12,,Progressive disease,Progressive disease,Radiologist 2
+000203,Progressive disease,89.0,Week 12,,Progressive disease,Progressive disease,Oncologist
+000204,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000204,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000204,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000204,Progressive disease,48.0,Week 8,,Progressive disease,Progressive disease,Radiologist 1
+000204,Progressive disease,48.0,Week 8,,Progressive disease,Progressive disease,Oncologist
+000204,Progressive disease,49.0,Week 8,,Progressive disease,Progressive disease,Radiologist 2
+000205,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000205,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000205,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000206,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000206,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000206,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000206,Progressive disease,50.0,Week 8,,Progressive disease,Progressive disease,Radiologist 1
+000206,Progressive disease,50.0,Week 8,,Progressive disease,Progressive disease,Radiologist 2
+000206,Progressive disease,50.0,Week 8,,Progressive disease,Progressive disease,Oncologist
+000207,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000207,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000207,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000207,Progressive disease,60.0,Week 8,,Progressive disease,Progressive disease,Radiologist 1
+000207,Progressive disease,60.0,Week 8,,Progressive disease,Progressive disease,Radiologist 2
+000207,Progressive disease,60.0,Week 8,,Progressive disease,Progressive disease,Oncologist
+000208,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000208,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000208,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000208,Unable to evaluate,49.0,Week 8,,Stable disease,Stable disease,Radiologist 1
+000208,Unable to evaluate,49.0,Week 8,,Stable disease,Stable disease,Radiologist 2
+000208,Unable to evaluate,49.0,Week 8,,Stable disease,Stable disease,Oncologist
+000208,Progressive disease,72.0,Week 12,,Stable disease,Progressive disease,Radiologist 1
+000208,Progressive disease,72.0,Week 12,,Stable disease,Stable disease,Radiologist 2
+000208,Progressive disease,72.0,Week 12,,Stable disease,Progressive disease,Oncologist
+000210,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000210,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000210,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000210,Progressive disease,56.0,Week 8,,Progressive disease,Stable disease,Radiologist 1
+000210,Progressive disease,56.0,Week 8,,Progressive disease,Stable disease,Radiologist 2
+000210,Progressive disease,56.0,Week 8,,Progressive disease,Stable disease,Oncologist
+000210,Progressive disease,85.0,Week 12,,Progressive disease,Stable disease,Radiologist 1
+000210,Progressive disease,85.0,Week 12,,Progressive disease,Progressive disease,Radiologist 2
+000210,Progressive disease,85.0,Week 12,,Progressive disease,Stable disease,Oncologist
+000214,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000214,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000214,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000214,Progressive disease,40.0,Unscheduled visit 1,,Stable disease,Unable to evaluate,Radiologist 1
+000214,Progressive disease,40.0,Unscheduled visit 1,,Unable to evaluate,Unable to evaluate,Radiologist 2
+000214,Progressive disease,40.0,Unscheduled visit 1,,Stable disease,Unable to evaluate,Oncologist
+000215,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000215,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000215,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000215,Unable to evaluate,18.0,Unscheduled visit 1,,Stable disease,Stable disease,Radiologist 1
+000215,Unable to evaluate,18.0,Unscheduled visit 1,,Stable disease,Stable disease,Radiologist 2
+000215,Unable to evaluate,18.0,Unscheduled visit 1,,Stable disease,Stable disease,Oncologist
+000216,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000216,Progressive disease,57.0,Week 8,,Stable disease,Progressive disease,Oncologist
+000218,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000218,Stable disease,60.0,Week 8,,Stable disease,Stable disease,Oncologist
+000218,Stable disease,88.0,Week 12,,Stable disease,Stable disease,Oncologist
+000218,Stable disease,118.0,Week 16,,Stable disease,Stable disease,Oncologist
+000218,Progressive disease,174.0,Week 24,,Stable disease,Stable disease,Oncologist
+000219,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000219,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000219,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000219,Progressive disease,42.0,Unscheduled visit 1,,Not applicable,Progressive disease,Radiologist 1
+000219,Progressive disease,42.0,Unscheduled visit 1,,Progressive disease,Progressive disease,Radiologist 2
+000219,Progressive disease,42.0,Unscheduled visit 1,,Not applicable,Progressive disease,Oncologist
+000220,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000220,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000220,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000221,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000221,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000221,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000221,Progressive disease,51.0,Week 8,,Stable disease,Progressive disease,Radiologist 1
+000221,Progressive disease,51.0,Week 8,,Stable disease,Progressive disease,Radiologist 2
+000221,Progressive disease,51.0,Week 8,,Stable disease,Progressive disease,Oncologist
+000222,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000222,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000222,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000222,Stable disease,52.0,Week 8,,Not applicable,Stable disease,Radiologist 1
+000222,Stable disease,52.0,Week 8,,Not applicable,Stable disease,Radiologist 2
+000222,Stable disease,52.0,Week 8,,Not applicable,Stable disease,Oncologist
+000222,Progressive disease,79.0,Week 12,,Not applicable,Progressive disease,Radiologist 1
+000222,Progressive disease,79.0,Week 12,,Not applicable,Progressive disease,Radiologist 2
+000222,Progressive disease,79.0,Week 12,,Not applicable,Progressive disease,Oncologist
+000223,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000223,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000223,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000223,Progressive disease,53.0,Week 8,,Progressive disease,Stable disease,Radiologist 1
+000223,Progressive disease,53.0,Week 8,,Progressive disease,Stable disease,Radiologist 2
+000223,Progressive disease,53.0,Week 8,,Progressive disease,Stable disease,Oncologist
+000223,Unable to evaluate,85.0,Safety follow-Up,,Unable to evaluate,Unable to evaluate,Radiologist 1
+000223,Unable to evaluate,85.0,Safety follow-Up,,Unable to evaluate,Unable to evaluate,Radiologist 2
+000223,Unable to evaluate,85.0,Safety follow-Up,,Unable to evaluate,Unable to evaluate,Oncologist
+000224,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000224,Partial response,58.0,Week 8,Y,Partial response,Stable disease,Oncologist
+000224,Partial response,86.0,Week 12,Y,Partial response,Stable disease,Oncologist
+000224,Partial response,116.0,Week 16,Y,Partial response,Stable disease,Oncologist
+000224,Partial response,178.0,Week 24,N,Partial response,Stable disease,Oncologist
+000224,Progressive disease,235.0,Week 32,,Partial response,Progressive disease,Oncologist
+000225,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000225,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000225,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000225,Progressive disease,58.0,Week 8,,Progressive disease,Stable disease,Radiologist 1
+000225,Progressive disease,58.0,Week 8,,Stable disease,Stable disease,Radiologist 2
+000225,Progressive disease,58.0,Week 8,,Progressive disease,Stable disease,Oncologist
+000226,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000226,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000226,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000226,Progressive disease,58.0,Week 8,,Progressive disease,Stable disease,Radiologist 1
+000226,Progressive disease,58.0,Week 8,,Progressive disease,Stable disease,Radiologist 2
+000226,Progressive disease,58.0,Week 8,,Progressive disease,Stable disease,Oncologist
+000228,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000228,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000228,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000228,Unknown,,Week 8,,Unknown,Unknown,Radiologist 1
+000228,Unknown,,Week 8,,Unknown,Unknown,Radiologist 2
+000228,Unknown,,Week 8,,Unknown,Unknown,Oncologist
+000229,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000229,Partial response,50.0,Week 8,Y,Partial response,Stable disease,Oncologist
+000229,Partial response,81.0,Week 12,N,Partial response,Stable disease,Oncologist
+000229,Unable to evaluate,108.0,Week 16,,Unable to evaluate,Unable to evaluate,Oncologist
+000229,Unable to evaluate,164.0,Week 24,,Unable to evaluate,Unable to evaluate,Oncologist
+000229,Partial response,226.0,Week 32,N,Partial response,Stable disease,Oncologist
+000230,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000230,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000230,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000230,Progressive disease,65.0,Week 8,,Progressive disease,Stable disease,Radiologist 1
+000230,Progressive disease,65.0,Week 8,,Progressive disease,Stable disease,Radiologist 2
+000230,Progressive disease,65.0,Week 8,,Progressive disease,Stable disease,Oncologist
+000230,Progressive disease,93.0,Week 12,,Progressive disease,Progressive disease,Radiologist 1
+000230,Progressive disease,93.0,Week 12,,Progressive disease,Stable disease,Radiologist 2
+000230,Progressive disease,93.0,Week 12,,Progressive disease,Progressive disease,Oncologist
+000231,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000231,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000231,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000231,Progressive disease,47.0,Week 8,,Progressive disease,Progressive disease,Radiologist 1
+000231,Progressive disease,47.0,Week 8,,Progressive disease,Stable disease,Radiologist 2
+000231,Progressive disease,47.0,Week 8,,Progressive disease,Progressive disease,Oncologist
+000233,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000233,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000233,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000234,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000234,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000234,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000234,Unable to evaluate,28.0,Unscheduled visit 1,,Unable to evaluate,Unable to evaluate,Radiologist 1
+000234,Unable to evaluate,28.0,Unscheduled visit 1,,Unable to evaluate,Unable to evaluate,Radiologist 2
+000234,Unable to evaluate,28.0,Unscheduled visit 1,,Stable disease,Unable to evaluate,Oncologist
+000235,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000235,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000235,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000236,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000236,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000236,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000236,Partial response,62.0,Week 8,,Partial response,Stable disease,Radiologist 1
+000236,Partial response,62.0,Week 8,,Partial response,Stable disease,Radiologist 2
+000236,Partial response,62.0,Week 8,N,Partial response,Stable disease,Oncologist
+000236,Partial response,85.0,Week 12,,Partial response,Stable disease,Radiologist 1
+000236,Partial response,85.0,Week 12,,Partial response,Stable disease,Radiologist 2
+000236,Partial response,85.0,Week 12,Y,Partial response,Stable disease,Oncologist
+000236,Partial response,113.0,Week 16,,Partial response,Stable disease,Radiologist 1
+000236,Partial response,113.0,Week 16,,Partial response,Stable disease,Radiologist 2
+000236,Partial response,113.0,Week 16,N,Partial response,Stable disease,Oncologist
+000236,Progressive disease,169.0,Week 24,,Progressive disease,Stable disease,Radiologist 1
+000236,Progressive disease,169.0,Week 24,,Progressive disease,Stable disease,Radiologist 2
+000236,Progressive disease,169.0,Week 24,,Progressive disease,Stable disease,Oncologist
+000237,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000237,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000237,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000237,Stable disease,56.0,Week 8,,Stable disease,Stable disease,Radiologist 1
+000237,Stable disease,56.0,Week 8,,Stable disease,Stable disease,Radiologist 2
+000237,Stable disease,56.0,Week 8,,Stable disease,Stable disease,Oncologist
+000238,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000238,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000238,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000238,Unable to evaluate,50.0,Week 8,,Stable disease,Stable disease,Radiologist 1
+000238,Unable to evaluate,50.0,Week 8,,Stable disease,Stable disease,Radiologist 2
+000238,Unable to evaluate,50.0,Week 8,,Stable disease,Stable disease,Oncologist
+000239,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000239,Stable disease,53.0,Week 8,,Stable disease,Stable disease,Oncologist
+000242,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000242,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000242,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000242,Progressive disease,52.0,Week 8,,Stable disease,Progressive disease,Radiologist 1
+000242,Progressive disease,52.0,Week 8,,Stable disease,Progressive disease,Radiologist 2
+000242,Progressive disease,52.0,Week 8,,Stable disease,Progressive disease,Oncologist
+000243,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000243,Progressive disease,28.0,Unscheduled visit 1,,Stable disease,Progressive disease,Oncologist
+000244,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000244,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000244,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000244,Progressive disease,15.0,Unscheduled visit 1,,Progressive disease,Stable disease,Radiologist 1
+000244,Progressive disease,15.0,Unscheduled visit 1,,Progressive disease,Progressive disease,Radiologist 2
+000244,Progressive disease,15.0,Unscheduled visit 1,,Progressive disease,Stable disease,Oncologist
+000245,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000245,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000245,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000245,Progressive disease,60.0,Week 8,,Progressive disease,Progressive disease,Radiologist 1
+000245,Progressive disease,60.0,Week 8,,Progressive disease,Progressive disease,Radiologist 2
+000245,Progressive disease,60.0,Week 8,,Progressive disease,Progressive disease,Oncologist
+000246,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000246,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000246,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000246,Progressive disease,51.0,Week 8,,Progressive disease,Progressive disease,Radiologist 1
+000246,Progressive disease,51.0,Week 8,,Progressive disease,Not applicable,Radiologist 2
+000246,Progressive disease,51.0,Week 8,,Progressive disease,Progressive disease,Oncologist
+000247,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000247,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000247,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000247,Progressive disease,50.0,Week 8,,Stable disease,Progressive disease,Radiologist 1
+000247,Progressive disease,50.0,Week 8,,Stable disease,Progressive disease,Radiologist 2
+000247,Progressive disease,50.0,Week 8,,Stable disease,Progressive disease,Oncologist
+000247,Progressive disease,87.0,Week 12,,Stable disease,Progressive disease,Radiologist 1
+000247,Progressive disease,87.0,Week 12,,Stable disease,Progressive disease,Radiologist 2
+000247,Progressive disease,87.0,Week 12,,Stable disease,Progressive disease,Oncologist
+000247,Progressive disease,115.0,Safety follow-Up,,Stable disease,Progressive disease,Radiologist 1
+000247,Progressive disease,115.0,Safety follow-Up,,Stable disease,Progressive disease,Radiologist 2
+000247,Progressive disease,115.0,Safety follow-Up,,Stable disease,Progressive disease,Oncologist
+000247,Unable to evaluate,144.0,Unscheduled visit 1,,Unable to evaluate,Unable to evaluate,Radiologist 1
+000247,Unable to evaluate,144.0,Unscheduled visit 1,,Unable to evaluate,Unable to evaluate,Radiologist 2
+000247,Unable to evaluate,144.0,Unscheduled visit 1,,Unable to evaluate,Unable to evaluate,Oncologist
+000248,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000248,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000248,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000248,Progressive disease,51.0,Week 8,,Progressive disease,Progressive disease,Radiologist 1
+000248,Progressive disease,51.0,Week 8,,Progressive disease,Progressive disease,Radiologist 2
+000248,Progressive disease,51.0,Week 8,,Progressive disease,Progressive disease,Oncologist
+000250,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000250,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000250,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000250,Progressive disease,60.0,Week 8,,Progressive disease,Progressive disease,Radiologist 1
+000250,Progressive disease,60.0,Week 8,,Stable disease,Stable disease,Radiologist 2
+000250,Progressive disease,60.0,Week 8,,Progressive disease,Progressive disease,Oncologist
+000251,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000251,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000251,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000251,Progressive disease,51.0,Week 8,,Not applicable,Stable disease,Radiologist 1
+000251,Progressive disease,51.0,Week 8,,Not applicable,Stable disease,Radiologist 2
+000251,Progressive disease,51.0,Week 8,,Not applicable,Stable disease,Oncologist
+000251,Progressive disease,111.0,Week 16,,Not applicable,Stable disease,Radiologist 1
+000251,Progressive disease,111.0,Week 16,,Not applicable,Stable disease,Radiologist 2
+000251,Progressive disease,111.0,Week 16,,Not applicable,Stable disease,Oncologist
+000251,Progressive disease,161.0,Week 24,,Not applicable,Stable disease,Radiologist 1
+000251,Progressive disease,161.0,Week 24,,Not applicable,Stable disease,Radiologist 2
+000251,Progressive disease,161.0,Week 24,,Not applicable,Stable disease,Oncologist
+000254,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000254,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000254,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000254,Unable to evaluate,23.0,Safety follow-Up,,Not applicable,Stable disease,Radiologist 1
+000254,Unable to evaluate,23.0,Safety follow-Up,,Not applicable,Stable disease,Radiologist 2
+000254,Unable to evaluate,23.0,Safety follow-Up,,Not applicable,Stable disease,Oncologist
+000255,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000255,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000255,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000255,Progressive disease,57.0,Week 8,,Stable disease,Stable disease,Radiologist 1
+000255,Progressive disease,57.0,Week 8,,Stable disease,Progressive disease,Radiologist 2
+000255,Progressive disease,57.0,Week 8,,Stable disease,Stable disease,Oncologist
+000255,Progressive disease,81.0,Week 12,,Stable disease,Stable disease,Radiologist 1
+000255,Progressive disease,81.0,Week 12,,Stable disease,Stable disease,Radiologist 2
+000255,Progressive disease,81.0,Week 12,,Stable disease,Stable disease,Oncologist
+000255,Progressive disease,115.0,Week 16,,Stable disease,Stable disease,Radiologist 1
+000255,Progressive disease,115.0,Week 16,,Stable disease,Progressive disease,Radiologist 2
+000255,Progressive disease,115.0,Week 16,,Stable disease,Stable disease,Oncologist
+000255,Progressive disease,149.0,Week 24,,Stable disease,Stable disease,Radiologist 1
+000255,Progressive disease,149.0,Week 24,,Stable disease,Progressive disease,Radiologist 2
+000255,Progressive disease,149.0,Week 24,,Stable disease,Stable disease,Oncologist
+000256,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000256,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000256,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000256,Progressive disease,38.0,Week 8,,Progressive disease,Progressive disease,Radiologist 1
+000256,Progressive disease,38.0,Week 8,,Stable disease,Progressive disease,Radiologist 2
+000256,Progressive disease,38.0,Week 8,,Progressive disease,Progressive disease,Oncologist
+000258,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000258,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000258,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000258,Progressive disease,52.0,Week 8,,Progressive disease,Progressive disease,Radiologist 1
+000258,Progressive disease,52.0,Week 8,,Progressive disease,Progressive disease,Radiologist 2
+000258,Progressive disease,52.0,Week 8,,Progressive disease,Progressive disease,Oncologist
+000259,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000259,Progressive disease,22.0,Unscheduled visit 1,,Progressive disease,Stable disease,Oncologist
+000259,Progressive disease,50.0,Week 8,,Progressive disease,Stable disease,Oncologist
+000260,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000260,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000260,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000260,Progressive disease,29.0,Unscheduled visit 1,,Progressive disease,Stable disease,Radiologist 1
+000260,Progressive disease,29.0,Unscheduled visit 1,,Progressive disease,Progressive disease,Radiologist 2
+000260,Progressive disease,29.0,Unscheduled visit 1,,Progressive disease,Stable disease,Oncologist
+000261,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000261,Progressive disease,56.0,Week 8,,Progressive disease,Stable disease,Oncologist
+000261,Progressive disease,84.0,Week 12,,Progressive disease,Stable disease,Oncologist
+000262,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000262,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000262,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000262,Progressive disease,45.0,Week 8,,Progressive disease,Stable disease,Radiologist 1
+000262,Progressive disease,45.0,Week 8,,Progressive disease,Progressive disease,Radiologist 2
+000262,Progressive disease,45.0,Week 8,,Progressive disease,Stable disease,Oncologist
+000263,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000263,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000263,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000263,Progressive disease,46.0,Week 8,,Progressive disease,Progressive disease,Radiologist 1
+000263,Progressive disease,46.0,Week 8,,Progressive disease,Not applicable,Radiologist 2
+000263,Progressive disease,46.0,Week 8,,Progressive disease,Progressive disease,Oncologist
+000266,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000266,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000266,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000266,Progressive disease,60.0,Week 8,,Stable disease,Progressive disease,Radiologist 1
+000266,Progressive disease,60.0,Week 8,,Progressive disease,Progressive disease,Radiologist 2
+000266,Progressive disease,60.0,Week 8,,Stable disease,Progressive disease,Oncologist
+000267,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000267,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000267,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000268,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000268,Stable disease,51.0,Week 8,,Stable disease,Stable disease,Oncologist
+000268,Progressive disease,105.0,Week 16,,Stable disease,Stable disease,Oncologist
+000269,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000269,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000269,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000269,Progressive disease,32.0,Unscheduled visit 1,,Stable disease,Progressive disease,Radiologist 1
+000269,Progressive disease,32.0,Unscheduled visit 1,,Stable disease,Progressive disease,Radiologist 2
+000269,Progressive disease,32.0,Unscheduled visit 1,,Stable disease,Progressive disease,Oncologist
+000271,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000271,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000271,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000271,Partial response,75.0,Week 8,,Partial response,Stable disease,Radiologist 1
+000271,Partial response,75.0,Week 8,,Partial response,Not applicable,Radiologist 2
+000271,Partial response,75.0,Week 8,Y,Partial response,Stable disease,Oncologist
+000271,Partial response,102.0,Week 12,,Partial response,Stable disease,Radiologist 1
+000271,Partial response,102.0,Week 12,,Partial response,Not applicable,Radiologist 2
+000271,Partial response,102.0,Week 12,Y,Partial response,Stable disease,Oncologist
+000271,Partial response,131.0,Week 16,,Partial response,Stable disease,Radiologist 1
+000271,Partial response,131.0,Week 16,,Partial response,Not applicable,Radiologist 2
+000271,Partial response,131.0,Week 16,Y,Partial response,Stable disease,Oncologist
+000271,Partial response,190.0,Week 24,,Partial response,Stable disease,Radiologist 1
+000271,Partial response,190.0,Week 24,,Partial response,Not applicable,Radiologist 2
+000271,Partial response,190.0,Week 24,Y,Partial response,Stable disease,Oncologist
+000271,Partial response,246.0,Week 32,,Partial response,Stable disease,Radiologist 1
+000271,Partial response,246.0,Week 32,,Partial response,Not applicable,Radiologist 2
+000271,Partial response,246.0,Week 32,Y,Partial response,Stable disease,Oncologist
+000271,Partial response,302.0,Week 40,,Partial response,Stable disease,Radiologist 1
+000271,Partial response,302.0,Week 40,,Partial response,Not applicable,Radiologist 2
+000271,Partial response,302.0,Week 40,Y,Partial response,Stable disease,Oncologist
+000271,Partial response,358.0,Week 48,,Partial response,Stable disease,Radiologist 1
+000271,Partial response,358.0,Week 48,,Partial response,Not applicable,Radiologist 2
+000271,Partial response,358.0,Week 48,Y,Partial response,Stable disease,Oncologist
+000271,Partial response,450.0,Week 60,,Partial response,Stable disease,Radiologist 1
+000271,Partial response,450.0,Week 60,,Partial response,Not applicable,Radiologist 2
+000271,Partial response,450.0,Week 60,Y,Partial response,Stable disease,Oncologist
+000271,Partial response,533.0,Week 72,,Partial response,Stable disease,Radiologist 1
+000271,Partial response,533.0,Week 72,,Partial response,Not applicable,Radiologist 2
+000271,Partial response,533.0,Week 72,Y,Partial response,Stable disease,Oncologist
+000271,Partial response,612.0,Week 84,,Partial response,Stable disease,Radiologist 1
+000271,Partial response,612.0,Week 84,,Partial response,Not applicable,Radiologist 2
+000271,Partial response,612.0,Week 84,N,Partial response,Stable disease,Oncologist
+000271,Progressive disease,696.0,Week 96,,Partial response,Progressive disease,Radiologist 1
+000271,Progressive disease,696.0,Week 96,,Progressive disease,Not applicable,Radiologist 2
+000271,Progressive disease,696.0,Week 96,,Partial response,Progressive disease,Oncologist
+000271,Progressive disease,796.0,Week 108,,Partial response,Progressive disease,Radiologist 1
+000271,Progressive disease,796.0,Week 108,,Progressive disease,Not applicable,Radiologist 2
+000271,Progressive disease,796.0,Week 108,,Partial response,Progressive disease,Oncologist
+000271,Progressive disease,878.0,Week 120,,Partial response,Progressive disease,Radiologist 1
+000271,Progressive disease,878.0,Week 120,,Progressive disease,Not applicable,Radiologist 2
+000271,Progressive disease,878.0,Week 120,,Partial response,Progressive disease,Oncologist
+000271,Progressive disease,957.0,Week 132,,Partial response,Progressive disease,Radiologist 1
+000271,Progressive disease,957.0,Week 132,,Progressive disease,Not applicable,Radiologist 2
+000271,Progressive disease,957.0,Week 132,,Partial response,Progressive disease,Oncologist
+000272,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000272,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000272,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000272,Progressive disease,54.0,Week 8,,Progressive disease,Progressive disease,Radiologist 1
+000272,Progressive disease,54.0,Week 8,,Progressive disease,Progressive disease,Radiologist 2
+000272,Progressive disease,54.0,Week 8,,Progressive disease,Progressive disease,Oncologist
+000273,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000273,Progressive disease,33.0,Unscheduled visit 1,,Unable to evaluate,Progressive disease,Oncologist
+000275,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000275,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000275,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000275,Unable to evaluate,17.0,Unscheduled visit 1,,Stable disease,Stable disease,Radiologist 1
+000275,Unable to evaluate,17.0,Unscheduled visit 1,,Stable disease,Unable to evaluate,Radiologist 2
+000275,Unable to evaluate,17.0,Unscheduled visit 1,,Stable disease,Stable disease,Oncologist
+000278,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000278,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000278,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000278,Progressive disease,51.0,Week 8,,Stable disease,Progressive disease,Radiologist 2
+000278,Progressive disease,54.0,Week 8,,Progressive disease,Progressive disease,Radiologist 1
+000278,Progressive disease,54.0,Week 8,,Progressive disease,Progressive disease,Oncologist
+000280,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000280,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000280,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000280,Stable disease,51.0,Week 8,,Stable disease,Stable disease,Radiologist 1
+000280,Stable disease,51.0,Week 8,,Stable disease,Stable disease,Radiologist 2
+000280,Stable disease,51.0,Week 8,,Stable disease,Stable disease,Oncologist
+000280,Stable disease,79.0,Week 12,,Stable disease,Stable disease,Radiologist 1
+000280,Stable disease,79.0,Week 12,,Stable disease,Stable disease,Radiologist 2
+000280,Stable disease,79.0,Week 12,,Stable disease,Stable disease,Oncologist
+000280,Partial response,107.0,Week 16,,Partial response,Stable disease,Radiologist 1
+000280,Partial response,107.0,Week 16,,Partial response,Stable disease,Radiologist 2
+000280,Partial response,107.0,Week 16,Y,Partial response,Stable disease,Oncologist
+000280,Partial response,167.0,Week 24,,Partial response,Stable disease,Radiologist 1
+000280,Partial response,167.0,Week 24,,Partial response,Stable disease,Radiologist 2
+000280,Partial response,167.0,Week 24,Y,Partial response,Stable disease,Oncologist
+000280,Partial response,219.0,Week 32,,Partial response,Stable disease,Radiologist 1
+000280,Partial response,219.0,Week 32,,Partial response,Stable disease,Radiologist 2
+000280,Partial response,219.0,Week 32,N,Partial response,Stable disease,Oncologist
+000281,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000281,Partial response,51.0,Week 8,Y,Partial response,Stable disease,Oncologist
+000281,Partial response,81.0,Week 12,Y,Partial response,Stable disease,Oncologist
+000281,Partial response,106.0,Week 16,N,Partial response,Stable disease,Oncologist
+000282,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000282,Unable to evaluate,49.0,Week 8,,Stable disease,Stable disease,Oncologist
+000282,Stable disease,74.0,Week 12,,Stable disease,Stable disease,Oncologist
+000282,Stable disease,108.0,Week 16,,Stable disease,Stable disease,Oncologist
+000282,Progressive disease,158.0,Week 24,,Progressive disease,Progressive disease,Oncologist
+000282,Progressive disease,221.0,Week 32,,Progressive disease,Progressive disease,Oncologist
+000282,Progressive disease,269.0,Week 40,,Progressive disease,Progressive disease,Oncologist
+000283,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000283,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000283,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000284,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000284,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000284,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000284,Progressive disease,53.0,Week 8,,Progressive disease,Stable disease,Radiologist 1
+000284,Progressive disease,53.0,Week 8,,Progressive disease,Progressive disease,Radiologist 2
+000284,Progressive disease,53.0,Week 8,,Progressive disease,Stable disease,Oncologist
+000285,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000285,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000285,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000286,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000286,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000286,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000286,Stable disease,54.0,Week 8,,Stable disease,Stable disease,Radiologist 1
+000286,Stable disease,54.0,Week 8,,Stable disease,Stable disease,Radiologist 2
+000286,Stable disease,54.0,Week 8,,Stable disease,Stable disease,Oncologist
+000287,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000287,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000287,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000287,Stable disease,55.0,Week 8,,Stable disease,Stable disease,Radiologist 1
+000287,Stable disease,55.0,Week 8,,Stable disease,Stable disease,Radiologist 2
+000287,Stable disease,55.0,Week 8,,Stable disease,Stable disease,Oncologist
+000287,Progressive disease,84.0,Week 12,,Progressive disease,Stable disease,Radiologist 1
+000287,Progressive disease,84.0,Week 12,,Progressive disease,Stable disease,Radiologist 2
+000287,Progressive disease,84.0,Week 12,,Progressive disease,Stable disease,Oncologist
+000287,Progressive disease,110.0,Week 16,,Progressive disease,Stable disease,Radiologist 1
+000287,Progressive disease,110.0,Week 16,,Progressive disease,Stable disease,Radiologist 2
+000287,Progressive disease,110.0,Week 16,,Progressive disease,Stable disease,Oncologist
+000287,Progressive disease,166.0,Week 24,,Progressive disease,Stable disease,Radiologist 1
+000287,Progressive disease,166.0,Week 24,,Progressive disease,Stable disease,Radiologist 2
+000287,Progressive disease,166.0,Week 24,,Progressive disease,Stable disease,Oncologist
+000287,Progressive disease,223.0,Week 32,,Progressive disease,Progressive disease,Radiologist 1
+000287,Progressive disease,223.0,Week 32,,Progressive disease,Stable disease,Radiologist 2
+000287,Progressive disease,223.0,Week 32,,Progressive disease,Progressive disease,Oncologist
+000288,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000288,Stable disease,54.0,Week 8,,Stable disease,Stable disease,Oncologist
+000289,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000289,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000289,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000289,Progressive disease,57.0,Week 8,,Progressive disease,Stable disease,Radiologist 1
+000289,Progressive disease,57.0,Week 8,,Progressive disease,Stable disease,Radiologist 2
+000289,Progressive disease,57.0,Week 8,,Progressive disease,Stable disease,Oncologist
+000290,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000290,Stable disease,93.0,Week 12,,Stable disease,Stable disease,Oncologist
+000290,Stable disease,138.0,Unscheduled visit 1,,Stable disease,Stable disease,Oncologist
+000290,Stable disease,170.0,Week 24,,Stable disease,Stable disease,Oncologist
+000290,Progressive disease,228.0,Week 32,,Progressive disease,Stable disease,Oncologist
+000291,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000291,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000291,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000292,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000292,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000292,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000292,Stable disease,51.0,Week 8,,Stable disease,Stable disease,Radiologist 1
+000292,Stable disease,51.0,Week 8,,Stable disease,Stable disease,Radiologist 2
+000292,Stable disease,51.0,Week 8,,Stable disease,Stable disease,Oncologist
+000292,Stable disease,79.0,Week 12,,Stable disease,Stable disease,Radiologist 1
+000292,Stable disease,79.0,Week 12,,Stable disease,Stable disease,Radiologist 2
+000292,Stable disease,79.0,Week 12,,Stable disease,Stable disease,Oncologist
+000292,Stable disease,107.0,Week 16,,Stable disease,Stable disease,Radiologist 1
+000292,Stable disease,107.0,Week 16,,Stable disease,Stable disease,Radiologist 2
+000292,Stable disease,107.0,Week 16,,Stable disease,Stable disease,Oncologist
+000293,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000293,Stable disease,52.0,Week 8,,Stable disease,Stable disease,Oncologist
+000293,Progressive disease,81.0,Week 12,,Stable disease,Stable disease,Oncologist
+000294,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000294,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000294,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000294,Progressive disease,30.0,Unscheduled visit 1,,Stable disease,Progressive disease,Radiologist 1
+000294,Progressive disease,30.0,Unscheduled visit 1,,Stable disease,Stable disease,Radiologist 2
+000294,Progressive disease,30.0,Unscheduled visit 1,,Stable disease,Progressive disease,Oncologist
+000296,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000296,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000296,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000296,Progressive disease,47.0,Week 8,,Progressive disease,Progressive disease,Radiologist 1
+000296,Progressive disease,47.0,Week 8,,Progressive disease,Progressive disease,Radiologist 2
+000296,Progressive disease,47.0,Week 8,,Progressive disease,Progressive disease,Oncologist
+000298,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000298,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000298,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000298,Progressive disease,44.0,Week 8,,Stable disease,Stable disease,Radiologist 1
+000298,Progressive disease,44.0,Week 8,,Stable disease,Stable disease,Oncologist
+000298,Progressive disease,45.0,Week 8,,Stable disease,Progressive disease,Radiologist 2
+000299,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000299,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000299,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000299,Progressive disease,59.0,Week 8,,Stable disease,Progressive disease,Radiologist 1
+000299,Progressive disease,59.0,Week 8,,Stable disease,Progressive disease,Radiologist 2
+000299,Progressive disease,59.0,Week 8,,Stable disease,Progressive disease,Oncologist
+000300,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000300,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000300,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000300,Stable disease,57.0,Week 8,,Stable disease,Stable disease,Radiologist 1
+000300,Stable disease,57.0,Week 8,,Stable disease,Stable disease,Radiologist 2
+000300,Stable disease,57.0,Week 8,,Stable disease,Stable disease,Oncologist
+000300,Progressive disease,85.0,Week 12,,Progressive disease,Progressive disease,Radiologist 1
+000300,Progressive disease,85.0,Week 12,,Unable to evaluate,Progressive disease,Radiologist 2
+000300,Progressive disease,85.0,Week 12,,Progressive disease,Progressive disease,Oncologist
+000301,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000301,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000301,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000301,Progressive disease,13.0,Unscheduled visit 1,,Progressive disease,Stable disease,Radiologist 1
+000301,Progressive disease,13.0,Unscheduled visit 1,,Unable to evaluate,Unable to evaluate,Radiologist 2
+000301,Progressive disease,13.0,Unscheduled visit 1,,Progressive disease,Stable disease,Oncologist
+000303,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000303,Progressive disease,44.0,Unscheduled visit 1,,Progressive disease,Progressive disease,Oncologist
+000304,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000304,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000304,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000304,Stable disease,56.0,Week 8,,Stable disease,Stable disease,Radiologist 1
+000304,Stable disease,56.0,Week 8,,Stable disease,Stable disease,Radiologist 2
+000304,Stable disease,56.0,Week 8,,Stable disease,Stable disease,Oncologist
+000304,Stable disease,113.0,Week 16,,Stable disease,Stable disease,Radiologist 1
+000304,Stable disease,113.0,Week 16,,Stable disease,Stable disease,Radiologist 2
+000304,Stable disease,113.0,Week 16,,Stable disease,Stable disease,Oncologist
+000305,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000305,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000305,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000305,Progressive disease,48.0,Week 8,,Progressive disease,Progressive disease,Radiologist 1
+000305,Progressive disease,48.0,Week 8,,Stable disease,Progressive disease,Radiologist 2
+000305,Progressive disease,48.0,Week 8,,Progressive disease,Progressive disease,Oncologist
+000306,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000306,Stable disease,54.0,Week 8,,Stable disease,Stable disease,Oncologist
+000307,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000307,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000307,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000308,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000308,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000308,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000308,Partial response,57.0,Week 8,,Partial response,Stable disease,Radiologist 1
+000308,Partial response,57.0,Week 8,,Partial response,Stable disease,Radiologist 2
+000308,Partial response,57.0,Week 8,Y,Partial response,Stable disease,Oncologist
+000308,Partial response,88.0,Week 12,,Partial response,Stable disease,Radiologist 1
+000308,Partial response,88.0,Week 12,,Partial response,Stable disease,Radiologist 2
+000308,Partial response,88.0,Week 12,Y,Partial response,Stable disease,Oncologist
+000308,Partial response,115.0,Week 16,,Partial response,Stable disease,Radiologist 1
+000308,Partial response,115.0,Week 16,,Partial response,Stable disease,Radiologist 2
+000308,Partial response,115.0,Week 16,N,Partial response,Stable disease,Oncologist
+000308,Progressive disease,175.0,Week 24,,Progressive disease,Progressive disease,Radiologist 1
+000308,Progressive disease,175.0,Week 24,,Progressive disease,Progressive disease,Radiologist 2
+000308,Progressive disease,175.0,Week 24,,Progressive disease,Progressive disease,Oncologist
+000309,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000309,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000309,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000309,Progressive disease,56.0,Week 8,,Progressive disease,Stable disease,Radiologist 1
+000309,Progressive disease,56.0,Week 8,,Progressive disease,Stable disease,Oncologist
+000309,Progressive disease,57.0,Week 8,,Progressive disease,Progressive disease,Radiologist 2
+000311,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000311,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000311,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000311,Progressive disease,50.0,Week 8,,Stable disease,Progressive disease,Radiologist 1
+000311,Progressive disease,50.0,Week 8,,Stable disease,Progressive disease,Radiologist 2
+000311,Progressive disease,50.0,Week 8,,Stable disease,Progressive disease,Oncologist
+000312,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000312,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000312,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000312,Progressive disease,57.0,Week 8,,Progressive disease,Stable disease,Radiologist 1
+000312,Progressive disease,57.0,Week 8,,Progressive disease,Progressive disease,Radiologist 2
+000312,Progressive disease,57.0,Week 8,,Progressive disease,Stable disease,Oncologist
+000313,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000313,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000313,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000314,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000314,Progressive disease,14.0,Unscheduled visit 1,,Stable disease,Progressive disease,Oncologist
+000315,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000315,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000315,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000315,Stable disease,51.0,Week 8,,Stable disease,Stable disease,Radiologist 1
+000315,Stable disease,51.0,Week 8,,Stable disease,Stable disease,Radiologist 2
+000315,Stable disease,51.0,Week 8,,Stable disease,Stable disease,Oncologist
+000316,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000316,Stable disease,53.0,Week 8,,Not applicable,Stable disease,Oncologist
+000317,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000317,Stable disease,58.0,Week 8,,Stable disease,Stable disease,Oncologist
+000317,Progressive disease,86.0,Week 12,,Stable disease,Progressive disease,Oncologist
+000318,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000318,Stable disease,55.0,Week 8,,Stable disease,Stable disease,Oncologist
+000318,Stable disease,91.0,Week 12,,Stable disease,Stable disease,Oncologist
+000318,Stable disease,113.0,Week 16,,Stable disease,Stable disease,Oncologist
+000318,Stable disease,167.0,Week 24,,Stable disease,Stable disease,Oncologist
+000318,Progressive disease,223.0,Week 32,,Progressive disease,Progressive disease,Oncologist
+000319,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000319,Unable to evaluate,31.0,Safety follow-Up,,Stable disease,Stable disease,Oncologist
+000320,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000320,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000320,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000320,Progressive disease,43.0,Week 8,,Stable disease,Progressive disease,Radiologist 1
+000320,Progressive disease,43.0,Week 8,,Progressive disease,Progressive disease,Radiologist 2
+000320,Progressive disease,43.0,Week 8,,Stable disease,Progressive disease,Oncologist
+000321,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000321,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000321,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000321,Progressive disease,53.0,Week 8,,Unable to evaluate,Progressive disease,Radiologist 1
+000321,Progressive disease,53.0,Week 8,,Progressive disease,Progressive disease,Radiologist 2
+000321,Progressive disease,53.0,Week 8,,Unable to evaluate,Progressive disease,Oncologist
+000322,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000322,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000322,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000323,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000323,Progressive disease,11.0,Unscheduled visit 1,,Progressive disease,Stable disease,Oncologist
+000324,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000324,Progressive disease,28.0,Unscheduled visit 1,,Stable disease,Stable disease,Oncologist
+000325,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000325,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000325,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000326,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000326,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000326,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000326,Progressive disease,54.0,Week 8,,Progressive disease,Stable disease,Radiologist 1
+000326,Progressive disease,54.0,Week 8,,Progressive disease,Progressive disease,Radiologist 2
+000326,Progressive disease,54.0,Week 8,,Progressive disease,Stable disease,Oncologist
+000327,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000327,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000327,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000327,Stable disease,61.0,Week 8,,Stable disease,Stable disease,Radiologist 1
+000327,Stable disease,61.0,Week 8,,Stable disease,Stable disease,Radiologist 2
+000327,Stable disease,61.0,Week 8,,Stable disease,Stable disease,Oncologist
+000327,Stable disease,89.0,Week 12,,Stable disease,Stable disease,Radiologist 1
+000327,Stable disease,89.0,Week 12,,Stable disease,Stable disease,Radiologist 2
+000327,Stable disease,89.0,Week 12,,Stable disease,Stable disease,Oncologist
+000327,Stable disease,117.0,Week 16,,Stable disease,Stable disease,Radiologist 1
+000327,Stable disease,117.0,Week 16,,Stable disease,Stable disease,Radiologist 2
+000327,Stable disease,117.0,Week 16,,Stable disease,Stable disease,Oncologist
+000327,Stable disease,173.0,Week 24,,Stable disease,Stable disease,Radiologist 1
+000327,Unable to evaluate,173.0,Week 24,,Stable disease,Unable to evaluate,Radiologist 2
+000327,Stable disease,173.0,Week 24,,Stable disease,Stable disease,Oncologist
+000329,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000329,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000329,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000329,Progressive disease,19.0,Unscheduled visit 1,,Progressive disease,Progressive disease,Radiologist 1
+000329,Progressive disease,19.0,Unscheduled visit 1,,Progressive disease,Stable disease,Radiologist 2
+000329,Progressive disease,19.0,Unscheduled visit 1,,Progressive disease,Progressive disease,Oncologist
+000330,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000330,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000330,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000331,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000331,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000331,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000331,Progressive disease,43.0,Unscheduled visit 1,,Progressive disease,Stable disease,Radiologist 1
+000331,Progressive disease,43.0,Unscheduled visit 1,,Progressive disease,Not applicable,Radiologist 2
+000331,Progressive disease,43.0,Unscheduled visit 1,,Progressive disease,Stable disease,Oncologist
+000332,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000332,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000332,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000332,Progressive disease,40.0,Unscheduled visit 1,,Progressive disease,Progressive disease,Radiologist 1
+000332,Progressive disease,40.0,Unscheduled visit 1,,Progressive disease,Progressive disease,Radiologist 2
+000332,Progressive disease,40.0,Unscheduled visit 1,,Progressive disease,Progressive disease,Oncologist
+000333,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000333,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000333,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000333,Progressive disease,15.0,Unscheduled visit 1,,Stable disease,Stable disease,Radiologist 1
+000333,Progressive disease,15.0,Unscheduled visit 1,,Stable disease,Stable disease,Radiologist 2
+000333,Progressive disease,15.0,Unscheduled visit 1,,Stable disease,Stable disease,Oncologist
+000334,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000334,Stable disease,54.0,Week 8,,Stable disease,Stable disease,Oncologist
+000335,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000335,Stable disease,53.0,Week 8,,Stable disease,Not applicable,Oncologist
+000335,Partial response,81.0,Week 12,Y,Partial response,Not applicable,Oncologist
+000335,Partial response,108.0,Week 16,Y,Partial response,Not applicable,Oncologist
+000335,Partial response,162.0,Week 24,Y,Partial response,Not applicable,Oncologist
+000335,Partial response,219.0,Week 32,Y,Partial response,Not applicable,Oncologist
+000335,Partial response,275.0,Week 40,N,Partial response,Not applicable,Oncologist
+000335,Progressive disease,331.0,Week 48,,Progressive disease,Not applicable,Oncologist
+000336,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000336,Stable disease,51.0,Week 8,,Stable disease,Stable disease,Oncologist
+000336,Stable disease,77.0,Week 12,,Stable disease,Stable disease,Oncologist
+000336,Stable disease,108.0,Week 16,,Stable disease,Stable disease,Oncologist
+000336,Stable disease,163.0,Week 24,,Stable disease,Stable disease,Oncologist
+000336,Stable disease,218.0,Week 32,,Stable disease,Stable disease,Oncologist
+000336,Stable disease,303.0,Week 44,,Stable disease,Stable disease,Oncologist
+000336,Stable disease,332.0,Week 48,,Stable disease,Stable disease,Oncologist
+000336,Stable disease,414.0,Week 60,,Stable disease,Stable disease,Oncologist
+000336,Stable disease,496.0,Week 72,,Stable disease,Stable disease,Oncologist
+000336,Stable disease,583.0,Week 84,,Stable disease,Stable disease,Oncologist
+000336,Progressive disease,667.0,Week 96,,Progressive disease,Stable disease,Oncologist
+000336,Progressive disease,752.0,Week 108,,Progressive disease,Stable disease,Oncologist
+000338,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000338,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000338,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000339,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000339,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000339,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000339,Progressive disease,53.0,Week 8,,Progressive disease,Progressive disease,Radiologist 1
+000339,Progressive disease,53.0,Week 8,,Progressive disease,Not applicable,Radiologist 2
+000339,Progressive disease,53.0,Week 8,,Progressive disease,Progressive disease,Oncologist
+000340,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000340,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000340,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000340,Progressive disease,54.0,Week 8,,Progressive disease,Stable disease,Radiologist 1
+000340,Progressive disease,54.0,Week 8,,Stable disease,Progressive disease,Radiologist 2
+000340,Progressive disease,54.0,Week 8,,Progressive disease,Stable disease,Oncologist
+000341,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000341,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000341,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000341,Progressive disease,46.0,Week 8,,Progressive disease,Progressive disease,Radiologist 1
+000341,Progressive disease,46.0,Week 8,,Progressive disease,Progressive disease,Radiologist 2
+000341,Progressive disease,46.0,Week 8,,Progressive disease,Progressive disease,Oncologist
+000342,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000342,Progressive disease,25.0,Unscheduled visit 1,,Not applicable,Progressive disease,Oncologist
+000343,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000343,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000343,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000344,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000344,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000344,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000344,Progressive disease,56.0,Week 8,,Progressive disease,Stable disease,Radiologist 1
+000344,Progressive disease,56.0,Week 8,,Progressive disease,Progressive disease,Radiologist 2
+000344,Progressive disease,56.0,Week 8,,Progressive disease,Stable disease,Oncologist
+000345,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000345,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000345,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000347,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000347,Progressive disease,46.0,Week 8,,Stable disease,Stable disease,Oncologist
+000348,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000348,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000348,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000348,Unable to evaluate,19.0,Unscheduled visit 1,,Stable disease,Stable disease,Radiologist 1
+000348,Unable to evaluate,19.0,Unscheduled visit 1,,Stable disease,Stable disease,Radiologist 2
+000348,Unable to evaluate,19.0,Unscheduled visit 1,,Stable disease,Stable disease,Oncologist
+000349,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000349,Unable to evaluate,25.0,Unscheduled visit 1,,Stable disease,Stable disease,Oncologist
+000349,Progressive disease,60.0,Week 8,,Stable disease,Progressive disease,Oncologist
+000350,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000350,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000350,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000350,Partial response,57.0,Week 8,,Partial response,Stable disease,Radiologist 1
+000350,Stable disease,57.0,Week 8,,Stable disease,Stable disease,Radiologist 2
+000350,Partial response,57.0,Week 8,N,Partial response,Stable disease,Oncologist
+000353,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000353,Partial response,50.0,Week 8,Y,Partial response,Stable disease,Oncologist
+000353,Partial response,82.0,Week 12,N,Partial response,Stable disease,Oncologist
+000353,Stable disease,115.0,Week 16,,Stable disease,Stable disease,Oncologist
+000353,Progressive disease,165.0,Week 24,,Progressive disease,Stable disease,Oncologist
+000353,Progressive disease,226.0,Week 32,,Progressive disease,Stable disease,Oncologist
+000354,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000354,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000354,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000354,Progressive disease,51.0,Week 8,,Progressive disease,Progressive disease,Radiologist 1
+000354,Progressive disease,51.0,Week 8,,Progressive disease,Progressive disease,Radiologist 2
+000354,Progressive disease,51.0,Week 8,,Progressive disease,Progressive disease,Oncologist
+000356,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000356,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000356,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000356,Progressive disease,58.0,Week 8,,Stable disease,Progressive disease,Radiologist 1
+000356,Progressive disease,58.0,Week 8,,Stable disease,Progressive disease,Radiologist 2
+000356,Progressive disease,58.0,Week 8,,Stable disease,Progressive disease,Oncologist
+000357,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000357,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000357,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000357,Stable disease,55.0,Week 8,,Stable disease,Stable disease,Radiologist 1
+000357,Stable disease,55.0,Week 8,,Not applicable,Stable disease,Radiologist 2
+000357,Stable disease,55.0,Week 8,,Stable disease,Stable disease,Oncologist
+000357,Stable disease,86.0,Week 12,,Stable disease,Stable disease,Radiologist 1
+000357,Stable disease,86.0,Week 12,,Not applicable,Stable disease,Radiologist 2
+000357,Stable disease,86.0,Week 12,,Stable disease,Stable disease,Oncologist
+000357,Stable disease,114.0,Week 16,,Stable disease,Stable disease,Radiologist 1
+000357,Stable disease,114.0,Week 16,,Not applicable,Stable disease,Radiologist 2
+000357,Stable disease,114.0,Week 16,,Stable disease,Stable disease,Oncologist
+000357,Progressive disease,170.0,Week 24,,Stable disease,Progressive disease,Radiologist 1
+000357,Progressive disease,170.0,Week 24,,Not applicable,Progressive disease,Radiologist 2
+000357,Progressive disease,170.0,Week 24,,Stable disease,Progressive disease,Oncologist
+000357,Progressive disease,226.0,Week 32,,Stable disease,Progressive disease,Radiologist 1
+000357,Progressive disease,226.0,Week 32,,Not applicable,Progressive disease,Radiologist 2
+000357,Progressive disease,226.0,Week 32,,Stable disease,Progressive disease,Oncologist
+000357,Progressive disease,288.0,Week 40,,Stable disease,Progressive disease,Radiologist 1
+000357,Progressive disease,288.0,Week 40,,Not applicable,Progressive disease,Radiologist 2
+000357,Progressive disease,288.0,Week 40,,Stable disease,Progressive disease,Oncologist
+000358,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000358,Stable disease,57.0,Week 8,,Stable disease,Stable disease,Oncologist
+000358,Stable disease,85.0,Week 12,,Stable disease,Stable disease,Oncologist
+000358,Progressive disease,113.0,Week 16,,Stable disease,Stable disease,Oncologist
+000358,Progressive disease,168.0,Week 24,,Stable disease,Progressive disease,Oncologist
+000359,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000359,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000359,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000359,Progressive disease,7.0,Unscheduled visit 1,,Stable disease,Progressive disease,Radiologist 1
+000359,Progressive disease,7.0,Unscheduled visit 1,,Stable disease,Progressive disease,Radiologist 2
+000359,Progressive disease,7.0,Unscheduled visit 1,,Stable disease,Progressive disease,Oncologist
+000360,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000360,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000360,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000360,Progressive disease,54.0,Week 8,,Progressive disease,Progressive disease,Radiologist 1
+000360,Progressive disease,54.0,Week 8,,Progressive disease,Progressive disease,Radiologist 2
+000360,Progressive disease,54.0,Week 8,,Progressive disease,Progressive disease,Oncologist
+000361,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000361,Unable to evaluate,21.0,Unscheduled visit 1,,Stable disease,Stable disease,Oncologist
+000361,Progressive disease,57.0,Week 8,,Progressive disease,Stable disease,Oncologist
+000362,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000362,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000362,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000362,Progressive disease,54.0,Week 8,,Progressive disease,Progressive disease,Radiologist 1
+000362,Progressive disease,54.0,Week 8,,Progressive disease,Progressive disease,Radiologist 2
+000362,Progressive disease,54.0,Week 8,,Progressive disease,Progressive disease,Oncologist
+000363,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000363,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000363,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000363,Stable disease,51.0,Week 8,,Stable disease,Not applicable,Radiologist 1
+000363,Stable disease,51.0,Week 8,,Stable disease,Stable disease,Radiologist 2
+000363,Stable disease,51.0,Week 8,,Stable disease,Not applicable,Oncologist
+000364,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000364,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000364,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000366,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000366,Progressive disease,57.0,Week 8,,Stable disease,Progressive disease,Oncologist
+000366,Progressive disease,86.0,Week 12,,Stable disease,Progressive disease,Oncologist
+000367,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000367,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000367,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000367,Progressive disease,20.0,Unscheduled visit 1,,Stable disease,Unable to evaluate,Radiologist 1
+000367,Progressive disease,20.0,Unscheduled visit 1,,Stable disease,Progressive disease,Radiologist 2
+000367,Progressive disease,20.0,Unscheduled visit 1,,Stable disease,Unable to evaluate,Oncologist
+000369,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000369,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000369,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000370,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000370,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000370,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000370,Progressive disease,57.0,Week 8,,Progressive disease,Progressive disease,Radiologist 1
+000370,Progressive disease,57.0,Week 8,,Progressive disease,Progressive disease,Radiologist 2
+000370,Progressive disease,57.0,Week 8,,Progressive disease,Progressive disease,Oncologist
+000371,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000371,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000371,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000372,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000372,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000372,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000372,Progressive disease,57.0,Week 8,,Progressive disease,Stable disease,Radiologist 1
+000372,Progressive disease,57.0,Week 8,,Progressive disease,Progressive disease,Radiologist 2
+000372,Progressive disease,57.0,Week 8,,Progressive disease,Stable disease,Oncologist
+000373,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000373,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000373,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000373,Progressive disease,50.0,Week 8,,Progressive disease,Not applicable,Radiologist 1
+000373,Progressive disease,50.0,Week 8,,Progressive disease,Progressive disease,Radiologist 2
+000373,Progressive disease,50.0,Week 8,,Progressive disease,Not applicable,Oncologist
+000374,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000374,Progressive disease,50.0,Week 8,,Stable disease,Progressive disease,Oncologist
+000375,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000375,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000375,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000375,Unable to evaluate,46.0,Week 8,,Stable disease,Stable disease,Radiologist 1
+000375,Unable to evaluate,46.0,Week 8,,Stable disease,Stable disease,Radiologist 2
+000375,Unable to evaluate,46.0,Week 8,,Stable disease,Stable disease,Oncologist
+000376,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000376,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000376,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000376,Progressive disease,55.0,Week 8,,Not applicable,Progressive disease,Radiologist 1
+000376,Progressive disease,55.0,Week 8,,Progressive disease,Stable disease,Radiologist 2
+000376,Progressive disease,55.0,Week 8,,Not applicable,Progressive disease,Oncologist
+000377,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000377,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000377,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000377,Progressive disease,1.0,Unscheduled visit 1,,Progressive disease,Progressive disease,Radiologist 1
+000377,Progressive disease,1.0,Unscheduled visit 1,,Progressive disease,Progressive disease,Radiologist 2
+000377,Progressive disease,1.0,Unscheduled visit 1,,Progressive disease,Progressive disease,Oncologist
+000378,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000378,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000378,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000378,Progressive disease,39.0,Unscheduled visit 1,,Stable disease,Progressive disease,Radiologist 1
+000378,Progressive disease,39.0,Unscheduled visit 1,,Stable disease,Progressive disease,Radiologist 2
+000378,Progressive disease,39.0,Unscheduled visit 1,,Stable disease,Progressive disease,Oncologist
+000379,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000379,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000379,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000379,Progressive disease,25.0,Unscheduled visit 1,,Not done,Progressive disease,Radiologist 1
+000379,Progressive disease,25.0,Unscheduled visit 1,,Unable to evaluate,Progressive disease,Radiologist 2
+000379,Progressive disease,25.0,Unscheduled visit 1,,Not done,Progressive disease,Oncologist
+000380,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000380,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000380,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000380,Progressive disease,1.0,Unscheduled visit 1,,Stable disease,Progressive disease,Radiologist 1
+000380,Progressive disease,1.0,Unscheduled visit 1,,Progressive disease,Stable disease,Radiologist 2
+000380,Progressive disease,1.0,Unscheduled visit 1,,Stable disease,Progressive disease,Oncologist
+000381,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000381,Unable to evaluate,47.0,Week 8,,Not applicable,Stable disease,Oncologist
+000382,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000382,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000382,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000382,Progressive disease,13.0,Unscheduled visit 1,,Stable disease,Progressive disease,Radiologist 1
+000382,Progressive disease,13.0,Unscheduled visit 1,,Progressive disease,Progressive disease,Radiologist 2
+000382,Progressive disease,13.0,Unscheduled visit 1,,Stable disease,Progressive disease,Oncologist
+000383,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000383,Progressive disease,57.0,Week 8,,Progressive disease,Progressive disease,Oncologist
+000383,Progressive disease,86.0,Week 12,,Progressive disease,Progressive disease,Oncologist
+000384,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000384,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000384,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000384,Progressive disease,51.0,Week 8,,Progressive disease,Progressive disease,Radiologist 1
+000384,Progressive disease,51.0,Week 8,,Progressive disease,Progressive disease,Radiologist 2
+000384,Progressive disease,51.0,Week 8,,Progressive disease,Progressive disease,Oncologist
+000385,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000385,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000385,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000385,Progressive disease,55.0,Week 8,,Progressive disease,Progressive disease,Radiologist 1
+000385,Progressive disease,55.0,Week 8,,Progressive disease,Progressive disease,Radiologist 2
+000385,Progressive disease,55.0,Week 8,,Progressive disease,Progressive disease,Oncologist
+000387,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000387,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000387,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000387,Progressive disease,53.0,Week 8,,Progressive disease,Stable disease,Radiologist 1
+000387,Progressive disease,53.0,Week 8,,Progressive disease,Not applicable,Radiologist 2
+000387,Progressive disease,53.0,Week 8,,Progressive disease,Stable disease,Oncologist
+000389,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000389,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000389,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000389,Stable disease,56.0,Week 8,,Stable disease,Stable disease,Radiologist 1
+000389,Stable disease,56.0,Week 8,,Stable disease,Stable disease,Radiologist 2
+000389,Stable disease,56.0,Week 8,,Stable disease,Stable disease,Oncologist
+000389,Stable disease,84.0,Week 12,,Stable disease,Stable disease,Radiologist 1
+000389,Stable disease,84.0,Week 12,,Stable disease,Stable disease,Radiologist 2
+000389,Stable disease,84.0,Week 12,,Stable disease,Stable disease,Oncologist
+000389,Stable disease,112.0,Week 16,,Stable disease,Stable disease,Radiologist 1
+000389,Stable disease,112.0,Week 16,,Stable disease,Stable disease,Radiologist 2
+000389,Stable disease,112.0,Week 16,,Stable disease,Stable disease,Oncologist
+000389,Progressive disease,158.0,Week 24,,Progressive disease,Progressive disease,Radiologist 1
+000389,Progressive disease,158.0,Week 24,,Progressive disease,Progressive disease,Radiologist 2
+000389,Progressive disease,158.0,Week 24,,Progressive disease,Progressive disease,Oncologist
+000390,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000390,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000390,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000390,Unable to evaluate,28.0,Unscheduled visit 1,,Stable disease,Stable disease,Radiologist 1
+000390,Unable to evaluate,28.0,Unscheduled visit 1,,Stable disease,Stable disease,Radiologist 2
+000390,Unable to evaluate,28.0,Unscheduled visit 1,,Stable disease,Stable disease,Oncologist
+000392,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000392,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000392,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000392,Progressive disease,27.0,Unscheduled visit 1,,Stable disease,Progressive disease,Radiologist 1
+000392,Progressive disease,27.0,Unscheduled visit 1,,Stable disease,Progressive disease,Radiologist 2
+000392,Progressive disease,27.0,Unscheduled visit 1,,Stable disease,Progressive disease,Oncologist
+000393,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000393,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000393,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000393,Progressive disease,51.0,Week 8,,Progressive disease,Progressive disease,Radiologist 1
+000393,Progressive disease,51.0,Week 8,,Progressive disease,Progressive disease,Radiologist 2
+000393,Progressive disease,51.0,Week 8,,Progressive disease,Progressive disease,Oncologist
+000394,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000394,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000394,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000394,Stable disease,51.0,Week 8,,Stable disease,Stable disease,Radiologist 1
+000394,Stable disease,51.0,Week 8,,Not applicable,Stable disease,Radiologist 2
+000394,Stable disease,51.0,Week 8,,Stable disease,Stable disease,Oncologist
+000394,Partial response,79.0,Week 12,,Partial response,Stable disease,Radiologist 1
+000394,Stable disease,79.0,Week 12,,Not applicable,Stable disease,Radiologist 2
+000394,Partial response,79.0,Week 12,N,Partial response,Stable disease,Oncologist
+000395,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000395,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000395,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000395,Partial response,54.0,Week 8,,Partial response,Stable disease,Radiologist 1
+000395,Partial response,54.0,Week 8,,Partial response,Stable disease,Radiologist 2
+000395,Partial response,54.0,Week 8,N,Partial response,Stable disease,Oncologist
+000395,Unable to evaluate,82.0,Week 12,,Unable to evaluate,Unable to evaluate,Radiologist 1
+000395,Unable to evaluate,82.0,Week 12,,Unable to evaluate,Unable to evaluate,Radiologist 2
+000395,Unable to evaluate,82.0,Week 12,,Unable to evaluate,Unable to evaluate,Oncologist
+000395,Progressive disease,113.0,Week 16,,Partial response,Stable disease,Radiologist 1
+000395,Progressive disease,113.0,Week 16,,Progressive disease,Progressive disease,Radiologist 2
+000395,Progressive disease,113.0,Week 16,,Partial response,Stable disease,Oncologist
+000395,Progressive disease,166.0,Week 24,,Progressive disease,Progressive disease,Radiologist 1
+000395,Progressive disease,166.0,Week 24,,Progressive disease,Progressive disease,Radiologist 2
+000395,Progressive disease,166.0,Week 24,,Progressive disease,Progressive disease,Oncologist
+000396,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000396,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000396,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000396,Stable disease,57.0,Week 8,,Stable disease,Stable disease,Radiologist 1
+000396,Stable disease,57.0,Week 8,,Stable disease,Stable disease,Radiologist 2
+000396,Stable disease,57.0,Week 8,,Stable disease,Stable disease,Oncologist
+000396,Stable disease,78.0,Week 12,,Stable disease,Stable disease,Radiologist 1
+000396,Stable disease,78.0,Week 12,,Stable disease,Stable disease,Radiologist 2
+000396,Stable disease,78.0,Week 12,,Stable disease,Stable disease,Oncologist
+000396,Stable disease,115.0,Week 16,,Stable disease,Stable disease,Radiologist 1
+000396,Stable disease,115.0,Week 16,,Stable disease,Stable disease,Radiologist 2
+000396,Stable disease,115.0,Week 16,,Stable disease,Stable disease,Oncologist
+000396,Progressive disease,171.0,Week 24,,Progressive disease,Progressive disease,Radiologist 1
+000396,Progressive disease,171.0,Week 24,,Progressive disease,Stable disease,Radiologist 2
+000396,Progressive disease,171.0,Week 24,,Progressive disease,Progressive disease,Oncologist
+000396,Progressive disease,213.0,Week 32,,Progressive disease,Progressive disease,Radiologist 1
+000396,Progressive disease,213.0,Week 32,,Progressive disease,Stable disease,Radiologist 2
+000396,Progressive disease,213.0,Week 32,,Progressive disease,Progressive disease,Oncologist
+000397,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000397,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000397,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000397,Stable disease,57.0,Week 8,,Stable disease,Stable disease,Radiologist 1
+000397,Stable disease,57.0,Week 8,,Stable disease,Stable disease,Radiologist 2
+000397,Stable disease,57.0,Week 8,,Stable disease,Stable disease,Oncologist
+000397,Stable disease,85.0,Week 12,,Stable disease,Stable disease,Radiologist 1
+000397,Stable disease,85.0,Week 12,,Stable disease,Stable disease,Radiologist 2
+000397,Stable disease,85.0,Week 12,,Stable disease,Stable disease,Oncologist
+000397,Stable disease,113.0,Week 16,,Stable disease,Stable disease,Radiologist 1
+000397,Stable disease,113.0,Week 16,,Stable disease,Stable disease,Oncologist
+000397,Stable disease,114.0,Week 16,,Stable disease,Stable disease,Radiologist 2
+000398,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000398,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000398,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000398,Stable disease,57.0,Week 8,,Stable disease,Stable disease,Radiologist 1
+000398,Stable disease,57.0,Week 8,,Stable disease,Stable disease,Radiologist 2
+000398,Stable disease,57.0,Week 8,,Stable disease,Stable disease,Oncologist
+000398,Progressive disease,85.0,Week 12,,Progressive disease,Stable disease,Radiologist 1
+000398,Progressive disease,85.0,Week 12,,Progressive disease,Progressive disease,Radiologist 2
+000398,Progressive disease,85.0,Week 12,,Progressive disease,Stable disease,Oncologist
+000400,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000400,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000400,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000400,Progressive disease,55.0,Week 8,,Progressive disease,Progressive disease,Radiologist 1
+000400,Progressive disease,55.0,Week 8,,Progressive disease,Progressive disease,Radiologist 2
+000400,Progressive disease,55.0,Week 8,,Progressive disease,Progressive disease,Oncologist
+000400,Progressive disease,91.0,Safety follow-Up,,Progressive disease,Progressive disease,Radiologist 1
+000400,Progressive disease,91.0,Safety follow-Up,,Progressive disease,Progressive disease,Radiologist 2
+000400,Progressive disease,91.0,Safety follow-Up,,Progressive disease,Progressive disease,Oncologist
+000403,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000403,Progressive disease,33.0,Week 8,,Stable disease,Progressive disease,Oncologist
+000404,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000404,Progressive disease,80.0,Week 12,,Progressive disease,Stable disease,Oncologist
+000404,Progressive disease,113.0,Week 16,,Stable disease,Stable disease,Oncologist
+000404,Progressive disease,169.0,Week 24,,Stable disease,Stable disease,Oncologist
+000404,Progressive disease,225.0,Week 32,,Stable disease,Stable disease,Oncologist
+000404,Progressive disease,274.0,Week 40,,Stable disease,Stable disease,Oncologist
+000405,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000405,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000405,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000405,Progressive disease,27.0,Unscheduled visit 1,,Progressive disease,Progressive disease,Radiologist 1
+000405,Progressive disease,27.0,Unscheduled visit 1,,Progressive disease,Progressive disease,Radiologist 2
+000405,Progressive disease,27.0,Unscheduled visit 1,,Progressive disease,Progressive disease,Oncologist
+000406,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000406,Progressive disease,24.0,Unscheduled visit 1,,Stable disease,Progressive disease,Oncologist
+000407,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000407,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000407,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000407,Progressive disease,52.0,Week 8,,Progressive disease,Stable disease,Radiologist 1
+000407,Progressive disease,52.0,Week 8,,Progressive disease,Stable disease,Radiologist 2
+000407,Progressive disease,52.0,Week 8,,Stable disease,Stable disease,Oncologist
+000409,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000409,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000409,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000409,Partial response,92.0,Week 12,,Partial response,Stable disease,Radiologist 1
+000409,Stable disease,92.0,Week 12,,Stable disease,Complete response,Radiologist 2
+000409,Partial response,92.0,Week 12,N,Partial response,Stable disease,Oncologist
+000410,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000410,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000410,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000410,Progressive disease,56.0,Week 8,,Stable disease,Stable disease,Radiologist 1
+000410,Progressive disease,56.0,Week 8,,Stable disease,Stable disease,Radiologist 2
+000410,Progressive disease,56.0,Week 8,,Stable disease,Stable disease,Oncologist
+000410,Progressive disease,87.0,Week 12,,Progressive disease,Progressive disease,Radiologist 1
+000410,Progressive disease,87.0,Week 12,,Progressive disease,Progressive disease,Radiologist 2
+000410,Progressive disease,87.0,Week 12,,Progressive disease,Progressive disease,Oncologist
+000414,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000414,Unable to evaluate,37.0,Week 8,,Stable disease,Stable disease,Oncologist
+000414,Progressive disease,87.0,Week 12,,Progressive disease,Stable disease,Oncologist
+000414,Progressive disease,115.0,Week 16,,Progressive disease,Progressive disease,Oncologist
+000414,Progressive disease,137.0,Unscheduled visit 1,,Progressive disease,Progressive disease,Oncologist
+000415,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000415,Progressive disease,53.0,Week 8,,Progressive disease,Progressive disease,Oncologist
+000416,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000416,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000416,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000416,Progressive disease,29.0,Unscheduled visit 1,,Not applicable,Progressive disease,Radiologist 1
+000416,Progressive disease,29.0,Unscheduled visit 1,,Stable disease,Progressive disease,Radiologist 2
+000416,Progressive disease,29.0,Unscheduled visit 1,,Not applicable,Progressive disease,Oncologist
+000419,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000419,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000419,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000419,Progressive disease,55.0,Week 8,,Stable disease,Progressive disease,Radiologist 1
+000419,Progressive disease,55.0,Week 8,,Stable disease,Stable disease,Radiologist 2
+000419,Progressive disease,55.0,Week 8,,Stable disease,Progressive disease,Oncologist
+000420,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000420,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000420,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000420,Progressive disease,29.0,Unscheduled visit 1,,Not done,Not done,Radiologist 1
+000420,Progressive disease,29.0,Unscheduled visit 1,,Progressive disease,Stable disease,Radiologist 2
+000420,Progressive disease,29.0,Unscheduled visit 1,,Unable to evaluate,Unable to evaluate,Oncologist
+000421,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000421,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000421,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000422,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000422,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000422,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000422,Progressive disease,30.0,Unscheduled visit 1,,Progressive disease,Stable disease,Radiologist 1
+000422,Progressive disease,30.0,Unscheduled visit 1,,Stable disease,Progressive disease,Radiologist 2
+000422,Progressive disease,30.0,Unscheduled visit 1,,Progressive disease,Stable disease,Oncologist
+000423,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000423,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000423,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000423,Progressive disease,54.0,Week 8,,Progressive disease,Progressive disease,Radiologist 1
+000423,Progressive disease,54.0,Week 8,,Unable to evaluate,Progressive disease,Radiologist 2
+000423,Progressive disease,54.0,Week 8,,Progressive disease,Progressive disease,Oncologist
+000424,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000424,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000424,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000425,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000425,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000425,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000425,Progressive disease,19.0,Unscheduled visit 1,,Stable disease,Stable disease,Radiologist 1
+000425,Progressive disease,19.0,Unscheduled visit 1,,Stable disease,Stable disease,Radiologist 2
+000425,Progressive disease,19.0,Unscheduled visit 1,,Stable disease,Progressive disease,Oncologist
+000427,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000427,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000427,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000427,Progressive disease,57.0,Week 8,,Stable disease,Stable disease,Radiologist 1
+000427,Progressive disease,57.0,Week 8,,Stable disease,Progressive disease,Radiologist 2
+000427,Progressive disease,57.0,Week 8,,Stable disease,Stable disease,Oncologist
+000427,Progressive disease,85.0,Week 12,,Stable disease,Stable disease,Radiologist 1
+000427,Progressive disease,85.0,Week 12,,Stable disease,Progressive disease,Radiologist 2
+000427,Progressive disease,85.0,Week 12,,Stable disease,Stable disease,Oncologist
+000427,Progressive disease,113.0,Week 16,,Stable disease,Stable disease,Radiologist 1
+000427,Progressive disease,113.0,Week 16,,Stable disease,Progressive disease,Radiologist 2
+000427,Progressive disease,113.0,Week 16,,Stable disease,Stable disease,Oncologist
+000429,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000429,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000429,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000429,Progressive disease,54.0,Week 8,,Progressive disease,Progressive disease,Radiologist 1
+000429,Progressive disease,54.0,Week 8,,Unable to evaluate,Progressive disease,Radiologist 2
+000429,Progressive disease,54.0,Week 8,,Progressive disease,Progressive disease,Oncologist
+000430,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000430,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000430,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000430,Stable disease,51.0,Week 8,,Stable disease,Stable disease,Radiologist 1
+000430,Stable disease,51.0,Week 8,,Stable disease,Stable disease,Radiologist 2
+000430,Stable disease,51.0,Week 8,,Stable disease,Stable disease,Oncologist
+000430,Stable disease,77.0,Week 12,,Stable disease,Stable disease,Radiologist 1
+000430,Stable disease,77.0,Week 12,,Stable disease,Stable disease,Radiologist 2
+000430,Stable disease,77.0,Week 12,,Stable disease,Stable disease,Oncologist
+000430,Progressive disease,108.0,Week 16,,Progressive disease,Stable disease,Radiologist 1
+000430,Progressive disease,108.0,Week 16,,Stable disease,Stable disease,Radiologist 2
+000430,Progressive disease,108.0,Week 16,,Progressive disease,Stable disease,Oncologist
+000431,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000431,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000431,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000431,Progressive disease,39.0,Unscheduled visit 1,,Stable disease,Progressive disease,Radiologist 1
+000431,Progressive disease,39.0,Unscheduled visit 1,,Progressive disease,Progressive disease,Radiologist 2
+000431,Progressive disease,39.0,Unscheduled visit 1,,Stable disease,Progressive disease,Oncologist
+000433,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000433,Stable disease,54.0,Week 8,,Stable disease,Stable disease,Oncologist
+000433,Unable to evaluate,82.0,Week 12,,Unable to evaluate,Unable to evaluate,Oncologist
+000433,Progressive disease,109.0,Week 16,,Unable to evaluate,Unable to evaluate,Oncologist
+000433,Progressive disease,165.0,Week 24,,Stable disease,Stable disease,Oncologist
+000435,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000435,Progressive disease,28.0,Unscheduled visit 1,,Stable disease,Stable disease,Oncologist
+000436,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000436,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000436,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000436,Progressive disease,49.0,Week 8,,Progressive disease,Progressive disease,Radiologist 1
+000436,Progressive disease,49.0,Week 8,,Progressive disease,Progressive disease,Radiologist 2
+000436,Progressive disease,49.0,Week 8,,Progressive disease,Progressive disease,Oncologist
+000437,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000437,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000437,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000437,Progressive disease,2.0,Unscheduled visit 1,,Progressive disease,Progressive disease,Radiologist 1
+000437,Progressive disease,2.0,Unscheduled visit 1,,Unable to evaluate,Progressive disease,Radiologist 2
+000437,Progressive disease,2.0,Unscheduled visit 1,,Progressive disease,Progressive disease,Oncologist
+000439,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000439,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000439,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000439,Progressive disease,44.0,Unscheduled visit 1,,Progressive disease,Progressive disease,Radiologist 1
+000439,Progressive disease,44.0,Unscheduled visit 1,,Progressive disease,Not applicable,Radiologist 2
+000439,Progressive disease,44.0,Unscheduled visit 1,,Progressive disease,Progressive disease,Oncologist
+000440,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000440,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000440,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000440,Stable disease,51.0,Week 8,,Stable disease,Stable disease,Radiologist 1
+000440,Stable disease,51.0,Week 8,,Stable disease,Stable disease,Radiologist 2
+000440,Stable disease,51.0,Week 8,,Stable disease,Stable disease,Oncologist
+000440,Progressive disease,100.0,Week 12,,Progressive disease,Stable disease,Radiologist 1
+000440,Progressive disease,100.0,Week 12,,Progressive disease,Stable disease,Radiologist 2
+000440,Progressive disease,100.0,Week 12,,Progressive disease,Stable disease,Oncologist
+000442,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000442,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000442,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000442,Progressive disease,39.0,Unscheduled visit 1,,Stable disease,Progressive disease,Radiologist 1
+000442,Progressive disease,39.0,Unscheduled visit 1,,Stable disease,Stable disease,Radiologist 2
+000442,Progressive disease,39.0,Unscheduled visit 1,,Stable disease,Progressive disease,Oncologist
+000443,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000443,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000443,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000443,Progressive disease,57.0,Week 8,,Progressive disease,Progressive disease,Radiologist 1
+000443,Progressive disease,57.0,Week 8,,Unable to evaluate,Progressive disease,Radiologist 2
+000443,Progressive disease,57.0,Week 8,,Progressive disease,Progressive disease,Oncologist
+000444,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000444,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000444,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000444,Unable to evaluate,25.0,Safety follow-Up,,Stable disease,Stable disease,Radiologist 1
+000444,Unable to evaluate,25.0,Safety follow-Up,,Stable disease,Stable disease,Radiologist 2
+000444,Unable to evaluate,25.0,Safety follow-Up,,Unable to evaluate,Unable to evaluate,Oncologist
+000445,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000445,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000445,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000445,Unable to evaluate,49.0,Week 8,,Stable disease,Stable disease,Radiologist 1
+000445,Unable to evaluate,49.0,Week 8,,Stable disease,Stable disease,Radiologist 2
+000445,Unable to evaluate,49.0,Week 8,,Stable disease,Stable disease,Oncologist
+000446,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000446,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000446,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000446,Progressive disease,28.0,Unscheduled visit 1,,Stable disease,Progressive disease,Radiologist 1
+000446,Progressive disease,28.0,Unscheduled visit 1,,Stable disease,Progressive disease,Radiologist 2
+000446,Progressive disease,28.0,Unscheduled visit 1,,Stable disease,Progressive disease,Oncologist
+000447,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000447,Partial response,57.0,Week 8,Y,Partial response,Stable disease,Oncologist
+000447,Partial response,112.0,Week 16,Y,Partial response,Stable disease,Oncologist
+000447,Partial response,164.0,Week 24,N,Partial response,Stable disease,Oncologist
+000447,Progressive disease,197.0,Unscheduled visit 1,,Progressive disease,Stable disease,Oncologist
+000447,Progressive disease,219.0,Week 32,,Progressive disease,Stable disease,Oncologist
+000447,Progressive disease,242.0,Safety follow-Up,,Progressive disease,Stable disease,Oncologist
+000448,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000448,Unable to evaluate,52.0,Week 8,,Partial response,Unable to evaluate,Oncologist
+000448,Progressive disease,80.0,Week 12,,Progressive disease,Stable disease,Oncologist
+000448,Progressive disease,107.0,Week 16,,Progressive disease,Stable disease,Oncologist
+000448,Progressive disease,157.0,Week 24,,Progressive disease,Progressive disease,Oncologist
+000448,Progressive disease,223.0,Week 32,,Progressive disease,Progressive disease,Oncologist
+000450,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000450,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000450,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000450,Progressive disease,51.0,Week 8,,Not applicable,Progressive disease,Radiologist 1
+000450,Progressive disease,51.0,Week 8,,Stable disease,Progressive disease,Radiologist 2
+000450,Progressive disease,51.0,Week 8,,Not applicable,Progressive disease,Oncologist
+000451,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000451,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000451,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000451,Progressive disease,57.0,Week 8,,Progressive disease,Progressive disease,Radiologist 1
+000451,Progressive disease,57.0,Week 8,,Progressive disease,Progressive disease,Radiologist 2
+000451,Progressive disease,57.0,Week 8,,Progressive disease,Progressive disease,Oncologist
+000452,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000452,Stable disease,52.0,Week 8,,Not applicable,Stable disease,Oncologist
+000452,Stable disease,80.0,Week 12,,Not applicable,Stable disease,Oncologist
+000452,Stable disease,108.0,Week 16,,Not applicable,Stable disease,Oncologist
+000452,Stable disease,164.0,Week 24,,Not applicable,Stable disease,Oncologist
+000452,Progressive disease,219.0,Week 32,,Not applicable,Progressive disease,Oncologist
+000453,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000453,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000453,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000453,Progressive disease,61.0,Unscheduled visit 1,,Progressive disease,Progressive disease,Radiologist 1
+000453,Progressive disease,61.0,Unscheduled visit 1,,Progressive disease,Progressive disease,Radiologist 2
+000453,Progressive disease,61.0,Unscheduled visit 1,,Progressive disease,Progressive disease,Oncologist
+000454,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000454,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000454,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000456,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000456,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000456,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000457,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000457,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000457,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000457,Progressive disease,51.0,Week 8,,Progressive disease,Progressive disease,Radiologist 1
+000457,Progressive disease,51.0,Week 8,,Progressive disease,Not applicable,Radiologist 2
+000457,Progressive disease,51.0,Week 8,,Progressive disease,Progressive disease,Oncologist
+000458,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000458,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000458,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000458,Progressive disease,55.0,Week 8,,Stable disease,Progressive disease,Radiologist 1
+000458,Progressive disease,55.0,Week 8,,Stable disease,Progressive disease,Radiologist 2
+000458,Progressive disease,55.0,Week 8,,Stable disease,Progressive disease,Oncologist
+000459,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000459,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000459,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000459,Progressive disease,56.0,Week 8,,Stable disease,Progressive disease,Radiologist 1
+000459,Progressive disease,56.0,Week 8,,Progressive disease,Progressive disease,Radiologist 2
+000459,Progressive disease,56.0,Week 8,,Stable disease,Progressive disease,Oncologist
+000460,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000460,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000460,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000460,Progressive disease,47.0,Week 8,,Stable disease,Progressive disease,Radiologist 1
+000460,Progressive disease,47.0,Week 8,,Stable disease,Progressive disease,Radiologist 2
+000460,Progressive disease,47.0,Week 8,,Stable disease,Progressive disease,Oncologist
+000461,Unknown,,Screening,,Unknown,Unknown,Radiologist 1
+000461,Unknown,,Screening,,Unknown,Unknown,Radiologist 2
+000461,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000461,Progressive disease,54.0,Week 8,,Progressive disease,Progressive disease,Radiologist 1
+000461,Progressive disease,54.0,Week 8,,Progressive disease,Progressive disease,Radiologist 2
+000461,Progressive disease,54.0,Week 8,,Progressive disease,Progressive disease,Oncologist
+000462,Unknown,,Screening,,Unknown,Unknown,Oncologist
+000462,Progressive disease,62.0,Week 8,,Not applicable,Progressive disease,Oncologist

@@ -1,0 +1,20 @@
+[
+  {
+    "control_arm": "BSC",
+    "treatment_arm": "Panitumumab + BSC",
+    "n_control": 500,
+    "n_treatment": 500,
+    "events_control": 454,
+    "events_treatment": 481,
+    "median_control": 276.0,
+    "median_treatment": 199.0,
+    "median_difference": -77.0,
+    "hazard_ratio": 1.5190144218323152,
+    "hr_95ci_lower": 1.3347497578335432,
+    "hr_95ci_upper": 1.7287171622939672,
+    "hr_p_value": 2.354787277720851e-10,
+    "logrank_statistic": 40.77456476511171,
+    "logrank_p_value": 1.7084232006623716e-10,
+    "significant": true
+  }
+]

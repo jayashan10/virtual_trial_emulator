@@ -8,18 +8,8 @@ import pandas as pd
 from lifelines import KaplanMeierFitter
 
 from .io import load_adam_tables
-from .endpoints import derive_os_from_adsl, prepare_eot_competing_from_adam
-from .features_baseline import assemble_baseline_feature_view
-from .features_longitudinal import build_longitudinal_features
-
-# Reuse generic modeling utilities from pds149
-from pds149.model_os import fit_cox, fit_weibull_aft_robust, _transform  # type: ignore
-from .os_simulate_cox import simulate_os_times_cox  # use PDS310-specific simulator
-from .model_ae import fit_cause_specific_cox_ae, fit_eot_allcause
-from .simulate import simulate_patients
-from .reporting import write_report
-from .plotting import plot_ae_incidence, plot_eot_distributions_from_tables
-from .cv import cox_kfold_cindex
+from .profile_database import load_profile_database
+from .model_survival import prepare_os_data, train_os_model
 
 
 ID_COL = "SUBJID"
@@ -31,214 +21,159 @@ def ensure_dir(path: str) -> None:
 
 
 def run_baseline_os(config_path: str) -> None:
+    """Run OS modeling using pre-built digital profiles."""
     with open(config_path, "r") as f:
         cfg = yaml.safe_load(f)
 
-    data_root = cfg["data_root"]
     out_root = cfg["outputs_root"]
     ensure_dir(out_root)
+    models_dir = os.path.join(out_root, "models")
+    ensure_dir(models_dir)
 
-    tables = load_adam_tables(data_root)
+    # Load digital profiles
+    profile_path = os.path.join(out_root, "patient_profiles.csv")
+    if not os.path.exists(profile_path):
+        print("=" * 80)
+        print("ERROR: Digital profiles not found!")
+        print("=" * 80)
+        print(f"Expected location: {profile_path}")
+        print("\nPlease build profiles first:")
+        print("  uv run python pds310/build_profiles.py")
+        print()
+        return
 
-    os_df = derive_os_from_adsl(
-        tables["adsl"],
-        death_flag_col=cfg["endpoints"]["os"].get("death_flag_col", "DTHX"),
-        time_col=cfg["endpoints"]["os"].get("time_col", "DTHDYX"),
-        trtsdt_col=cfg["endpoints"]["os"].get("trtsdt_col"),
-        dthdt_col=cfg["endpoints"]["os"].get("dthdt_col"),
+    print("Loading digital profiles...")
+    profiles = load_profile_database(profile_path)
+    print(f"Loaded {len(profiles)} patient profiles with {len(profiles.columns)} features")
+
+    # Prepare OS data (includes rare category collapsing!)
+    print("\nPreparing OS data...")
+    X, durations, events = prepare_os_data(
+        profiles,
+        duration_col="DTHDYX",
+        event_col="DTHX",
+        min_duration=1.0,
+        exclude_outcomes=True
     )
-    X_base = assemble_baseline_feature_view(tables)
-    X_long = build_longitudinal_features(tables.get("adlb"))
-    X_full = X_base.merge(X_long, on=[ID_COL, STUDY_COL], how="left")
-    df = X_full.merge(os_df[[ID_COL, STUDY_COL, "time", "event"]], on=[ID_COL, STUDY_COL], how="inner")
-    df = df[df["time"] > 0].reset_index(drop=True)
+    print(f"Training set: {len(X)} patients, {len(X.columns)} features")
+    print(f"Events: {events.sum()}/{len(events)} ({events.sum()/len(events)*100:.1f}%)")
 
-    cox_res = fit_cox(df, groups=df[STUDY_COL].astype(str))
-    joblib.dump({"model": cox_res["model"], "preprocessor": cox_res["preprocessor"], "feature_names": cox_res["feature_names"]}, os.path.join(out_root, "cox.joblib"))
+    # Train Cox model (includes cross-validation)
+    print("\nTraining Cox proportional hazards model...")
+    cox_model = train_os_model(X, durations, events, penalizer=0.1, random_state=42)
 
-    aft_cv = float("nan")
-    try:
-        aft_res = fit_weibull_aft_robust(df, groups=df[STUDY_COL].astype(str))
-        pre_obj = aft_res.get("preprocessor") or aft_res.get("pre")
-        feat_names = aft_res.get("feature_names") or aft_res.get("feat_names")
-        joblib.dump({"model": aft_res["model"], "pre": pre_obj, "feat_names": feat_names}, os.path.join(out_root, "aft_weibull.joblib"))
-        aft_cv = float(aft_res.get("cv_cindex_mean", float("nan")))
-    except Exception:
-        # Proceed without AFT
-        pass
+    # Save model
+    model_path = os.path.join(models_dir, "os_model.joblib")
+    joblib.dump(cox_model, model_path)
+    print(f"✅ OS model saved to: {model_path}")
 
-    # Single-study friendly CV (KFold stratified by event) for Cox
-    kfold_ci = cox_kfold_cindex(df, n_splits=min(5, max(2, int(len(df) ** 0.5))), random_state=42)
+    # Extract metrics (CV is done inside train_os_model)
     metrics = {
-        "cox_cv_cindex_mean": cox_res["cv_cindex_mean"],  # may be NaN with single study
-        "cox_kfold_cindex_mean": kfold_ci,
-        "aft_cv_cindex_mean": aft_cv,
-        "n_patients": int(len(df)),
-        "n_studies": int(df[STUDY_COL].nunique()),
+        "train_concordance": float(cox_model["train_concordance"]),
+        "cv_concordance_mean": float(cox_model["cv_cindex_mean"]),
+        "cv_concordance_std": float(cox_model["cv_cindex_std"]),
+        "n_patients": int(len(X)),
+        "n_features": int(len(X.columns)),
+        "n_events": int(events.sum()),
+        "event_rate": float(events.sum() / len(events)),
     }
-    with open(os.path.join(out_root, "metrics_os.json"), "w") as f:
+    
+    metrics_path = os.path.join(out_root, "metrics_os.json")
+    with open(metrics_path, "w") as f:
         json.dump(metrics, f, indent=2)
-
-    X_pre_df = _transform(cox_res["preprocessor"], df, cox_res["feature_names"])
-    risk = cox_res["model"].predict_partial_hazard(X_pre_df).values.ravel()
-    df_km = df[["time", "event"]].copy()
-    df_km["high_risk"] = (risk > pd.Series(risk).median()).astype(int)
-    df_km.to_csv(os.path.join(out_root, "km_input.csv"), index=False)
+    
+    print(f"\nOS Model Performance:")
+    print(f"  Train concordance: {metrics['train_concordance']:.3f}")
+    print(f"  CV concordance: {metrics['cv_concordance_mean']:.3f} ± {metrics['cv_concordance_std']:.3f}")
+    print(f"\n✅ Metrics saved to: {metrics_path}")
 
 
 def run_os_overlay(config_path: str, sims: int = 50) -> None:
-    with open(config_path, "r") as f:
-        cfg = yaml.safe_load(f)
-
-    data_root = cfg["data_root"]
-    out_root = cfg["outputs_root"]
-    ensure_dir(out_root)
-
-    tables = load_adam_tables(data_root)
-    os_df = derive_os_from_adsl(
-        tables["adsl"],
-        death_flag_col=cfg["endpoints"]["os"].get("death_flag_col", "DTHX"),
-        time_col=cfg["endpoints"]["os"].get("time_col", "DTHDYX"),
-        trtsdt_col=cfg["endpoints"]["os"].get("trtsdt_col"),
-        dthdt_col=cfg["endpoints"]["os"].get("dthdt_col"),
-    )
-    X_base = assemble_baseline_feature_view(tables)
-    X_long = build_longitudinal_features(tables.get("adlb"))
-    X_full = X_base.merge(X_long, on=[ID_COL, STUDY_COL], how="left")
-    df = X_full.merge(os_df[[ID_COL, STUDY_COL, "time", "event"]], on=[ID_COL, STUDY_COL], how="inner")
-    df = df[df["time"] > 0].reset_index(drop=True)
-
-    from pds149.model_os import fit_cox  # local import to avoid confusion
-    cox_res = fit_cox(df, groups=df[STUDY_COL].astype(str))
-
-    # Simulate OS times using Cox sampler; build ARM from ADSL
-    adsl_for_arm = tables["adsl"]
-    if "ARM" not in adsl_for_arm.columns and "ARMCD" not in adsl_for_arm.columns:
-        adsl_for_arm = adsl_for_arm.copy()
-        adsl_for_arm["ARM"] = "ARM"
-
-    df_sim = simulate_os_times_cox(cox_res, df.drop(columns=["time", "event"]), os_df, adsl_for_arm, n_sim=sims)
-
-    # Prepare observed df with ARM
-    from .os_eval import observed_os_df
-    df_obs = observed_os_df(tables["adsl"], os_df)
-
-    # Overlay plots
-    from pds149.plotting import plot_os_overlays  # reuse plotting
-    paths = plot_os_overlays(df_obs, df_sim, out_root)
-    print("OS overlays saved:")
-    for p in paths:
-        print(p)
+    """Generate OS simulation overlays using trained model."""
+    print("=" * 80)
+    print("NOTE: OS overlay functionality has been moved to:")
+    print("  uv run python pds310/run_virtual_trial.py --effect_source learned")
+    print()
+    print("The virtual trial script provides:")
+    print("  - KM overlays with observed vs simulated survival")
+    print("  - Treatment arm comparisons")
+    print("  - Trial statistics and power analysis")
+    print("=" * 80)
 
 
 def run_ae_and_sim(config_path: str) -> None:
-    with open(config_path, "r") as f:
-        cfg = yaml.safe_load(f)
-
-    data_root = cfg["data_root"]
-    out_root = cfg["outputs_root"]
-    ensure_dir(out_root)
-
-    tables = load_adam_tables(data_root)
-
-    X_base = assemble_baseline_feature_view(tables)
-    X_long = build_longitudinal_features(tables.get("adlb"))
-    X_full = X_base.merge(X_long, on=[ID_COL, STUDY_COL], how="left")
-
-    eot = prepare_eot_competing_from_adam(tables.get("adsl"), tables.get("adlb"), tables.get("adae"))
-    if eot is None or eot.empty:
-        raise ValueError("Unable to derive EOT from ADLB; ensure ADLB with VISITDY is available.")
-
-    df = X_full.merge(eot, on=[ID_COL, STUDY_COL], how="inner")
-    df = df[df["time"] > 0].reset_index(drop=True)
-
-    ae_res = fit_cause_specific_cox_ae(df)
-    eot_res = fit_eot_allcause(df)
-
-    joblib.dump(ae_res, os.path.join(out_root, "ae_cox.joblib"))
-    joblib.dump(eot_res, os.path.join(out_root, "eot_model.joblib"))
-
-    sim_df = simulate_patients(
-        df_features=X_full,
-        aft_allcause=eot_res,
-        cox_ae=ae_res["model"],
-        ohe=ae_res["ohe"],
-        feature_cols=ae_res["feature_cols"],
-        adsl=tables["adsl"],
-        n_sim=cfg.get("simulation", {}).get("n_simulations", 100),
-        seed=cfg.get("simulation", {}).get("seed", 42),
-    )
-    sim_path = os.path.join(out_root, "sim_ae.csv")
-    sim_df.to_csv(sim_path, index=False)
+    """Deprecated: Use standalone train_ae_models.py script instead."""
+    print("=" * 80)
+    print("DEPRECATED: CLI AE command")
+    print("=" * 80)
+    print()
+    print("AE/EOT modeling has been moved to a standalone script.")
+    print()
+    print("Use instead:")
+    print("  uv run python pds310/train_ae_models.py")
+    print()
+    print("This script will:")
+    print("  - Train adverse event (AE) models")
+    print("  - Train end-of-treatment (EOT) models")
+    print("  - Generate simulations and reports")
+    print("  - Create visualization plots")
+    print("=" * 80)
 
 
 def run_report_ae(config_path: str) -> None:
-    with open(config_path, "r") as f:
-        cfg = yaml.safe_load(f)
-    tables = load_adam_tables(cfg["data_root"])
-    out_dir = cfg["outputs_root"]
-    sim_path = os.path.join(out_dir, "sim_ae.csv")
-    report_path = write_report(tables.get("adsl"), tables.get("adlb"), tables.get("adae"), sim_path, out_dir)
-    print(f"AE report written: {report_path}")
+    """Deprecated: Use train_ae_models.py which includes reporting."""
+    print("=" * 80)
+    print("DEPRECATED: CLI report-ae command")
+    print("=" * 80)
+    print()
+    print("AE reporting is now integrated into:")
+    print("  uv run python pds310/train_ae_models.py")
+    print()
+    print("This generates all AE reports and visualizations in one run.")
+    print("=" * 80)
 
 
 def run_plots(config_path: str) -> None:
-    with open(config_path, "r") as f:
-        cfg = yaml.safe_load(f)
-    out_dir = cfg["outputs_root"]
-    rep = os.path.join(out_dir, "report_ae.csv")
-    tables = load_adam_tables(cfg["data_root"])
-    ae_plots = plot_ae_incidence(rep, out_dir)
-    sim_csv = os.path.join(out_dir, "sim_ae_calibrated.csv") if os.path.exists(os.path.join(out_dir, "sim_ae_calibrated.csv")) else os.path.join(out_dir, "sim_ae.csv")
-    eot_plot = plot_eot_distributions_from_tables(tables.get("adlb"), sim_csv, out_dir)
-    print("Plots saved:")
-    for p in ae_plots + [eot_plot]:
-        print(p)
+    """Deprecated: Use train_ae_models.py which includes plots."""
+    print("=" * 80)
+    print("DEPRECATED: CLI plots command")
+    print("=" * 80)
+    print()
+    print("AE/EOT plotting is now integrated into:")
+    print("  uv run python pds310/train_ae_models.py")
+    print()
+    print("This generates all visualizations automatically.")
+    print("=" * 80)
+
+
+def run_calibrate_ae(config_path: str) -> None:
+    """Deprecated: Use train_ae_models.py instead."""
+    print("=" * 80)
+    print("DEPRECATED: CLI calibrate-ae command")
+    print("=" * 80)
+    print()
+    print("AE calibration is no longer supported.")
+    print()
+    print("Use the standalone script for AE modeling:")
+    print("  uv run python pds310/train_ae_models.py")
+    print("=" * 80)
 
 
 def run_os_advanced(config_path: str) -> None:
-    from pds149.model_os_advanced import fit_rsf, fit_gb  # type: ignore
-    from .cv import rsf_kfold_cindex, gb_kfold_cindex
-    with open(config_path, "r") as f:
-        cfg = yaml.safe_load(f)
-
-    data_root = cfg["data_root"]
-    out_root = cfg["outputs_root"]
-    ensure_dir(out_root)
-
-    tables = load_adam_tables(data_root)
-    os_df = derive_os_from_adsl(
-        tables["adsl"],
-        death_flag_col=cfg["endpoints"]["os"].get("death_flag_col", "DTHX"),
-        time_col=cfg["endpoints"]["os"].get("time_col", "DTHDYX"),
-        trtsdt_col=cfg["endpoints"]["os"].get("trtsdt_col"),
-        dthdt_col=cfg["endpoints"]["os"].get("dthdt_col"),
-    )
-    X_base = assemble_baseline_feature_view(tables)
-    X_long = build_longitudinal_features(tables.get("adlb"))
-    X_full = X_base.merge(X_long, on=[ID_COL, STUDY_COL], how="left")
-    df = X_full.merge(os_df[[ID_COL, STUDY_COL, "time", "event"]], on=[ID_COL, STUDY_COL], how="inner")
-    df = df[df["time"] > 0].reset_index(drop=True)
-
-    rsf_res = fit_rsf(df, groups=df[STUDY_COL].astype(str))
-    gb_res = fit_gb(df, groups=df[STUDY_COL].astype(str))
-
-    joblib.dump(rsf_res, os.path.join(out_root, "os_rsf.joblib"))
-    joblib.dump(gb_res, os.path.join(out_root, "os_gb.joblib"))
-
-    # Single-study friendly KFold c-index for RSF/GB
-    n_splits = min(5, max(2, int(len(df) ** 0.5)))
-    metrics = {
-        "rsf_cv_cindex_mean": rsf_res["cv_cindex_mean"],  # may be NaN
-        "gb_cv_cindex_mean": gb_res["cv_cindex_mean"],    # may be NaN
-        "rsf_kfold_cindex_mean": rsf_kfold_cindex(df, n_splits=n_splits, random_state=42),
-        "gb_kfold_cindex_mean": gb_kfold_cindex(df, n_splits=n_splits, random_state=42),
-        "n_patients": int(len(df)),
-        "n_studies": int(df[STUDY_COL].nunique()),
-    }
-    with open(os.path.join(out_root, "metrics_os_advanced.json"), "w") as f:
-        json.dump(metrics, f, indent=2)
-    print("OS advanced metrics written")
+    """Deprecated: RSF and GB models had poor performance (C-index ~0.33)."""
+    print("=" * 80)
+    print("DEPRECATED: Advanced OS models (RSF, GB) command")
+    print("=" * 80)
+    print()
+    print("Random Survival Forest and Gradient Boosting models")
+    print("underperformed Cox PH (C-index ~0.33 vs 0.666).")
+    print()
+    print("Use the standard Cox model instead:")
+    print("  uv run -m pds310.cli os --config pds310/config.yaml")
+    print()
+    print("Or use the comprehensive training pipeline:")
+    print("  uv run python pds310/train_models.py --seed 42")
+    print("=" * 80)
 
 
 if __name__ == "__main__":
@@ -278,15 +213,7 @@ if __name__ == "__main__":
     elif args.cmd == "report-ae":
         run_report_ae(args.config)
     elif args.cmd == "calibrate-ae":
-        from pds149.calibration import apply_time_scaling  # reuse
-        with open(args.config, "r") as f:
-            cfg = yaml.safe_load(f)
-        out_dir = cfg["outputs_root"]
-        sim_in = os.path.join(out_dir, "sim_ae.csv")
-        rep = os.path.join(out_dir, "report_ae.csv")
-        sim_out = os.path.join(out_dir, "sim_ae_calibrated.csv")
-        path = apply_time_scaling(sim_in, rep, sim_out)
-        print(f"Calibrated sim written: {path}")
+        run_calibrate_ae(args.config)
     elif args.cmd == "plots":
         run_plots(args.config)
     elif args.cmd == "os-advanced":

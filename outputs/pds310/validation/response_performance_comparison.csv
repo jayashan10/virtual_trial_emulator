@@ -1,0 +1,5 @@
+Metric,Training,CV,Test
+Accuracy,1.0,0.7263876342467128,0.8
+Precision,1.0,,0.7737861811391222
+Recall,1.0,,0.8
+F1 Score,1.0,,0.7785346097201767

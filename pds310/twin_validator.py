@@ -150,7 +150,7 @@ def _check_required_features(twin: Dict[str, Any]) -> Dict[str, Any]:
     Check if required features are present.
     """
     required_features = [
-        "AGE", "SEX", "RAS_status", "TRT", "composite_risk_score"
+        "AGE", "SEX", "RAS_status", "ATRT", "composite_risk_score"
     ]
     
     missing = [f for f in required_features if f not in twin or twin[f] is None]
@@ -275,18 +275,16 @@ def _check_clinical_logic(twin: Dict[str, Any]) -> Dict[str, Any]:
             elif ecog_num >= 3 and perf_risk < 0.8:
                 issues.append("Poor ECOG but low performance risk")
     
-    # Check 4: Weight and weight_change consistency
-    weight = twin.get("B_WEIGHT")
-    weight_baseline = twin.get("weight_baseline")
-    if weight is not None and weight_baseline is not None:
-        if not pd.isna(weight) and not pd.isna(weight_baseline):
-            if abs(weight - weight_baseline) > 20:
-                issues.append(
-                    f"Large discrepancy between B_WEIGHT ({weight}) and weight_baseline ({weight_baseline})"
-                )
+    # Check 4: Early weight change within plausible bounds
+    weight_pct_42d = twin.get("weight_change_pct_42d")
+    if weight_pct_42d is not None and not pd.isna(weight_pct_42d):
+        if weight_pct_42d < -50 or weight_pct_42d > 50:
+            issues.append(
+                f"weight_change_pct_42d {weight_pct_42d:.1f}% outside plausible range (-50%, 50%)"
+            )
     
     # Check 5: Treatment and RAS status (if EGFR inhibitor trial)
-    trt = twin.get("TRT", "")
+    trt = twin.get("ATRT", "")
     ras_status = twin.get("RAS_status")
     if "panit" in str(trt).lower() and ras_status == "MUTANT":
         # Note: This is actually realistic - trial included KRAS mutants

@@ -295,7 +295,7 @@ def _calculate_population_balance(
     """
     Check if twin cohort maintains population balance for key subgroups.
     """
-    balance_features = ["SEX", "RAS_status", "TRT", "B_ECOG"]
+    balance_features = ["SEX", "RAS_status", "ATRT", "B_ECOG"]
     
     differences = []
     
@@ -384,7 +384,7 @@ def plot_twin_vs_real_comparison(
         plt.savefig(output_path, dpi=150, bbox_inches='tight')
         print(f"Comparison plot saved to: {output_path}")
     
-    plt.show()
+    plt.close()
 
 
 def export_diversity_report(

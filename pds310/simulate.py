@@ -41,7 +41,7 @@ def simulate_patients(
 
     # ARM mapping
     arm_col = None
-    for c in ["TRT", "ARM", "ARMCD"]:
+    for c in ["ATRT", "TRT", "ARM", "ARMCD"]:
         if c in adsl.columns:
             arm_col = c
             break

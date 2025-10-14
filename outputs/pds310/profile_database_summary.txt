@@ -1,0 +1,142 @@
+================================================================================
+PATIENT PROFILE DATABASE SUMMARY
+================================================================================
+
+Total Patients: 370
+Total Features: 71
+
+--------------------------------------------------------------------------------
+FEATURE GROUPS
+--------------------------------------------------------------------------------
+
+IDENTIFIERS: 2 features
+  - SUBJID
+  - STUDYID
+
+DEMOGRAPHICS: 5 features
+  - AGE
+  - SEX
+  - RACE
+  - B_ECOG
+  - B_WEIGHT
+
+DISEASE: 4 features
+  - DIAGMONS
+  - HISSUBTY
+  - DIAGTYPE
+  - SXANY
+
+TREATMENT: 1 features
+  - ATRT
+
+BASELINE_LABS: 8 features
+  - baseline_ALB
+  - baseline_ALP
+  - baseline_CEA
+  - baseline_CREAT
+  - baseline_HGB
+  - baseline_LDH
+  - baseline_PLT
+  - baseline_WBC
+
+LONGITUDINAL_LABS: 16 features
+  - lab_ALB_early_last
+  - lab_ALP_early_last
+  - lab_CEA_early_last
+  - lab_CREAT_early_last
+  - lab_HGB_early_last
+  - lab_LDH_early_last
+  - lab_PLT_early_last
+  - lab_WBC_early_last
+  - lab_ALB_early_slope
+  - lab_ALP_early_slope
+  - lab_CEA_early_slope
+  - lab_CREAT_early_slope
+  - lab_HGB_early_slope
+  - lab_LDH_early_slope
+  - lab_PLT_early_slope
+  - lab_WBC_early_slope
+
+TUMOR: 7 features
+  - target_lesion_count
+  - nontarget_lesion_count
+  - sum_target_diameters
+  - max_lesion_size
+  - mean_lesion_size
+  - lesion_sites_count
+  - tumor_burden_category
+
+MOLECULAR: 8 features
+  - KRAS_exon2
+  - KRAS_exon3
+  - KRAS_exon4
+  - NRAS_exon2
+  - NRAS_exon3
+  - NRAS_exon4
+  - BRAF_exon15
+  - RAS_status
+
+PHYSICAL: 1 features
+  - weight_change_pct_42d
+
+HISTORY: 5 features
+  - prior_ae_count
+  - prior_severe_ae_count
+  - prior_skin_toxicity_flag
+  - num_prior_therapies
+  - time_since_diagnosis
+
+RISK_SCORES: 6 features
+  - lab_risk_score
+  - performance_risk
+  - tumor_burden_risk
+  - molecular_risk
+  - composite_risk_score
+  - predicted_good_prognosis_flag
+
+OUTCOMES: 8 features
+  - DTHDYX
+  - DTHX
+  - PFSDYCR
+  - PFSCR
+  - best_response
+  - response_at_week8
+  - response_at_week16
+  - time_to_response
+
+--------------------------------------------------------------------------------
+DEMOGRAPHICS
+--------------------------------------------------------------------------------
+Age: 61.0 ± 10.6 years
+Age Range: 27 - 83
+
+Sex Distribution:
+  Male: 237
+  Female: 133
+
+--------------------------------------------------------------------------------
+TREATMENT ARMS
+--------------------------------------------------------------------------------
+  Best supportive care: 187
+  panit. plus best supportive care: 183
+
+--------------------------------------------------------------------------------
+RAS MUTATION STATUS
+--------------------------------------------------------------------------------
+  WILD-TYPE: 181
+  MUTANT: 170
+  UNKNOWN: 19
+
+--------------------------------------------------------------------------------
+SURVIVAL OUTCOMES
+--------------------------------------------------------------------------------
+OS Events: 335
+OS Censored: 35
+OS Median: 186.5 days
+
+--------------------------------------------------------------------------------
+RESPONSE OUTCOMES
+--------------------------------------------------------------------------------
+  PD: 215
+  SD: 65
+  PR: 25

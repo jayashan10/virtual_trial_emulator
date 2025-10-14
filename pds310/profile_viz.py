@@ -74,10 +74,10 @@ def plot_profile_distribution(
         plt.xticks(rotation=0)
     
     # Treatment arms
-    if "TRT" in db.columns:
+    if "ATRT" in db.columns:
         plt.subplot(4, 4, ax_idx)
         ax_idx += 1
-        trt_counts = db["TRT"].value_counts()
+        trt_counts = db["ATRT"].value_counts()
         trt_counts.plot(kind="barh", color="steelblue")
         plt.xlabel("Count")
         plt.ylabel("Treatment")
@@ -131,7 +131,7 @@ def plot_profile_distribution(
         plt.savefig(output_path, dpi=150, bbox_inches="tight")
         print(f"Saved profile distributions to: {output_path}")
     
-    plt.show()
+    plt.close()
 
 
 def plot_profile_comparison(
@@ -196,14 +196,14 @@ def plot_profile_comparison(
         plt.savefig(output_path, dpi=150, bbox_inches="tight")
         print(f"Saved profile comparison to: {output_path}")
     
-    plt.show()
+    plt.close()
 
 
 def plot_correlation_heatmap(
     db: pd.DataFrame,
     feature_subset: Optional[List[str]] = None,
     output_path: Optional[str] = None,
-    figsize: tuple = (12, 10)
+    figsize: tuple = (20, 18)
 ) -> None:
     """
     Plot correlation heatmap for numeric features.
@@ -223,17 +223,38 @@ def plot_correlation_heatmap(
     if feature_subset:
         numeric_cols = [c for c in numeric_cols if c in feature_subset]
     
-    # Limit to reasonable number
-    if len(numeric_cols) > 40:
-        # Prioritize key features
+    # Remove features with zero variance or all missing
+    valid_cols = []
+    for col in numeric_cols:
+        if db[col].std() > 0 and db[col].notna().sum() > 0:
+            valid_cols.append(col)
+    
+    numeric_cols = valid_cols
+    
+    # If still too many features (>80), sample intelligently
+    if len(numeric_cols) > 80:
+        # Keep key features + sample from the rest
         priority_features = [
-            "AGE", "B_ECOG", "B_WEIGHT",
-            "baseline_HGB", "baseline_LDH", "baseline_ALP", "baseline_CEA",
-            "sum_target_diameters", "target_lesion_count",
+            "AGE", "B_ECOG", "B_WEIGHT", "DIAGMONS",
+            "baseline_ALB", "baseline_CREAT", "baseline_PLT",
+            "target_lesion_count", "nontarget_lesion_count",
             "composite_risk_score", "lab_risk_score", "performance_risk",
-            "DTHDYX", "PFSDYCR"
+            "DTHDYX", "PFSDYCR", "time_to_response"
         ]
-        numeric_cols = [c for c in priority_features if c in numeric_cols][:40]
+        
+        # Add longitudinal lab features
+        lab_features = [c for c in numeric_cols if c.startswith('lab_') and 
+                       any(x in c for x in ['HGB', 'LDH', 'ALP', 'CEA', 'CREATININE'])]
+        
+        priority_cols = [c for c in priority_features if c in numeric_cols]
+        other_cols = [c for c in numeric_cols if c not in priority_cols]
+        
+        # Combine: all priority + sample of others
+        import random
+        random.seed(42)
+        sampled_others = random.sample(other_cols, min(len(other_cols), 80 - len(priority_cols) - len(lab_features)))
+        
+        numeric_cols = priority_cols + lab_features[:20] + sampled_others
     
     # Calculate correlations
     corr = db[numeric_cols].corr()
@@ -250,7 +271,7 @@ def plot_correlation_heatmap(
         plt.savefig(output_path, dpi=150, bbox_inches="tight")
         print(f"Saved correlation heatmap to: {output_path}")
     
-    plt.show()
+    plt.close()
 
 
 def plot_subgroup_comparison(
@@ -265,7 +286,7 @@ def plot_subgroup_comparison(
     
     Args:
         db: Profile database
-        subgroup_col: Column defining subgroups (e.g., "RAS_status", "TRT")
+    subgroup_col: Column defining subgroups (e.g., "RAS_status", "ATRT")
         metric_col: Metric to compare (e.g., "composite_risk_score", "DTHDYX")
         output_path: Path to save plot (optional)
         figsize: Figure size
@@ -314,7 +335,7 @@ def plot_subgroup_comparison(
         plt.savefig(output_path, dpi=150, bbox_inches="tight")
         print(f"Saved subgroup comparison to: {output_path}")
     
-    plt.show()
+    plt.close()
 
 
 def export_profile_summary_table(
@@ -332,7 +353,7 @@ def export_profile_summary_table(
     """
     # Select key features for summary
     summary_features = [
-        ID_COL, "AGE", "SEX", "RACE", "B_ECOG", "TRT",
+        ID_COL, "AGE", "SEX", "RACE", "B_ECOG", "ATRT",
         "RAS_status", "baseline_HGB", "baseline_LDH",
         "sum_target_diameters", "tumor_burden_category",
         "composite_risk_score", "best_response",
@@ -420,6 +441,6 @@ def plot_feature_importance_from_profiles(
         plt.savefig(output_path, dpi=150, bbox_inches="tight")
         print(f"Saved feature importance plot to: {output_path}")
     
-    plt.show()
+    plt.close()
     
     return importance_df

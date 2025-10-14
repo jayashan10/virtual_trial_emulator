@@ -1,0 +1,9 @@
+{
+  "train_concordance": 0.8020153931603586,
+  "cv_concordance_mean": 0.23242157134015634,
+  "cv_concordance_std": 0.015951206338467375,
+  "n_patients": 370,
+  "n_features": 106,
+  "n_events": 335,
+  "event_rate": 0.9054054054054054
+}

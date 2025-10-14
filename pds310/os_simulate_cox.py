@@ -72,7 +72,7 @@ def simulate_os_times_cox(
 
     # ARM mapping from ADSL
     arm_col = None
-    for c in ["TRT", "ARM", "ARMCD"]:
+    for c in ["ATRT", "TRT", "ARM", "ARMCD"]:
         if c in adsl_for_arm.columns:
             arm_col = c
             break

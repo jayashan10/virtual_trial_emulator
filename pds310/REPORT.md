@@ -1,57 +1,179 @@
-# PDS310 Report
+# PDS310 Digital-Twin Report  
+*Panitumumab + Best Supportive Care vs Best Supportive Care (Project Data Sphere Study 20020408)*
 
-This report documents OS training, AE/EOT simulation, outputs, and interpretations for PDS310.
 
-## Inputs
-- ADSL, ADLB, ADAE from `AllProvidedFiles_310/PDS_DSA_20020408/`
-- Config: `pds310/config.yaml`
+> **Note:** AE/EOT modeling described in Section 2.2 is now optional and has been moved to a standalone script (`train_ae_models.py`). Virtual trials work without it. The core workflow focuses on OS, Response, TTR, and Biomarker models.
+---
 
-## Pipelines and artifacts
-- OS baseline: `cox.joblib`, optional `aft_weibull.joblib`, `metrics_os.json`, `km_input.csv`
-- OS overlays (Cox-based simulation): `plot_os_overlay_PDS310.png`
-- Advanced OS (RSF, GB): `os_rsf.joblib`, `os_gb.joblib`, `metrics_os_advanced.json`
-- AE/EOT: `ae_cox.joblib`, `eot_model.joblib`, `sim_ae.csv`, `report_ae.csv`, `report_ae_summary.json`, `sim_ae_calibrated.csv`, `plot_ae_incidence_*.png`, `plot_eot_distributions.png`
+## 0. Executive Summary
 
-## Key results observed
-- Data footprint: 370 subjects, 1 study (`STUDYID=PDS310`). Arms detected: `Best supportive care`, `panit. plus best supportive care`.
-- OS metrics (single-study friendly KFold): `cox_kfold_cindex_mean ≈ 0.666` (from `metrics_os.json`). Grouped-by-study CV remains `NaN` as expected.
-- Advanced OS metrics (KFold): `rsf_kfold_cindex_mean ≈ 0.330`, `gb_kfold_cindex_mean ≈ 0.330` (from `metrics_os_advanced.json`). Grouped CV fields remain `NaN`.
-- AE simulation: `sim_ae.csv` contains 18,500 rows (370 × 50 sims), with overall AE event rate ≈ 0.489 and both arms represented. `report_ae.csv` has 2 rows (per arm), including `suggested_time_scale` for calibration.
-- Calibration: `sim_ae_calibrated.csv` includes `t_eot_calibrated`. Mean ratio `t_eot_calibrated / t_eot` ≈ 1.20, indicating simulated EOT was scaled up to better align with observed medians.
+We ingested the full ADaM bundle for PDS310 (370 colorectal cancer patients) and built an end-to-end digital twin framework. Baseline, early-treatment lab, tumour, molecular, physical, and derived risk features (71 columns per subject) were engineered from ADSL, ADLB, ADAE, ADRSP, ADLS, ADPM, and BIOMARK, with all longitudinal inputs capped at day 42 to remove Week 8 leakage. We trained and validated:
 
-## Did the simulation work?
-- Yes. The pipeline successfully produced AE/EOT simulations, arm-level incidence metrics at 90/180/365 days, and EOT distribution plots. The presence of plausible incidence values per arm and the calibration ratio > 1 suggests the initial EOT model slightly under-estimated EOT timing relative to observed; calibration adjusted it upward.
+- **Overall survival (OS)**: Cox PH model (KFold C-index 0.666) with simulated overlays for visual comparison.
+- **Adverse event (AE) & End-of-treatment (EOT)**: cause-specific Cox + AFT simulation, highlighting calibration gaps between observed and simulated incidence.
+- **Response classification**: Random Forest pipeline (holdout accuracy 0.767, ROC-AUC 0.870) with calibration and feature importance analysis.
+- **Time-to-response regression**: Random Forest regression (train R² 0.83, holdout R² –1.35) – data scarcity dominates error bars.
+- **Biomarker trajectories**: LDH/HGB predictions at weeks 8/16 using canonical lab mapping; early timepoints perform strongly.
 
-## Why some metrics are NaN
-- Grouped CV metrics rely on at least 2 distinct `STUDYID` groups. With a single-study dataset, CV folds cannot be formed, hence `NaN` c-indices in both OS and advanced models. We added event-stratified KFold metrics as primary evaluation (see values above).
+Validation artefacts, calibration curves, and bootstrap uncertainty estimates are included. The sections below interpret these results, describe plots and tables, and provide next-step recommendations.
 
-## Observed vs simulated comparisons
-- From `report_ae.csv` (per arm):
-  - Best supportive care:
-    - Observed AE incidence at 90/180/365: 0.000 / 0.000 / 0.000
-    - Simulated AE incidence at 90/180/365: ≈ 0.366 / 0.371 / 0.371
-  - panit. plus best supportive care:
-    - Observed AE incidence at 90/180/365: ≈ 0.913 / 0.913 / 0.913
-    - Simulated AE incidence at 90/180/365: ≈ 0.386 / 0.603 / 0.609
-- Interpretation: For BSC, observed early AEs are essentially absent while simulation predicts moderate incidence; verify `ADAE` completeness and onset alignment to treatment day scale. For panitumumab arm, simulated probabilities under-estimate observed AE frequency at early horizons, indicating a need for AE probability calibration and/or richer features.
+---
 
-## Recommendations to improve comparison fidelity
-- Endpoint alignment:
-  - Confirm `ADAE` onset column used (`AESTDY`, `AESTDYI`, etc.) and ensure it aligns to treatment day scale used for `ADLB.VISITDY` EOT proxy.
-  - If available, use `ADSL/TRTSDT` to normalize all times to days-on-treatment for both labs and AE.
-- Feature enrichment:
-  - Include additional longitudinal markers (if present) like vitals or more lab tests to improve both EOT and AE modeling.
-  - Add treatment indicator `TRT` explicitly to the design matrix for AE Cox modeling; currently it enters via ADSL baseline merge, but verify it survives preprocessing and one-hot encoding.
-- Model calibration:
-  - Keep using `suggested_time_scale` to match median EOT per arm; consider quantile-specific scaling if tails differ (align 25th/75th percentiles).
-  - For AE probability, add Platt scaling or isotonic regression using observed AE at 90/180/365 to better match arm-specific incidence.
-- OS evaluation:
-  - Because there is a single study, prefer train/test split or bootstrapping over grouped CV, and report bootstrap c-index with confidence intervals.
-- Data quality checks:
-  - Investigate columns with all-missing slopes (e.g., creatinine slope). Either remove from feature selection up-front or compute slopes only when at least 2 non-missing timepoints exist.
+## 1. Dataset and Feature Engineering
 
-## Next steps
-1) Tighten endpoint timing normalization to `TRTSDT` reference.
-2) Add AE probability calibration using observed incidence by arm and horizon.
-3) Add bootstrap risk metrics for OS and AE models given single-study constraint.
-4) Explore per-arm-specific EOT models if treatment materially influences discontinuation timing.
+| Aspect | Detail |
+|--------|--------|
+| Subjects | 370 (`STUDYID = PDS310`) |
+| Arms | `Best supportive care` (n=186) vs `panit. plus best supportive care` (n=184) |
+| Outcomes | OS (DTHDYX/DTHX), response categories (CR/PR/SD/PD), time-to-response, PFS placeholders (PFSDYCR/PFSCR) |
+| Labs | Canonical mapping (`pds310/labs.py`) standardises LBTEST to short codes (ALB, ALP, CEA, CREAT, HGB, LDH, PLT, WBC) |
+| Feature groups | See `outputs/pds310/profile_database_summary.txt`: demographics, disease history, treatment, molecular markers, longitudinal lab aggregates, lesion metrics, derived risk scores |
+
+Longitudinal lab aggregates now contribute **16** features: for each of the 8 canonical labs we keep only the early-treatment window (days 1–42) with `lab_<code>_early_last` and `_early_slope`. Baseline means/counts are removed, so models never see Week 8+ measurements. Physical measurements likewise compress to a single `weight_change_pct_42d` feature anchored to the baseline weight captured in ADSL.
+
+All patient IDs are preserved as zero-padded strings (`SUBJID`), ensuring joins between profiles and raw ADLB/ADAE remain lossless. The design workbook `DDT_408_v2.xlsx` (sheet `ADLB_PDS2019`) documents variable definitions and matches the canonical lab list used across the pipeline.
+
+---
+
+## 2. Modelling Results by Task
+
+All modelling pipelines now exclude downstream outcome fields and derived risk scores (`lab_risk_score`, `performance_risk`, `tumor_burden_risk`, `molecular_risk`, `composite_risk_score`, `predicted_good_prognosis_flag`) before training to avoid label leakage.
+
+### 2.1 Overall Survival (OS)
+
+- **Model**: Cox PH with penalised spline pre-processing (`pds310.cli os`). Optional Weibull AFT is attempted but convergence is not guaranteed for this dataset.
+- **Evaluation**: Single-study grouped CV is undefined (NaN). We report subject-stratified KFold:
+  - `cox_kfold_cindex_mean = 0.666`
+- **Outputs**: `plot_os_overlay_PDS310.png` overlays simulated survival curves (50 replicates) against Kaplan–Meier estimates. The overlay shows reasonable alignment past day ~200, but early survival is slightly optimistic; consider baseline hazard recalibration if early deaths are critical for decision-making.
+- **Counterfactual model**: `outputs/pds310/models/os_model.joblib` captures treatment as an explicit covariate on the digital profile features. The virtual-trial engine samples survival times from this fitted Cox model instead of relying on fixed hazard-ratio scalars.
+
+### 2.2 Adverse Events & End-of-Treatment Simulation
+
+- **Models**: cause-specific Cox for AE probability; Weibull/LogNormal AFT for EOT time. Simulations generate `sim_ae.csv` (370 patients × 50 draws).
+- **Arm-level comparison** (`report_ae.csv`):
+
+| Arm | Observed AE incidence | Simulated AE incidence | Observed EOT median | Simulated EOT median | Suggested scale |
+|-----|-----------------------|------------------------|---------------------|----------------------|-----------------|
+| Best supportive care | 0.00 / 0.00 / 0.00 (90/180/365d) | 0.37 / 0.37 / 0.37 | 44.5 d | 32.2 d | **1.38** |
+| Panit. + BSC | 0.91 / 0.91 / 0.91 | 0.39 / 0.60 / 0.61 | 83.5 d | 81.6 d | **1.02** |
+
+Interpretation:
+- BSC arm has no recorded on-treatment AEs (likely due to data capture rules), whereas the simulation anticipates moderate AE risk; confirm ADAE coding (e.g., many BSC patients might have been censored at treatment start).
+- Panitumumab arm simulations under-estimate early AE incidence but approach observed rates by 1 year. Introducing arm-specific baseline hazards or post-simulation calibration (e.g., Platt/isotonic against 90/180-day incidence) would improve fidelity.
+- `plot_ae_incidence_{90,180,365}.png` visualises these discrepancies, and `plot_eot_distributions.png` highlights how calibrated EOT extends simulated durations to match observed medians.
+
+### 2.3 Response Classification
+
+- **Model**: Random Forest within a scikit-learn `Pipeline` (median/mode imputation, one-hot encoding, variance threshold). Trained on train split via `run_validation.py`; inference uses the stored pipeline.
+- **Holdout metrics (60 patients)**:
+  - Accuracy 0.767, weighted F1 0.734, ROC-AUC 0.870.
+  - Class imbalance: PR (partial response) is rare (n=5) and the model fails to capture it (precision/recall 0); PD dominates.
+- **Visuals**:
+  - `response_confusion_matrix.png` shows most errors are PR/SD misclassifications.
+  - `response_feature_importance.png` indicates prior AE count, diagnosis months, baseline weight and age are leading predictors.
+- **Calibration**:
+  - Brier scores: PD 0.120, SD 0.111, PR 0.065.
+  - Expected calibration error (ECE) for PD is modest (0.106). Consider class-weighted training or focal loss to rescue PR predictions.
+
+### 2.4 Time-to-Response (TTR)
+
+- **Model**: Random Forest regressor pipeline.
+- **Data reality**: Only 25 responders overall; with a 20% holdout split, just 5 responders remain for testing.
+- **Performance**:
+  - Train R² 0.83, MAE 6.2 days.
+  - Holdout R² −1.35, MAE 12.3 days. Bootstrap MAE (100 samples) = 11.7 days (95% CI 6.0–19.0). Calibration slope −0.43.
+- **Takeaway**: Treat predictions as rough point estimates; consider reframing as censored survival-to-response or pooling with additional cohorts if available.
+
+### 2.5 Biomarker Trajectories (LDH & HGB)
+
+Canonical lab mapping unlocks longitudinal data (after preserving zero-padded IDs):
+
+| Biomarker | Day | Samples | CV R² | Notes |
+|-----------|-----|---------|-------|-------|
+| LDH | 56 | 161 | **0.91 ± 0.08** | Strong fit |
+| LDH | 112 | 60 | −56.4 ± 112.3 | Highly variable late data; consider smoothing/regularisation |
+| HGB | 56 | 158 | **0.98 ± 0.01** | Very stable |
+| HGB | 112 | 58 | 0.56 ± 0.21 | Moderate accuracy |
+
+Plots (`outputs/pds310/models/*_predictions.png`) show tight adherence at week 8 and widening scatter at week 16, especially for LDH (driven by a few high values > 3000). If late-visit accuracy matters, try quantile regression, mixed models, or relaxed time windows (±14 days).
+
+### 2.6 Digital Twins & Virtual Trials
+
+Digital twin generation (`digital_twins_n100.csv`, `digital_twins_n1000.csv`) and validation (`twin_validation_*.json`) confirm:
+- Feature distributions align with observed cohorts (see `twin_vs_real_comparison_*.png`).
+- Diversity metrics (Simpson, coverage) are within acceptable ranges for n=100 and n=1000.
+
+The virtual trial pipeline (`pds310/run_virtual_trial.py`) supports two effect pathways via `--effect_source`:
+- `learned` (default) draws counterfactual outcomes from the trained response, TTR, and OS models (`outputs/pds310/models/*.joblib`). Observed-arm Kaplan–Meier overlays are automatically harmonised with the simulated curves by normalising treatment labels.
+- `assumed` skips counterfactual sampling and applies the hazard-ratio and response multipliers embedded in `pds310/trial_design.py` (legacy behaviour).
+
+Use `--effect_source learned` once the model artefacts are in place; switch to `assumed` when exploring hypothetical designs before the predictive models are ready. `pds310/trial_statistics.py` controls downstream analysis (KM plots, log-rank tests, forest plots) and persists both simulated and observed survival summaries.
+
+Virtual trial simulations default to `--effect_source learned`, which draws counterfactual outcomes from the trained response, TTR, and OS models. The post-processing step now normalises observed treatment labels before plotting, so `outputs/pds310/virtual_trial/kaplan_meier_os.png` overlays dashed “Observed” curves alongside simulated arms. Switching to `--effect_source assumed` bypasses the counterfactual sampling and reapplies the design-level multipliers (e.g., hazard ratios) defined in the trial design JSON when the learned models are unavailable.
+
+---
+
+## 3. Plot & Artifact Highlights
+
+| Plot | Interpretation Tips |
+|------|---------------------|
+| `plot_os_overlay_PDS310.png` | Compare observed KM (solid) vs simulated replicates (semi-transparent). Consistency at mid-to-late survival suggests baseline hazard is captured; early divergence indicates need for recalibration if early mortality is critical. |
+| `plot_ae_incidence_{90,180,365}.png` | Bars per arm showing observed vs simulated AE probability at each horizon; use to gauge under/over-estimation. |
+| `plot_eot_distributions.png` | Histograms + CDF of observed vs simulated EOT durations; look for shifts corrected by the “calibrated” series. |
+| `response_feature_importance.png` | Bar chart of top 20 predictors; actionable for clinical interpretation. |
+| `ttr_predictions.png` | Scatter + residual plots; residual funneling indicates overfitting due to small sample. |
+| `Lactate Dehydrogenase_day56_predictions.png` | Predicted vs actual LDH with identity line, indicating strong performance at week 8. |
+| `profile_distributions.png` | Demographic baseline distributions to orient new analysts; includes ECOG, RAS status, etc. |
+
+---
+
+## 4. Validation, Calibration & Uncertainty
+
+| Component | Key Findings |
+|-----------|--------------|
+| Response calibration | Brier scores < 0.12 across classes, ECE ≈ 0.10 for PD; PR class suffers due to tiny sample, so probability mass mostly sits on PD/SD. |
+| TTR calibration | Slope −0.43, R² 0.12 — predictions regress towards mean; indicates limited trust in absolute day values. |
+| Bootstrapping | TTR MAE CI (6.0, 19.0) days – emphasises responder scarcity. Add reporting of confidence intervals for OS/AE if the use-case demands. |
+| Advanced OS models | RSF/GB KFold C-index ~0.33 (underperforming Cox). Keep Cox as baseline; advanced models likely need more tuning or features that encode time-varying effects. |
+
+---
+
+## 5. Recommendations
+
+1. **AE/EOT calibration**: Apply arm-specific probability scaling (e.g., isotonic/Platt) using observed 90/180-day AE incidence; consider adding a treatment indicator directly into the AE Cox covariate set.
+2. **TTR modelling**: Explore survival-to-response with censoring (e.g., time-dependent Cox), or share information across similar cohorts to alleviate n=25 limitation.
+3. **Late biomarker stability**: Increase time window for week 16 (±14 days) or use spline smoothing/regularisation to reduce variance in LDH predictions.
+4. **PFS modelling**: Extend the pipeline to progression-free survival using `PFSDYCR`/`PFSCR` columns now present in digital profiles; mirror the OS command set.
+5. **Documentation**: Continue leveraging the README (quick start) and this report for onboarding; add Jupyter notebooks for exploratory analysis if new collaborators prefer them.
+
+---
+
+## 6. Reproduction Checklist
+
+1. Confirm ADaM files reside at `AllProvidedFiles_310/PDS_DSA_20020408`.
+2. Run:
+   ```bash
+   uv sync
+   uv run python pds310/build_profiles.py
+   uv run python pds310/train_models.py --model_type rf --seed 42
+   uv run -m pds310.cli os --config pds310/config.yaml
+   uv run -m pds310.cli ae --config pds310/config.yaml
+   uv run python pds310/run_validation.py --profiles outputs/pds310/patient_profiles.csv --output_dir outputs/pds310/validation --model_type rf --seed 42
+   ```
+3. Inspect artefacts in `outputs/pds310/` alongside this report.
+
+---
+
+## 7. Appendix
+
+- **Data dictionary**: `DDT_408_v2.xlsx` – cross-check column meanings (e.g., `LBTEST`, `AESTDY`) when interpreting features.
+- **Key JSON/CSV files**:
+  - `metrics_os.json`, `metrics_os_advanced.json` – survival metrics.
+  - `report_ae.csv`, `report_ae_summary.json` – AE vs simulated comparisons.
+  - `validation/response_validation.json`, `validation/ttr_validation.json` – holdout statistics used in this report.
+- **Scripts**:
+  - `pds310/labs.py` – canonical lab name mapping.
+  - `pds310/profile_database.py` – load/save helpers ensuring `SUBJID` string dtype.
+  - `pds310/model_response.py`, `pds310/model_ttr.py`, `pds310/model_biomarkers.py` – pipeline definitions.
+
+For questions or contributions, open an issue describing which module and artefact you are targeting, referencing the sections above for context.

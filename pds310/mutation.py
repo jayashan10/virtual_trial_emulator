@@ -58,7 +58,7 @@ def apply_mutation(
         "NRAS_exon2", "NRAS_exon3", "NRAS_exon4",
         "BRAF_exon15", "RAS_status",
         # Treatment assignment (study design)
-        "TRT", "ATRT",
+        "ATRT",
     }
     
     # Define weakly mutable features (lower mutation rate)
@@ -188,16 +188,6 @@ def _mutate_categorical(
             elif idx < len(burdens) - 1:
                 return burdens[idx + 1]
     
-    elif "trajectory" in feature_name.lower():
-        # Weight trajectory can change
-        trajectories = ["declining", "stable", "increasing"]
-        if value in trajectories:
-            idx = trajectories.index(value)
-            if np.random.random() < 0.5 and idx > 0:
-                return trajectories[idx - 1]
-            elif idx < len(trajectories) - 1:
-                return trajectories[idx + 1]
-    
     # Default: no mutation for other categorical features
     return value
 
@@ -235,9 +225,7 @@ def get_default_feature_ranges() -> Dict[str, Tuple[float, float]]:
         "lesion_sites_count": (0, 10),
         
         # Physical measurements
-        "weight_baseline": (30, 150),      # kg
-        "weight_change_abs": (-30, 30),    # kg
-        "weight_change_pct": (-50, 50),    # %
+        "weight_change_pct_42d": (-50, 50),  # %
         
         # History
         "prior_ae_count": (0, 50),
@@ -284,27 +272,18 @@ def apply_correlated_mutations(
     
     # Then adjust correlated features
     
-    # Weight and weight_change correlation
-    if "B_WEIGHT" in mutated and "weight_baseline" in mutated:
-        if "B_WEIGHT" in profile and "weight_baseline" in profile:
+    # Weight change correlation
+    if "B_WEIGHT" in mutated and "weight_change_pct_42d" in mutated:
+        if "B_WEIGHT" in profile and "weight_change_pct_42d" in profile:
             weight_diff = mutated["B_WEIGHT"] - profile["B_WEIGHT"]
-            if abs(weight_diff) > 1:  # Significant change
-                # Adjust weight_change
-                if "weight_change_abs" in mutated:
-                    mutated["weight_change_abs"] = mutated.get("weight_change_abs", 0) + weight_diff
-                if "weight_change_pct" in mutated and mutated.get("weight_baseline"):
-                    mutated["weight_change_pct"] = (
-                        mutated.get("weight_change_abs", 0) / mutated["weight_baseline"] * 100
-                    )
-                # Update trajectory
-                if "weight_change_pct" in mutated:
-                    pct = mutated["weight_change_pct"]
-                    if pct < -5:
-                        mutated["weight_trajectory"] = "declining"
-                    elif pct > 5:
-                        mutated["weight_trajectory"] = "increasing"
-                    else:
-                        mutated["weight_trajectory"] = "stable"
+            if abs(weight_diff) > 1:
+                pct_adjust = (weight_diff / max(mutated["B_WEIGHT"], 1e-6)) * 100
+                current_pct = mutated.get("weight_change_pct_42d")
+                if current_pct is None or pd.isna(current_pct):
+                    current_pct = 0.0
+                mutated["weight_change_pct_42d"] = float(
+                    np.clip(current_pct + pct_adjust, -50, 50)
+                )
     
     # Performance status and composite risk correlation
     if "B_ECOG" in mutated and "performance_risk" in mutated:

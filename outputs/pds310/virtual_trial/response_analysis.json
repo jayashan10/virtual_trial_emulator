@@ -1,0 +1,19 @@
+[
+  {
+    "control_arm": "BSC",
+    "treatment_arm": "Panitumumab + BSC",
+    "n_control": 500,
+    "n_treatment": 500,
+    "responders_control": 0,
+    "responders_treatment": 0,
+    "rate_control": 0.0,
+    "rate_treatment": 0.0,
+    "risk_difference": 0.0,
+    "rd_95ci_lower": 0.0,
+    "rd_95ci_upper": 0.0,
+    "relative_risk": null,
+    "odds_ratio": null,
+    "p_value": 1.0,
+    "significant": false
+  }
+]
