@@ -1,84 +1,159 @@
-# PDS149: Clinical Trial Modeling and Simulation (Project Data Sphere 149)
+# PDS310 Clinical-Twin Pipelines
 
-This repository implements a reproducible pipeline to learn from the Prostate Cancer DREAM Challenge mCRPC trials (Project Data Sphere content 149), validate against observed outcomes, and simulate trial endpoints.
+Digital twin modelling for Project Data Sphere study 20020408 (panitumumab + best supportive care vs best supportive care).  
+This package ingests ADaM tables, engineers rich baseline and longitudinal features, trains predictive models (OS, response, TTR, biomarker trajectories) and runs validation and simulation workflows.
 
-## What this does
-- Derives endpoints from the training split (`CoreTable_training.csv`):
-  - Overall survival (OS): time `LKADT_P` and event flag `DEATH`.
-  - On-treatment end-of-treatment (EOT) with AE competing risks via `ENDTRS_C` and `ENTRT_PC`.
-- Builds feature views:
-  - Baseline: demographics, ECOG, metastasis flags, labs, prior meds, comorbidities.
-  - Longitudinal: windowed aggregates for key labs/vitals in baseline (−30–0 d) and early treatment (1–60 d).
-- Models:
-  - OS: Cox PH and Weibull AFT baselines (with grouped CV by `STUDYID`).
-  - AE/EOT: cause-specific Cox for AE; robust AFT (Weibull/LogNormal with fallbacks) for all-cause EOT.
-- Simulation:
-  - Multi-state EOT simulation (sample EOT and AE indicator) and reporting.
-- Reporting & plots:
-  - Observed vs simulated AE incidence at 90/180/365 days.
-  - EOT distribution overlays with density normalization and fair binning.
-  - Suggested per-study/arm time-scaling for calibration.
+---
 
-## Data
-Place the training CSVs under:
+## 1. Quick Start
+
+### 1.1 Prerequisites
+- Python ≥ 3.9
+- `uv` (preferred) or `pip` for dependency management
+- ADaM tables from PDS_DSA_20020408 (SAS7BDAT format)
+- Optional: `openpyxl` if you want to inspect the design workbook `DDT_408_v2.xlsx`
+
+### 1.2 Data layout
 ```
-AllProvidedFiles_149/prostate_cancer_challenge_data_training/
+AllProvidedFiles_310/
+ ├── DDT_408_v2.xlsx                      # data dictionary
+ └── PDS_DSA_20020408/
+      ├── adsl_pds2019.sas7bdat           # subject-level (required)
+      ├── adlb_pds2019.sas7bdat           # lab longitudinal (required)
+      ├── adae_pds2019.sas7bdat           # adverse events (optional but recommended)
+      ├── adls_pds2019.sas7bdat           # lesion measurements
+      ├── adpm_pds2019.sas7bdat           # physical measurements
+      ├── adrsp_pds2019.sas7bdat          # response assessments
+      └── biomark_pds2019.sas7bdat        # molecular assays
 ```
-The CLI uses the path in `config.yaml`.
+Point `pds310/config.yaml` to the directory above. All artefacts will land in `outputs/pds310/`.
 
-## Quick start (uv)
-1) Install deps and lock:
+### 1.3 Environment setup
 ```bash
-uv sync
+uv sync                      # or: pip install -r requirements.txt
+uv run python -m pip install openpyxl pyreadstat   # if not already present
 ```
-2) Run pipelines:
+
+---
+
+## 2. Pipeline Overview
+
+| Stage | Module | Description |
+|-------|--------|-------------|
+| Data ingestion | `pds310.io` | Loads ADaM tables, normalises patient IDs (`SUBJID`) and synthesises `STUDYID` if missing. |
+| Feature engineering | `pds310.digital_profile`, `pds310.features_*` | Builds 71-feature digital profiles combining demographics, baseline labs, early-treatment labs, tumour burden, molecular markers, physical measurements, derived risk scores, and outcomes. Labs are normalised using canonical mappings from `pds310/labs.py`; longitudinal aggregates now keep only the 1–42 day early window (`lab_<code>_early_last` and `_slope`) to avoid Week 8 leakage. |
+| Survival modelling | `pds310.cli os`, `pds310.train_models` | Fits Cox PH (and optional Weibull AFT) for overall survival, produces risk scores, `os_model.joblib`, and KM overlays. |
+| AE/EOT modelling (optional) | `pds310.train_ae_models` | Trains cause-specific Cox for treatment-related adverse events and Weibull/LogNormal AFT for end-of-treatment timing (optional analysis, not required for virtual trials). |
+| Response/TTR models | `pds310.train_models` | Pipeline-based Random Forest (default) for best-response classification; Random Forest regression for time-to-response; both include proper preprocessing and holdout validation. |
+| Biomarker trajectories | `pds310.train_models` → `pds310.model_biomarkers` | Predicts LDH and HGB trajectories at weeks 8 and 16; leverages canonical lab IDs to reconstruct longitudinal targets. |
+| Validation & calibration | `pds310.run_validation`, `pds310.calibration` | Retrains on train split, evaluates on holdout (accuracy, ROC-AUC, MAE/R²), plots calibration curves, bootstraps uncertainty. |
+| Digital twins & simulation | `pds310.virtual_trial`, `pds310.simulate` | Generates synthetic cohorts, compares twins to real patients, and runs virtual trial design/statistics. |
+
+The ADaM data dictionary (`DDT_408_v2.xlsx`) is a handy reference when exploring column definitions.
+
+---
+
+## 3. Reproducing the Full Workflow
+
+### Step 1: Build Digital Profiles (Required First)
 ```bash
-uv run python -m pds149.cli ae --config config.yaml
-uv run python -m pds149.cli report-ae --config config.yaml
-uv run python -m pds149.cli calibrate-ae --config config.yaml
-uv run python -m pds149.cli plots --config config.yaml
+uv run python pds310/build_profiles.py
 ```
-3) Optional OS baseline:
+This integrates all ADaM tables and creates `outputs/pds310/patient_profiles.csv` (370 patients × 71 features).
+
+### Step 2: Train Predictive Models
+**Option A: Comprehensive pipeline (Recommended)**
 ```bash
-uv run python -m pds149.cli os --config config.yaml
+uv run python pds310/train_models.py --seed 42
 ```
-Artifacts are written to `outputs/`.
+Trains all models: response, TTR, OS, biomarkers → `outputs/pds310/models/`
 
-### PDS310 (ADaM) pipelines
-
-New, separate module `pds310/` processes the ADaM tables in `AllProvidedFiles_310/PDS_DSA_20020408`.
-
-1) Configure paths in `pds310/config.yaml` (defaults are absolute paths under this repo).
-2) Run OS baseline training and metrics:
-
+**Option B: OS model only via CLI**
 ```bash
 uv run -m pds310.cli os --config pds310/config.yaml
 ```
+Faster for quick OS modeling, produces same output as train_models.py for OS.
 
-3) Generate simulated vs observed OS overlays:
+All modelling entry points automatically drop downstream outcomes and derived risk-score columns (`lab_risk_score`, `performance_risk`, etc.) from the feature matrix so that response/TTR/OS models cannot leak label information.
 
+### Step 3: Validation & Virtual Trials
+**Holdout validation:**
 ```bash
-uv run -m pds310.cli os-overlay --config pds310/config.yaml --sims 50
+uv run python pds310/run_validation.py \
+    --profiles outputs/pds310/patient_profiles.csv \
+    --output_dir outputs/pds310/validation \
+    --model_type rf --test_size 0.2 --seed 42
 ```
 
-## Code structure
-- `pds149/io.py` – table loading with encoding/NA handling; ID normalization.
-- `pds149/endpoints.py` – OS and AE/EOT label derivation.
-- `pds149/features_baseline.py` – baseline feature view from core/med history/prior meds.
-- `pds149/features_longitudinal.py` – lab/vital windowed aggregates (last/mean/slope/count).
-- `pds149/model_os.py` – Cox/Weibull with robust preprocessing, adaptive CV.
-- `pds149/model_ae.py` – cause-specific Cox for AE; robust AFT with fallbacks for EOT.
-- `pds149/simulate.py` – EOT sampling + AE cause probability; aligned encoders.
-- `pds149/reporting.py` – observed vs simulated AE metrics; suggested time scaling.
-- `pds149/calibration.py` – apply time scaling to simulated EOT per study/arm.
-- `pds149/plotting.py` – plots for AE incidence and EOT distributions with fair comparison.
-- `pds149/cli.py` – subcommands: `os`, `ae`, `report-ae`, `calibrate-ae`, `plots`.
+**Virtual trial simulation:**
+```bash
+uv run python pds310/run_virtual_trial.py --config pds310/config.yaml --effect_source learned
+```
+The `--effect_source` flag controls treatment effects:
+- `learned` (default): Uses trained models for counterfactual outcomes + KM overlays with observed data
+- `assumed`: Uses protocol hazard ratios without counterfactual sampling
 
-## Configuration
-See `config.yaml` for data roots, endpoints mapping, CV options, and simulation seeds.
+### Step 4: AE/EOT Analysis (Optional)
+```bash
+uv run python pds310/train_ae_models.py
+```
+Trains adverse event and treatment discontinuation models (optional - virtual trials work without this).
 
-## Notes
-- Leaderboard/final scoring sets have labels withheld; this pipeline focuses on training split for evaluation and simulation. You can still produce predictions for those splits by adapting the CLI to load alternate roots.
+### Important Notes
+- **CLI commands require profiles**: Run `build_profiles.py` first
+- **OS overlay moved**: Use `run_virtual_trial.py --effect_source learned` instead of `cli os-overlay`
+- **Advanced OS models deprecated**: RSF/GB underperformed (C-index ~0.33 vs 0.666 for Cox)
+- **AE/EOT CLI commands deprecated**: Use `train_ae_models.py` standalone script instead
+- All outputs go to `outputs/pds310/` (models in `models/` subdirectory)
 
-## License
-MIT
+---
+
+## 4. Key Outputs & Where to Find Them
+
+| Artefact | Location | Description |
+|----------|----------|-------------|
+| Patient profiles | `outputs/pds310/patient_profiles.csv` | One row per patient with all engineered features. Summary in `profile_database_summary.{json,txt}` plus distribution plots (`profile_distributions.png`, `profile_correlations.png`, `ras_vs_risk_score.png`, `treatment_vs_survival.png`). |
+| OS modelling | `cox.joblib`, `metrics_os.json`, `plot_os_overlay_PDS310.png` | Cox model bundle, evaluation metrics (KFold C-index ≈ 0.666) and observed vs simulated survival overlay. |
+| Learned OS model | `outputs/pds310/models/os_model.joblib` | Cox PH model trained on digital profiles (with treatment indicator) used for counterfactual survival simulation. |
+| AE/EOT simulation (optional) | `ae_cox.joblib`, `eot_model.joblib`, `sim_ae.csv`, `report_ae.csv`, `plot_ae_incidence_*.png`, `plot_eot_distributions.png` | Optional adverse event and end-of-treatment models (generated by `train_ae_models.py`). |
+| Response/TTR models | `outputs/pds310/models/response_model.joblib`, `ttr_model.joblib` + plots | Pipeline-based models with feature importances (`response_feature_importance.png`, `ttr_feature_importance.png`) and diagnostics (`response_confusion_matrix.png`, `ttr_predictions.png`). |
+| Biomarker trajectories | `outputs/pds310/models/biomarker_models.joblib` + LDH/HGB prediction plots | Week 8/16 predictions with scatter/residual plots (e.g. `Lactate Dehydrogenase_day56_predictions.png`). |
+| Validation bundle | `outputs/pds310/validation/` | Train/test splits, JSON metrics (`response_validation.json`, `ttr_validation.json`), calibration plots, performance comparison tables, bootstrap uncertainty results. |
+| Digital twin audits | `outputs/pds310/twin_*` | Diversity metrics, twin vs real comparisons (n=100 and n=1000). |
+
+Refer to `pds310/REPORT.md` for detailed interpretation of these artefacts.
+
+---
+
+## 5. Model Performance Snapshot
+
+| Task | Dataset / Metric | Result |
+|------|------------------|--------|
+| Overall Survival | KFold C-index (Cox PH) | **0.666** (single study – grouped CV not available) |
+| AE / EOT Simulation | Arm medians from `report_ae.csv` | BSC observed EOT median 44.5 days (sim 32.2 days); Panitumumab arm observed 83.5 days (sim 81.6 days) |
+| AE Incidence (BSC vs Panitu) | Observed 90/180/365 vs Simulated | BSC: 0.00 / 0.00 / 0.00 vs 0.37 / 0.37 / 0.37<br>Panitu: 0.91 / 0.91 / 0.91 vs 0.39 / 0.60 / 0.61 |
+| Response Classification | Holdout (60 pts) | Accuracy **0.77**, ROC-AUC **0.87**, macro-F1 0.43 (PR under-represented) |
+| Time-to-Response | Holdout (5 responders) | R² **−1.35**, MAE 12.3 days (small n – treat cautiously) |
+| Biomarker Trajectories | LDH day56 CV R² 0.91, day112 CV R² −56 (sparse late data)<br>HGB day56 CV R² 0.98, day112 CV R² 0.56 | Early timepoints robust; late LDH needs more data or smoothing. |
+
+Interpretation of these metrics, plots, and recommended follow-up actions are documented in `pds310/REPORT.md`.
+
+---
+
+## 6. Tips & Troubleshooting
+
+- **Patient IDs look numeric?** Make sure you rebuild profiles using the shipped scripts. The loader now forces zero-padded strings (e.g. `000123`) so ADaM joins succeed.
+- **AE incidence mismatch**: verify `ADAE` contains on-study events (columns `AESTDY`, `AESTDYI`). You can adjust horizons in `pds310/reporting.py`.
+- **TTR performance**: only 25 responders exist (5 in the validation split). Expect high variance; consider framing time-to-response as a survival problem with censoring.
+- **Biomarker coverage**: `pds310/model_biomarkers.py` prints counts per timepoint—use this to adjust target windows or add additional labs.
+- **Virtual trial**: start with the provided design in `pds310/trial_design.py`, then customise sample size, arm allocation, or endpoint definitions.
+
+---
+
+## 7. Further Reading & Reference
+
+- Project Data Sphere Study 20020408 documentation (`DDT_408_v2.xlsx`) – sheet `ADLB_PDS2019` maps each lab test to canonical names used here.
+- CAMP methodology background: Chen et al., *Clinically Aligned Multi-Task Learning for Digital Twins* (2022).
+- Lifelines documentation for Cox/AFT models if you wish to customise penalisation or tie handling.
+
+Questions or ideas? See the detailed analysis in `pds310/REPORT.md` for context, open issues, and next-step recommendations.
