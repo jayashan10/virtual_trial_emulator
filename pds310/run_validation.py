@@ -83,11 +83,33 @@ def main():
         "--model_type",
         type=str,
         default="rf",
-        choices=["rf", "gb", "xgboost"],
-        help="Estimator family for response/TTR models",
+        choices=["rf", "gb", "xgboost", "logreg", "elasticnet"],
+        help="Legacy flag to apply the same estimator family across tasks",
+    )
+    parser.add_argument(
+        "--response_model",
+        type=str,
+        default=None,
+        choices=["rf", "gb", "xgboost", "logreg"],
+        help="Response classifier model type (overrides --model_type)",
+    )
+    parser.add_argument(
+        "--ttr_model",
+        type=str,
+        default=None,
+        choices=["rf", "gb", "xgboost", "elasticnet"],
+        help="Time-to-response regressor model type (overrides --model_type)",
     )
     
     args = parser.parse_args()
+
+    response_model_type = args.response_model or args.model_type or "rf"
+    if args.ttr_model is not None:
+        ttr_model_type = args.ttr_model
+    elif args.model_type in {"rf", "gb", "xgboost", "elasticnet"}:
+        ttr_model_type = args.model_type
+    else:
+        ttr_model_type = "rf"
     
     print("=" * 80)
     print("PDS310 COMPREHENSIVE MODEL VALIDATION")
@@ -125,14 +147,14 @@ def main():
             response_model = train_response_classifier(
                 X_train_resp,
                 y_train_resp,
-                model_type=args.model_type,
+                model_type=response_model_type,
                 random_state=args.seed,
             )
         else:
             response_model = train_response_classifier(
                 X_train_resp,
                 y_train_resp_simple,
-                model_type=args.model_type,
+                model_type=response_model_type,
                 random_state=args.seed,
             )
         
@@ -277,7 +299,7 @@ def main():
         ttr_model = train_ttr_model(
             X_train_ttr,
             y_train_ttr,
-            model_type=args.model_type,
+            model_type=ttr_model_type,
             cv_folds=min(3, max(2, len(X_train_ttr))),
             random_state=args.seed,
         )

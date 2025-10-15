@@ -169,7 +169,8 @@ def main():
         plot_confusion_matrix(
             response_results['confusion_matrix'],
             response_results['classes'],
-            output_path=str(conf_matrix_path)
+            output_path=str(conf_matrix_path),
+            title="Response Classification Confusion Matrix (CV)"
         )
         
         print("✅ Response model training complete!")

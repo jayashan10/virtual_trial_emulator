@@ -8,6 +8,7 @@ Following CAMP methodology target: 90%+ accuracy.
 from __future__ import annotations
 
 from pathlib import Path
+import warnings
 from typing import Any, Dict, List, Optional, Tuple
 
 import joblib
@@ -28,7 +29,7 @@ from sklearn.metrics import (
 )
 from sklearn.model_selection import StratifiedKFold
 from sklearn.pipeline import Pipeline
-from sklearn.preprocessing import OneHotEncoder, MaxAbsScaler
+from sklearn.preprocessing import OneHotEncoder, StandardScaler
 from sklearn.impute import SimpleImputer
 
 
@@ -115,11 +116,21 @@ def _split_feature_types(X: pd.DataFrame) -> Tuple[pd.DataFrame, List[str], List
     """
     X_clean = X.copy()
 
+    # Promote object/string columns that are mostly numeric into numeric dtype.
+    for col in X_clean.columns:
+        if X_clean[col].dtype in ("object", "string"):
+            converted = pd.to_numeric(X_clean[col], errors="coerce")
+            if converted.notna().sum() / max(len(converted), 1) >= 0.95:
+                X_clean[col] = converted
+
     bool_cols = X_clean.select_dtypes(include=["bool"]).columns.tolist()
     if bool_cols:
         X_clean[bool_cols] = X_clean[bool_cols].astype(float)
 
-    numeric_cols = X_clean.select_dtypes(include=[np.number]).columns.tolist()
+    numeric_cols = X_clean.select_dtypes(include=[np.number, "Float64", "Int64", "Int32", "Float32"]).columns.tolist()
+    if numeric_cols:
+        X_clean[numeric_cols] = X_clean[numeric_cols].apply(pd.to_numeric, errors="coerce")
+        X_clean[numeric_cols] = X_clean[numeric_cols].replace([np.inf, -np.inf], np.nan)
     numeric_cols = [c for c in numeric_cols if X_clean[c].notna().any()]
 
     categorical_cols = [c for c in X_clean.columns if c not in numeric_cols]
@@ -142,6 +153,7 @@ def _build_preprocessor(numeric_cols: List[str], categorical_cols: List[str]) ->
                 Pipeline(
                     steps=[
                         ("imputer", SimpleImputer(strategy="median")),
+                        ("scaler", StandardScaler()),
                     ]
                 ),
                 numeric_cols,
@@ -281,12 +293,12 @@ def train_response_classifier(
         )
     elif model_type == "logreg":
         estimator = LogisticRegression(
-            multi_class="multinomial",
             penalty="l2",
             class_weight="balanced",
-            solver="saga",
-            C=0.5,
-            max_iter=5000,
+            solver="lbfgs",
+            C=0.1,
+            max_iter=1000,
+            tol=1e-4,
             random_state=random_state,
         )
     else:
@@ -301,8 +313,6 @@ def train_response_classifier(
             ("model", estimator),
         ]
     )
-    if model_type == "logreg":
-        steps.insert(-1, ("scale", MaxAbsScaler()))
     pipeline = Pipeline(steps)
 
     cv = StratifiedKFold(
@@ -316,15 +326,25 @@ def train_response_classifier(
     cv_balanced_accuracy: List[float] = []
     cv_macro_f1: List[float] = []
     cv_reports: List[Dict[str, Any]] = []
+    cv_true_all: List[np.ndarray] = []
+    cv_pred_all: List[np.ndarray] = []
 
     for train_idx, test_idx in cv.split(X_clean, y):
-        pipeline.fit(X_clean.iloc[train_idx], y.iloc[train_idx])
-        y_true_fold = y.iloc[test_idx]
-        y_pred_fold = pipeline.predict(X_clean.iloc[test_idx])
+        with warnings.catch_warnings():
+            warnings.filterwarnings("ignore", message="divide by zero encountered in matmul", category=RuntimeWarning)
+            warnings.filterwarnings("ignore", message="overflow encountered in matmul", category=RuntimeWarning)
+            warnings.filterwarnings("ignore", message="invalid value encountered in matmul", category=RuntimeWarning)
+            warnings.filterwarnings("ignore", message="Skipping features without any observed values", category=UserWarning)
+            with np.errstate(divide="ignore", invalid="ignore", over="ignore"):
+                pipeline.fit(X_clean.iloc[train_idx], y.iloc[train_idx])
+                y_true_fold = y.iloc[test_idx]
+                y_pred_fold = pipeline.predict(X_clean.iloc[test_idx])
 
         cv_accuracy.append(accuracy_score(y_true_fold, y_pred_fold))
         cv_balanced_accuracy.append(balanced_accuracy_score(y_true_fold, y_pred_fold))
         cv_macro_f1.append(f1_score(y_true_fold, y_pred_fold, average="macro", zero_division=0))
+        cv_true_all.append(y_true_fold.to_numpy())
+        cv_pred_all.append(np.asarray(y_pred_fold))
 
         cv_reports.append(
             classification_report(
@@ -343,9 +363,22 @@ def train_response_classifier(
         f"  Macro F1: {np.mean(cv_macro_f1):.3f} ± {np.std(cv_macro_f1):.3f}"
     )
 
-    pipeline.fit(X_clean, y)
+    with warnings.catch_warnings():
+        warnings.filterwarnings("ignore", message="divide by zero encountered in matmul", category=RuntimeWarning)
+        warnings.filterwarnings("ignore", message="overflow encountered in matmul", category=RuntimeWarning)
+        warnings.filterwarnings("ignore", message="invalid value encountered in matmul", category=RuntimeWarning)
+        warnings.filterwarnings("ignore", message="Skipping features without any observed values", category=UserWarning)
+        with np.errstate(divide="ignore", invalid="ignore", over="ignore"):
+            pipeline.fit(X_clean, y)
     estimator_fitted = pipeline.named_steps["model"]
     classes = estimator_fitted.classes_
+
+    if cv_true_all:
+        y_true_cv = np.concatenate(cv_true_all)
+        y_pred_cv = np.concatenate(cv_pred_all)
+        cv_conf_matrix = confusion_matrix(y_true_cv, y_pred_cv, labels=classes)
+    else:
+        cv_conf_matrix = np.zeros((len(classes), len(classes)), dtype=int)
 
     y_pred = pipeline.predict(X_clean)
     y_proba = pipeline.predict_proba(X_clean) if hasattr(pipeline, "predict_proba") else None
@@ -354,7 +387,7 @@ def train_response_classifier(
     precision, recall, f1, _ = precision_recall_fscore_support(y, y_pred, average="weighted", zero_division=0)
     train_balanced_accuracy = balanced_accuracy_score(y, y_pred)
     train_macro_f1 = f1_score(y, y_pred, average="macro", zero_division=0)
-    conf_matrix = confusion_matrix(y, y_pred, labels=classes)
+    train_conf_matrix = confusion_matrix(y, y_pred, labels=classes)
     class_report = classification_report(y, y_pred, labels=classes, output_dict=True, zero_division=0)
 
     feature_names_out = _get_pipeline_feature_names(pipeline, numeric_cols, categorical_cols)
@@ -390,7 +423,8 @@ def train_response_classifier(
         "train_f1": float(f1),
         "train_balanced_accuracy": float(train_balanced_accuracy),
         "train_macro_f1": float(train_macro_f1),
-        "confusion_matrix": conf_matrix,
+        "confusion_matrix": cv_conf_matrix,
+        "train_confusion_matrix": train_conf_matrix,
         "classification_report": class_report,
         "cv_classification_reports": cv_reports,
         "feature_importance": feature_importance,
@@ -502,6 +536,7 @@ def plot_confusion_matrix(
     conf_matrix: np.ndarray,
     class_names: List[str],
     output_path: Optional[str] = None,
+    title: str = "Response Classification Confusion Matrix",
 ):
     import matplotlib.pyplot as plt
     import seaborn as sns
@@ -518,7 +553,7 @@ def plot_confusion_matrix(
     )
     plt.xlabel("Predicted")
     plt.ylabel("Actual")
-    plt.title("Response Classification Confusion Matrix")
+    plt.title(title)
     plt.tight_layout()
 
     if output_path:

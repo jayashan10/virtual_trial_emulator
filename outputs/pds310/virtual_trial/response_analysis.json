@@ -2,8 +2,8 @@
   {
     "control_arm": "BSC",
     "treatment_arm": "Panitumumab + BSC",
-    "n_control": 500,
-    "n_treatment": 500,
+    "n_control": 150,
+    "n_treatment": 150,
     "responders_control": 0,
     "responders_treatment": 0,
     "rate_control": 0.0,

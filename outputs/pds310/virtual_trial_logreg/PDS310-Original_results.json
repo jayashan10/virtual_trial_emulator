@@ -5,9 +5,9 @@
     "Panitumumab + BSC",
     "BSC"
   ],
-  "start_time": "2025-10-14T20:55:26.100759",
-  "end_time": "2025-10-14T20:55:42.215789",
-  "duration_seconds": 16.11503,
+  "start_time": "2025-10-14T20:24:06.388073",
+  "end_time": "2025-10-14T20:24:14.541897",
+  "duration_seconds": 8.153824,
   "design": {
     "trial_name": "PDS310-Original",
     "description": "Panitumumab + BSC vs BSC alone in RAS wild-type metastatic colorectal cancer",

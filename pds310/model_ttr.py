@@ -19,8 +19,9 @@ from sklearn.feature_selection import VarianceThreshold
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 from sklearn.model_selection import KFold, cross_val_score
 from sklearn.pipeline import Pipeline
-from sklearn.preprocessing import OneHotEncoder
+from sklearn.preprocessing import OneHotEncoder, StandardScaler
 from sklearn.impute import SimpleImputer
+from sklearn.linear_model import ElasticNet
 
 
 def prepare_ttr_data(
@@ -76,11 +77,20 @@ def prepare_ttr_data(
 def _split_feature_types(X: pd.DataFrame) -> Tuple[pd.DataFrame, List[str], List[str]]:
     X_clean = X.copy()
 
+    for col in X_clean.columns:
+        if X_clean[col].dtype in ("object", "string"):
+            converted = pd.to_numeric(X_clean[col], errors="coerce")
+            if converted.notna().sum() / max(len(converted), 1) >= 0.95:
+                X_clean[col] = converted
+
     bool_cols = X_clean.select_dtypes(include=["bool"]).columns.tolist()
     if bool_cols:
         X_clean[bool_cols] = X_clean[bool_cols].astype(float)
 
-    numeric_cols = X_clean.select_dtypes(include=[np.number]).columns.tolist()
+    numeric_cols = X_clean.select_dtypes(include=[np.number, "Float64", "Int64", "Int32", "Float32"]).columns.tolist()
+    if numeric_cols:
+        X_clean[numeric_cols] = X_clean[numeric_cols].apply(pd.to_numeric, errors="coerce")
+        X_clean[numeric_cols] = X_clean[numeric_cols].replace([np.inf, -np.inf], np.nan)
     numeric_cols = [c for c in numeric_cols if X_clean[c].notna().any()]
 
     categorical_cols = [c for c in X_clean.columns if c not in numeric_cols]
@@ -230,6 +240,13 @@ def train_ttr_model(
             random_state=random_state,
             n_jobs=-1,
         )
+    elif model_type == "elasticnet":
+        estimator = ElasticNet(
+            alpha=0.1,
+            l1_ratio=0.5,
+            max_iter=10000,
+            random_state=random_state,
+        )
     else:
         raise ValueError(f"Unknown model type: {model_type}")
 
@@ -242,6 +259,8 @@ def train_ttr_model(
             ("model", estimator),
         ]
     )
+    if model_type == "elasticnet":
+        steps.insert(-1, ("scale", StandardScaler()))
     pipeline = Pipeline(steps)
 
     n_splits = min(cv_folds, len(X_clean))
@@ -270,6 +289,18 @@ def train_ttr_model(
                 {
                     "feature": feature_names_out,
                     "importance": estimator_fitted.feature_importances_,
+                }
+            )
+            .sort_values("importance", ascending=False)
+            .reset_index(drop=True)
+        )
+    elif hasattr(estimator_fitted, "coef_"):
+        importance = np.abs(np.asarray(estimator_fitted.coef_).ravel())
+        feature_importance = (
+            pd.DataFrame(
+                {
+                    "feature": feature_names_out,
+                    "importance": importance,
                 }
             )
             .sort_values("importance", ascending=False)

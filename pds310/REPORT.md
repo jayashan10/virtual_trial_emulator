@@ -11,8 +11,8 @@ We ingested the full ADaM bundle for PDS310 (370 colorectal cancer patients) and
 
 - **Overall survival (OS)**: Cox PH model (KFold C-index 0.666) with simulated overlays for visual comparison.
 - **Adverse event (AE) & End-of-treatment (EOT)**: cause-specific Cox + AFT simulation, highlighting calibration gaps between observed and simulated incidence.
-- **Response classification**: Random Forest pipeline (holdout accuracy 0.767, ROC-AUC 0.870) with calibration and feature importance analysis.
-- **Time-to-response regression**: Random Forest regression (train R² 0.83, holdout R² –1.35) – data scarcity dominates error bars.
+- **Response classification**: Random Forest pipeline (holdout accuracy 0.783, ROC-AUC 0.895) with calibration and feature importance analysis.
+- **Time-to-response regression**: Random Forest regression (train R² 0.85, holdout R² –1.56; MAE ≈ 12 days) – data scarcity dominates error bars.
 - **Biomarker trajectories**: LDH/HGB predictions at weeks 8/16 using canonical lab mapping; early timepoints perform strongly.
 
 Validation artefacts, calibration curves, and bootstrap uncertainty estimates are included. The sections below interpret these results, describe plots and tables, and provide next-step recommendations.
@@ -64,25 +64,25 @@ Interpretation:
 
 ### 2.3 Response Classification
 
-- **Model**: Random Forest within a scikit-learn `Pipeline` (median/mode imputation, one-hot encoding, variance threshold). Trained on train split via `run_validation.py`; inference uses the stored pipeline.
+- **Model**: Random Forest within a scikit-learn `Pipeline` (median/mode imputation, one-hot encoding, variance threshold). Trained on the 80% training split via `run_validation.py`; inference uses the stored pipeline.
 - **Holdout metrics (60 patients)**:
-  - Accuracy 0.767, weighted F1 0.734, ROC-AUC 0.870.
-  - Class imbalance: PR (partial response) is rare (n=5) and the model fails to capture it (precision/recall 0); PD dominates.
+  - Accuracy 0.783, weighted F1 0.759, ROC-AUC 0.895.
+  - Class imbalance: PR (partial response) remains rare (n=5) and recall is still 0; PD dominates predictions.
 - **Visuals**:
   - `response_confusion_matrix.png` shows most errors are PR/SD misclassifications.
-  - `response_feature_importance.png` indicates prior AE count, diagnosis months, baseline weight and age are leading predictors.
+  - `response_feature_importance.png` highlights prior AE burden, DIAGMONS, baseline weight, and age as leading predictors.
 - **Calibration**:
-  - Brier scores: PD 0.120, SD 0.111, PR 0.065.
-  - Expected calibration error (ECE) for PD is modest (0.106). Consider class-weighted training or focal loss to rescue PR predictions.
+  - Brier scores: PD 0.120, SD 0.098, PR 0.066; overall 0.095.
+  - ECE remains ~0.12 for PD. A per-arm responder table (`response_per_arm_metrics.csv`) shows predicted responder probability uplift of ~10 pp for panitumumab vs BSC, aligning with the observed 16 pp uplift but attenuated by class imbalance.
 
 ### 2.4 Time-to-Response (TTR)
 
 - **Model**: Random Forest regressor pipeline.
 - **Data reality**: Only 25 responders overall; with a 20% holdout split, just 5 responders remain for testing.
 - **Performance**:
-  - Train R² 0.83, MAE 6.2 days.
-  - Holdout R² −1.35, MAE 12.3 days. Bootstrap MAE (100 samples) = 11.7 days (95% CI 6.0–19.0). Calibration slope −0.43.
-- **Takeaway**: Treat predictions as rough point estimates; consider reframing as censored survival-to-response or pooling with additional cohorts if available.
+  - Train R² 0.85, MAE 6.6 days.
+  - Holdout R² −1.56, MAE 12.4 days. Bootstrap MAE (30 samples) ≈ 11.7 days with 95% CI [6.0, 18.4]. Calibration slope −0.54, R² 0.21.
+- **Takeaway**: Treat predictions as rough point estimates; consider censored survival-to-response or pooling additional cohorts if available.
 
 ### 2.5 Biomarker Trajectories (LDH & HGB)
 
@@ -131,9 +131,9 @@ Virtual trial simulations default to `--effect_source learned`, which draws coun
 
 | Component | Key Findings |
 |-----------|--------------|
-| Response calibration | Brier scores < 0.12 across classes, ECE ≈ 0.10 for PD; PR class suffers due to tiny sample, so probability mass mostly sits on PD/SD. |
-| TTR calibration | Slope −0.43, R² 0.12 — predictions regress towards mean; indicates limited trust in absolute day values. |
-| Bootstrapping | TTR MAE CI (6.0, 19.0) days – emphasises responder scarcity. Add reporting of confidence intervals for OS/AE if the use-case demands. |
+| Response calibration | Per-class Brier scores: PD 0.120, SD 0.098, PR 0.066 (overall 0.095). PD ECE ≈ 0.12; PR remains poorly calibrated because of tiny support. |
+| TTR calibration | Slope −0.54, R² 0.21 — predictions regress toward the mean, reinforcing the need for alternate modelling. |
+| Bootstrapping | TTR MAE ≈ 11.7 days with 95% CI [6.0, 18.4] (30 bootstrap draws) – emphasises responder scarcity. Add confidence intervals for OS/AE if the use-case demands. |
 | Advanced OS models | RSF/GB KFold C-index ~0.33 (underperforming Cox). Keep Cox as baseline; advanced models likely need more tuning or features that encode time-varying effects. |
 
 ---

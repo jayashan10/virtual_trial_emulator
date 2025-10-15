@@ -77,13 +77,14 @@ Faster for quick OS modeling, produces same output as train_models.py for OS.
 All modelling entry points automatically drop downstream outcomes and derived risk-score columns (`lab_risk_score`, `performance_risk`, etc.) from the feature matrix so that response/TTR/OS models cannot leak label information.
 
 ### Step 3: Validation & Virtual Trials
-**Holdout validation:**
+**Holdout validation + calibration:**
 ```bash
 uv run python pds310/run_validation.py \
     --profiles outputs/pds310/patient_profiles.csv \
     --output_dir outputs/pds310/validation \
-    --model_type rf --test_size 0.2 --seed 42
+    --model_type rf --test_size 0.2 --seed 42 --n_bootstrap 30
 ```
+Produces `response_validation.json/.png`, `ttr_validation.json/.png`, calibration curves, per-arm responder tables, and bootstrap MAE estimates (now under `outputs/pds310/validation/`). The latest run (seed 42, RF models) achieved response accuracy 0.78 with ROC-AUC 0.90 and a TTR holdout MAE ≈ 12 days (R² ≈ −1.56 given only five responders).
 
 **Virtual trial simulation:**
 ```bash
