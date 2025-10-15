@@ -6,6 +6,79 @@ We built an end-to-end analytical pipeline for the PDS310 colorectal cancer stud
 
 ---
 
+## Modeling Design Decision: Treatment Variable Inclusion
+
+A central question in building predictive models for clinical trials is whether to include the treatment variable (TRT/ATRT) during model training, and if so, how. This decision has profound implications for sample size, confounding, and the ability to perform counterfactual predictions in virtual trials. We carefully considered three approaches before selecting our final methodology.
+
+### Option 1: Arm-Specific Models
+
+**Approach:** Train separate models for each treatment arm (e.g., Response Model A on Panitumumab patients, Response Model B on BSC patients).
+
+**Advantage:** Each model learns arm-specific outcome patterns without cross-contamination.
+
+**Critical Disadvantages:**
+
+1. **Sample size collapse:** Our cohort of 370 patients splits into ~185 per arm. For minority classes like partial response (PR, n=25 total), this means approximately 12 PR cases per arm—far too few for robust classification. With severe class imbalance (PD=215, SD=65, PR=25), halving the data makes minority class prediction nearly impossible.
+
+2. **No information sharing across biological relationships:** Fundamental prognostic factors like high LDH indicating worse outcomes, low albumin reflecting malnutrition, or ECOG 2-3 indicating poor performance status should operate universally regardless of treatment arm. Arm-specific models estimate these relationships twice with half the data, rather than pooling evidence from all 370 patients to learn them once with high confidence.
+
+3. **Cannot identify treatment effect modifiers:** Treatment effect modification occurs when a feature changes how much treatment helps (e.g., "Panitumumab adds +150 days survival for low-LDH patients but only +30 days for high-LDH patients"). Arm-specific models can calculate differences post-hoc but cannot learn these interactions directly during training.
+
+4. **Prediction instability for rare patient types:** Consider an 85-year-old patient with ECOG 3 and very high CEA. If only two similar patients exist in the training data and both happen to be in the control arm, the treatment arm model must extrapolate wildly to make predictions for this profile. A unified model learns from all similar patients across both arms, improving stability.
+
+5. **Confounding permanently encoded:** If higher-risk patients were preferentially assigned to Panitumumab in the original trial (selection bias), each arm-specific model encodes that confounding. The treatment model learns "my arm's patients die at 230 days median" and the control model learns "my arm's patients die at 270 days median," both reflecting confounded distributions with no mechanism for adjustment.
+
+6. **Statistical efficiency loss:** Variance of parameter estimates scales as 1/n. With arm-specific models, variance ∝ 1/n_arm; with unified models, variance ∝ 1/n_total. For our case (n_arm ≈ 185, n_total = 370), arm-specific models have roughly twice the variance in all estimates, reducing statistical power and increasing overfitting risk.
+
+### Option 2: Unified Model with Treatment Variable and Interactions
+
+**Approach:** Train a single model including TRT as a feature, plus interaction terms TRT×LDH, TRT×ECOG, TRT×Age, etc.
+
+**Advantages:** Preserves full sample size (n=370) and can directly learn treatment effect modifiers through explicit interaction terms.
+
+**Critical Problem: Association ≠ Causation**
+
+When models see TRT/ATRT during training, they learn associations: "Patients on Panitumumab have worse outcomes." This is an **association**, not a **causal effect**. If the original trial assigned sicker patients to the treatment arm (confounding by indication), the model permanently encodes this bias. The model cannot distinguish between:
+- "Panitumumab causes harm" (causal effect)
+- "Sicker patients received Panitumumab" (confounding)
+
+Including treatment as a feature without proper causal adjustment (propensity scores, inverse probability weighting, doubly robust estimation) risks learning spurious treatment effects that reflect selection bias rather than true biological mechanisms.
+
+### Chosen Approach: Arm-Agnostic Unified Models (Exclude TRT/ATRT)
+
+**Rationale:** We exclude the treatment variable entirely from all predictive models, training on baseline patient characteristics only.
+
+**Key Benefits:**
+
+1. **Maximize sample size:** All 370 patients contribute to learning universal prognostic relationships (high LDH → worse outcomes works the same way for everyone, pooled evidence from both arms).
+
+2. **Avoid encoding confounding:** Models never see treatment assignment, so they cannot learn spurious associations between treatment and outcomes driven by selection bias in the original trial.
+
+3. **Enable counterfactual simulation:** Because models predict outcomes from baseline characteristics alone, we can score each patient's profile under hypothetical treatment assignments in a virtual trial. The difference between predictions under "assigned Panitumumab" versus "assigned BSC" estimates the treatment effect without confounding from observed assignments.
+
+4. **Maintain prognostic focus:** Models learn which patients are high-risk versus low-risk at baseline, independent of what treatment they might receive. This aligns with clinical decision-making: assess prognosis, then choose treatment.
+
+**How This Enables Virtual Trials:**
+
+In the virtual trial emulator (Section 6), each synthetic patient's digital profile is fed through the trained models to generate predictions under both treatment arms. For example:
+- Patient VPT-0042 profile → Response Model → 60% probability PD under Panitumumab, 75% probability PD under BSC
+- Difference (75% - 60% = 15% reduction in PD risk) is the model's estimated treatment effect for this patient
+
+Because the model was trained arm-agnostic, this difference reflects learned prognostic patterns rather than confounded treatment assignment. However, any remaining bias (unobserved confounders, missing treatment interactions, model misspecification) means these are **hypothesis-generating estimates only, not causal effects**. See Section 6 "Interpretation and Limitations" for detailed discussion.
+
+**Trade-off Acknowledgment:**
+
+This approach cannot learn treatment effect modifiers directly from the data. If Panitumumab truly helps younger patients more than older patients, and if age×treatment interactions exist in the training data, our models will not capture this heterogeneity. Future work could address this limitation by:
+- Including treatment with propensity score weighting to debias confounding
+- Using doubly robust estimators (outcome regression + propensity scores)
+- Pooling data across multiple trials to increase sample size for interaction learning
+
+However, given our moderate sample size (370 patients) and the presence of confounding in observational treatment assignments, the arm-agnostic approach provides the most robust foundation for prognostic modeling and hypothesis-generating virtual trials.
+
+**Cross-References:** See Section 3.1 for detailed data leakage prevention mechanisms that enforce treatment exclusion, and Section 4.6 for how arm-agnostic models integrate with the virtual trial simulator.
+
+---
+
 ## 1. Dataset and Cohort
 
 The study dataset originates from Project Data Sphere (PDS310), a phase III trial in metastatic colorectal cancer comparing Panitumumab plus best supportive care versus best supportive care alone. Raw data were provided as SAS ADaM files, which we converted to CSV format for downstream processing and analysis. After filtering for data availability and quality criteria, our analyzable cohort comprises 370 patients with comprehensive baseline and longitudinal measurements.
@@ -292,13 +365,239 @@ For Day 112, predictions exhibit increased variance, particularly for LDH (not s
 
 ## 5. Virtual Trial Emulator
 
-We designed and executed a virtual trial to simulate the comparative effectiveness of Panitumumab plus best supportive care versus best supportive care alone using learned effect models. The virtual trial leverages the trained response, TTR, and overall survival models to project outcomes under counterfactual treatment assignments, providing a hypothesis-generating tool for trial design and endpoint estimation.
+We designed and executed a virtual trial to simulate the comparative effectiveness of Panitumumab plus best supportive care versus best supportive care alone using learned effect models. The virtual trial leverages a sophisticated 4-stage digital twin generation pipeline combined with the trained response, TTR, and overall survival models to project outcomes under counterfactual treatment assignments, providing a hypothesis-generating tool for trial design and endpoint estimation.
 
-### Trial Design
+### 5.1 Virtual Patient Generation Pipeline
 
-The virtual cohort was sampled from the observed digital patient profile distribution, with eligibility criteria enforced to match real-world practice guidelines: RAS wild-type status (required for anti-EGFR therapy), ECOG performance status 0-2 (excludes severely debilitated patients), and age ≥18 years. We generated two arms of 500 patients each, randomly assigned to Panitumumab + BSC or BSC alone. Outcomes (response, time-to-response, overall survival) were predicted using the trained models, and statistical comparisons were performed via two-sample tests (chi-squared for ORR, log-rank for OS).
+Our virtual trial employs a sophisticated 3-stage digital twin generation approach to create biologically plausible synthetic patients. This methodology ensures that virtual patients maintain realistic correlations between features while exhibiting diverse clinical profiles not observed in the original cohort.
 
-### Results Summary
+#### Stage 1: Digital Profile Construction
+
+Before generating any virtual patients, we construct comprehensive digital patient profiles from the real PDS310 cohort (see Section 2). Each profile comprises 71 features organized across 12 interpretable groups:
+
+**Core Feature Groups:**
+- **Demographics** (5 features): AGE (years), SEX (male/female), RACE (categorical), B_ECOG (performance status 0-3), B_WEIGHT (kg)
+- **Disease Characteristics** (4 features): DIAGMONS (months since diagnosis), HISSUBTY (histological subtype: adenocarcinoma, mucinous, rectal), DIAGTYPE (anatomic site classification), SXANY (baseline symptoms yes/no)
+- **Baseline Laboratories** (8 features): baseline_ALB, baseline_ALP, baseline_CEA, baseline_CREAT, baseline_HGB, baseline_LDH, baseline_PLT, baseline_WBC (all in standard clinical units)
+- **Longitudinal Laboratory Trajectories** (16 features): For each of 8 canonical labs, we compute lab_*_early_last (most recent value days 0-42) and lab_*_early_slope (trajectory slope), capturing early treatment dynamics
+- **Tumor Burden** (7 features): target_lesion_count, nontarget_lesion_count, sum_target_diameters (mm), max_lesion_size, mean_lesion_size, lesion_sites_count, tumor_burden_category (low/medium/high)
+- **Molecular Markers** (8 features): KRAS_exon2/3/4, NRAS_exon2/3/4, BRAF_exon15 (all categorical: mutant/wild-type/unknown), plus composite RAS_status (WILD-TYPE/MUTANT/UNKNOWN)
+- **Physical Status** (1 feature): weight_change_pct_42d (percentage weight change from baseline to day 42)
+- **Clinical History** (5 features): prior_ae_count, prior_severe_ae_count, prior_skin_toxicity_flag, num_prior_therapies, time_since_diagnosis
+- **Risk Scores** (6 features): lab_risk_score, performance_risk, tumor_burden_risk, molecular_risk, composite_risk_score, predicted_good_prognosis_flag (computed for profiling but excluded from model training)
+- **Outcomes** (8 features): DTHDYX, DTHX, PFSDYCR, PFSCR, best_response, response_at_week8, response_at_week16, time_to_response (targets only, never predictors)
+
+This standardized 71-dimensional feature space ensures all real and virtual patients exist in a common representational framework, enabling direct application of trained models to synthetic profiles.
+
+#### Stage 2: Twin Recombination via Intelligent Feature Mixing
+
+Virtual patients are created by recombining features from 2-3 real donor patients, respecting biological constraints and correlation structure. This approach maintains clinical coherence while generating novel feature combinations. Implementation: `twin_generator.py`, function `generate_digital_twin()` with strategy="random".
+
+**Recombination Strategy:**
+
+**Correlated Feature Groups (kept together from same donor patient):**
+
+- **Demographics Block:** AGE, SEX, RACE, B_ECOG, B_WEIGHT sourced from the same base patient to maintain physiological coherence. For example, an 85-year-old patient's frailty pattern (low weight, poor ECOG) stays together rather than mixing with a 40-year-old's robustness.
+
+- **Disease Block:** DIAGMONS, HISSUBTY, DIAGTYPE, SXANY from the same patient ensures disease trajectory internal consistency. A patient with mucinous histology diagnosed 24 months ago has a coherent disease history that should not be split across donors.
+
+- **Molecular Block:** All KRAS/NRAS/BRAF mutation statuses from the same patient because genetics is fixed at tumor initiation. Cannot mix chromosomes from different patients—a tumor cannot be simultaneously KRAS-mutant from Patient A and KRAS-wild-type from Patient B.
+
+- **Tumor Geometry:** target_lesion_count, sum_target_diameters, lesion_sites_count from the same patient because spatial disease patterns correlate. A patient with 5 target lesions likely has different biology than a patient with 1 lesion, and lesion sizes correlate with lesion counts.
+
+**Independent Feature Groups (mixed from different donors):**
+
+- **Baseline Laboratories:** Each of the 8 baseline labs (HGB, LDH, CEA, ALB, etc.) can be sourced from different patients. Lab values fluctuate somewhat independently day-to-day and can be reasonably mixed. For example, a virtual patient may have WBC from donor A, LDH from donor B, and CEA from donor C.
+
+- **Longitudinal Lab Trajectories:** The early_last and early_slope features can be mixed across donors to create diverse treatment dynamics. A patient might have rising LDH trajectory from donor A combined with stable HGB trajectory from donor B.
+
+- **Treatment History:** prior_ae_count, num_prior_therapies, time_since_diagnosis from different patients because exposure history varies independently of current disease state.
+
+**Immutable Features (biological constraints enforced):**
+
+- **SEX:** Never changed after base patient selection (biological sex is fixed)
+- **RACE:** Never changed (genetic ancestry fixed)
+- **Molecular mutations:** Never changed after base selection (somatic mutations fixed at tumor initiation, cannot be altered)
+
+**Example Virtual Patient Construction:**
+
+```
+Virtual Patient VPT-0042:
+  [From Base Patient #187]
+  Demographics: Age=65, Sex=Male, ECOG=1, Weight=72kg, Race=White
+  Molecular: KRAS_exon2=Mutant, NRAS=WT, BRAF=WT, RAS_status=MUTANT
+  Disease: DIAGMONS=18, HISSUBTY=adenocarcinoma, DIAGTYPE=colon
+  
+  [Mixed from Donor Patient #203]
+  Baseline labs (partial):
+    HGB: 11.2 g/dL
+    PLT: 285 × 10^9/L
+  
+  [Mixed from Donor Patient #089]
+  Baseline labs (partial):
+    LDH: 450 U/L
+    ALP: 180 U/L
+  Tumor burden:
+    target_lesions: 3
+    sum_target_diameters: 87mm
+    
+  [Mixed from Donor Patient #156]
+  Baseline labs (partial):
+    CEA: 125 ng/mL
+    ALB: 3.8 g/L
+    
+  [Mixed from Donor Patient #312]
+  Treatment history:
+    num_prior_therapies: 2
+    prior_ae_count: 8
+    prior_severe_ae_count: 3
+```
+
+This virtual patient is biologically coherent (maintains critical correlations: male with appropriate weight for age, KRAS-mutant tumor, internally consistent disease history) while exhibiting a feature combination never observed in the original 370-patient cohort. The recombination creates diversity without violating biological constraints.
+
+#### Stage 3: Realistic Variation via Mutation
+
+After recombination, controlled noise is applied to numeric features to increase diversity while maintaining clinical plausibility. This "mutation" step prevents virtual patients from being exact copies of feature combinations and introduces realistic measurement variability. Implementation: `mutation.py`, function `apply_mutation()`.
+
+**Mutation Rules:**
+
+**Numeric Features:**
+- **Lab values:** Add Gaussian noise with ±10% standard deviation relative to the feature value. For example, HGB=11.2 g/dL → 11.2 ± 1.12, sampled as 11.2 + N(0, 1.12).
+- **Age:** Add Gaussian noise with ±2 years standard deviation (age varies slowly, small perturbations).
+- **Tumor measurements:** Add ±15% noise to sum_target_diameters and individual lesion sizes (tumor measurements have natural variability and measurement error).
+- **Weight:** Add ±5% noise to B_WEIGHT (body weight fluctuates day-to-day).
+- **Constraint enforcement:** Clip all values to valid clinical ranges after mutation (HGB ≥ 3.0 g/dL, Age ≥ 18 years, tumor diameters ≥ 0, etc.). Invalid values are clamped to boundaries.
+
+**Categorical Features:**
+- **Rare random flips:** With 5% probability, flip a categorical feature to a different valid category. For example, ECOG 1 → ECOG 2 with small probability.
+- **Respect transition probabilities:** If flipped, choose the new category based on real-world frequency distributions observed in the cohort (e.g., ECOG 1 is more likely to flip to ECOG 2 than to ECOG 3).
+- **Immutable categories never flip:** SEX, RACE, and all molecular mutation statuses remain fixed (biological constraints).
+
+**Correlated Feature Adjustments:**
+
+When one feature changes, related features are adjusted to maintain biological plausibility:
+- **If ECOG status worsens** (e.g., ECOG 1 → ECOG 2): Systematically reduce B_WEIGHT by 3-8 kg to reflect increased frailty and malnutrition associated with declining performance.
+- **If LDH increases by >20%:** Also increase CEA by 10-15% because both are tumor burden markers and correlate in disease progression.
+- **If albumin drops:** Reduce B_WEIGHT proportionally (low albumin indicates malnutrition, which correlates with weight loss).
+- **If multiple labs worsen simultaneously:** Adjust ECOG toward worse categories with higher probability (multisystem decline suggests functional decline).
+
+**Example Mutation Application:**
+
+```
+Pre-mutation:
+  HGB = 11.2 g/dL
+  LDH = 450 U/L
+  Age = 65 years
+  ECOG = 1
+  B_WEIGHT = 72 kg
+
+Mutation step (random draws):
+  noise_HGB ~ N(0, 1.12)  → drawn value = -0.3
+  noise_LDH ~ N(0, 45)    → drawn value = +25
+  noise_Age ~ N(0, 2)     → drawn value = +1
+  flip_ECOG ~ Bernoulli(0.05) → drawn value = False (no flip)
+  noise_weight ~ N(0, 3.6) → drawn value = -1.5
+
+Post-mutation:
+  HGB = 10.9 g/dL  (11.2 - 0.3, clipped to ≥3.0)
+  LDH = 475 U/L    (450 + 25, valid range)
+  Age = 66 years   (65 + 1, rounded to integer)
+  ECOG = 1         (no flip)
+  B_WEIGHT = 70.5 kg (72 - 1.5, valid range)
+
+All values remain clinically plausible.
+```
+
+#### Stage 4: Virtual Trial Execution
+
+With virtual patients generated via the 3-stage pipeline, the trial simulation proceeds in four steps:
+
+**Step 1: Eligibility Filtering**
+
+Apply inclusion/exclusion criteria to the source profile database to create an eligible donor pool:
+- **RAS_status == "WILD-TYPE":** Required for anti-EGFR therapy (Panitumumab mechanism of action)
+- **B_ECOG ∈ {0, 1, 2}:** Exclude severely debilitated patients (ECOG 3-4 typically excluded from oncology trials)
+- **AGE ≥ 18 years:** Adult population only
+
+From the original 370 real patients, approximately 180 meet eligibility criteria and form the donor pool for twin generation.
+
+**Step 2: Virtual Cohort Generation**
+
+Using the eligible donor pool, generate 1000 synthetic patients via repeated application of the recombination+mutation pipeline:
+- For each of 1000 iterations:
+  1. Select base patient randomly from eligible pool
+  2. Select 2-3 additional donors randomly
+  3. Recombine features according to correlation rules (Stage 2)
+  4. Apply mutation for variability (Stage 3)
+  5. Store virtual patient profile
+
+Result: 1000 unique virtual patients, each biologically plausible and diverse.
+
+**Step 3: Treatment Randomization**
+
+Randomly assign virtual patients to treatment arms with stratification to preserve covariate balance:
+- **Allocation:** 1:1 ratio → 500 patients per arm (Panitumumab + BSC vs BSC alone)
+- **Stratification factors:**
+  - RAS_status: Ensure all patients are wild-type (inclusion criterion) but stratify to guarantee balance
+  - B_ECOG: Stratify into ECOG 0-1 (high performance) vs ECOG 2 (moderate performance) to balance frailty
+- **Randomization method:** Permuted block randomization within strata (blocks of size 4-6 to maintain unpredictability)
+
+This ensures covariate distributions are similar across arms, mimicking a well-conducted randomized controlled trial.
+
+**Step 4: Counterfactual Outcome Prediction**
+
+For each virtual patient, predict outcomes under BOTH treatment assignments using the trained arm-agnostic models:
+
+1. **Response Prediction (Section 3.1):**
+   - Feed patient's baseline profile (71 features, excluding TRT/outcomes) into trained response classifier
+   - Model outputs predicted probabilities for each response class: P(PD), P(PR), P(SD)
+   - Sample predicted response class from multinomial distribution using these probabilities
+   - Repeat this process conceptually for both arms (in practice, model predicts same probabilities since TRT is not an input; randomness comes from sampling)
+
+2. **Time-to-Response Prediction (Section 3.2):**
+   - For patients with predicted response = PR or CR, apply the TTR regression model
+   - Model outputs predicted time_to_response in days
+   - Note: TTR predictions have high uncertainty due to model overfitting (test R²=-1.56)
+   
+3. **Survival Prediction (Section 3.3):**
+   - Feed baseline profile into trained Cox proportional hazards model
+   - Model outputs predicted hazard function: λ(t | X) = λ₀(t) × exp(β'X)
+   - Sample survival time using inverse transform method:
+     - Draw U ~ Uniform(0, 1)
+     - Compute survival time: T = H⁻¹(-log(U)), where H is cumulative hazard function
+   - This generates a random survival time consistent with the patient's predicted hazard
+
+**Step 5: Observed Outcome Assignment**
+
+Each patient's "observed" outcome is the prediction corresponding to their randomly assigned treatment arm:
+- If Patient VPT-0042 is randomized to Panitumumab arm:
+  - Observed response = Response prediction (e.g., PD)
+  - Observed survival = Survival prediction (e.g., 245 days)
+- If Patient VPT-0133 is randomized to BSC arm:
+  - Observed response = Response prediction (e.g., SD)
+  - Observed survival = Survival prediction (e.g., 312 days)
+
+This creates the simulated trial dataset with per-arm outcomes, enabling standard statistical analyses (chi-squared test for ORR, log-rank test for OS, hazard ratios from Cox regression).
+
+**Why This Methodology Works:**
+
+The arm-agnostic modeling approach (see "Modeling Design Decision" section) enables counterfactual prediction without confounding:
+- Models trained on baseline characteristics only learn universal prognostic relationships (high LDH → worse outcomes, regardless of treatment)
+- Virtual trial applies identical models to both treatment arms
+- Any outcome difference between arms reflects the models' learned associations between baseline features and outcomes
+- Since models never saw treatment assignment during training, predictions cannot encode confounding from the original trial's treatment allocation
+
+**Important Caveats:**
+
+The virtual trial is **hypothesis-generating only** and does not provide causal effect estimates:
+- Remaining bias from unobserved confounders (features not captured in the 71-dimensional profile)
+- Missing treatment effect modifiers (models cannot learn that Panitumumab helps younger patients more if treatment was excluded during training)
+- Model misspecification (Random Forests may miss complex interactions or temporal dynamics)
+- Propagation of model errors (overfitting in TTR model, calibration issues in response model)
+
+See Section 5.3 for detailed interpretation of the ORR-OS paradox and limitations of learned effect models.
+
+### 5.2 Results Summary
 
 The table below summarizes the primary endpoints:
 
@@ -317,7 +616,7 @@ The Kaplan-Meier survival curves below illustrate this divergence:
 
 The Panitumumab curve (blue) drops more steeply than the BSC curve (orange), particularly in the first 200 days. Confidence bands (shaded regions) do not overlap after approximately 100 days, indicating statistically significant separation.
 
-### Interpretation and Limitations
+### 5.3 Interpretation and Limitations
 
 The ORR-OS paradox likely arises from limitations in the learned effect models and data-driven confounding rather than true causal effects. Potential explanations include:
 

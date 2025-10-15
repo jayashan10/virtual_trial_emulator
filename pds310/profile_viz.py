@@ -66,7 +66,20 @@ def plot_profile_distribution(
     if "B_ECOG" in db.columns:
         plt.subplot(4, 4, ax_idx)
         ax_idx += 1
-        ecog_counts = db["B_ECOG"].value_counts().sort_index()
+
+        ecog_order = [
+            "Fully active",
+            "Symptoms but ambulatory",
+            "In bed less than 50% of the time",
+            "In bed more than 50% of the time",
+        ]
+        ecog_map = {label: idx for idx, label in enumerate(ecog_order)}
+
+        ecog_numeric = db["B_ECOG"].map(ecog_map)
+        ecog_counts = pd.Series(0, index=range(len(ecog_order)), dtype=int)
+        mapped_counts = ecog_numeric.value_counts().sort_index().astype(int)
+        ecog_counts.update(mapped_counts)
+
         ecog_counts.plot(kind="bar", color="steelblue")
         plt.xlabel("ECOG Performance Status")
         plt.ylabel("Count")
