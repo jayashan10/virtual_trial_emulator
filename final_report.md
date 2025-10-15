@@ -2,86 +2,38 @@
 
 ## Executive Summary
 
-I built an end-to-end analytical pipeline for the PDS310 colorectal cancer study (Project Data Sphere), engineered comprehensive digital patient profiles, trained predictive models for response and time-to-response (TTR), and executed a virtual trial comparing Panitumumab plus best supportive care (BSC) versus BSC alone. Key outcomes: the response classifier reached 0.783 accuracy with ROC-AUC 0.895 on holdout data; the TTR regressor exhibited overfitting due to responder scarcity (train R² 0.852, test R² −1.562, MAE 12.39 days); the virtual trial showed higher overall response rate with Panitumumab (22.4% vs 8.0%, p≈2.1e−10) but paradoxically worse overall survival (HR 1.52, p≈1.7e−10), highlighting trade-offs and data limitations.
+I built an end-to-end analytical pipeline for the PDS310 colorectal cancer study (Project Data Sphere), engineered comprehensive digital patient profiles, trained predictive models for response and time-to-response (TTR), and executed a virtual trial comparing Panitumumab plus best supportive care (BSC) versus BSC alone. PDS310 is derived from the randomized phase III trial [NCT00113763](https://clinicaltrials.gov/study/NCT00113763), which enrolled roughly 460 participants; the public Project Data Sphere release contains 370 patients after anonymization, and about 300 of those retain most baseline and early longitudinal measurements required for modeling. Key outcomes: the response classifier reached 0.783 accuracy with ROC-AUC 0.895 on holdout data; the TTR regressor exhibited overfitting due to responder scarcity (train R² 0.852, test R² −1.562, MAE 12.39 days); the virtual trial showed higher overall response rate with Panitumumab (22.4% vs 8.0%, p≈2.1e−10) but paradoxically worse overall survival (HR 1.52, p≈1.7e−10), highlighting trade-offs and data limitations.
 
 ---
 
-## Modeling Design Decision: Treatment Variable Inclusion
+## Modeling Design Decision: Including Treatment as a Feature
 
-A central question in building predictive models for clinical trials is whether to include the treatment variable (TRT/ATRT) during model training, and if so, how. This decision has profound implications for sample size, confounding, and the ability to perform counterfactual predictions in virtual trials. I carefully considered three approaches before selecting my final methodology.
+My initial experiments investigated whether the treatment assignment (TRT/ATRT) should be removed during model training. After evaluating the trade-offs, I ultimately decided to keep the treatment variable in every predictive model while managing it carefully through the preprocessing pipeline. The main alternatives I considered were:
 
-### Option 1: Arm-Specific Models
+### Option 1: Arm-Specific Models (Rejected)
 
-**Approach:** Train separate models for each treatment arm (e.g., Response Model A on Panitumumab patients, Response Model B on BSC patients).
+Training separate models for Panitumumab and BSC patients avoids mixing arms, but it cuts the effective sample size in half. For minority outcomes such as partial response (PR, only 25 total cases), splitting the data leaves roughly a dozen examples per arm, producing unstable estimates and poor minority-class recall. It also prevents the model from sharing universal prognostic relationships (e.g., high LDH → worse outcomes) across arms.
 
-**Advantage:** Each model learns arm-specific outcome patterns without cross-contamination.
+### Option 2: Excluding Treatment Entirely (Rejected)
 
-**Critical Disadvantages:**
+Arm-agnostic models simplify counterfactual reasoning, but they cannot learn treatment effect heterogeneity. During early prototypes I found that leaving out TRT caused the virtual trial engine to assume identical response dynamics for both arms, eliminating real signal that should come from the observed trial. Moreover, removing TRT prevented the models from capturing clinically relevant interactions (e.g., Panitumumab benefiting RAS wild-type patients differently than mutants).
 
-1. **Sample size collapse:** My cohort of 370 patients splits into ~185 per arm. For minority classes like partial response (PR, n=25 total), this means approximately 12 PR cases per arm—far too few for robust classification. With severe class imbalance (PD=215, SD=65, PR=25), halving the data makes minority class prediction nearly impossible.
+### Final Approach: Unified Models with Treatment Feature (Chosen)
 
-2. **No information sharing across biological relationships:** Fundamental prognostic factors like high LDH indicating worse outcomes, low albumin reflecting malnutrition, or ECOG 2-3 indicating poor performance status should operate universally regardless of treatment arm. Arm-specific models estimate these relationships twice with half the data, rather than pooling evidence from all 370 patients to learn them once with high confidence.
+I adopted a single model per endpoint that retains TRT/ATRT as a categorical predictor. Keeping treatment in the feature set means the models learn observed associations—if sicker patients received Panitumumab, the model will capture that negative correlation without proving causation—so all findings must be interpreted with confounding in mind. The variable is passed through a fold-aware pipeline (median/mode imputation, one-hot encoding, variance filtering) so there is no leakage across cross-validation splits. This design keeps the full 370-patient cohort available for every model, enables the algorithms to learn arm-specific effects and interactions, and still allows virtual trials to score counterfactual assignments by toggling the one-hot encoded treatment indicator.
 
-3. **Cannot identify treatment effect modifiers:** Treatment effect modification occurs when a feature changes how much treatment helps (e.g., "Panitumumab adds +150 days survival for low-LDH patients but only +30 days for high-LDH patients"). Arm-specific models can calculate differences post-hoc but cannot learn these interactions directly during training.
+**Safeguards and Limitations:**
+- Treatment is encoded purely from baseline data; no post-randomization information is used.
+- Because the observed trial may contain confounding (e.g., sicker patients preferentially treated), predicted treatment effects remain associative rather than causal. Section 6 discusses this caveat and outlines future debiasing options (propensity weighting, doubly robust estimators).
+- When generating counterfactual predictions, I explicitly switch the one-hot treatment indicators to assess “what-if” scenarios while keeping all other features fixed.
 
-4. **Prediction instability for rare patient types:** Consider an 85-year-old patient with ECOG 3 and very high CEA. If only two similar patients exist in the training data and both happen to be in the control arm, the treatment arm model must extrapolate wildly to make predictions for this profile. A unified model learns from all similar patients across both arms, improving stability.
-
-5. **Confounding permanently encoded:** If higher-risk patients were preferentially assigned to Panitumumab in the original trial (selection bias), each arm-specific model encodes that confounding. The treatment model learns "my arm's patients die at 230 days median" and the control model learns "my arm's patients die at 270 days median," both reflecting confounded distributions with no mechanism for adjustment.
-
-6. **Statistical efficiency loss:** Variance of parameter estimates scales as 1/n. With arm-specific models, variance ∝ 1/n_arm; with unified models, variance ∝ 1/n_total. For my case (n_arm ≈ 185, n_total = 370), arm-specific models have roughly twice the variance in all estimates, reducing statistical power and increasing overfitting risk.
-
-### Option 2: Unified Model with Treatment Variable and Interactions
-
-**Approach:** Train a single model including TRT as a feature, plus interaction terms TRT×LDH, TRT×ECOG, TRT×Age, etc.
-
-**Advantages:** Preserves full sample size (n=370) and can directly learn treatment effect modifiers through explicit interaction terms.
-
-**Critical Problem: Association ≠ Causation**
-
-When models see TRT/ATRT during training, they learn associations: "Patients on Panitumumab have worse outcomes." This is an **association**, not a **causal effect**. If the original trial assigned sicker patients to the treatment arm (confounding by indication), the model permanently encodes this bias. The model cannot distinguish between:
-- "Panitumumab causes harm" (causal effect)
-- "Sicker patients received Panitumumab" (confounding)
-
-Including treatment as a feature without proper causal adjustment (propensity scores, inverse probability weighting, doubly robust estimation) risks learning spurious treatment effects that reflect selection bias rather than true biological mechanisms.
-
-### Chosen Approach: Arm-Agnostic Unified Models (Exclude TRT/ATRT)
-
-**Rationale:** I exclude the treatment variable entirely from all predictive models, training on baseline patient characteristics only.
-
-**Key Benefits:**
-
-1. **Maximize sample size:** All 370 patients contribute to learning universal prognostic relationships (high LDH → worse outcomes works the same way for everyone, pooled evidence from both arms).
-
-2. **Avoid encoding confounding:** Models never see treatment assignment, so they cannot learn spurious associations between treatment and outcomes driven by selection bias in the original trial.
-
-3. **Enable counterfactual simulation:** Because models predict outcomes from baseline characteristics alone, I can score each patient's profile under hypothetical treatment assignments in a virtual trial. The difference between predictions under "assigned Panitumumab" versus "assigned BSC" estimates the treatment effect without confounding from observed assignments.
-
-4. **Maintain prognostic focus:** Models learn which patients are high-risk versus low-risk at baseline, independent of what treatment they might receive. This aligns with clinical decision-making: assess prognosis, then choose treatment.
-
-**How This Enables Virtual Trials:**
-
-In the virtual trial emulator (Section 6), each synthetic patient's digital profile is fed through the trained models to generate predictions under both treatment arms. For example:
-- Patient VPT-0042 profile → Response Model → 60% probability PD under Panitumumab, 75% probability PD under BSC
-- Difference (75% - 60% = 15% reduction in PD risk) is the model's estimated treatment effect for this patient
-
-Because the model was trained arm-agnostic, this difference reflects learned prognostic patterns rather than confounded treatment assignment. However, any remaining bias (unobserved confounders, missing treatment interactions, model misspecification) means these are **hypothesis-generating estimates only, not causal effects**. See Section 6 "Interpretation and Limitations" for detailed discussion.
-
-**Trade-off Acknowledgment:**
-
-This approach cannot learn treatment effect modifiers directly from the data. If Panitumumab truly helps younger patients more than older patients, and if age×treatment interactions exist in the training data, my models will not capture this heterogeneity. Future work could address this limitation by:
-- Including treatment with propensity score weighting to debias confounding
-- Using doubly robust estimators (outcome regression + propensity scores)
-- Pooling data across multiple trials to increase sample size for interaction learning
-
-However, given my moderate sample size (370 patients) and the presence of confounding in observational treatment assignments, the arm-agnostic approach provides the most robust foundation for prognostic modeling and hypothesis-generating virtual trials.
-
-**Cross-References:** See Section 3.1 for detailed data leakage prevention mechanisms that enforce treatment exclusion, and Section 4.6 for how arm-agnostic models integrate with the virtual trial simulator.
+This balanced approach preserves statistical power, captures arm-dependent patterns, and keeps the pipeline flexible for virtual trial simulations while acknowledging that the resulting treatment effects are hypothesis-generating, not causally identified.
 
 ---
 
 ## 1. Dataset and Cohort
 
-The study dataset originates from Project Data Sphere (PDS310), a phase III trial in metastatic colorectal cancer comparing Panitumumab plus best supportive care versus best supportive care alone. Raw data were provided as SAS ADaM files, which I converted to CSV format for downstream processing and analysis. After filtering for data availability and quality criteria, my analyzable cohort comprises 370 patients with comprehensive baseline and longitudinal measurements.
+The study dataset originates from Project Data Sphere (PDS310), a phase III trial in metastatic colorectal cancer comparing Panitumumab plus best supportive care versus best supportive care alone. The parent clinical trial [NCT00113763](https://clinicaltrials.gov/study/NCT00113763) randomized approximately 460 participants. The de-identified Project Data Sphere release contains 370 patients, and about 300 of them retain most baseline features and early laboratory trajectories needed for modeling. Raw data were provided as SAS ADaM files, which I converted to CSV format for downstream processing and analysis.
 
 ### Cohort Characteristics
 
@@ -141,7 +93,7 @@ I engineered a comprehensive digital patient profile comprising 71 features orga
 
 **Disease Characteristics:** Disease history variables include DIAGMONS (months elapsed from initial colorectal cancer diagnosis to study enrollment, reflecting disease duration), HISSUBTY (histological subtype such as adenocarcinoma, mucinous, or rectal primary), DIAGTYPE (anatomic site classification), and SXANY (presence of disease-related symptoms at baseline, encoded as binary yes/no). These features contextualize disease trajectory and prognosis.
 
-**Treatment:** The ATRT variable records the observed treatment arm assignment as captured in the ADaM dataset. While this field is preserved for analysis stratification and virtual trial design, it is explicitly excluded from all predictive models to maintain arm-agnostic baseline feature sets and prevent label leakage in cross-arm predictions.
+**Treatment:** The ATRT column records the observed treatment arm assignment (Panitumumab + BSC vs BSC alone). It is retained as a categorical predictor and passed through the modeling pipeline’s one-hot encoder so that each model can learn arm-specific patterns and interactions.
 
 **Baseline Laboratory Values:** I extract pre-treatment laboratory measurements for eight canonical biomarkers: albumin (baseline_ALB, g/L), alkaline phosphatase (baseline_ALP, U/L), carcinoembryonic antigen (baseline_CEA, ng/mL), creatinine (baseline_CREAT, mg/dL), hemoglobin (baseline_HGB, g/dL), lactate dehydrogenase (baseline_LDH, U/L), platelets (baseline_PLT, 10^9/L), and white blood cell count (baseline_WBC, 10^9/L). Units follow ADaM defaults after harmonization in the lab processing pipeline. Baseline values serve as snapshot indicators of hepatic function, renal function, tumor burden, hematologic reserve, and inflammatory state at study entry.
 
@@ -182,7 +134,7 @@ These exclusions are hardcoded in the data preparation logic and enforced progra
 
 **Pipeline Isolation and Cross-Validation:** Stratified K-fold cross-validation and train-test splitting are performed before any preprocessing. Each fold maintains independent preprocessing state, ensuring no information flows across folds. The use of scikit-learn Pipeline objects guarantees that the entire transformation chain (imputation → encoding → feature selection → model) respects fold boundaries. This prevents subtle leakage that can occur when preprocessing is applied to the full dataset before splitting.
 
-**Treatment Arm Exclusion:** The ATRT variable (observed treatment arm) is retained in the digital profile for stratification and virtual trial design but is never included as a predictive feature. This maintains arm-agnostic models that predict outcomes based solely on baseline patient characteristics, ensuring fairness and avoiding confounding by observed treatment assignment.
+**Treatment Handling:** The ATRT variable is included as a categorical feature but processed entirely within each training fold (median/mode imputation followed by one-hot encoding). This prevents leakage between folds while allowing the models to learn arm-associated signals. When producing counterfactual predictions I swap the treatment indicator explicitly, so the same pipeline serves both the train-time learning and virtual trial inference.
 
 These layered protections are not post-hoc validation steps but core design principles embedded in the codebase architecture, ensuring that all reported performance metrics reflect true generalization capability rather than artifacts of information leakage.
 
@@ -292,7 +244,7 @@ The confusion matrix below shows predicted classes (columns) versus actual class
 
 The matrix reveals that the model performs well on the majority PD class, correctly predicting 43 of 46 PD cases (93.5% recall). However, PR is exceedingly difficult to predict, with 0 of 5 PR cases correctly classified (0% recall). All five PR cases were misclassified as PD (4 cases) or SD (1 case). SD performance is moderate, with 4 of 9 cases correctly predicted (44.4% recall). The strong PD performance drives the overall weighted metrics, while macro-averaged metrics (precision 0.54, recall 0.46, F1 0.48) reflect the poor PR and moderate SD performance.
 
-Feature importance from the Random Forest model identifies which baseline and early trajectory variables most influenced response predictions.
+Feature importance from the Random Forest model identifies which baseline, treatment, and early trajectory variables most influenced response predictions.
 
 ![Figure 2: Top-20 feature importance scores from the response classification Random Forest. Importance is measured as mean decrease in impurity.](outputs/pds310/models/response_feature_importance.png)
 
@@ -365,7 +317,7 @@ For Day 112, predictions exhibit increased variance, particularly for LDH (not s
 
 ## 5. Virtual Trial Emulator
 
-I designed and executed a virtual trial to simulate the comparative effectiveness of Panitumumab plus best supportive care versus best supportive care alone using learned effect models. The virtual trial leverages a sophisticated 4-stage digital twin generation pipeline combined with the trained response, TTR, and overall survival models to project outcomes under counterfactual treatment assignments, providing a hypothesis-generating tool for trial design and endpoint estimation.
+I designed and executed a virtual trial to simulate the comparative effectiveness of Panitumumab plus best supportive care versus best supportive care alone using learned effect models. The virtual trial leverages a sophisticated 3-stage digital twin generation pipeline combined with the trained response, TTR, and overall survival models to project outcomes under counterfactual treatment assignments, providing a hypothesis-generating tool for trial design and endpoint estimation.
 
 ### 5.1 Virtual Patient Generation Pipeline
 
@@ -508,7 +460,7 @@ Post-mutation:
 All values remain clinically plausible.
 ```
 
-#### Stage 4: Virtual Trial Execution
+#### Virtual Trial Execution
 
 With virtual patients generated via the 3-stage pipeline, the trial simulation proceeds in four steps:
 
@@ -546,26 +498,21 @@ This ensures covariate distributions are similar across arms, mimicking a well-c
 
 **Step 4: Counterfactual Outcome Prediction**
 
-For each virtual patient, predict outcomes under BOTH treatment assignments using the trained arm-agnostic models:
+For each virtual patient, I run the unified models twice—once with the treatment indicator set to Panitumumab and once with it set to BSC—while keeping all other baseline features fixed:
 
 1. **Response Prediction (Section 3.1):**
-   - Feed patient's baseline profile (71 features, excluding TRT/outcomes) into trained response classifier
-   - Model outputs predicted probabilities for each response class: P(PD), P(PR), P(SD)
-   - Sample predicted response class from multinomial distribution using these probabilities
-   - Repeat this process conceptually for both arms (in practice, model predicts same probabilities since TRT is not an input; randomness comes from sampling)
+   - Set the one-hot encoded treatment column to the arm of interest and feed the 71-feature profile into the trained classifier.
+   - The model outputs arm-specific probabilities for each response class: P(PD│arm), P(PR│arm), P(SD│arm).
+   - Sample a response label from this multinomial distribution to obtain the simulated outcome for that arm.
 
 2. **Time-to-Response Prediction (Section 3.2):**
-   - For patients with predicted response = PR or CR, apply the TTR regression model
-   - Model outputs predicted time_to_response in days
-   - Note: TTR predictions have high uncertainty due to model overfitting (test R²=-1.56)
-   
+   - For virtual patients whose sampled response is PR or CR, toggle the treatment indicator and score the TTR regressor.
+   - The model returns the expected time_to_response (in days) for that arm. These estimates remain noisy because of responder scarcity (test R² ≈ −1.56).
+
 3. **Survival Prediction (Section 3.3):**
-   - Feed baseline profile into trained Cox proportional hazards model
-   - Model outputs predicted hazard function: λ(t | X) = λ₀(t) × exp(β'X)
-   - Sample survival time using inverse transform method:
-     - Draw U ~ Uniform(0, 1)
-     - Compute survival time: T = H⁻¹(-log(U)), where H is cumulative hazard function
-   - This generates a random survival time consistent with the patient's predicted hazard
+   - With the treatment indicator fixed to the target arm, pass the profile through the Cox model to obtain λ(t | X, arm) = λ₀(t) × exp(β'X).
+   - Sample survival time using inverse transform sampling: draw U ~ Uniform(0,1) and compute T = H⁻¹(-log(U)), where H is the cumulative hazard.
+   - Repeat for the alternate arm by flipping the treatment flag.
 
 **Step 5: Observed Outcome Assignment**
 
@@ -581,17 +528,16 @@ This creates the simulated trial dataset with per-arm outcomes, enabling standar
 
 **Why This Methodology Works:**
 
-The arm-agnostic modeling approach (see "Modeling Design Decision" section) enables counterfactual prediction without confounding:
-- Models trained on baseline characteristics only learn universal prognostic relationships (high LDH → worse outcomes, regardless of treatment)
-- Virtual trial applies identical models to both treatment arms
-- Any outcome difference between arms reflects the models' learned associations between baseline features and outcomes
-- Since models never saw treatment assignment during training, predictions cannot encode confounding from the original trial's treatment allocation
+- A single unified model per endpoint learns jointly from all 370 patients with the treatment indicator included, preserving statistical power and allowing arm-dependent signals to be captured.
+- Cross-validation keeps the treatment one-hot encoding fold-specific, so there is no leakage when fitting the models.
+- During simulation I explicitly toggle the treatment indicator, producing counterfactual predictions for both arms while holding every other baseline feature constant.
+- Differences between the two predictions therefore reflect the model’s learned association between treatment, covariates, and outcomes—useful for hypothesis generation, though still susceptible to confounding from the original trial.
 
 **Important Caveats:**
 
 The virtual trial is **hypothesis-generating only** and does not provide causal effect estimates:
 - Remaining bias from unobserved confounders (features not captured in the 71-dimensional profile)
-- Missing treatment effect modifiers (models cannot learn that Panitumumab helps younger patients more if treatment was excluded during training)
+- Incomplete treatment effect modeling—tree ensembles may still miss subtle interaction patterns or extrapolate poorly for rare covariate combinations
 - Model misspecification (Random Forests may miss complex interactions or temporal dynamics)
 - Propagation of model errors (overfitting in TTR model, calibration issues in response model)
 
