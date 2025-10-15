@@ -2,13 +2,13 @@
 
 ## Executive Summary
 
-We built an end-to-end analytical pipeline for the PDS310 colorectal cancer study (Project Data Sphere), engineered comprehensive digital patient profiles, trained predictive models for response and time-to-response (TTR), and executed a virtual trial comparing Panitumumab plus best supportive care (BSC) versus BSC alone. Key outcomes: the response classifier reached 0.783 accuracy with ROC-AUC 0.895 on holdout data; the TTR regressor exhibited overfitting due to responder scarcity (train R² 0.852, test R² −1.562, MAE 12.39 days); the virtual trial showed higher overall response rate with Panitumumab (22.4% vs 8.0%, p≈2.1e−10) but paradoxically worse overall survival (HR 1.52, p≈1.7e−10), highlighting trade-offs and data limitations.
+I built an end-to-end analytical pipeline for the PDS310 colorectal cancer study (Project Data Sphere), engineered comprehensive digital patient profiles, trained predictive models for response and time-to-response (TTR), and executed a virtual trial comparing Panitumumab plus best supportive care (BSC) versus BSC alone. Key outcomes: the response classifier reached 0.783 accuracy with ROC-AUC 0.895 on holdout data; the TTR regressor exhibited overfitting due to responder scarcity (train R² 0.852, test R² −1.562, MAE 12.39 days); the virtual trial showed higher overall response rate with Panitumumab (22.4% vs 8.0%, p≈2.1e−10) but paradoxically worse overall survival (HR 1.52, p≈1.7e−10), highlighting trade-offs and data limitations.
 
 ---
 
 ## Modeling Design Decision: Treatment Variable Inclusion
 
-A central question in building predictive models for clinical trials is whether to include the treatment variable (TRT/ATRT) during model training, and if so, how. This decision has profound implications for sample size, confounding, and the ability to perform counterfactual predictions in virtual trials. We carefully considered three approaches before selecting our final methodology.
+A central question in building predictive models for clinical trials is whether to include the treatment variable (TRT/ATRT) during model training, and if so, how. This decision has profound implications for sample size, confounding, and the ability to perform counterfactual predictions in virtual trials. I carefully considered three approaches before selecting my final methodology.
 
 ### Option 1: Arm-Specific Models
 
@@ -18,7 +18,7 @@ A central question in building predictive models for clinical trials is whether 
 
 **Critical Disadvantages:**
 
-1. **Sample size collapse:** Our cohort of 370 patients splits into ~185 per arm. For minority classes like partial response (PR, n=25 total), this means approximately 12 PR cases per arm—far too few for robust classification. With severe class imbalance (PD=215, SD=65, PR=25), halving the data makes minority class prediction nearly impossible.
+1. **Sample size collapse:** My cohort of 370 patients splits into ~185 per arm. For minority classes like partial response (PR, n=25 total), this means approximately 12 PR cases per arm—far too few for robust classification. With severe class imbalance (PD=215, SD=65, PR=25), halving the data makes minority class prediction nearly impossible.
 
 2. **No information sharing across biological relationships:** Fundamental prognostic factors like high LDH indicating worse outcomes, low albumin reflecting malnutrition, or ECOG 2-3 indicating poor performance status should operate universally regardless of treatment arm. Arm-specific models estimate these relationships twice with half the data, rather than pooling evidence from all 370 patients to learn them once with high confidence.
 
@@ -28,7 +28,7 @@ A central question in building predictive models for clinical trials is whether 
 
 5. **Confounding permanently encoded:** If higher-risk patients were preferentially assigned to Panitumumab in the original trial (selection bias), each arm-specific model encodes that confounding. The treatment model learns "my arm's patients die at 230 days median" and the control model learns "my arm's patients die at 270 days median," both reflecting confounded distributions with no mechanism for adjustment.
 
-6. **Statistical efficiency loss:** Variance of parameter estimates scales as 1/n. With arm-specific models, variance ∝ 1/n_arm; with unified models, variance ∝ 1/n_total. For our case (n_arm ≈ 185, n_total = 370), arm-specific models have roughly twice the variance in all estimates, reducing statistical power and increasing overfitting risk.
+6. **Statistical efficiency loss:** Variance of parameter estimates scales as 1/n. With arm-specific models, variance ∝ 1/n_arm; with unified models, variance ∝ 1/n_total. For my case (n_arm ≈ 185, n_total = 370), arm-specific models have roughly twice the variance in all estimates, reducing statistical power and increasing overfitting risk.
 
 ### Option 2: Unified Model with Treatment Variable and Interactions
 
@@ -46,7 +46,7 @@ Including treatment as a feature without proper causal adjustment (propensity sc
 
 ### Chosen Approach: Arm-Agnostic Unified Models (Exclude TRT/ATRT)
 
-**Rationale:** We exclude the treatment variable entirely from all predictive models, training on baseline patient characteristics only.
+**Rationale:** I exclude the treatment variable entirely from all predictive models, training on baseline patient characteristics only.
 
 **Key Benefits:**
 
@@ -54,7 +54,7 @@ Including treatment as a feature without proper causal adjustment (propensity sc
 
 2. **Avoid encoding confounding:** Models never see treatment assignment, so they cannot learn spurious associations between treatment and outcomes driven by selection bias in the original trial.
 
-3. **Enable counterfactual simulation:** Because models predict outcomes from baseline characteristics alone, we can score each patient's profile under hypothetical treatment assignments in a virtual trial. The difference between predictions under "assigned Panitumumab" versus "assigned BSC" estimates the treatment effect without confounding from observed assignments.
+3. **Enable counterfactual simulation:** Because models predict outcomes from baseline characteristics alone, I can score each patient's profile under hypothetical treatment assignments in a virtual trial. The difference between predictions under "assigned Panitumumab" versus "assigned BSC" estimates the treatment effect without confounding from observed assignments.
 
 4. **Maintain prognostic focus:** Models learn which patients are high-risk versus low-risk at baseline, independent of what treatment they might receive. This aligns with clinical decision-making: assess prognosis, then choose treatment.
 
@@ -68,12 +68,12 @@ Because the model was trained arm-agnostic, this difference reflects learned pro
 
 **Trade-off Acknowledgment:**
 
-This approach cannot learn treatment effect modifiers directly from the data. If Panitumumab truly helps younger patients more than older patients, and if age×treatment interactions exist in the training data, our models will not capture this heterogeneity. Future work could address this limitation by:
+This approach cannot learn treatment effect modifiers directly from the data. If Panitumumab truly helps younger patients more than older patients, and if age×treatment interactions exist in the training data, my models will not capture this heterogeneity. Future work could address this limitation by:
 - Including treatment with propensity score weighting to debias confounding
 - Using doubly robust estimators (outcome regression + propensity scores)
 - Pooling data across multiple trials to increase sample size for interaction learning
 
-However, given our moderate sample size (370 patients) and the presence of confounding in observational treatment assignments, the arm-agnostic approach provides the most robust foundation for prognostic modeling and hypothesis-generating virtual trials.
+However, given my moderate sample size (370 patients) and the presence of confounding in observational treatment assignments, the arm-agnostic approach provides the most robust foundation for prognostic modeling and hypothesis-generating virtual trials.
 
 **Cross-References:** See Section 3.1 for detailed data leakage prevention mechanisms that enforce treatment exclusion, and Section 4.6 for how arm-agnostic models integrate with the virtual trial simulator.
 
@@ -81,7 +81,7 @@ However, given our moderate sample size (370 patients) and the presence of confo
 
 ## 1. Dataset and Cohort
 
-The study dataset originates from Project Data Sphere (PDS310), a phase III trial in metastatic colorectal cancer comparing Panitumumab plus best supportive care versus best supportive care alone. Raw data were provided as SAS ADaM files, which we converted to CSV format for downstream processing and analysis. After filtering for data availability and quality criteria, our analyzable cohort comprises 370 patients with comprehensive baseline and longitudinal measurements.
+The study dataset originates from Project Data Sphere (PDS310), a phase III trial in metastatic colorectal cancer comparing Panitumumab plus best supportive care versus best supportive care alone. Raw data were provided as SAS ADaM files, which I converted to CSV format for downstream processing and analysis. After filtering for data availability and quality criteria, my analyzable cohort comprises 370 patients with comprehensive baseline and longitudinal measurements.
 
 ### Cohort Characteristics
 
@@ -96,7 +96,7 @@ The study dataset originates from Project Data Sphere (PDS310), a phase III tria
 
 The cohort exhibits reasonable balance across treatment arms in terms of age and sex distribution. ECOG performance status (0-1, indicating fully active or mildly symptomatic but ambulatory) is slightly higher in the Panitumumab arm. RAS mutation status, a critical biomarker for anti-EGFR therapy response, is similarly distributed between arms with approximately half of patients carrying wild-type RAS alleles.
 
-We assessed baseline balance across categorical variables to evaluate potential confounding. The figure below displays distributions of ECOG performance status and RAS mutation status by treatment arm. Both variables show similar patterns between arms, though ECOG 0-1 is marginally more prevalent in the Panitumumab group.
+I assessed baseline balance across categorical variables to evaluate potential confounding. The figure below displays distributions of ECOG performance status and RAS mutation status by treatment arm. Both variables show similar patterns between arms, though ECOG 0-1 is marginally more prevalent in the Panitumumab group.
 
 ![Baseline balance by arm](outputs/pds310/report/baseline_balance.png)
 
@@ -114,7 +114,7 @@ Additional visualizations of the complete digital patient profiles are shown bel
 
 ## 2. Feature Engineering
 
-We engineered a comprehensive digital patient profile comprising 71 features organized into 12 interpretable groups. This structure mirrors clinical data capture workflows and enforces temporal separation to prevent outcome leakage. The table below summarizes feature groups and their composition.
+I engineered a comprehensive digital patient profile comprising 71 features organized into 12 interpretable groups. This structure mirrors clinical data capture workflows and enforces temporal separation to prevent outcome leakage. The table below summarizes feature groups and their composition.
 
 ### Feature Group Summary
 
@@ -143,19 +143,19 @@ We engineered a comprehensive digital patient profile comprising 71 features org
 
 **Treatment:** The ATRT variable records the observed treatment arm assignment as captured in the ADaM dataset. While this field is preserved for analysis stratification and virtual trial design, it is explicitly excluded from all predictive models to maintain arm-agnostic baseline feature sets and prevent label leakage in cross-arm predictions.
 
-**Baseline Laboratory Values:** We extract pre-treatment laboratory measurements for eight canonical biomarkers: albumin (baseline_ALB, g/L), alkaline phosphatase (baseline_ALP, U/L), carcinoembryonic antigen (baseline_CEA, ng/mL), creatinine (baseline_CREAT, mg/dL), hemoglobin (baseline_HGB, g/dL), lactate dehydrogenase (baseline_LDH, U/L), platelets (baseline_PLT, 10^9/L), and white blood cell count (baseline_WBC, 10^9/L). Units follow ADaM defaults after harmonization in the lab processing pipeline. Baseline values serve as snapshot indicators of hepatic function, renal function, tumor burden, hematologic reserve, and inflammatory state at study entry.
+**Baseline Laboratory Values:** I extract pre-treatment laboratory measurements for eight canonical biomarkers: albumin (baseline_ALB, g/L), alkaline phosphatase (baseline_ALP, U/L), carcinoembryonic antigen (baseline_CEA, ng/mL), creatinine (baseline_CREAT, mg/dL), hemoglobin (baseline_HGB, g/dL), lactate dehydrogenase (baseline_LDH, U/L), platelets (baseline_PLT, 10^9/L), and white blood cell count (baseline_WBC, 10^9/L). Units follow ADaM defaults after harmonization in the lab processing pipeline. Baseline values serve as snapshot indicators of hepatic function, renal function, tumor burden, hematologic reserve, and inflammatory state at study entry.
 
-**Longitudinal Laboratory Features:** To capture early treatment dynamics without violating temporal ordering, we derive trajectory features from the first 42 days (approximately 6 weeks) of treatment, intentionally excluding the week-8 tumor assessment window. For each of the eight canonical labs, we compute two features: early_last (the most recent measurement within days 0-42) and early_slope (the ordinary least-squares slope of lab value versus time for all measurements in the window). This yields 16 features: lab_ALB_early_last, lab_ALP_early_last, lab_CEA_early_last, lab_CREAT_early_last, lab_HGB_early_last, lab_LDH_early_last, lab_PLT_early_last, lab_WBC_early_last, and corresponding lab_*_early_slope variables. For example, a rising LDH slope may signal disease progression, while stable or improving hemoglobin suggests maintained hematologic function. The 42-day cutoff is clinically defensible and ensures that response assessment at 8+ weeks remains unbiased.
+**Longitudinal Laboratory Features:** To capture early treatment dynamics without violating temporal ordering, I derive trajectory features from the first 42 days (approximately 6 weeks) of treatment, intentionally excluding the week-8 tumor assessment window. For each of the eight canonical labs, I compute two features: early_last (the most recent measurement within days 0-42) and early_slope (the ordinary least-squares slope of lab value versus time for all measurements in the window). This yields 16 features: lab_ALB_early_last, lab_ALP_early_last, lab_CEA_early_last, lab_CREAT_early_last, lab_HGB_early_last, lab_LDH_early_last, lab_PLT_early_last, lab_WBC_early_last, and corresponding lab_*_early_slope variables. For example, a rising LDH slope may signal disease progression, while stable or improving hemoglobin suggests maintained hematologic function. The 42-day cutoff is clinically defensible and ensures that response assessment at 8+ weeks remains unbiased.
 
-**Tumor Burden:** Tumor measurements follow RECIST criteria with baseline lesion counts (target_lesion_count for measurable lesions, nontarget_lesion_count for non-measurable disease) and geometric summaries (sum_target_diameters in mm, max_lesion_size, mean_lesion_size). We also record lesion_sites_count to quantify spatial disease spread (e.g., liver, lung, lymph nodes). To handle patients with incomplete imaging data, we construct a categorical tumor_burden_category (low/medium/high) based on threshold rules applied to size and site features, providing a robust ordinal burden indicator when raw metrics are sparse.
+**Tumor Burden:** Tumor measurements follow RECIST criteria with baseline lesion counts (target_lesion_count for measurable lesions, nontarget_lesion_count for non-measurable disease) and geometric summaries (sum_target_diameters in mm, max_lesion_size, mean_lesion_size). I also record lesion_sites_count to quantify spatial disease spread (e.g., liver, lung, lymph nodes). To handle patients with incomplete imaging data, I construct a categorical tumor_burden_category (low/medium/high) based on threshold rules applied to size and site features, providing a robust ordinal burden indicator when raw metrics are sparse.
 
-**Molecular Profiling:** Molecular features encode mutation status across RAS pathway genes: KRAS_exon2, KRAS_exon3, KRAS_exon4, NRAS_exon2, NRAS_exon3, NRAS_exon4, and BRAF_exon15. Each variable is categorical (mutant/wild-type/unknown). We also derive a composite RAS_status variable (WILD-TYPE if all KRAS and NRAS exons are wild-type, MUTANT if any are mutant, UNKNOWN otherwise). RAS status is clinically critical for anti-EGFR agents like Panitumumab, as wild-type RAS is associated with therapeutic benefit while mutant RAS confers resistance. Our virtual trial design enforces RAS wild-type eligibility to align with clinical practice guidelines.
+**Molecular Profiling:** Molecular features encode mutation status across RAS pathway genes: KRAS_exon2, KRAS_exon3, KRAS_exon4, NRAS_exon2, NRAS_exon3, NRAS_exon4, and BRAF_exon15. Each variable is categorical (mutant/wild-type/unknown). I also derive a composite RAS_status variable (WILD-TYPE if all KRAS and NRAS exons are wild-type, MUTANT if any are mutant, UNKNOWN otherwise). RAS status is clinically critical for anti-EGFR agents like Panitumumab, as wild-type RAS is associated with therapeutic benefit while mutant RAS confers resistance. My virtual trial design enforces RAS wild-type eligibility to align with clinical practice guidelines.
 
-**Physical Status:** We compute weight_change_pct_42d as the percentage change in body weight from baseline to day 42. Positive values indicate weight gain, negative values indicate loss. This single longitudinal vital sign serves as a coarse indicator of nutritional status, disease burden, and treatment tolerance during the early treatment phase.
+**Physical Status:** I compute weight_change_pct_42d as the percentage change in body weight from baseline to day 42. Positive values indicate weight gain, negative values indicate loss. This single longitudinal vital sign serves as a coarse indicator of nutritional status, disease burden, and treatment tolerance during the early treatment phase.
 
 **Clinical History:** History features summarize prior treatment exposure and toxicity: prior_ae_count (total adverse events in prior lines), prior_severe_ae_count (grade 3+ events), prior_skin_toxicity_flag (history of dermatologic toxicity, relevant for Panitumumab which causes rash), num_prior_therapies (count of previous treatment regimens), and time_since_diagnosis (months from diagnosis to current enrollment, partially redundant with DIAGMONS but retained for consistency). These variables inform models of patient tolerance thresholds and cumulative treatment burden.
 
-**Risk Scores:** We derive six composite risk indices: lab_risk_score (weighted combination of abnormal lab flags), performance_risk (derived from ECOG and weight), tumor_burden_risk (derived from lesion metrics), molecular_risk (derived from mutation patterns), composite_risk_score (aggregate across domains), and predicted_good_prognosis_flag (binary indicator from composite thresholds). These scores are computed for exploratory profiling and clinical interpretation but are explicitly excluded from model training to prevent circularity, as they are deterministic functions of other features already in the model input space.
+**Risk Scores:** I derive six composite risk indices: lab_risk_score (weighted combination of abnormal lab flags), performance_risk (derived from ECOG and weight), tumor_burden_risk (derived from lesion metrics), molecular_risk (derived from mutation patterns), composite_risk_score (aggregate across domains), and predicted_good_prognosis_flag (binary indicator from composite thresholds). These scores are computed for exploratory profiling and clinical interpretation but are explicitly excluded from model training to prevent circularity, as they are deterministic functions of other features already in the model input space.
 
 **Outcomes:** Outcome variables include survival endpoints (DTHDYX: days to death, DTHX: death event indicator; PFSDYCR: days to progression-free survival event, PFSCR: PFS event indicator), tumor response assessments (best_response: best overall RECIST response across all visits, response_at_week8, response_at_week16: response at specific timepoints), and time_to_response (days from treatment start to first documented response for responders). These variables serve exclusively as modeling targets and are never included in predictor feature sets. The model training scripts (model_response.py, model_ttr.py) explicitly drop all outcome columns before pipeline preprocessing to enforce this separation.
 
@@ -165,7 +165,7 @@ Feature types are standardized prior to modeling: boolean flags are cast to floa
 
 ### 2.1 Data Leakage Prevention Strategies
 
-Data leakage occurs when information from outside the training dataset influences model training, leading to artificially inflated performance that fails to generalize. We implement multiple layers of protection against leakage throughout the feature engineering and modeling pipeline.
+Data leakage occurs when information from outside the training dataset influences model training, leading to artificially inflated performance that fails to generalize. I implement multiple layers of protection against leakage throughout the feature engineering and modeling pipeline.
 
 **Temporal Windowing for Longitudinal Features:** All longitudinal laboratory features are restricted to a Day 0-42 window, intentionally excluding week-8 and later assessments. This ensures that early trajectory features (lab_*_early_last and lab_*_early_slope) cannot incorporate information from the tumor response assessment timepoint (typically week 8 or later). The 42-day cutoff provides approximately 6 weeks of treatment dynamics while maintaining strict temporal separation from outcome measurement. This prevents the models from "peeking" at data that would be unavailable at prediction time in a prospective deployment scenario.
 
@@ -176,7 +176,7 @@ Data leakage occurs when information from outside the training dataset influence
 
 These exclusions are hardcoded in the data preparation logic and enforced programmatically, not as a manual step, reducing the risk of accidental inclusion.
 
-**Composite Risk Score Exclusion:** The six derived risk scores (lab_risk_score, performance_risk, tumor_burden_risk, molecular_risk, composite_risk_score, predicted_good_prognosis_flag) are computed for exploratory profiling and clinical interpretation but are explicitly excluded from all model training pipelines. These scores are deterministic functions of input features already present in the model, so including them would create circular dependencies and artificially inflate feature importance without adding predictive signal. By excluding them, we ensure models learn directly from raw clinical measurements rather than pre-aggregated summaries.
+**Composite Risk Score Exclusion:** The six derived risk scores (lab_risk_score, performance_risk, tumor_burden_risk, molecular_risk, composite_risk_score, predicted_good_prognosis_flag) are computed for exploratory profiling and clinical interpretation but are explicitly excluded from all model training pipelines. These scores are deterministic functions of input features already present in the model, so including them would create circular dependencies and artificially inflate feature importance without adding predictive signal. By excluding them, I ensure models learn directly from raw clinical measurements rather than pre-aggregated summaries.
 
 **Train-Fold-Only Imputation and Encoding:** All preprocessing transformations—imputation (median for numeric, mode for categorical), one-hot encoding, variance thresholding, and scaling—are fitted exclusively on the training fold and then applied to validation and test folds. This is enforced through scikit-learn Pipeline objects that encapsulate transformation logic. For example, the median value used for imputing missing hemoglobin is computed from the training set only, preventing test set statistics from leaking into training. Similarly, categorical encoder vocabularies are learned from training data, with unseen categories in test data handled via ignore-unknown directives.
 
@@ -190,7 +190,7 @@ These layered protections are not post-hoc validation steps but core design prin
 
 ## 3. Modeling Methods
 
-We trained three primary predictive models—response classification, time-to-response regression, and overall survival—alongside auxiliary biomarker trajectory models. All models employ preprocessing pipelines with strict leakage controls (see Section 2.1) and are designed to predict outcomes from baseline and early treatment features only.
+I trained three primary predictive models—response classification, time-to-response regression, and overall survival—alongside auxiliary biomarker trajectory models. All models employ preprocessing pipelines with strict leakage controls (see Section 2.1) and are designed to predict outcomes from baseline and early treatment features only.
 
 ### 3.1 Model 1: Response Classification
 
@@ -304,7 +304,7 @@ Calibration assesses whether predicted probabilities accurately reflect observed
 
 Calibration is visualized using reliability diagrams (also called calibration plots). Each point on the plot represents a bin of predictions: the x-axis shows the mean predicted probability within that bin, and the y-axis shows the observed frequency of positive outcomes in that bin. Perfect calibration follows the dashed diagonal line (y = x). Points above the diagonal indicate the model under-predicts (observed frequency > predicted probability), while points below indicate over-prediction (observed frequency < predicted probability).
 
-We quantify calibration using two metrics:
+Calibration is quantified using two metrics:
 
 - **Brier Score:** Mean squared error between predicted probabilities and binary outcomes, bounded in [0, 1] with 0 indicating perfect predictions. Lower is better.
 - **Expected Calibration Error (ECE):** Average absolute difference between predicted probability and observed frequency across all bins. Measures average deviation from the diagonal. Lower is better.
@@ -349,7 +349,7 @@ The sharp train-test performance gap underscores the need for larger responder c
 
 ### 4.4 Biomarker Trajectories
 
-We trained auxiliary models to predict future hemoglobin (HGB) and lactate dehydrogenase (LDH) levels at Day 56 (approximately 8 weeks) and Day 112 (approximately 16 weeks) based on baseline and early features. These models assess the feasibility of forecasting key lab trajectories for monitoring disease progression and treatment response.
+I trained auxiliary models to predict future hemoglobin (HGB) and lactate dehydrogenase (LDH) levels at Day 56 (approximately 8 weeks) and Day 112 (approximately 16 weeks) based on baseline and early features. These models assess the feasibility of forecasting key lab trajectories for monitoring disease progression and treatment response.
 
 Predictions for Day 56 are shown below:
 
@@ -365,21 +365,21 @@ For Day 112, predictions exhibit increased variance, particularly for LDH (not s
 
 ## 5. Virtual Trial Emulator
 
-We designed and executed a virtual trial to simulate the comparative effectiveness of Panitumumab plus best supportive care versus best supportive care alone using learned effect models. The virtual trial leverages a sophisticated 4-stage digital twin generation pipeline combined with the trained response, TTR, and overall survival models to project outcomes under counterfactual treatment assignments, providing a hypothesis-generating tool for trial design and endpoint estimation.
+I designed and executed a virtual trial to simulate the comparative effectiveness of Panitumumab plus best supportive care versus best supportive care alone using learned effect models. The virtual trial leverages a sophisticated 4-stage digital twin generation pipeline combined with the trained response, TTR, and overall survival models to project outcomes under counterfactual treatment assignments, providing a hypothesis-generating tool for trial design and endpoint estimation.
 
 ### 5.1 Virtual Patient Generation Pipeline
 
-Our virtual trial employs a sophisticated 3-stage digital twin generation approach to create biologically plausible synthetic patients. This methodology ensures that virtual patients maintain realistic correlations between features while exhibiting diverse clinical profiles not observed in the original cohort.
+My virtual trial employs a sophisticated 3-stage digital twin generation approach to create biologically plausible synthetic patients. This methodology ensures that virtual patients maintain realistic correlations between features while exhibiting diverse clinical profiles not observed in the original cohort.
 
 #### Stage 1: Digital Profile Construction
 
-Before generating any virtual patients, we construct comprehensive digital patient profiles from the real PDS310 cohort (see Section 2). Each profile comprises 71 features organized across 12 interpretable groups:
+Before generating any virtual patients, I construct comprehensive digital patient profiles from the real PDS310 cohort (see Section 2). Each profile comprises 71 features organized across 12 interpretable groups:
 
 **Core Feature Groups:**
 - **Demographics** (5 features): AGE (years), SEX (male/female), RACE (categorical), B_ECOG (performance status 0-3), B_WEIGHT (kg)
 - **Disease Characteristics** (4 features): DIAGMONS (months since diagnosis), HISSUBTY (histological subtype: adenocarcinoma, mucinous, rectal), DIAGTYPE (anatomic site classification), SXANY (baseline symptoms yes/no)
 - **Baseline Laboratories** (8 features): baseline_ALB, baseline_ALP, baseline_CEA, baseline_CREAT, baseline_HGB, baseline_LDH, baseline_PLT, baseline_WBC (all in standard clinical units)
-- **Longitudinal Laboratory Trajectories** (16 features): For each of 8 canonical labs, we compute lab_*_early_last (most recent value days 0-42) and lab_*_early_slope (trajectory slope), capturing early treatment dynamics
+- **Longitudinal Laboratory Trajectories** (16 features): For each of 8 canonical labs, I compute lab_*_early_last (most recent value days 0-42) and lab_*_early_slope (trajectory slope), capturing early treatment dynamics
 - **Tumor Burden** (7 features): target_lesion_count, nontarget_lesion_count, sum_target_diameters (mm), max_lesion_size, mean_lesion_size, lesion_sites_count, tumor_burden_category (low/medium/high)
 - **Molecular Markers** (8 features): KRAS_exon2/3/4, NRAS_exon2/3/4, BRAF_exon15 (all categorical: mutant/wild-type/unknown), plus composite RAS_status (WILD-TYPE/MUTANT/UNKNOWN)
 - **Physical Status** (1 feature): weight_change_pct_42d (percentage weight change from baseline to day 42)
